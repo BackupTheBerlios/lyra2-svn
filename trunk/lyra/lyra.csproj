@@ -1,0 +1,359 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{CACF63D5-C9CB-4878-95CC-7DA19367B68A}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = "bin\Release\data\lyra.ico"
+                AssemblyKeyContainerName = ""
+                AssemblyName = "lyra"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "WinExe"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "lyra"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "true"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Windows.Forms.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.XML.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "App.ico"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DebugConsole.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DebugConsole.resx"
+                    DependentUpon = "DebugConsole.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Editor.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Editor.resx"
+                    DependentUpon = "Editor.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "FileLauncher.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "FolderBrowser.cs"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "FolderBrowser.resx"
+                    DependentUpon = "FolderBrowser.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Frst.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Frst.resx"
+                    DependentUpon = "Frst.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "FX.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "FX.resx"
+                    DependentUpon = "FX.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "GUI.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "GUI.resx"
+                    DependentUpon = "GUI.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "HTML.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "HTML.resx"
+                    DependentUpon = "HTML.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Info.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Info.resx"
+                    DependentUpon = "Info.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "IPhysicalStorage.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ISearch.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IStorage.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "LyraUpdate.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "LyraUpdate.resx"
+                    DependentUpon = "LyraUpdate.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "LyraUpdateView.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "LyraUpdateView.resx"
+                    DependentUpon = "LyraUpdateView.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "NewList.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NewList.resx"
+                    DependentUpon = "NewList.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Options.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Options.resx"
+                    DependentUpon = "Options.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PhysicalXML.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PictView.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PictView.resx"
+                    DependentUpon = "PictView.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PLists.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PrBackground.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PrBackground.resx"
+                    DependentUpon = "PrBackground.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Pswd.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Pswd.resx"
+                    DependentUpon = "Pswd.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Search.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Song.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Start.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Start.resx"
+                    DependentUpon = "Start.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Storage.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "TEditor.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "TEditor.resx"
+                    DependentUpon = "TEditor.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Translation.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UpdateFileURL.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Util.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "View.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "View.resx"
+                    DependentUpon = "View.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "View.vi.resx"
+                    DependentUpon = "View.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "View.vi-VN.resx"
+                    DependentUpon = "View.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

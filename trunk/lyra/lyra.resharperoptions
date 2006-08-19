@@ -1,0 +1,71 @@
+<Configuration>
+  <RecentFilesTracker>
+    <RecentFilesTracker>
+      <TrackedFile location="D:\Work\Andreas\lyra\GUI.cs" offset="73664" line="1073" column="0" />
+      <TrackedFile location="D:\Work\Andreas\lyra\Util.cs" offset="2568" line="12" column="0" />
+    </RecentFilesTracker>
+  </RecentFilesTracker>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyEventArgs">
+      <Item value="KeyCode" priority="0" />
+      <Item value="Control" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListBox.ObjectCollection">
+      <Item value="GetEnumerator" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListBox">
+      <Item value="Items" priority="0" />
+      <Item value="SelectedItem" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:int">
+      <Item value="ToString" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:lyra.Song">
+      <Item value="GetTranslation" priority="0" />
+      <Item value="Text" priority="7" />
+      <Item value="Number" priority="2" />
+      <Item value="Title" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TabControl">
+      <Item value="SelectedIndex" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@lyra.HTML">
+      <Item value="myHTML" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.SortedList">
+      <Item value="Count" priority="1" />
+      <Item value="GetByIndex" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:string">
+      <Item value="EndsWith" priority="0" />
+      <Item value="IndexOf" priority="0" />
+      <Item value="Length" priority="3" />
+      <Item value="StartsWith" priority="0" />
+      <Item value="TrimStart" priority="0" />
+      <Item value="Replace" priority="1" />
+      <Item value="TrimEnd" priority="0" />
+      <Item value="Substring" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime.Now">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.StatusBar">
+      <Item value="Visible" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.SaveFileDialog">
+      <Item value="Title" priority="0" />
+      <Item value="FileName" priority="3" />
+      <Item value="ShowDialog" priority="0" />
+      <Item value="Filter" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamWriter">
+      <Item value="Close" priority="0" />
+      <Item value="WriteLine" priority="6" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean />
+  </SettingsComponent>
+</Configuration>

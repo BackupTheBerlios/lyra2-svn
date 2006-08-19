@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>expimp</Title>
+<LINK REL="stylesheet" TYPE="text/css" HREF="lyrahelp.css">
+</HEAD>
+<BODY>
+<h1>Export/Import</h1>
+<p>
+Der gesamte Inhalt der Datenbank kann <i>exportiert</i> werden. Klicken Sie dazu auf "Datei"->"Exportieren..." oder Ctrl+Shift+E.<br>
+Dabei wird einfach die interne XML-Datei an die angegebene Adresse kopiert. 
+Beachten Sie, dass <i>nur die zuletzt übernommenen Änderungen</i> berücksichtigt werden! Stellen Sie also sicher, dass Ihre letzten 
+Änderungen auch übernommen wurden, falls sie auch exportiert werden sollen.<br>
+<br>
+Analog können Sie eine XML-Datei auch <i>importieren</i>. "Datei"->"Importieren"->XML oder Ctrl+Shift+I klicken. Am einfachsten ist es,
+wenn Sie aus lyra exportierte XML-Dateien importieren.<br>
+Die angezeigte Warnung ist <i>keine Fehlermeldung</i>. Geben Sie einfach an, ob Sie die importierten Lieder hinzufügen oder 
+wollen, oder ob die alten zuerst gelöscht werden sollen.<br>
+Falls Lieder mit der gleichen Nummer vorkommen, werden Sie darüber während dem Importvorgang informiert.<br>
+<br>
+<img src="pics/tech.jpg"> Falls Sie eigene XML-Dateien manuell erstellen oder anpassen wollen, geht das natürlich auch. 
+Die XML-Datei muss folgende DTD erfüllen, damit sie von lyra richtig interpretiert werden kann:
+</p>
+<ul>
+<code>
+&lt;!DOCTYPE lyra[<br>
+&nbsp;&nbsp;&lt;!ELEMENT lyra (Songs,Translations)&gt;<br>
+&nbsp;&nbsp;&lt;!ELEMENT Songs (Song*) &gt;<br>
+&nbsp;&nbsp;&lt;!ELEMENT Song (Number,Title,Text) &gt;<br>
+&nbsp;&nbsp;&lt;!ELEMENT Translations (Translation*)&gt;<br>
+&nbsp;&nbsp;&lt;!ELEMENT Translation (Title,Text)&gt;<br>
+&nbsp;&nbsp;&lt;!ELEMENT Number (#PCDATA)&gt;<br>
+&nbsp;&nbsp;&lt;!ELEMENT Title (#PCDATA)&gt;<br>
+&nbsp;&nbsp;&lt;!ELEMENT Text (#PCDATA)&gt;<br>
+&nbsp;&nbsp;&lt;!ATTLIST Song id ID #REQUIRED&gt;<br>
+&nbsp;&nbsp;&lt;!ATTLIST Song trans IDREFS #REQUIRED&gt;<br>
+&nbsp;&nbsp;&lt;!ATTLIST Translation id ID #REQUIRED&gt;<br>
+&nbsp;&nbsp;&lt;!ATTLIST Translation lang CDATA #REQUIRED&gt;]&gt;<br>
+</code>
+</ul>
+<p>
+Die XML-Export/Import Variante hat den Vorteil, dass <i>alle Informationen</i> exportiert werden. Textformate und vor allem
+auch die Übersetzungen werden in der XML-Datei ebenfalls abgespeichert. Deshalb wird auf eine LTX-Exportfunktion verzichtet.<br>
+<br>
+<i>(vgl. <a href="storage.htm">Speichermanagement</a>)</i><br>
+<br>
+<br>
+</p>
+<h1>LTX-Import</h1>
+<br>
+<p>
+Ein etwas einfacheres, aber <i>ziemlich ineffizientes</i> Import-Verfahren ist der <i>LTX-Import</i>.<br>
+Klicken Sie auf "Datei"->"Importieren"->"LTX-Import" und wählen Sie im Dialog die zu importierende LTX-Datei aus.<br>
+Auch hier können Sie anwählen, ob die Lieder hinzugefügt werden sollen, oder ob Sie die alten zuerst löschen wollen.<br>
+<br>
+Der Hauptvorteil ist die einfache Struktur der LTX-Datei. Sie können also ohne grosse Umstände eine LTX-Datei manuell erstellen und 
+sie in lyra importieren. Das <a href="Converter.htm">Converter</a>-tool kann Ihnen dabei eine zusätzliche Hilfe sein.<br>
+<br>
+Eine LTX-Datei hat folgende <i>Struktur</i>:<br>
+Die Lieder werden untereinander aufgelistet.<br>
+Ein Lied besteht aus der <i>Bezeichnung</i> "Liedenummer" + " " + "Liedtitel" in der <i>ersten Zeile</i>, gefolgt vom "Liedtext".
+Der Liedblock wird abgeschlossen "#END". Vergessen Sie dieses sog. Terminalzeichen nicht, sonst erkennt lyra nicht, wo ein Lied
+zu Ende ist. Eine LTX-Datei hat die <i>Endung</i> "*.ltx". 
+<i>Achtung!</i> Die LTX-Datei muss im <b>UTF-8</b> Format abgespeichert werden.<br>
+<br>
+Beispiel-LTX-Datei: {lyra}\doc\bsp.ltx<br>
+<br>
+<img src="pics/tech.jpg">
+</p>
+<ul><code>
+EBNF:<br>
+&nbsp;&nbsp;ltx-file = {header + nl + text + "#END"}<br>
+&nbsp;&nbsp;header = nr + " " + titel<br>
+&nbsp;&nbsp;titel,text = string<br>
+&nbsp;&nbsp;nr = digit{digit}<br>
+&nbsp;&nbsp;string = char{char}<br>
+&nbsp;&nbsp;nl = new line: "\n" (DOS/UNIX) or "\n\r" (Windows)<br>
+&nbsp;&nbsp;digit = 0-9<br>
+&nbsp;&nbsp;char = utf-8 charset<br>
+</code></ul>
+<p>
+</p>
+</BODY>
+</HTML>

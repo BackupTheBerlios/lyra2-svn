@@ -1,0 +1,9 @@
+<dotnetbar fullmenus="false" fullmenushover="true" tooltips="true" scintooltip="false" animation="6">
+  <items />
+  <bars>
+    <bar name="taskbar1" candockleft="true" candockright="true" candocktop="true" candockbottom="true" text="Task Pane" dockline="0" dockoffset="0" grabhandle="8" menubar="false" stretch="true" style="2" wrapdock="false" wrapfloat="true" state="2" dockside="2" visible="true" custom="false" canhide="false" imagesize="0" itemsp="0" themes="false" layout="1" eqbutton="false">
+      <items />
+    </bar>
+  </bars>
+  <popups />
+</dotnetbar>
