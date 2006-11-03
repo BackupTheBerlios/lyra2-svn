@@ -24,8 +24,10 @@ Global
 		{CACF63D5-C9CB-4878-95CC-7DA19367B68A}.Release.Build.0 = Release|.NET
 		{E2B93A95-76E8-4DC0-9007-5B8E87BAEC74}.Debug.ActiveCfg = Debug
 		{E2B93A95-76E8-4DC0-9007-5B8E87BAEC74}.Release.ActiveCfg = Release
+		{E2B93A95-76E8-4DC0-9007-5B8E87BAEC74}.Release.Build.0 = Release
 		{FA9D8EF6-A5D5-43F3-95C4-15F86DC36164}.Debug.ActiveCfg = Debug
 		{FA9D8EF6-A5D5-43F3-95C4-15F86DC36164}.Release.ActiveCfg = Release
+		{FA9D8EF6-A5D5-43F3-95C4-15F86DC36164}.Release.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection
