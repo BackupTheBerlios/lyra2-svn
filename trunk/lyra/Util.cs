@@ -1,8 +1,8 @@
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 namespace lyra
 {
@@ -11,11 +11,12 @@ namespace lyra
 	/// </summary>
 	public class Util
 	{
+		public static string CONFIGPATH = Application.StartupPath + "\\lyra.config";
 		// info & build 
 		public const string NAME = "lyra";
-		public const string BUILDNR = "27";
-		public const string VER = "1.7.2"; // with PocketPC
-		public static string BUILD = "{build 20060716." + Util.BUILDNR + "}";
+		public const string BUILDNR = "28";
+		public const string VER = "1.8.0"; // with PocketPC
+		public static string BUILD = "{build 20061104." + Util.BUILDNR + "}";
 		public static string GUINAME = Util.NAME; // + " v" + Util.VER + "   " + Util.BUILD;
 
 		// lyra update
@@ -45,6 +46,12 @@ namespace lyra
 		public static Font TRANSFONT = null;
 		public static Font FONT = null;
 		public static bool refmode = true;
+		
+		// pictures
+		public static string PICTDIR = Application.StartupPath + "\\data\\pictures\\";
+		public static bool COPYPICS = true;
+		public const string PICTSSYM = "{pics}\\";
+		public static bool KEEPRATIO = false;
 
 		// pres
 		public static Color UNICOLOR;
@@ -87,14 +94,7 @@ namespace lyra
 		public static bool CTRLSHOWNR = false;
 		public static int TIMER = 3000;
 
-
-		// cons
-		public Util()
-		{
-		}
-
 		// help methods
-
 		public const string NL = "\r\n";
 		public const string RTNL = "{\\par}";
 		public const string HTMLNL = "<br />\n\t";
@@ -146,6 +146,35 @@ namespace lyra
 			}
 			return vert + hor[hor.Length - 1];
 		}
+		
+		public static string handlePicture(string fn)
+		{
+			fn = fn.ToLower();
+			if(Util.COPYPICS && !fn.StartsWith(Util.PICTSSYM) && Util.isPict(fn))
+			{
+				string converted = fn.Replace('\\', '_').Replace(":", "");
+				if(!File.Exists(Util.PICTDIR + converted))
+				{
+					File.Copy(fn,Util.PICTDIR+converted);
+				}
+				return Util.PICTSSYM + converted;
+			}
+			else if(Util.isPict(fn))
+			{
+				return fn;
+			}
+			else
+			{
+				// auto correct invalid file names
+				return "";
+			}
+		}
+		
+		private static bool isPict(string pictPath)
+		{
+			return (pictPath.EndsWith(".gif") || pictPath.EndsWith(".jpg") || pictPath.EndsWith(".bmp") || pictPath.EndsWith(".bmp")) && 
+			       (File.Exists(pictPath) || pictPath.StartsWith(Util.PICTSSYM));
+		}
 
 		// FX
 		public static void OpenFile(int fnr)
@@ -186,6 +215,43 @@ namespace lyra
 			}
 			return ret;
 		}
+		
+		// stretch an image
+		public static Bitmap handlePic(bool scale, Image img, Size bounds, bool keepRatio, int transparency)
+		{
+			Bitmap ret;
+			if(scale)
+			{
+				if(!keepRatio)
+				{
+					ret = new Bitmap(img, bounds);
+				}
+				else
+				{
+					if (img.Width/bounds.Width > img.Height/bounds.Height)
+					{
+						int h = img.Height*bounds.Width/img.Width;
+						ret = new Bitmap(img, new Size(bounds.Width, h));
+					}
+					else
+					{
+						int w = img.Width*bounds.Height/img.Height;
+						ret = new Bitmap(img, new Size(w, bounds.Height));
+					}
+				}
+			}
+			else
+			{
+				ret = new Bitmap(img, img.Size);
+			}
+			
+			if(transparency > 0)
+			{
+				ret = Util.GenerateMagicImage(ret, transparency);
+			}
+			
+			return ret;
+		}
 
 		/**
 		 * LANGUAGES
@@ -203,6 +269,29 @@ namespace lyra
 			HB,
 			OT
 		} ;
+		
+		public static Bitmap GenerateMagicImage(Bitmap bFront, int transparency)
+		{
+			float opacity = (100 - transparency)/100f;
+			Bitmap bHidden = new Bitmap(bFront.Width, bFront.Height);
+			// the following code draws the front image over the hidden image using the alpha blending effect
+			Graphics g = Graphics.FromImage(bHidden);
+			g.FillRectangle(Brushes.White, 0, 0, bFront.Width, bFront.Height);
+			float[][] ptsArray ={ new float[] {1, 0, 0, 0, 0},
+									new float[] {0, 1, 0, 0, 0},
+									new float[] {0, 0, 1, 0, 0},
+									new float[] {0, 0, 0, opacity, 0}, 
+									new float[] {0, 0, 0, 0, 1}}; 
+			ColorMatrix clrMatrix = new ColorMatrix( ptsArray );
+			ImageAttributes imgAttributes = new ImageAttributes();
+			imgAttributes.SetColorMatrix( clrMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap );
+			g.DrawImage( bFront, new Rectangle( 0, 0, bFront.Width, bFront.Height ), 0, 0, bFront.Width, bFront.Height, GraphicsUnit.Pixel, imgAttributes );
+
+			// return the result image
+			// Bitmap bResult = new Bitmap( bHidden.Width, bHidden.Height );
+			// bResult = (Bitmap)bHidden.Clone();
+			return bHidden;
+		}
 
 		public static string getLanguageString(int l, bool abrev)
 		{
@@ -319,48 +408,37 @@ namespace lyra
 		{
 			try
 			{
-				RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\lyra", true);
-				if (Util.SHOWBUILDNEWS) key.SetValue("1", "yes");
-				else key.SetValue("1", "no");
-				if (Util.SHOWGER) key.SetValue("ger", "yes");
-				else key.SetValue("ger", "no");
-				if (Util.SHOWRIGHT) key.SetValue("right", "yes");
-				else key.SetValue("right", "no");
-				if (Util.NOCOMMIT) key.SetValue("ac", "no");
-				else key.SetValue("ac", "yes");
-				if (Util.SHOWNR) key.SetValue("shnr", "yes");
-				else key.SetValue("shnr", "no");
-				key.SetValue("timer", Util.TIMER.ToString());
+				ConfigFile configFile = new ConfigFile(Util.CONFIGPATH);
+				
+				configFile["1"] = Util.SHOWBUILDNEWS ? "yes" : "no";
+				configFile["ger"] = Util.SHOWGER ? "yes" : "no";
+				configFile["right"] = Util.SHOWGER ? "yes" : "no";
+				configFile["ger"] = Util.SHOWRIGHT ? "yes" : "no";
+				configFile["ac"] = Util.NOCOMMIT ? "yes" : "no";
+				configFile["shnr"] = Util.SHOWNR ? "yes" : "no";
+				configFile["timer"] = Util.TIMER.ToString();
 
-				key.Close();
 
-				RegistryKey fonts = Registry.CurrentUser.OpenSubKey(@"Software\lyra\fonts", true);
-				fonts.SetValue("standard", Util.FontToString(Util.FONT));
-				fonts.SetValue("special", Util.FontToString(Util.SPECFONT));
-				fonts.SetValue("transfont", Util.FontToString(Util.TRANSFONT));
-				fonts.SetValue("refcolor", Util.ColorToString(Util.REFCOLOR));
-				if (Util.refmode)
-					fonts.SetValue("refmode", "normal");
-				else
-					fonts.SetValue("refmode", "fett");
+				configFile["fonts.standard"] = Util.FontToString(Util.FONT);
+				configFile["fonts.special"] = Util.FontToString(Util.SPECFONT);
+				configFile["fonts.transfont"] = Util.FontToString(Util.TRANSFONT);
+				configFile["fonts.color"] = Util.ColorToString(Util.COLOR);
+				configFile["fonts.refcolor"] = Util.ColorToString(Util.REFCOLOR);
+				configFile["fonts.refmode"] = Util.refmode ? "normal" : "fett";
 
-				fonts.Close();
+				configFile["presentation.unicol"] = Util.ColorToString(Util.UNICOLOR);
+				configFile["presentation.gradcol1"] = Util.ColorToString(Util.GRADCOL1);
+				configFile["presentation.gradcol2"] = Util.ColorToString(Util.GRADCOL2);
+				configFile["presentation.mode"] = Util.PREMODE.ToString();
+				configFile["presentation.picuri"] = Util.picturi;
+				configFile["presentation.cascade"] = Util.CASCADEPIC ? "yes" : "no";
 
-				RegistryKey pres = Registry.CurrentUser.OpenSubKey(@"Software\lyra\presentation", true);
-				pres.SetValue("unicol", Util.ColorToString(Util.UNICOLOR));
-				pres.SetValue("gradcol1", Util.ColorToString(Util.GRADCOL1));
-				pres.SetValue("gradcol2", Util.ColorToString(Util.GRADCOL2));
-				pres.SetValue("mode", Util.PREMODE);
-				pres.SetValue("picuri", Util.picturi);
-				pres.SetValue("cascade", Util.CASCADEPIC ? "yes" : "no");
-				pres.Close();
-
-				RegistryKey fx = Registry.CurrentUser.OpenSubKey(@"Software\lyra\FX", true);
 				for (int i = 0; i < Util.FX.Length; i++)
 				{
-					fx.SetValue("f" + (i + 1).ToString(), Util.FX[i]);
+					configFile["FX.f" + (i+1).ToString()] = Util.FX[i];
 				}
-				fx.Close();
+				
+				configFile.Save(Util.CONFIGPATH);
 			}
 			catch (Exception e)
 			{
@@ -373,50 +451,43 @@ namespace lyra
 		{
 			try
 			{
-				RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\lyra", true);
-				Util.HLPURL = key.GetValue("help").ToString();
-				Util.URL = key.GetValue("url").ToString();
-				Util.LISTURL = key.GetValue("lists").ToString();
-				Util.SCHEMA = key.GetValue("schema").ToString();
-				Util.SHOWBUILDNEWS = key.GetValue("1").ToString().Equals("yes");
-				Util.SHOWRIGHT = key.GetValue("right").ToString().Equals("yes");
-				Util.NOCOMMIT = key.GetValue("ac").ToString().Equals("no");
-				Util.SHOWGER = key.GetValue("ger").ToString().Equals("yes");
-				Util.SHOWNR = key.GetValue("shnr").ToString().Equals("yes");
-				Util.TIMER = Int32.Parse(key.GetValue("timer").ToString());
+				ConfigFile configFile = new ConfigFile(Util.CONFIGPATH);
+				
+				Util.HLPURL = configFile["help"];
+				Util.URL = configFile["url"];
+				Util.LISTURL = configFile["lists"];
+				Util.SCHEMA = configFile["schema"];
+				Util.SHOWBUILDNEWS = configFile["1"].Equals("yes");
+				Util.SHOWRIGHT = configFile["right"].Equals("yes");
+				Util.NOCOMMIT = configFile["ac"].Equals("yes");
+				Util.SHOWGER = configFile["ger"].Equals("yes");
+				Util.SHOWNR = configFile["shnr"].Equals("yes");
+				Util.TIMER = Int32.Parse(configFile["timer"]);
 
-				key.Close();
-
-				RegistryKey fonts = Registry.CurrentUser.OpenSubKey(@"Software\lyra\fonts", true);
-				Util.FONT = Util.GetFont(fonts.GetValue("standard").ToString());
-				Util.SPECFONT = Util.GetFont(fonts.GetValue("special").ToString());
-				Util.TRANSFONT = Util.GetFont(fonts.GetValue("transfont").ToString());
-				Util.REFCOLOR = Util.GetColor(fonts.GetValue("refcolor").ToString());
-				Util.COLOR = Util.GetColor(fonts.GetValue("color").ToString());
-				if (fonts.GetValue("refmode").ToString() == "normal")
+				Util.FONT = Util.GetFont(configFile["fonts.standard"]);
+				Util.SPECFONT = Util.GetFont(configFile["fonts.special"]);
+				Util.TRANSFONT = Util.GetFont(configFile["fonts.transfont"]);
+				Util.REFCOLOR = Util.GetColor(configFile["fonts.refcolor"]);
+				Util.COLOR = Util.GetColor(configFile["fonts.color"]);
+				if (configFile["fonts.refmode"] == "normal")
 					Util.refmode = true;
 				else
 					Util.refmode = false;
 
-				fonts.Close();
+				Util.UNICOLOR = Util.GetColor(configFile["presentation.unicol"]);
+				Util.GRADCOL1 = Util.GetColor(configFile["presentation.gradcol1"]);
+				Util.GRADCOL2 = Util.GetColor(configFile["presentation.gradcol2"]);
+				Util.PREMODE = Int32.Parse(configFile["presentation.mode"]);
+				Util.PICTURI = configFile["presentation.picuri"];
+				Util.CASCADEPIC = configFile["presentation.cascade"].Equals("yes");
 
-				RegistryKey pres = Registry.CurrentUser.OpenSubKey(@"Software\lyra\presentation", true);
-				Util.UNICOLOR = Util.GetColor(pres.GetValue("unicol").ToString());
-				Util.GRADCOL1 = Util.GetColor(pres.GetValue("gradcol1").ToString());
-				Util.GRADCOL2 = Util.GetColor(pres.GetValue("gradcol2").ToString());
-				Util.PREMODE = Int32.Parse(pres.GetValue("mode").ToString());
-				Util.PICTURI = pres.GetValue("picuri").ToString();
-				Util.CASCADEPIC = pres.GetValue("cascade").ToString().Equals("yes");
-				pres.Close();
-
-				RegistryKey fx = Registry.CurrentUser.OpenSubKey(@"Software\lyra\FX", true);
 				for (int i = 0; i < Util.FX.Length; i++)
 				{
-					Util.FX[i] = fx.GetValue("f" + (i + 1).ToString()).ToString();
+					Util.FX[i] = configFile["FX.f" + (i + 1).ToString()];
 				}
-				fx.Close();
 
 				Util.loadStats();
+				
 			}
 			catch (Exception e)
 			{
@@ -470,14 +541,14 @@ namespace lyra
 		{
 			try
 			{
-				RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\lyra\stats", true);
-				key.SetValue("TLD", Util.TOTALLOAD);
-				key.SetValue("NRUSE", Util.NRUSE);
-				key.SetValue("TSRC", Util.TOTALSEARCH);
-				key.SetValue("NRSRC", Util.NRSEARCH);
+				ConfigFile configFile = new ConfigFile(Util.CONFIGPATH);
+				configFile["stats.TLD"] = Util.TOTALLOAD.ToString();
+				configFile["stats.NRUSE"] = Util.NRUSE.ToString();
+				configFile["stats.TSRC"] = Util.TOTALSEARCH.ToString();
+				configFile["stats.NRSRC"] = Util.NRSEARCH.ToString();
 				Util.TOTALUSE += Util.getCurrentTicks() - Util.startticks;
-				key.SetValue("TUSE", Util.TOTALUSE);
-				key.Close();
+				configFile["stats.TUSE"] = Util.TOTALUSE.ToString();
+				configFile.Save(Util.CONFIGPATH);
 			}
 			catch (Exception)
 			{
@@ -489,14 +560,13 @@ namespace lyra
 		{
 			try
 			{
-				RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\lyra\stats", true);
-				Util.TOTALLOAD = Convert.ToInt64(key.GetValue("TLD").ToString());
-				Util.NRUSE = Convert.ToInt32(key.GetValue("NRUSE").ToString());
-				Util.TOTALSEARCH = Convert.ToInt64(key.GetValue("TSRC").ToString());
-				Util.NRSEARCH = Convert.ToInt32(key.GetValue("NRSRC").ToString());
-				Util.TOTALUSE = Convert.ToInt64(key.GetValue("TUSE").ToString());
+				ConfigFile configFile = new ConfigFile(Util.CONFIGPATH);
+				Util.TOTALLOAD = Convert.ToInt64(configFile["stats.TLD"]);
+				Util.NRUSE = Convert.ToInt32(configFile["stats.NRUSE"]);
+				Util.TOTALSEARCH = Convert.ToInt64(configFile["stats.TSRC"]);
+				Util.NRSEARCH = Convert.ToInt32(configFile["stats.NRSRC"]);
+				Util.TOTALUSE = Convert.ToInt64(configFile["stats.TUSE"]);
 				Util.startticks = DateTime.Now.Ticks;
-				key.Close();
 			}
 			catch (Exception)
 			{

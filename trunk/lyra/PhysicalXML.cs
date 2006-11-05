@@ -83,6 +83,22 @@ namespace lyra
 					}
 
 					Song newSong = new Song(nr, title, text, id, desc, imp);
+					
+					if(songchildren.Count == 4)
+					{
+						XmlNodeList bgdesc = songchildren[3].ChildNodes;
+						if(songchildren[3].Name == "Background" && bgdesc.Count == 3 && bgdesc[0].Name == "uri" 
+							&& bgdesc[1].Name == "transparency" && bgdesc[2].Name == "scale")
+						{
+							newSong.BackgroundPicture = bgdesc[0].InnerText;
+							newSong.Transparency = Int32.Parse(bgdesc[1].InnerText);
+							newSong.Scale = bgdesc[2].InnerText == "yes";
+						}
+						else
+						{
+							throw new NotValidException("background node not valid");
+						}
+					}
 
 					this.GetTranslations(newSong, translations, imp);
 
@@ -243,6 +259,37 @@ namespace lyra
 							{
 								throw new NotValidException();
 							}
+							curSong.BackgroundPicture = Util.handlePicture(curSong.BackgroundPicture);
+							// check if background already existed:
+							if(children.Count == 4)
+							{
+								XmlNodeList bgdesc = children[3].ChildNodes;
+								if(children[3].Name == "Background" && bgdesc.Count == 3 && bgdesc[0].Name == "uri" 
+									&& bgdesc[1].Name == "transparency" && bgdesc[2].Name == "scale")
+								{
+									bgdesc[0].InnerText = curSong.BackgroundPicture;
+									bgdesc[1].InnerText = curSong.Transparency.ToString();
+									bgdesc[2].InnerText = curSong.Scale ? "yes" : "no";
+								}
+								else
+								{
+									throw new NotValidException("background node not valid");
+								}
+							}
+							else
+							{
+								XmlNode bgdesc = doc.CreateNode(XmlNodeType.Element, "Background", doc.NamespaceURI);
+								XmlNode uri = doc.CreateNode(XmlNodeType.Element, "uri", doc.NamespaceURI);
+								uri.InnerText = curSong.BackgroundPicture;
+								XmlNode transp = doc.CreateNode(XmlNodeType.Element, "transparency", doc.NamespaceURI);
+								transp.InnerText = curSong.Transparency.ToString();
+								XmlNode scale = doc.CreateNode(XmlNodeType.Element, "scale", doc.NamespaceURI);
+								scale.InnerText = curSong.Scale ? "yes" : "no";
+								bgdesc.AppendChild(uri);
+								bgdesc.AppendChild(transp);
+								bgdesc.AppendChild(scale);
+								curNode.AppendChild(bgdesc);
+							}
 						}
 							// id doesn't exist
 						else
@@ -265,10 +312,29 @@ namespace lyra
 							idattr.Value = "";
 							descattr = doc.CreateAttribute("zus", doc.NamespaceURI);
 							descattr.Value = "";
+							XmlNode bgdesc = null;
+							if(curSong.BackgroundPicture != "")
+							{
+								bgdesc = doc.CreateNode(XmlNodeType.Element, "Background", doc.NamespaceURI);
+								XmlNode uri = doc.CreateNode(XmlNodeType.Element, "uri", doc.NamespaceURI);
+								curSong.BackgroundPicture = Util.handlePicture(curSong.BackgroundPicture);
+								uri.InnerText = curSong.BackgroundPicture;
+								XmlNode transp = doc.CreateNode(XmlNodeType.Element, "transparency", doc.NamespaceURI);
+								transp.InnerText = curSong.Transparency.ToString();
+								XmlNode scale = doc.CreateNode(XmlNodeType.Element, "scale", doc.NamespaceURI);
+								scale.InnerText = curSong.Scale ? "yes" : "no";
+								bgdesc.AppendChild(uri);
+								bgdesc.AppendChild(transp);
+								bgdesc.AppendChild(scale);
+							}
 
 							newNode.AppendChild(nr);
 							newNode.AppendChild(title);
 							newNode.AppendChild(text);
+							if(bgdesc != null)
+							{
+								newNode.AppendChild(bgdesc);
+							}
 							newNode.Attributes.Append(idattr);
 							newNode.Attributes.Append(transattr);
 							newNode.Attributes.Append(descattr);

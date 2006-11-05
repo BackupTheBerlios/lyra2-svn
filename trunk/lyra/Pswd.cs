@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 namespace lyra
 {
@@ -219,10 +218,9 @@ namespace lyra
 		{
 			try
 			{
-				RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\lyra", true);
-				string pw = (string) key.GetValue("pw");
-				key.Close();
-				return pw.Equals("$$" + this.textBox1.Text.GetHashCode().ToString() + "$#");
+				ConfigFile configFile = new ConfigFile(Util.CONFIGPATH);
+				string pw = configFile["pw"];
+				return pw.Equals(this.textBox1.Text);
 			}
 			catch (Exception e)
 			{
@@ -271,9 +269,10 @@ namespace lyra
 				this.textBox2.Text == this.textBox3.Text &&
 				this.textBox2.Text != "")
 			{
-				RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\lyra", true);
-				key.SetValue("pw", "$$" + this.textBox2.Text.GetHashCode().ToString() + "$#");
-				key.Close();
+				ConfigFile configFile = new ConfigFile(Util.CONFIGPATH);
+				configFile["pw"] = this.textBox2.Text;
+				configFile.Save(Util.CONFIGPATH);
+
 				this.Height = 104;
 				this.button1.Enabled = true;
 				this.textBox1.Text = "";

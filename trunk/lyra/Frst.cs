@@ -1,5 +1,4 @@
 using System;
-using Microsoft.Win32;
 
 namespace lyra
 {
@@ -63,7 +62,7 @@ namespace lyra
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof (Frst));
+			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Frst));
 			this.label1 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -95,10 +94,11 @@ namespace lyra
 			// pictureBox1
 			// 
 			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(8, 8);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(104, 104);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 3;
 			this.pictureBox1.TabStop = false;
 			// 
@@ -115,7 +115,7 @@ namespace lyra
 			// 
 			// label2
 			// 
-			this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.SlateGray;
 			this.label2.Location = new System.Drawing.Point(128, 8);
 			this.label2.Name = "label2";
@@ -181,9 +181,9 @@ namespace lyra
 				try
 				{
 					Util.SHOWBUILDNEWS = false;
-					RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\lyra", true);
-					key.SetValue("1", "no");
-					key.Close();
+					ConfigFile configFile = new ConfigFile(Util.CONFIGPATH);
+					configFile["1"] = "no";
+					configFile.Save(Util.CONFIGPATH);
 				}
 				catch (Exception ex)
 				{

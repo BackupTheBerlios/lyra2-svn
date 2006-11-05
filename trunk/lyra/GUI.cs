@@ -4,7 +4,6 @@ using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace lyra
 {
@@ -132,7 +131,7 @@ namespace lyra
 		public GUI()
 		{
 			InitializeComponent();
-			this.Text = Util.GUINAME;
+			base.Text = Util.GUINAME;
 			this.start = new Start();
 			this.start.Show();
 			Util.init();
@@ -1133,6 +1132,11 @@ namespace lyra
 			}
 			if (this.curItem != -1)
 				this.listBox1.SelectedIndex = this.curItem;
+			if(this.tabControl1.SelectedIndex == 0)
+			{
+				this.textBox2.Focus();
+				this.textBox2.SelectAll();
+			}
 		}
 
 		//deavtivated
@@ -1776,6 +1780,11 @@ namespace lyra
 		private void tabControl1_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			this.menuItem10.Visible = (this.tabControl1.SelectedIndex == 2) && (this.prback == null);
+			if(this.tabControl1.SelectedIndex == 0)
+			{
+				this.textBox2.Focus();
+				this.textBox2.SelectAll();
+			}
 		}
 
 		// anzeigen! (Menü)
@@ -2119,11 +2128,6 @@ namespace lyra
 		// from existing Server
 		private void menuItem50_Click(object sender, System.EventArgs e)
 		{
-		}
-
-		private void generateServerFiles(XmlDocument desc)
-		{
-			// TODO
 		}
 
 		private string[] formats = new string[] { "refrain", "special", "p8","p16","p24","p32","p40","b","i","pagebreak",};

@@ -57,10 +57,13 @@ namespace lyra
 				this.menuItem6.Checked = Util.SHOWRIGHT;
 				this.richTextBox1.Font = Util.FONT;
 				this.richTextBox2.Font = Util.FONT;
-				this.refresh(song);
 				if (trans != null)
 				{
 					this.refresh(song, trans);
+				}
+				else
+				{
+					this.refresh(song);
 				}
 			}
 			else
@@ -216,6 +219,16 @@ namespace lyra
 			{
 				this.panel2.Hide();
 			}
+			
+			if(song != null && song.BackgroundPicture != "")
+			{
+				Image img = Image.FromFile(song.BackgroundPicture.Replace(Util.PICTSSYM, Util.PICTDIR));
+				this.BackgroundImage = Util.handlePic(song.Scale, img, new Size(this.Width, this.Height), Util.KEEPRATIO, song.Transparency);
+			}
+			else
+			{
+				this.BackgroundImage = null;
+			}
 			this.panel1.Focus();
 		}
 
@@ -368,6 +381,7 @@ namespace lyra
 			// 
 			this.button1.BackColor = System.Drawing.Color.White;
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
 			this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.button1.Location = new System.Drawing.Point(592, 8);
 			this.button1.Name = "button1";
@@ -546,6 +560,7 @@ namespace lyra
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(24, 16);
 			this.pictureBox1.Name = "pictureBox1";
@@ -556,6 +571,7 @@ namespace lyra
 			// label5
 			// 
 			this.label5.AutoSize = true;
+			this.label5.BackColor = System.Drawing.Color.Transparent;
 			this.label5.Font = new System.Drawing.Font("Verdana", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.DimGray;
 			this.label5.Location = new System.Drawing.Point(432, 40);
@@ -590,6 +606,7 @@ namespace lyra
 			// label9
 			// 
 			this.label9.AutoSize = true;
+			this.label9.BackColor = System.Drawing.Color.Transparent;
 			this.label9.Font = new System.Drawing.Font("Verdana", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label9.ForeColor = System.Drawing.Color.DarkGray;
 			this.label9.Location = new System.Drawing.Point(272, 56);
@@ -601,6 +618,7 @@ namespace lyra
 			// 
 			// label8
 			// 
+			this.label8.BackColor = System.Drawing.Color.Transparent;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label8.ForeColor = System.Drawing.Color.DarkGray;
 			this.label8.Location = new System.Drawing.Point(576, 280);
@@ -696,6 +714,15 @@ namespace lyra
 			this.label5.Text = this.song.Number.ToString();
 			this.label9.Text = this.song.Desc;
 			this.panel1.Focus();
+			
+			if (trans != null)
+			{
+				this.refresh(song, trans);
+			}
+			else
+			{
+				this.refresh(song);
+			}
 		}
 
 		private bool DISABLEACTIONS = false;

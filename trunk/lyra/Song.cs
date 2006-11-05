@@ -134,6 +134,28 @@ namespace lyra
 				}
 			}
 		}
+		
+		// picture
+		private string backgroundpic = "";
+		public string BackgroundPicture
+		{
+			get { return this.backgroundpic; }
+			set { this.backgroundpic = value; }
+		}
+		private int transparency = 0;
+		public int Transparency
+		{
+			get { return this.transparency; }
+			set { this.transparency = value; }
+		}
+		private bool scale = true;
+		public bool Scale
+		{
+			get { return this.scale; }
+			set { this.scale = value; }
+		}
+		
+		
 
 		// cons
 		public Song(int nr, string title, string text, string id, string zus)
