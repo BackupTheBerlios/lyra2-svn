@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE lyra[
   <!ELEMENT lyra (Songs,Translations)>
   <!ELEMENT Songs (Song*) >
@@ -23,6 +23,11 @@
       <Title>Jubilate Deo</Title>
       <Text>Jubilate Deo, jubilate Deo. Alleluja!   (Jubelt Gott zu, Halleluja!)
 </Text>
+      <Background>
+        <uri>{pics}\d_pics_bliss.jpg</uri>
+        <transparency>50</transparency>
+        <scale>yes</scale>
+      </Background>
     </Song>
     <Song id="s0002" trans="" zus="">
       <Number>2</Number>
@@ -53,37 +58,6 @@ Heiliger Gott, komm in deiner Herrlichkeit und zieh bei uns ein:
 Erfüll mit deiner Gegenwart diesen Ort.
 Hör uns, o Gott, in Einheit loben wir dich. Wir beten dich an
 und bringen dir, unserm Herrn, ein Lobopfer dar.
-</Text>
-    </Song>
-    <Song id="s0005" trans="" zus="">
-      <Number>5</Number>
-      <Title>Komm in unsre Mitte, o Herr</Title>
-      <Text>&lt;refrain&gt;Komm in unsre Mitte, o Herr, o Herr, o Herr.				(2x)&lt;/refrain&gt;
-	
-Fülle uns mit deinem Heilgen Geist, o Herr, wir danken dir.		(2x)
-
-Deine Gnade schenkst du täglich neu, o Herr, wir danken dir.	(2x)
-
-&lt;refrain&gt;Du bist in unsrer Mitte... &lt;/refrain&gt;
-
-Lass uns spüren, dass du bei uns bist, o Herr, wir danken dir.	(2x)
-
-&lt;refrain&gt;Bleib in unsrer Mitte... &lt;/refrain&gt;
-
-Lass uns hören, was du heut uns sagst, o Herr, wir danken dir.	(2x)
-
-&lt;refrain&gt;Bleib in unsrer Mitte...&lt;/refrain&gt;
-
-
-
-
-
-
-
-
-
-
-
 </Text>
     </Song>
     <Song id="s0006" trans="" zus="">
