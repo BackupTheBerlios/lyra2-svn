@@ -333,6 +333,11 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "TransparentRichTextBox.cs"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "UpdateFileURL.cs"
                     SubType = "Code"
                     BuildAction = "Compile"

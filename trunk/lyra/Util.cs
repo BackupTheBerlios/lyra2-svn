@@ -242,7 +242,12 @@ namespace lyra
 			}
 			else
 			{
-				ret = new Bitmap(img, img.Size);
+				
+				Bitmap centered = new Bitmap(bounds.Width, bounds.Height);
+				Graphics g = Graphics.FromImage(centered);
+				g.FillRectangle(Brushes.White, 0, 0, bounds.Width, bounds.Height);
+				g.DrawImage(img, (bounds.Width - img.Width)/2, (bounds.Height - img.Height)/2, img.Width, img.Height);
+				ret = centered;
 			}
 			
 			if(transparency > 0)

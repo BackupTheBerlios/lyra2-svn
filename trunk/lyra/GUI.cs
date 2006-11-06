@@ -257,6 +257,8 @@ namespace lyra
 			this.menuItem20 = new System.Windows.Forms.MenuItem();
 			this.menuItem21 = new System.Windows.Forms.MenuItem();
 			this.menuItem51 = new System.Windows.Forms.MenuItem();
+			this.menuItem52 = new System.Windows.Forms.MenuItem();
+			this.menuItem53 = new System.Windows.Forms.MenuItem();
 			this.menuItem40 = new System.Windows.Forms.MenuItem();
 			this.menuItem38 = new System.Windows.Forms.MenuItem();
 			this.menuItem41 = new System.Windows.Forms.MenuItem();
@@ -297,8 +299,6 @@ namespace lyra
 			this.menuItem25 = new System.Windows.Forms.MenuItem();
 			this.contextMenu2 = new System.Windows.Forms.ContextMenu();
 			this.menuItem9 = new System.Windows.Forms.MenuItem();
-			this.menuItem52 = new System.Windows.Forms.MenuItem();
-			this.menuItem53 = new System.Windows.Forms.MenuItem();
 			this.tabControl1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -344,7 +344,7 @@ namespace lyra
 			// checkBox4
 			// 
 			this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox4.Font = new System.Drawing.Font("Verdana Ref", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.checkBox4.Location = new System.Drawing.Point(240, 74);
 			this.checkBox4.Name = "checkBox4";
 			this.checkBox4.Size = new System.Drawing.Size(104, 18);
@@ -365,7 +365,7 @@ namespace lyra
 			// checkBox3
 			// 
 			this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox3.Font = new System.Drawing.Font("Verdana Ref", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.checkBox3.Location = new System.Drawing.Point(152, 74);
 			this.checkBox3.Name = "checkBox3";
 			this.checkBox3.Size = new System.Drawing.Size(88, 18);
@@ -375,7 +375,7 @@ namespace lyra
 			// checkBox2
 			// 
 			this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox2.Font = new System.Drawing.Font("Verdana Ref", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.checkBox2.Location = new System.Drawing.Point(72, 74);
 			this.checkBox2.Name = "checkBox2";
 			this.checkBox2.Size = new System.Drawing.Size(80, 18);
@@ -385,7 +385,7 @@ namespace lyra
 			// checkBox1
 			// 
 			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox1.Font = new System.Drawing.Font("Verdana Ref", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.checkBox1.Location = new System.Drawing.Point(8, 74);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(64, 18);
@@ -457,7 +457,7 @@ namespace lyra
 			this.label1.BackColor = System.Drawing.Color.Transparent;
 			this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-			this.label1.Location = new System.Drawing.Point(449, 14);
+			this.label1.Location = new System.Drawing.Point(472, 14);
 			this.label1.Name = "label1";
 			this.label1.TabIndex = 0;
 			this.label1.Text = "q u i c k.load";
@@ -465,9 +465,9 @@ namespace lyra
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(408, 0);
+			this.pictureBox2.Location = new System.Drawing.Point(400, 0);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(144, 104);
+			this.pictureBox2.Size = new System.Drawing.Size(144, 96);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 8;
 			this.pictureBox2.TabStop = false;
@@ -660,7 +660,7 @@ namespace lyra
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(496, 127);
+			this.pictureBox1.Location = new System.Drawing.Point(488, 136);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(144, 92);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -794,6 +794,18 @@ namespace lyra
 																					   this.menuItem52,
 																					   this.menuItem53});
 			this.menuItem51.Text = "Unformatierter Text...";
+			// 
+			// menuItem52
+			// 
+			this.menuItem52.Index = 0;
+			this.menuItem52.Text = "ausgewählter Song";
+			this.menuItem52.Click += new System.EventHandler(this.menuItem52_Click);
+			// 
+			// menuItem53
+			// 
+			this.menuItem53.Index = 1;
+			this.menuItem53.Text = "alle Songs";
+			this.menuItem53.Click += new System.EventHandler(this.menuItem53_Click);
 			// 
 			// menuItem40
 			// 
@@ -1063,18 +1075,6 @@ namespace lyra
 			this.menuItem9.Index = 0;
 			this.menuItem9.Text = "zu aktueller &Liste hinzufügen";
 			this.menuItem9.Click += new System.EventHandler(this.menuItem9_Click);
-			// 
-			// menuItem52
-			// 
-			this.menuItem52.Index = 0;
-			this.menuItem52.Text = "ausgewählter Song";
-			this.menuItem52.Click += new System.EventHandler(this.menuItem52_Click);
-			// 
-			// menuItem53
-			// 
-			this.menuItem53.Index = 1;
-			this.menuItem53.Text = "alle Songs";
-			this.menuItem53.Click += new System.EventHandler(this.menuItem53_Click);
 			// 
 			// GUI
 			// 

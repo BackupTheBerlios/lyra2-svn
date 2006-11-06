@@ -24,8 +24,8 @@
       <Text>Jubilate Deo, jubilate Deo. Alleluja!   (Jubelt Gott zu, Halleluja!)
 </Text>
       <Background>
-        <uri>{pics}\d_pics_bliss.jpg</uri>
-        <transparency>50</transparency>
+        <uri>{pics}\sample.jpg</uri>
+        <transparency>70</transparency>
         <scale>yes</scale>
       </Background>
     </Song>
@@ -96,6 +96,11 @@ und Erfüllung find't dein Leben vor dem Herrn.
 
 
 </Text>
+      <Background>
+        <uri>{pics}\sample2.jpg</uri>
+        <transparency>26</transparency>
+        <scale>yes</scale>
+      </Background>
     </Song>
     <Song id="s0007" trans="" zus="">
       <Number>7</Number>

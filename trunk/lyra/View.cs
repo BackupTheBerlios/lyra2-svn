@@ -15,13 +15,13 @@ namespace lyra
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.ContextMenu contextMenu1;
 		private System.Windows.Forms.MenuItem menuItem1;
 		private System.Windows.Forms.MenuItem menuItem2;
 		private System.Windows.Forms.MenuItem menuItem3;
 		private System.Windows.Forms.MenuItem menuItem4;
-		private System.Windows.Forms.RichTextBox richTextBox1;
+		private TransparentRichTextBox richTextBox1;
+		private TransparentRichTextBox richTextBox2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 
@@ -33,7 +33,6 @@ namespace lyra
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.MenuItem menuItem7;
 		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.RichTextBox richTextBox2;
 		private System.Windows.Forms.MenuItem menuItem6;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.PictureBox pictureBox1;
@@ -43,6 +42,8 @@ namespace lyra
 		private GUI owner;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Panel lyraBtn;
+		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label label9;
 
 		public View(Song song, Translation trans, GUI owner, ListBox navigate)
@@ -50,6 +51,7 @@ namespace lyra
 			if (View.countViews < Util.MAXOPEN)
 			{
 				InitializeComponent();
+				this.initTransparentBoxes();
 				this.menuItem1.Visible = false;
 				View.countViews++;
 				this.owner = owner;
@@ -65,6 +67,7 @@ namespace lyra
 				{
 					this.refresh(song);
 				}
+				this.richTextBox1.Focus();
 			}
 			else
 			{
@@ -229,7 +232,6 @@ namespace lyra
 			{
 				this.BackgroundImage = null;
 			}
-			this.panel1.Focus();
 		}
 
 		private void formatall(RichTextBox rtb)
@@ -339,6 +341,49 @@ namespace lyra
 			}
 			base.Dispose(disposing);
 		}
+		
+		private void initTransparentBoxes()
+		{
+			this.richTextBox1 = new TransparentRichTextBox();
+			this.richTextBox2 = new TransparentRichTextBox();
+			// 
+			// richTextBox1
+			// 
+			this.richTextBox1.BackColor = System.Drawing.Color.White;
+			this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+			this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.richTextBox1.Location = new System.Drawing.Point(30, 72);
+			this.richTextBox1.Name = "richTextBox1";
+			this.richTextBox1.ReadOnly = true;
+			this.richTextBox1.Size = new System.Drawing.Size(360, 176);
+			this.richTextBox1.TabIndex = 1;
+			this.richTextBox1.TabStop = false;
+			this.richTextBox1.Text = "Text";
+			this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.View_KeyDown);
+			this.richTextBox1.GotFocus += new System.EventHandler(this.richTextBox1_GotFocus);
+			// 
+			// richTextBox2
+			// 
+			this.richTextBox2.BackColor = System.Drawing.Color.White;
+			this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
+			this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.richTextBox2.Location = new System.Drawing.Point(152, 72);
+			this.richTextBox2.Name = "richTextBox2";
+			this.richTextBox2.ReadOnly = true;
+			this.richTextBox2.Size = new System.Drawing.Size(360, 176);
+			this.richTextBox2.TabIndex = 7;
+			this.richTextBox2.TabStop = false;
+			this.richTextBox2.Text = "TextRight";
+			this.richTextBox2.Visible = false;
+			this.richTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.View_KeyDown);
+			this.richTextBox2.GotFocus += new System.EventHandler(this.richTextBox1_GotFocus);
+			
+			
+			this.Controls.Add(this.richTextBox1);
+			this.Controls.Add(this.richTextBox2);
+		}
 
 		#region Windows Form Designer generated code
 
@@ -349,7 +394,6 @@ namespace lyra
 		private void InitializeComponent()
 		{
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(View));
-			this.button1 = new System.Windows.Forms.Button();
 			this.contextMenu1 = new System.Windows.Forms.ContextMenu();
 			this.menuItem1 = new System.Windows.Forms.MenuItem();
 			this.menuItem3 = new System.Windows.Forms.MenuItem();
@@ -358,7 +402,6 @@ namespace lyra
 			this.menuItem7 = new System.Windows.Forms.MenuItem();
 			this.menuItem5 = new System.Windows.Forms.MenuItem();
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
@@ -366,29 +409,18 @@ namespace lyra
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.richTextBox2 = new System.Windows.Forms.RichTextBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
+			this.lyraBtn = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
+			this.panel3.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// button1
-			// 
-			this.button1.BackColor = System.Drawing.Color.White;
-			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-			this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button1.Location = new System.Drawing.Point(592, 8);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(32, 32);
-			this.button1.TabIndex = 0;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.View_KeyDown);
 			// 
 			// contextMenu1
 			// 
@@ -443,29 +475,12 @@ namespace lyra
 			this.menuItem2.Text = "schlie&ssen";
 			this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
 			// 
-			// richTextBox1
-			// 
-			this.richTextBox1.BackColor = System.Drawing.Color.White;
-			this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-			this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.richTextBox1.Location = new System.Drawing.Point(30, 72);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.ReadOnly = true;
-			this.richTextBox1.Size = new System.Drawing.Size(360, 176);
-			this.richTextBox1.TabIndex = 1;
-			this.richTextBox1.TabStop = false;
-			this.richTextBox1.Text = "Text";
-			this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.View_KeyDown);
-			this.richTextBox1.GotFocus += new System.EventHandler(this.richTextBox1_GotFocus);
-			// 
 			// label1
 			// 
 			this.label1.BackColor = System.Drawing.Color.Transparent;
-			this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.DimGray;
-			this.label1.Location = new System.Drawing.Point(58, -3);
+			this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+			this.label1.Location = new System.Drawing.Point(64, -4);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(82, 38);
 			this.label1.TabIndex = 2;
@@ -474,6 +489,7 @@ namespace lyra
 			// 
 			// label2
 			// 
+			this.label2.BackColor = System.Drawing.Color.Transparent;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.Navy;
 			this.label2.Location = new System.Drawing.Point(144, 0);
@@ -486,11 +502,11 @@ namespace lyra
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+			this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel1.Controls.Add(this.label7);
+			this.panel1.Controls.Add(this.panel3);
 			this.panel1.Controls.Add(this.label4);
 			this.panel1.Controls.Add(this.label3);
-			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Location = new System.Drawing.Point(24, 8);
 			this.panel1.Name = "panel1";
@@ -502,8 +518,8 @@ namespace lyra
 			// 
 			this.label7.BackColor = System.Drawing.Color.Transparent;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label7.ForeColor = System.Drawing.Color.DimGray;
-			this.label7.Location = new System.Drawing.Point(0, -3);
+			this.label7.ForeColor = System.Drawing.Color.Gainsboro;
+			this.label7.Location = new System.Drawing.Point(8, -4);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(64, 34);
 			this.label7.TabIndex = 6;
@@ -512,6 +528,7 @@ namespace lyra
 			// 
 			// label4
 			// 
+			this.label4.BackColor = System.Drawing.Color.Transparent;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.Navy;
 			this.label4.Location = new System.Drawing.Point(229, 0);
@@ -540,23 +557,6 @@ namespace lyra
 			this.textBox1.Text = "nr";
 			this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
 			this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-			// 
-			// richTextBox2
-			// 
-			this.richTextBox2.BackColor = System.Drawing.Color.White;
-			this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-			this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.richTextBox2.Location = new System.Drawing.Point(152, 72);
-			this.richTextBox2.Name = "richTextBox2";
-			this.richTextBox2.ReadOnly = true;
-			this.richTextBox2.Size = new System.Drawing.Size(360, 176);
-			this.richTextBox2.TabIndex = 7;
-			this.richTextBox2.TabStop = false;
-			this.richTextBox2.Text = "TextRight";
-			this.richTextBox2.Visible = false;
-			this.richTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.View_KeyDown);
-			this.richTextBox2.GotFocus += new System.EventHandler(this.richTextBox1_GotFocus);
 			// 
 			// pictureBox1
 			// 
@@ -628,20 +628,38 @@ namespace lyra
 			this.label8.Text = "next: 9999";
 			this.label8.Visible = false;
 			// 
+			// lyraBtn
+			// 
+			this.lyraBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lyraBtn.BackgroundImage")));
+			this.lyraBtn.Location = new System.Drawing.Point(592, 8);
+			this.lyraBtn.Name = "lyraBtn";
+			this.lyraBtn.Size = new System.Drawing.Size(32, 32);
+			this.lyraBtn.TabIndex = 13;
+			this.lyraBtn.Click += new System.EventHandler(this.LyraButton_Click);
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.Transparent;
+			this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+			this.panel3.Controls.Add(this.label1);
+			this.panel3.Controls.Add(this.label7);
+			this.panel3.Location = new System.Drawing.Point(0, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(180, 32);
+			this.panel3.TabIndex = 7;
+			// 
 			// View
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1096, 576);
 			this.ControlBox = false;
+			this.Controls.Add(this.lyraBtn);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label6);
-			this.Controls.Add(this.richTextBox2);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.richTextBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -652,6 +670,7 @@ namespace lyra
 			this.Load += new System.EventHandler(this.View_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
+			this.panel3.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -669,8 +688,8 @@ namespace lyra
 			this.label6.Left = this.Width - this.label6.Width;
 			this.label6.Top = 0;
 			this.label6.Height = this.Height;
-			this.button1.Top = 10;
-			this.button1.Left = this.Width - 42;
+			this.lyraBtn.Top = 10;
+			this.lyraBtn.Left = this.Width - 42;
 
 			this.label8.Top = this.Height - this.label8.Height;
 			this.label8.Left = this.Width - this.label8.Width;
@@ -740,9 +759,9 @@ namespace lyra
 			Util.CTRLSHOWNR = true;
 		}
 
-		private void button1_Click(object sender, System.EventArgs e)
+		private void LyraButton_Click(object sender, System.EventArgs e)
 		{
-			this.contextMenu1.Show(this.button1, new Point(16, 24));
+			this.contextMenu1.Show(this.lyraBtn, new Point(16, 24));
 		}
 
 		private void menuItem2_Click(object sender, System.EventArgs e)
@@ -807,9 +826,9 @@ namespace lyra
 					Util.MBoxError("Lied konnte nicht gefunden werden!");
 				}
 			}
-			else if (ke.KeyCode == Keys.F11)
+			else
 			{
-				this.panel1.Focus();
+				this.View_KeyDown(sender, ke);
 			}
 		}
 
