@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using System.IO;
+using log4net;
+using log4net.Config;
+
+namespace Lyra2
+{
+    static class Program
+    {
+        // logger for this class
+        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            // Log4net config
+            XmlConfigurator.Configure(new FileInfo(Application.StartupPath + "\\config\\log4net.config"));
+
+            log.Info("Start Lyra 2.0");
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LyraGUI());
+        }
+    }
+}

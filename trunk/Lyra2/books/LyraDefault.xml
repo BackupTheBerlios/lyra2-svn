@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<book id="book3994734D836C">
+  <info>
+    <title>Standardbuch</title>
+    <author>Andreas Jost</author>
+    <desc>Das ist ein Test...</desc>
+    <createdate>17.3.2007@18:23:00</createdate>
+    <lastmodified>17.3.2007@18:23:00</lastmodified>
+    <lastused>17.3.2007@18:23:00</lastused>
+  </info>
+  <songs>
+    <song id="song3994734D837A" lang="ger">
+      <nr>1</nr>
+      <title>Titel 1</title>
+      <text>BlaBlaBla TODO</text>
+    </song>
+    <song id="song3994734D837B" lang="ger">
+      <nr>2</nr>
+      <title>Titel 2</title>
+      <text>BluBluBlu TODO</text>
+    </song>
+  </songs>
+  <translations>
+    <translation id="trans3994734D837C" lang="eng">
+      <title>Title 1</title>
+      <text>busadkjhds...</text>      
+    </translation>
+  </translations>
+</book>
