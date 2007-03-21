@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace Lyra2
 {
-    class Song
+    public class Song
     {
         private long id;
 

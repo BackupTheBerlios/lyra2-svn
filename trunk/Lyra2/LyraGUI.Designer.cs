@@ -36,6 +36,7 @@ namespace Lyra2
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testDialogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.centerPanel = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.songView = new System.Windows.Forms.ListView();
@@ -51,7 +52,7 @@ namespace Lyra2
             this.lyraTitlePic = new System.Windows.Forms.PictureBox();
             this.bookList = new Lyra2.NiceListBox();
             this.songCollectionList = new Lyra2.NiceListBox();
-            this.testDialogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -79,7 +80,7 @@ namespace Lyra2
             // globalStateLabel
             // 
             this.globalStateLabel.Name = "globalStateLabel";
-            this.globalStateLabel.Size = new System.Drawing.Size(35, 17);
+            this.globalStateLabel.Size = new System.Drawing.Size(37, 17);
             this.globalStateLabel.Text = "Bereit";
             // 
             // menuStrip
@@ -100,29 +101,37 @@ namespace Lyra2
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "&Datei";
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.beendenToolStripMenuItem.Text = "Be&enden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
             // extrasToolStripMenuItem
             // 
             this.extrasToolStripMenuItem.Name = "extrasToolStripMenuItem";
-            this.extrasToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.extrasToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.extrasToolStripMenuItem.Text = "E&xtras";
             // 
             // hilfeToolStripMenuItem
             // 
             this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testDialogToolStripMenuItem});
+            this.testDialogToolStripMenuItem,
+            this.showViewToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.hilfeToolStripMenuItem.Text = "&Hilfe";
+            // 
+            // testDialogToolStripMenuItem
+            // 
+            this.testDialogToolStripMenuItem.Name = "testDialogToolStripMenuItem";
+            this.testDialogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testDialogToolStripMenuItem.Text = "Test Dialog";
+            this.testDialogToolStripMenuItem.Click += new System.EventHandler(this.testDialogToolStripMenuItem_Click);
             // 
             // centerPanel
             // 
@@ -301,12 +310,12 @@ namespace Lyra2
             this.songCollectionList.Size = new System.Drawing.Size(305, 289);
             this.songCollectionList.TabIndex = 0;
             // 
-            // testDialogToolStripMenuItem
+            // showViewToolStripMenuItem
             // 
-            this.testDialogToolStripMenuItem.Name = "testDialogToolStripMenuItem";
-            this.testDialogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.testDialogToolStripMenuItem.Text = "Test Dialog";
-            this.testDialogToolStripMenuItem.Click += new System.EventHandler(this.testDialogToolStripMenuItem_Click);
+            this.showViewToolStripMenuItem.Name = "showViewToolStripMenuItem";
+            this.showViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showViewToolStripMenuItem.Text = "Show View";
+            this.showViewToolStripMenuItem.Click += new System.EventHandler(this.showViewToolStripMenuItem_Click);
             // 
             // LyraGUI
             // 
@@ -366,6 +375,7 @@ namespace Lyra2
         private System.Windows.Forms.ToolStripStatusLabel globalStateLabel;
         private System.Windows.Forms.PictureBox lyraTitlePic;
         private System.Windows.Forms.ToolStripMenuItem testDialogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showViewToolStripMenuItem;
     }
 }
 

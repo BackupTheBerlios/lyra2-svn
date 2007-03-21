@@ -61,7 +61,19 @@
     </Compile>
     <Compile Include="BookListItem.cs" />
     <Compile Include="DataManager.cs" />
+    <Compile Include="DefaultSongView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefaultSongView.Designer.cs">
+      <DependentUpon>DefaultSongView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ErrorHandler.cs" />
+    <Compile Include="ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageButton.Designer.cs">
+      <DependentUpon>ImageButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="ISongView.cs" />
     <Compile Include="resources\Lyra2Dialog1.cs">
@@ -90,6 +102,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DefaultSongView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DefaultSongView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageButton.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImageButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="resources\Lyra2Dialog1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Lyra2Dialog1.cs</DependentUpon>
@@ -157,6 +177,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\icon_search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\lyrabutton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\lyrabutton_out.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

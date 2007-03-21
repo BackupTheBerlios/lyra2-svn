@@ -61,5 +61,10 @@ namespace Lyra2
         {
             (new TestDialog()).ShowDialog(this);
         }
+
+        private void showViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new DefaultSongView()).ShowDialog(this);
+        }
     }
 }
