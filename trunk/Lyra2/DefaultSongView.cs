@@ -10,24 +10,61 @@ namespace Lyra2
 {
     public partial class DefaultSongView : Form, ISongView
     {
+        private Screen DisplayingScreen
+        {
+            get { return Screen.FromControl(this); }
+        }
+
         public DefaultSongView()
         {
             InitializeComponent();
+            this.Width = this.DisplayingScreen.Bounds.Width;
+            this.Height = this.DisplayingScreen.Bounds.Height;
             this.Left = 0;
             this.Top = 0;
-            this.Width = Screen.PrimaryScreen.Bounds.Width;
-            this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.panelActivatorBtn.Left = this.Width - this.btnPane.Width + this.lyraBtn.Left;
             this.panelActivatorBtn.Top = this.lyraBtn.Top;
             this.topPane.Height = 0;
-            this.browserDisplay.GotFocus += new EventHandler(browserDisplay_GotFocus);
+            this.mousePosition.Interval = 1000;
+            this.mousePosition.Tick += new EventHandler(mousePosition_Tick);
+            this.mousePosition.Start();
         }
 
-        void browserDisplay_GotFocus(object sender, EventArgs e)
+        #region MouseTimer
+
+        private Timer mousePosition = new Timer();
+        private int countOut = 0;
+        private bool isOut = true;
+
+        void mousePosition_Tick(object sender, EventArgs e)
         {
-            this.topPane.Height = 0;
+            // if on displaying screen, ignore otherwise
+            if (MousePosition.X >= DisplayingScreen.Bounds.Left &&
+                MousePosition.X < DisplayingScreen.Bounds.Right)
+            {
+                if (MousePosition.Y < 10)
+                {
+                    this.topPane.Height = 45;
+                    this.countOut = 0;
+                }
+                else if(MousePosition.Y > 45 && this.topPane.Height != 0)
+                {
+                    // wait 5 rounds, then hide the top pane
+                    if (this.isOut)
+                    {
+                        // components like pulldown menus may block the counter!
+                        this.countOut++;
+                    }
+                    if (this.countOut > 4)
+                    {
+                        this.topPane.Height = 0;
+                        this.browserDisplay.Focus();
+                    }
+                }
+            }
         }
 
+        #endregion
 
         #region ISongView Members
 
