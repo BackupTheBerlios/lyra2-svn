@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="ISongView.cs" />
+    <Compile Include="LyraException.cs" />
     <Compile Include="resources\Lyra2Dialog1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +147,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="templates\default.templ">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -183,6 +187,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\lyrabutton_out.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\html\default.html" />
+    <Content Include="templates\images\default.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\images\test.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

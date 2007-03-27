@@ -21,12 +21,12 @@ namespace Lyra2
             // TEST SETUP
             this.songCollectionList.Items.Add((SongCollectionListItem)new SongCollection("Alle Liedtexte!", "Zeigt alle Liedtexte an.", DateTime.Now, DateTime.Now, DateTime.Now, Image.FromFile(Info.RES_PATH + "icon_allbooks.png")));
             this.songCollectionList.Items.Add((SongCollectionListItem)new SongCollection("Letzte Suche", "Suche nach: \"lobet +herrn\"", DateTime.Now, DateTime.Now, DateTime.Now, Image.FromFile(Info.RES_PATH + "icon_search.png")));
-            this.bookList.Items.Add((BookListItem)new Book("Test1", "ogirard", "Ein Testkommentar...", DateTime.Now));
-            this.bookList.Items.Add((BookListItem)new Book("Test2", "ogirard", "Ein Testkommentar...", DateTime.Now));
-            this.bookList.Items.Add((BookListItem)new Book("Test3", "ogirard", "Ein Testkommentar...", DateTime.Now));
-            this.bookList.Items.Add((BookListItem)new Book("Test4", "ogirard", "Ein Testkommentar...", DateTime.Now));
-            Book book = new Book("Test5", "ogirard", "Ein Testkommentar...", DateTime.Now);
-            this.bookList.Items.Add((BookListItem)book);
+            // this.bookList.Items.Add((BookListItem)new Book("Test1", "ogirard", "Ein Testkommentar...", DateTime.Now));
+            // this.bookList.Items.Add((BookListItem)new Book("Test2", "ogirard", "Ein Testkommentar...", DateTime.Now));
+            // this.bookList.Items.Add((BookListItem)new Book("Test3", "ogirard", "Ein Testkommentar...", DateTime.Now));
+            // this.bookList.Items.Add((BookListItem)new Book("Test4", "ogirard", "Ein Testkommentar...", DateTime.Now));
+            // Book book = new Book("Test5", "ogirard", "Ein Testkommentar...", DateTime.Now);
+            // this.bookList.Items.Add((BookListItem)book);
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)

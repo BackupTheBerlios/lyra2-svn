@@ -18,9 +18,7 @@ namespace Lyra2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Book book = new Book("LyraDefault");
-            DataManager dataManager = new DataManager();
-            dataManager.storeLyraBook(book);
+            // TODO
         }
     }
 }

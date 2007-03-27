@@ -9,39 +9,67 @@ namespace Lyra2
 {
     class DataManager
     {
-        public Book loadLyraBook(string filename)
+        private Dictionary<string, Book> allBooks = new Dictionary<string, Book>();
+
+        private DirectoryInfo bookDir;
+        public DataManager(DirectoryInfo bookDir)
         {
-            return null;
+            this.bookDir = bookDir;
+            foreach (FileInfo bookFile in bookDir.GetFiles("*.lbk"))
+            {
+                Book book = this.loadLyraBook(bookFile);
+                this.allBooks.Add(book.ID, book);
+
+            }
         }
 
-        public bool storeLyraBook(Book book)
+        public void storeLyraBook(Book book)
+        {
+            this.storeLyraBook(book, new FileInfo(book.FileName));
+        }
+
+        public void storeLyraBook(Book book, FileInfo bookFile)
         {
             try
             {
-                string lbkFileName = Info.BOOK_PATH + book.FileName + ".lbk";
-                if (File.Exists(lbkFileName)) File.Delete(lbkFileName);
-                FileStream fileStream = new FileStream(lbkFileName, FileMode.CreateNew);
+                if (bookFile.Extension != "lbk") bookFile = new FileInfo(bookFile.FullName + ".lbk");
+                if (bookFile.Exists) bookFile.Delete();
+                FileStream fileStream = new FileStream(bookFile.FullName, FileMode.CreateNew);
                 GZipStream zipStream = new GZipStream(fileStream, CompressionMode.Compress);
                 StreamWriter writer = new StreamWriter(zipStream, Encoding.UTF8);
                 writer.Write(book.XML);
                 writer.Close();
+                zipStream.Close();
+                fileStream.Close();
             }
             catch (Exception ex)
             {
-                // an error occured!
-                return false;
+                throw new LyraException("Buch '" + book + "' konnte nicht gespeichert werden!", ex);
             }
-            return true;
         }
 
-        private XmlDocument readXML(string filename)
+        public Book loadLyraBook(FileInfo bookFile)
         {
-            return null;
-        }
-
-        private bool writeXML(XmlDocument xmlDoc, string filename)
-        {
-            return true;
+            if (bookFile == null) return null;
+            try
+            {
+                if (bookFile.Exists)
+                {
+                    FileStream fileStream = new FileStream(bookFile.FullName, FileMode.Open);
+                    GZipStream zipStream = new GZipStream(fileStream, CompressionMode.Decompress);
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.Load(zipStream);
+                    Book book = new Book(xmlDoc, bookFile.FullName);
+                    zipStream.Close();
+                    fileStream.Close();
+                    return book;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new LyraException("Buch '" + bookFile.FullName + "' konnte nicht geöffnet werden!", ex);
+            }
         }
     }
 }

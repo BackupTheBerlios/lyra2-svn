@@ -21,7 +21,7 @@ namespace Lyra2
         private List<Song> songs = new List<Song>();
         private string filename = "";
 
-        public Book(string filename)
+        public Book(XmlDocument xmlDoc, string filename)
         {
             this.filename = filename;
         }
