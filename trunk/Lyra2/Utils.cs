@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
+using System.IO;
 
 namespace Lyra2
 {
@@ -34,6 +35,39 @@ namespace Lyra2
             return date.ToString(DATEFORMATLONG);
         }
 
+        public static DateTime DateFromString(string datestring)
+        {
+            string[] datetime = datestring.Split('@');
+            int h = 0;
+            int m = 0;
+            int s = 0;
+            int d = 0;
+            int M = 0;
+            int y = 0;
+            string[] date = datestring.Split('.');
+            if (datetime.Length == 2)
+            {
+                string[] time = datetime[1].Split(':');
+                if (time.Length != 3)
+                {
+                    throw new LyraException("Wrong date format!", ErrorHandler.ErrorLevel.Debug);
+                }
+                h = Int32.Parse(time[0]);
+                m = Int32.Parse(time[1]);
+                s = Int32.Parse(time[2]);
+                date = datetime[0].Split('.');
+
+            }
+            else if (datetime.Length > 2 || datetime.Length <= 0 || date.Length != 3)
+            {
+                throw new LyraException("Wrong date format!", ErrorHandler.ErrorLevel.Debug);
+            }
+            d = Int32.Parse(date[0]);
+            M = Int32.Parse(date[1]);
+            y = Int32.Parse(date[2]);
+            DateTime parsedDate = new DateTime(y, M, d, h, m, s);
+            return parsedDate;
+        }
         /// <summary>
         /// Removes line breaks and tabs from string
         /// </summary>
@@ -105,5 +139,32 @@ namespace Lyra2
             return prefix + Convert.ToString(idCount++, 16).ToUpper();
         }
 
+        public static string XMLPrettyPrint(XmlDocument xmldoc)
+        {
+            MemoryStream ms = new MemoryStream();
+            XmlTextWriter writer = new XmlTextWriter(ms, Encoding.UTF8);
+            writer.Formatting = Formatting.Indented;
+            string result = "";
+            try
+            {
+                // write XML to memory
+                xmldoc.WriteContentTo(writer);
+                writer.Flush();
+                ms.Flush();
+                // go to start to read content
+                ms.Position = 0;
+                // read XML from memory
+                StreamReader reader = new StreamReader(ms);
+                result = reader.ReadToEnd();
+            }
+            catch (XmlException)
+            {
+            }
+
+            ms.Close();
+            writer.Close();
+
+            return result;
+        }
     }
 }

@@ -11,6 +11,11 @@ namespace Lyra2
     /// </summary>
     class Book : IEnumerable<Song>
     {
+        // source
+        private string filename = "";
+        private XmlDocument sourceXML;
+
+        // data
         private string id = "";
         private string title = "";
         private string author = "";
@@ -18,12 +23,29 @@ namespace Lyra2
         private DateTime createDate = DateTime.Now;
         private DateTime lastModified = DateTime.Now;
         private DateTime lastUsed = DateTime.Now;
-        private List<Song> songs = new List<Song>();
-        private string filename = "";
+        private List<Song> songs = new List<Song>();        
+        private List<ViewTemplate> exportedTemplates = new List<ViewTemplate>();
+        private bool selected;
 
         public Book(XmlDocument xmlDoc, string filename)
         {
             this.filename = filename;
+            this.sourceXML = xmlDoc;
+            this.loadData(xmlDoc);
+        }
+
+        private void loadData(XmlDocument xmlDoc)
+        {
+            XmlElement bookRoot = xmlDoc["book"];
+            this.id = bookRoot.Attributes["id"].InnerText;
+            XmlElement infoElem = bookRoot["info"];
+            this.title = infoElem["title"].InnerText;
+            this.desc = infoElem["desc"].InnerText;
+            this.author = infoElem["author"].InnerText;
+            this.createDate = Utils.DateFromString(infoElem["createdate"].InnerText);
+            this.lastModified = Utils.DateFromString(infoElem["lastmodified"].InnerText);
+            this.lastUsed = Utils.DateFromString(infoElem["lastused"].InnerText);
+            this.selected = infoElem["isselected"].InnerText == "yes";
         }
 
         public Book(string title, string author, string desc, DateTime createDate)
@@ -98,7 +120,28 @@ namespace Lyra2
 
         public string XML
         {
-            get { return "TEST"; /* TODO */ }
+            get { return Utils.XMLPrettyPrint(this.sourceXML); }
+        }
+
+        public bool Selected
+        {
+            get { return this.selected; }
+            set { this.selected = value; }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Book || obj is BookListItem)
+            {
+                Book b = (Book)obj;
+                return b.ID == this.ID;
+            }
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.ID.GetHashCode();
         }
 
 

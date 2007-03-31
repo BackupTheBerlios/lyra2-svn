@@ -25,6 +25,26 @@ namespace Lyra2
             get { return this.book; }
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is BookListItem)
+            {
+                BookListItem bli = (BookListItem)obj;
+                return bli.WrappedBook.ID == this.WrappedBook.ID;
+            }
+            else if (obj is Book)
+            {
+                Book b = (Book)obj;
+                return b.ID == this.WrappedBook.ID;
+            }
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.WrappedBook.ID.GetHashCode();
+        }
+
         #region INiceListBoxItem Members
 
         public string Title

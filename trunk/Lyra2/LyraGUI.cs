@@ -5,15 +5,29 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Lyra2
 {
     public partial class LyraGUI : Form
     {
+        // data manager (business logic for displayed book and song data handling)
+        private DataManager dataManager = null;
+
         public LyraGUI()
         {
             InitializeComponent();
             this.loadTestSetup();
+
+            // init data manager!
+            this.dataManager = new DataManager(new DirectoryInfo(Info.BOOK_PATH));
+
+            // load all books
+            foreach (Book book in this.dataManager)
+            {
+                this.bookList.Items.Add((BookListItem)book);
+                this.bookList.SetSelected(this.bookList.Items.IndexOf(book), book.Selected);
+            }
         }
 
         private void loadTestSetup()

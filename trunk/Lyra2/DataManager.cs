@@ -7,7 +7,7 @@ using System.IO.Compression;
 
 namespace Lyra2
 {
-    class DataManager
+    class DataManager : IEnumerable<Book>
     {
         private Dictionary<string, Book> allBooks = new Dictionary<string, Book>();
 
@@ -17,22 +17,47 @@ namespace Lyra2
             this.bookDir = bookDir;
             foreach (FileInfo bookFile in bookDir.GetFiles("*.lbk"))
             {
-                Book book = this.loadLyraBook(bookFile);
+                Book book = this.LoadLyraBook(bookFile);
                 this.allBooks.Add(book.ID, book);
-
             }
         }
 
-        public void storeLyraBook(Book book)
+        public static void ConvertXMLToLBK(DirectoryInfo bookDir)
         {
-            this.storeLyraBook(book, new FileInfo(book.FileName));
+            foreach (FileInfo xmlFile in bookDir.GetFiles("*.xml"))
+            {
+                XmlDocument tempDoc = new XmlDocument();
+                tempDoc.Load(xmlFile.FullName);
+                Book tempBook = new Book(tempDoc, xmlFile.FullName.Replace(".xml",".lbk"));
+                try
+                {
+                    FileInfo bookFile = new FileInfo(tempBook.FileName);
+                    if (bookFile.Exists) bookFile.Delete();
+                    FileStream fileStream = new FileStream(bookFile.FullName, FileMode.CreateNew);
+                    GZipStream zipStream = new GZipStream(fileStream, CompressionMode.Compress);
+                    StreamWriter writer = new StreamWriter(zipStream, Encoding.UTF8);
+                    writer.Write(tempBook.XML);
+                    writer.Close();
+                    zipStream.Close();
+                    fileStream.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new LyraException("Buch '" + tempBook + "' konnte nicht gespeichert werden!", ex);
+                }
+            }
         }
 
-        public void storeLyraBook(Book book, FileInfo bookFile)
+        public void StoreLyraBook(Book book)
+        {
+            this.StoreLyraBook(book, new FileInfo(book.FileName));
+        }
+
+        public void StoreLyraBook(Book book, FileInfo bookFile)
         {
             try
             {
-                if (bookFile.Extension != "lbk") bookFile = new FileInfo(bookFile.FullName + ".lbk");
+                if (!bookFile.FullName.EndsWith(".lbk")) bookFile = new FileInfo(bookFile.FullName + ".lbk");
                 if (bookFile.Exists) bookFile.Delete();
                 FileStream fileStream = new FileStream(bookFile.FullName, FileMode.CreateNew);
                 GZipStream zipStream = new GZipStream(fileStream, CompressionMode.Compress);
@@ -48,7 +73,7 @@ namespace Lyra2
             }
         }
 
-        public Book loadLyraBook(FileInfo bookFile)
+        public Book LoadLyraBook(FileInfo bookFile)
         {
             if (bookFile == null) return null;
             try
@@ -71,5 +96,28 @@ namespace Lyra2
                 throw new LyraException("Buch '" + bookFile.FullName + "' konnte nicht geöffnet werden!", ex);
             }
         }
+
+        public Book this[string id]
+        {
+            get { return this.allBooks[id]; }
+        }
+
+        #region IEnumerable<Book> Members
+
+        public IEnumerator<Book> GetEnumerator()
+        {
+            return this.allBooks.Values.GetEnumerator();
+        }
+
+        #endregion
+
+        #region IEnumerable Members
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return this.allBooks.Values.GetEnumerator();
+        }
+
+        #endregion
     }
 }

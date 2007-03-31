@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Lyra2
 {
@@ -13,12 +14,12 @@ namespace Lyra2
         public TestDialog()
         {
             InitializeComponent();
-            this.textBox1.Text = Info.BOOK_PATH + "LyraDefault.xml";
+            this.textBox1.Text = Info.BOOK_PATH;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // TODO
+            DataManager.ConvertXMLToLBK(new DirectoryInfo(this.textBox1.Text));
         }
     }
 }

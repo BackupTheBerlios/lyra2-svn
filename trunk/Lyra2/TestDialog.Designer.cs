@@ -30,6 +30,9 @@ namespace Lyra2
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestDialog));
             this.contentPane = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.topPanel = new System.Windows.Forms.Panel();
             this.commentLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -45,9 +48,6 @@ namespace Lyra2
             this.okBtn = new System.Windows.Forms.Button();
             this.bottomBorder1 = new System.Windows.Forms.Panel();
             this.bottomBorder2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.contentPane.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.topBorder1.SuspendLayout();
@@ -69,6 +69,34 @@ namespace Lyra2
             this.contentPane.Name = "contentPane";
             this.contentPane.Size = new System.Drawing.Size(431, 347);
             this.contentPane.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(346, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "convert";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Safe XML as Lyra2 Book";
+            // 
+            // textBox1
+            // 
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
+            this.textBox1.Location = new System.Drawing.Point(16, 106);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(321, 23);
+            this.textBox1.TabIndex = 0;
             // 
             // topPanel
             // 
@@ -217,34 +245,6 @@ namespace Lyra2
             this.bottomBorder2.Name = "bottomBorder2";
             this.bottomBorder2.Size = new System.Drawing.Size(431, 1);
             this.bottomBorder2.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.textBox1.Location = new System.Drawing.Point(16, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(321, 23);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Safe XML as Lyra2 Book";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(346, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TestDialog
             // 
