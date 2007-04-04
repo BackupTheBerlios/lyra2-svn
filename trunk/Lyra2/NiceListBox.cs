@@ -104,8 +104,8 @@ namespace Lyra2
         public NiceListBox()
         {
             InitializeComponent();
-            // special drawing
-            this.DrawMode = DrawMode.OwnerDrawVariable;
+
+            // special drawing   
             this.MeasureItem += new MeasureItemEventHandler(NiceListBox_MeasureItem);
             this.DrawItem += new DrawItemEventHandler(NiceListBox_DrawItem);
         }
@@ -135,11 +135,13 @@ namespace Lyra2
                     e.ItemHeight = 0;
                 }
                 string desc = Utils.CleanString(curItem.Desc, 50);
+                if (desc == "") desc = "TEST";
                 string state = Utils.CleanString(curItem.State, 50);
+                if (desc == "") state = "TEST";
                 int nr = e.Index + 1;
 
                 // string sizes
-                SizeF nrSize = g.MeasureString(nr.ToString() + ".", NiceListBox.boldFont);
+                SizeF nrSize = g.MeasureString(nr + ".", NiceListBox.boldFont);
                 SizeF descSize = g.MeasureString(desc, NiceListBox.txtFont, e.ItemWidth - (int)nrSize.Width - 10, new StringFormat(StringFormatFlags.FitBlackBox));
                 SizeF stateSize = g.MeasureString(state, NiceListBox.smallFont, e.ItemWidth - (int)nrSize.Width - 10, new StringFormat(StringFormatFlags.FitBlackBox));
 
@@ -188,8 +190,8 @@ namespace Lyra2
                     g.FillRectangle(new LinearGradientBrush(new Point(0, 0), new Point(0, e.Bounds.Height), this.inactiveColor1, this.inactiveColor2), e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
                 }
 
-                g.DrawString(nr.ToString() + ".", boldFont, Brushes.Black, e.Bounds.X, e.Bounds.Y + 3);
-                SizeF nrSize = g.MeasureString(nr.ToString() + ".", boldFont);
+                g.DrawString(nr + ".", boldFont, Brushes.Black, e.Bounds.X, e.Bounds.Y + 3);
+                SizeF nrSize = g.MeasureString(nr + ".", boldFont);
 
 
                 g.DrawString(title, NiceListBox.boldFont, new SolidBrush(active ? this.activeTitleFontColor : this.inactiveTitleFontColor), e.Bounds.X + nrSize.Width + 8, e.Bounds.Y + 3);
@@ -197,7 +199,7 @@ namespace Lyra2
                 Rectangle rect = new Rectangle(e.Bounds.X + (int)nrSize.Width + 10, e.Bounds.Y + 3 + (int)nrSize.Height + distance, lbox.ClientSize.Width - (int)nrSize.Width - 10, this.ClientSize.Height);
                 g.DrawString(desc, txtFont, Brushes.Black, rect, new StringFormat(StringFormatFlags.FitBlackBox));
 
-                SizeF descSize = g.MeasureString(desc, NiceListBox.txtFont, lbox.ClientSize.Width - (int)nrSize.Width - 10, new StringFormat(StringFormatFlags.FitBlackBox));
+                SizeF descSize = g.MeasureString(desc == "" ? "TEST" : desc, NiceListBox.txtFont, lbox.ClientSize.Width - (int)nrSize.Width - 10, new StringFormat(StringFormatFlags.FitBlackBox));
                 rect.Y += (int)descSize.Height + distance;
 
                 g.DrawString(state, NiceListBox.smallFont, Brushes.Gray, rect, new StringFormat(StringFormatFlags.FitBlackBox));

@@ -14,33 +14,49 @@ namespace Lyra2
         // data manager (business logic for displayed book and song data handling)
         private DataManager dataManager = null;
 
+        // default song collections
+        private SongCollection allSongs = null;
+        private SongCollection lastQuery = null;
+
         public LyraGUI()
         {
             InitializeComponent();
-            this.loadTestSetup();
+            
+            this.init();
+        }
 
-            // init data manager!
+        private void init()
+        {
+            this.Text = Info.GUI_TITLE + " 2   [BETA::" + Info.VERSION + "." + Info.BUILD + "." +
+                Utils.FormatShortDate(Info.RELEASE_DATE).Replace(".", "") + "]";
+            
+            // default song collections
+            this.allSongs = new SongCollection(new DefaultInfo("Alle Liedtexte!", "Zeigt alle Liedtexte an."), 
+                SongQueryEngine.CreateQuery("*"), Image.FromFile(Info.RES_PATH + "icon_allbooks.png"));
+            this.lastQuery = new SongCollection(new DefaultInfo("Letzte Suche", ""), null, Image.FromFile(Info.RES_PATH + "icon_search.png"));
+            // add fields
+            this.songCollectionList.Items.Add(new SongCollectionListItem(this.allSongs));
+            this.songCollectionList.Items.Add(new SongCollectionListItem(this.lastQuery));
+
+            // init data manager! (data handling implementation)
             this.dataManager = new DataManager(new DirectoryInfo(Info.BOOK_PATH));
 
             // load all books
             foreach (Book book in this.dataManager)
             {
-                this.bookList.Items.Add((BookListItem)book);
+                this.bookList.Items.Add(new BookListItem(book));
                 this.bookList.SetSelected(this.bookList.Items.IndexOf(book), book.Selected);
             }
         }
 
-        private void loadTestSetup()
+        /// <summary>
+        /// refreshes the main song display grid
+        /// </summary>
+        /// <param name="displayedSongs">songs to be displayed</param>
+        /// <param name="fullupdate">set <code>true</code> to force a complete refresh, <code>false</code> to refresh only the indicated songs</param>
+        private void updateMainView(List<Song> displayedSongs, bool fullupdate)
         {
-            // TEST SETUP
-            this.songCollectionList.Items.Add((SongCollectionListItem)new SongCollection("Alle Liedtexte!", "Zeigt alle Liedtexte an.", DateTime.Now, DateTime.Now, DateTime.Now, Image.FromFile(Info.RES_PATH + "icon_allbooks.png")));
-            this.songCollectionList.Items.Add((SongCollectionListItem)new SongCollection("Letzte Suche", "Suche nach: \"lobet +herrn\"", DateTime.Now, DateTime.Now, DateTime.Now, Image.FromFile(Info.RES_PATH + "icon_search.png")));
-            // this.bookList.Items.Add((BookListItem)new Book("Test1", "ogirard", "Ein Testkommentar...", DateTime.Now));
-            // this.bookList.Items.Add((BookListItem)new Book("Test2", "ogirard", "Ein Testkommentar...", DateTime.Now));
-            // this.bookList.Items.Add((BookListItem)new Book("Test3", "ogirard", "Ein Testkommentar...", DateTime.Now));
-            // this.bookList.Items.Add((BookListItem)new Book("Test4", "ogirard", "Ein Testkommentar...", DateTime.Now));
-            // Book book = new Book("Test5", "ogirard", "Ein Testkommentar...", DateTime.Now);
-            // this.bookList.Items.Add((BookListItem)book);
+
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,6 +95,11 @@ namespace Lyra2
         private void showViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new DefaultSongView()).ShowDialog(this);
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new AboutLyra()).ShowDialog(this);
         }
     }
 }

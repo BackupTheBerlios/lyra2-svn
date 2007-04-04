@@ -47,7 +47,7 @@
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\log4net.dll</HintPath>
+      <HintPath>lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -57,10 +57,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs">
+    <Compile Include="AboutLyra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutLyra.Designer.cs">
+      <DependentUpon>AboutLyra.cs</DependentUpon>
     </Compile>
     <Compile Include="BookListItem.cs" />
     <Compile Include="DataManager.cs" />
+    <Compile Include="DataUpdateEventArgs.cs" />
     <Compile Include="DefaultSongView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,7 +81,6 @@
     </Compile>
     <Compile Include="Info.cs" />
     <Compile Include="ISongView.cs" />
-    <Compile Include="LyraException.cs" />
     <Compile Include="resources\Lyra2Dialog1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +107,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutLyra.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutLyra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DefaultSongView.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DefaultSongView.cs</DependentUpon>
@@ -139,7 +147,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="config\log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -155,10 +165,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Song.cs">
-    </Compile>
-    <Compile Include="SongCollection.cs">
-    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="SongCollectionListItem.cs" />
     <Compile Include="SongListItem.cs" />
     <Compile Include="TestDialog.cs">
@@ -167,8 +174,6 @@
     <Compile Include="TestDialog.Designer.cs">
       <DependentUpon>TestDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils.cs" />
-    <Compile Include="ViewTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="books\LyraDefault.xml">
@@ -184,6 +189,7 @@
     <Content Include="resources\icon_search.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="resources\lyraAbout.png" />
     <Content Include="resources\lyrabutton.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -197,6 +203,16 @@
     <Content Include="templates\images\test.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{94CBB6F5-4349-4845-8B40-00F30D11F64E}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SongQueryEngine\SongQueryEngine.csproj">
+      <Project>{D23DAFC2-54B1-4802-B0A5-9B12C08994EB}</Project>
+      <Name>SongQueryEngine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

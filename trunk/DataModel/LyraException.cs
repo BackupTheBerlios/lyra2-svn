@@ -1,19 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Lyra2
 {
     /// <summary>
     /// Default Lyra 2.0 Exception Wrapper
     /// </summary>
-    class LyraException : Exception
+    public class LyraException : Exception
     {
-        private ErrorHandler.ErrorLevel level = ErrorHandler.ErrorLevel.Info;
+        private ErrorLevel level = ErrorLevel.Info;
 
         public LyraException(string message) : base(message) { }
 
-        public LyraException(string message, ErrorHandler.ErrorLevel level)
+        public LyraException(string message, ErrorLevel level)
             : base(message)
         {
             this.level = level;
@@ -21,15 +19,20 @@ namespace Lyra2
 
         public LyraException(string message, Exception innerException) : base(message, innerException) { }
 
-        public LyraException(string message, Exception innerException, ErrorHandler.ErrorLevel level)
+        public LyraException(string message, Exception innerException, ErrorLevel level)
             : base(message, innerException)
         {
             this.level = level;
         }
 
-        public ErrorHandler.ErrorLevel Level
+        public ErrorLevel Level
         {
             get { return this.level; }
         }
+    }
+
+    public enum ErrorLevel
+    {
+        Debug, Warning, Info, Error, Fatal, Always
     }
 }

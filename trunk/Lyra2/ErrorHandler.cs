@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using log4net;
 
@@ -54,11 +52,6 @@ namespace Lyra2
         public static void ShowInfo(string msg)
         {
             MessageBox.Show(msg, "Lyra 2.0 Info");
-        }
-
-        public enum ErrorLevel
-        {
-            Debug, Warning, Info, Error, Fatal, Always
         }
     }
 }

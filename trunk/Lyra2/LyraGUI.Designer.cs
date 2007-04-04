@@ -37,6 +37,9 @@ namespace Lyra2
             this.extrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testDialogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.centerPanel = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.songView = new System.Windows.Forms.ListView();
@@ -52,7 +55,6 @@ namespace Lyra2
             this.lyraTitlePic = new System.Windows.Forms.PictureBox();
             this.bookList = new Lyra2.NiceListBox();
             this.songCollectionList = new Lyra2.NiceListBox();
-            this.showViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -121,7 +123,9 @@ namespace Lyra2
             // 
             this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.testDialogToolStripMenuItem,
-            this.showViewToolStripMenuItem});
+            this.showViewToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.infoToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
             this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.hilfeToolStripMenuItem.Text = "&Hilfe";
@@ -129,9 +133,28 @@ namespace Lyra2
             // testDialogToolStripMenuItem
             // 
             this.testDialogToolStripMenuItem.Name = "testDialogToolStripMenuItem";
-            this.testDialogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testDialogToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.testDialogToolStripMenuItem.Text = "Test Dialog";
             this.testDialogToolStripMenuItem.Click += new System.EventHandler(this.testDialogToolStripMenuItem_Click);
+            // 
+            // showViewToolStripMenuItem
+            // 
+            this.showViewToolStripMenuItem.Name = "showViewToolStripMenuItem";
+            this.showViewToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.showViewToolStripMenuItem.Text = "Show View";
+            this.showViewToolStripMenuItem.Click += new System.EventHandler(this.showViewToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(130, 6);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.infoToolStripMenuItem.Text = "&Info";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // centerPanel
             // 
@@ -310,13 +333,6 @@ namespace Lyra2
             this.songCollectionList.Size = new System.Drawing.Size(305, 289);
             this.songCollectionList.TabIndex = 0;
             // 
-            // showViewToolStripMenuItem
-            // 
-            this.showViewToolStripMenuItem.Name = "showViewToolStripMenuItem";
-            this.showViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.showViewToolStripMenuItem.Text = "Show View";
-            this.showViewToolStripMenuItem.Click += new System.EventHandler(this.showViewToolStripMenuItem_Click);
-            // 
             // LyraGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -376,6 +392,8 @@ namespace Lyra2
         private System.Windows.Forms.PictureBox lyraTitlePic;
         private System.Windows.Forms.ToolStripMenuItem testDialogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     }
 }
 

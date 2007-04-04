@@ -27,17 +27,17 @@ namespace Lyra2
 
         public string Title
         {
-            get { return this.songCollection.Title; }
+            get { return this.songCollection.Info.Label; }
         }
 
         public string Desc
         {
-            get { return this.songCollection.Desc; }
+            get { return this.songCollection.Info.Description; }
         }
 
         public string State
         {
-            get { return "Erstellt am " + Utils.FormatShortDate(this.songCollection.CreateDate) + "."; }
+            get { return "Erstellt am " + Utils.FormatShortDate(this.songCollection.Info.CreateDate) + "."; }
         }
 
         public System.Drawing.Image Icon

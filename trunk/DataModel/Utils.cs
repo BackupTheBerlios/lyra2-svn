@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
@@ -7,9 +6,13 @@ using System.IO;
 
 namespace Lyra2
 {
-    class Utils
+    public class Utils
     {
+        // const indicating a not-existing int-value (e.g. song nr)
+        public const int NA = -1;
+        // Windows new line delimiter
         public const string WINNL = "\r\n";
+
         public static Random RAND = new Random();
         private static long idCount = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
 
@@ -50,17 +53,16 @@ namespace Lyra2
                 string[] time = datetime[1].Split(':');
                 if (time.Length != 3)
                 {
-                    throw new LyraException("Wrong date format!", ErrorHandler.ErrorLevel.Debug);
+                    throw new LyraException("Wrong date format!", ErrorLevel.Debug);
                 }
                 h = Int32.Parse(time[0]);
                 m = Int32.Parse(time[1]);
                 s = Int32.Parse(time[2]);
                 date = datetime[0].Split('.');
-
             }
             else if (datetime.Length > 2 || datetime.Length <= 0 || date.Length != 3)
             {
-                throw new LyraException("Wrong date format!", ErrorHandler.ErrorLevel.Debug);
+                throw new LyraException("Wrong date format!", ErrorLevel.Debug);
             }
             d = Int32.Parse(date[0]);
             M = Int32.Parse(date[1]);

@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Drawing;
 using System.Xml;
 
 namespace Lyra2
@@ -9,7 +7,7 @@ namespace Lyra2
     /// <summary>
     /// Wrapper Class for Lyra 2.0 XML Book
     /// </summary>
-    class Book : IEnumerable<Song>
+    public class Book : IEnumerable<Song>
     {
         // source
         private string filename = "";
@@ -55,11 +53,6 @@ namespace Lyra2
             this.author = author;
             this.desc = desc;
             this.createDate = createDate;
-        }
-
-        public static explicit operator BookListItem(Book book)
-        {
-            return new BookListItem(book);
         }
 
         public string ID
@@ -131,7 +124,7 @@ namespace Lyra2
 
         public override bool Equals(object obj)
         {
-            if (obj is Book || obj is BookListItem)
+            if (obj is Book)
             {
                 Book b = (Book)obj;
                 return b.ID == this.ID;

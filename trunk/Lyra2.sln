@@ -2,6 +2,17 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lyra2", "Lyra2\Lyra2.csproj", "{E578933C-489A-43A2-A621-B83F9D689C06}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94CBB6F5-4349-4845-8B40-00F30D11F64E} = {94CBB6F5-4349-4845-8B40-00F30D11F64E}
+		{D23DAFC2-54B1-4802-B0A5-9B12C08994EB} = {D23DAFC2-54B1-4802-B0A5-9B12C08994EB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongQueryEngine", "SongQueryEngine\SongQueryEngine.csproj", "{D23DAFC2-54B1-4802-B0A5-9B12C08994EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94CBB6F5-4349-4845-8B40-00F30D11F64E} = {94CBB6F5-4349-4845-8B40-00F30D11F64E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{94CBB6F5-4349-4845-8B40-00F30D11F64E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +24,14 @@ Global
 		{E578933C-489A-43A2-A621-B83F9D689C06}.Debug|Any CPU.Build.0 = Debug|x86
 		{E578933C-489A-43A2-A621-B83F9D689C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E578933C-489A-43A2-A621-B83F9D689C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23DAFC2-54B1-4802-B0A5-9B12C08994EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23DAFC2-54B1-4802-B0A5-9B12C08994EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23DAFC2-54B1-4802-B0A5-9B12C08994EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23DAFC2-54B1-4802-B0A5-9B12C08994EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CBB6F5-4349-4845-8B40-00F30D11F64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94CBB6F5-4349-4845-8B40-00F30D11F64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94CBB6F5-4349-4845-8B40-00F30D11F64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94CBB6F5-4349-4845-8B40-00F30D11F64E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

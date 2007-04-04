@@ -119,5 +119,17 @@ namespace Lyra2
         }
 
         #endregion
+
+        #region Data Update Event
+        
+        public event DataUpdateHandler DataUpdate;
+
+        public void OnDataUpdate(DataUpdateEventArgs e)
+        {
+            if (DataUpdate != null)
+                DataUpdate(this, e);
+        }
+
+        #endregion
     }
 }
