@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 
 namespace Lyra2
@@ -49,22 +46,23 @@ namespace Lyra2
 
         public string Title
         {
-            get { return this.book.Title; }
+            get { return this.book.Info.Label; }
         }
 
         public string Desc
         {
-            get { return this.book.Desc; }
+            get { return this.book.Info.Description; }
         }
 
         public string State
         {
-            get { return "Erstellt am " + Utils.FormatShortDate(this.book.CreateDate) + " von " + this.book.Author + "."; }
+            get { return "Erstellt am " + Utils.FormatShortDate(this.book.Info.CreateDate) + " von " + 
+                this.book.Info.Author + "."; }
         }
 
-        public System.Drawing.Image Icon
+        public Image Icon
         {
-            get { return BookListItem.icon; }
+            get { return icon; }
         }
 
         #endregion

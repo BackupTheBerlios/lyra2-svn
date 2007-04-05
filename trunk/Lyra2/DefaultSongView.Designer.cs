@@ -33,7 +33,7 @@ namespace Lyra2
             this.browserDisplay = new System.Windows.Forms.WebBrowser();
             this.topPane = new System.Windows.Forms.Panel();
             this.btnPane = new System.Windows.Forms.Panel();
-            this.searchBox = new System.Windows.Forms.TextBox();
+            this.searchBox = new Lyra2.SearchTextBox();
             this.forwardBtn = new Lyra2.ImageButton(this.components);
             this.backBtn = new Lyra2.ImageButton(this.components);
             this.lyraBtn = new Lyra2.ImageButton(this.components);
@@ -82,10 +82,14 @@ namespace Lyra2
             // 
             // searchBox
             // 
+            this.searchBox.Caption = "Liedsuche";
+            this.searchBox.FadeColor = System.Drawing.Color.Gray;
+            this.searchBox.ForeColor = System.Drawing.Color.Gray;
             this.searchBox.Location = new System.Drawing.Point(4, 15);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(178, 20);
             this.searchBox.TabIndex = 0;
+            this.searchBox.TextColor = System.Drawing.Color.Black;
             // 
             // forwardBtn
             // 
@@ -176,7 +180,7 @@ namespace Lyra2
 
         private System.Windows.Forms.WebBrowser browserDisplay;
         private System.Windows.Forms.Panel topPane;
-        private System.Windows.Forms.TextBox searchBox;
+        private SearchTextBox searchBox;
         private System.Windows.Forms.Panel btnPane;
         private ImageButton lyraBtn;
         private ImageButton forwardBtn;

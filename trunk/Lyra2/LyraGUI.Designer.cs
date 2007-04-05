@@ -51,10 +51,11 @@ namespace Lyra2
             this.searchBox = new System.Windows.Forms.ToolStripTextBox();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.leftSplit = new System.Windows.Forms.SplitContainer();
-            this.leftTopPanel = new System.Windows.Forms.Panel();
-            this.lyraTitlePic = new System.Windows.Forms.PictureBox();
             this.bookList = new Lyra2.NiceListBox();
             this.songCollectionList = new Lyra2.NiceListBox();
+            this.leftTopPanel = new System.Windows.Forms.Panel();
+            this.lyraTitlePic = new System.Windows.Forms.PictureBox();
+            this.bookColHeader = new System.Windows.Forms.ColumnHeader();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -181,6 +182,7 @@ namespace Lyra2
             this.songView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nrColHeader,
             this.titleColHeader,
+            this.bookColHeader,
             this.lastViewedColHeader});
             this.songView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.songView.GridLines = true;
@@ -202,12 +204,12 @@ namespace Lyra2
             // titleColHeader
             // 
             this.titleColHeader.Text = "Titel";
-            this.titleColHeader.Width = 430;
+            this.titleColHeader.Width = 394;
             // 
             // lastViewedColHeader
             // 
             this.lastViewedColHeader.Text = "Zuletzt betrachtet";
-            this.lastViewedColHeader.Width = 150;
+            this.lastViewedColHeader.Width = 107;
             // 
             // songToolStrip
             // 
@@ -273,26 +275,6 @@ namespace Lyra2
             this.leftSplit.SplitterDistance = 114;
             this.leftSplit.TabIndex = 0;
             // 
-            // leftTopPanel
-            // 
-            this.leftTopPanel.BackColor = System.Drawing.Color.Transparent;
-            this.leftTopPanel.Controls.Add(this.lyraTitlePic);
-            this.leftTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.leftTopPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftTopPanel.Name = "leftTopPanel";
-            this.leftTopPanel.Size = new System.Drawing.Size(305, 84);
-            this.leftTopPanel.TabIndex = 0;
-            // 
-            // lyraTitlePic
-            // 
-            this.lyraTitlePic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lyraTitlePic.Image = ((System.Drawing.Image)(resources.GetObject("lyraTitlePic.Image")));
-            this.lyraTitlePic.Location = new System.Drawing.Point(0, 0);
-            this.lyraTitlePic.Name = "lyraTitlePic";
-            this.lyraTitlePic.Size = new System.Drawing.Size(305, 84);
-            this.lyraTitlePic.TabIndex = 0;
-            this.lyraTitlePic.TabStop = false;
-            // 
             // bookList
             // 
             this.bookList.ActiveColor1 = System.Drawing.Color.Lavender;
@@ -332,6 +314,31 @@ namespace Lyra2
             this.songCollectionList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.songCollectionList.Size = new System.Drawing.Size(305, 289);
             this.songCollectionList.TabIndex = 0;
+            // 
+            // leftTopPanel
+            // 
+            this.leftTopPanel.BackColor = System.Drawing.Color.Transparent;
+            this.leftTopPanel.Controls.Add(this.lyraTitlePic);
+            this.leftTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.leftTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftTopPanel.Name = "leftTopPanel";
+            this.leftTopPanel.Size = new System.Drawing.Size(305, 84);
+            this.leftTopPanel.TabIndex = 0;
+            // 
+            // lyraTitlePic
+            // 
+            this.lyraTitlePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lyraTitlePic.Image = ((System.Drawing.Image)(resources.GetObject("lyraTitlePic.Image")));
+            this.lyraTitlePic.Location = new System.Drawing.Point(0, 0);
+            this.lyraTitlePic.Name = "lyraTitlePic";
+            this.lyraTitlePic.Size = new System.Drawing.Size(305, 84);
+            this.lyraTitlePic.TabIndex = 0;
+            this.lyraTitlePic.TabStop = false;
+            // 
+            // bookColHeader
+            // 
+            this.bookColHeader.Text = "Buch";
+            this.bookColHeader.Width = 100;
             // 
             // LyraGUI
             // 
@@ -394,6 +401,7 @@ namespace Lyra2
         private System.Windows.Forms.ToolStripMenuItem showViewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ColumnHeader bookColHeader;
     }
 }
 

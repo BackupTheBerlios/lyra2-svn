@@ -141,8 +141,9 @@ namespace Lyra2
             return prefix + Convert.ToString(idCount++, 16).ToUpper();
         }
 
-        public static string XMLPrettyPrint(XmlDocument xmldoc)
+        public static string XMLPrettyPrint(XmlElement xmlelem)
         {
+            if (xmlelem == null) return "";
             MemoryStream ms = new MemoryStream();
             XmlTextWriter writer = new XmlTextWriter(ms, Encoding.UTF8);
             writer.Formatting = Formatting.Indented;
@@ -150,7 +151,7 @@ namespace Lyra2
             try
             {
                 // write XML to memory
-                xmldoc.WriteContentTo(writer);
+                xmlelem.WriteContentTo(writer);
                 writer.Flush();
                 ms.Flush();
                 // go to start to read content
@@ -167,6 +168,52 @@ namespace Lyra2
             writer.Close();
 
             return result;
+        }
+
+        public static SongLanguage LanguageFromString(string str)
+        {
+            switch (str)
+            {
+                case "ger":
+                    return SongLanguage.German;
+                case "eng":
+                    return SongLanguage.English;
+                case "fre":
+                    return SongLanguage.French;
+                case "ita":
+                    return SongLanguage.Italian;
+                case "lat":
+                    return SongLanguage.Latin;
+                case "spa":
+                    return SongLanguage.Spanish;
+                case "heb":
+                    return SongLanguage.Hebrew;
+                default:
+                    return SongLanguage.Other;
+            }
+        }
+
+        public static string StringFromLanguage(SongLanguage lang)
+        {
+            switch (lang)
+            {
+                case SongLanguage.English:
+                    return "eng";
+                case SongLanguage.French:
+                    return "fre";
+                case SongLanguage.German:
+                    return "ger";
+                case SongLanguage.Hebrew:
+                    return "heb";
+                case SongLanguage.Italian:
+                    return "ita";
+                case SongLanguage.Latin:
+                    return "lat";
+                case SongLanguage.Spanish:
+                    return "spa";
+                default:
+                    return "";
+            }
         }
     }
 }

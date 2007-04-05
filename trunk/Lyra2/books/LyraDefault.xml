@@ -1,46 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <book id="book3994734D836C">
   <info>
-    <title>Standardbuch</title>
-    <desc>Das ist ein Test...</desc>
-    <author>Andreas Jost</author>
-    <createdate>17.3.2007@18:23:00</createdate>
-    <lastmodified>17.3.2007@18:23:00</lastmodified>
-    <lastused>17.3.2007@18:23:00</lastused>
+    <defaultinfo>
+      <label>Standardbuch</label>
+      <desc>Das ist ein Test...</desc>
+      <author>Andreas Jost</author>
+      <createdate>17.3.2007@18:23:00</createdate>
+      <lastmodified>17.3.2007@18:23:00</lastmodified>
+      <lastused>17.3.2007@18:23:00</lastused>
+    </defaultinfo>
     <nrofsongs>2</nrofsongs>
     <isselected>yes</isselected>
   </info>
   <songs>
-    <song id="song3994734D837A" lang="ger" template="templDefault">
+    <song id="song3994734D837A" deflang="ger" template="templDefault">
+      <defaultinfo>
+        <label></label>
+        <desc></desc>
+        <author></author>
+        <createdate>17.3.2007@18:23:00</createdate>
+        <lastmodified>17.3.2007@18:23:00</lastmodified>
+        <lastused>17.3.2007@18:23:00</lastused>
+      </defaultinfo>
       <nr>1</nr>
-      <title>Titel 1</title>
-      <lyrics cols="1">
-        <page scroll="no">BlaBlaBla TODO</page>
+      <lyrics lang="ger">
+        <title>Titel 1</title>
+        <text cols="1" scroll="no">
+          <page nr="1">Blablablabla</page>
+        </text>
       </lyrics>
-      <desc></desc>
-      <composer></composer>
-      <author></author>
-      <createdate>17.3.2007@18:23:00</createdate>
-      <lastmodified>17.3.2007@18:23:00</lastmodified>
-      <lastused>17.3.2007@18:23:00</lastused>
     </song>
-    <song id="song3994734D837B" lang="ger" template="templDefault">
+    <song id="song3994734D837B" deflang="ger" template="templDefault">
+      <defaultinfo>
+        <label></label>
+        <desc></desc>
+        <author></author>
+        <createdate>17.3.2007@18:23:00</createdate>
+        <lastmodified>17.3.2007@18:23:00</lastmodified>
+        <lastused>17.3.2007@18:23:00</lastused>
+      </defaultinfo>
       <nr>2</nr>
-      <title>Titel 2</title>
-      <text cols="2">
-        <page>BluBluBlu TODO</page>
-        <page></page>
-      </text>
-      <translations>
-        <translation lang="eng">
-          <title>Title 2</title>
-          <text cols="1">
-            <page>
-              busadkjhds...
-            </page>
-          </text>
-        </translation>
-      </translations>
+      <lyrics lang="ger">
+        <title>Titel 2</title>
+        <text cols="1" scroll="no">
+          <page nr="1">Blablablabla</page>
+        </text>
+      </lyrics>
+      <lyrics lang="fre">
+        <title>Titre 2</title>
+        <text cols="1" scroll="no">
+          <page nr="1">Blablablabla</page>
+        </text>
+      </lyrics>
+      <lyrics lang="eng">
+        <title>Title 2</title>
+        <text cols="1" scroll="no">
+          <page nr="1">Blablablabla</page>
+        </text>
+      </lyrics>
     </song>
   </songs>
   <templates>
