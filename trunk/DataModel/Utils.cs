@@ -151,7 +151,7 @@ namespace Lyra2
             try
             {
                 // write XML to memory
-                xmlelem.WriteContentTo(writer);
+                xmlelem.WriteTo(writer);
                 writer.Flush();
                 ms.Flush();
                 // go to start to read content

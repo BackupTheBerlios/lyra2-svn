@@ -11,6 +11,7 @@ namespace Lyra2
         // data changed flag
         private bool changed = false;
 
+        private string id;
         private DefaultInfo info = null;
         private ISongQuery query = null;
         private Image icon = null;
@@ -20,9 +21,15 @@ namespace Lyra2
 
         public SongCollection(DefaultInfo info, ISongQuery query, Image icon)
         {
+            this.id = Utils.GetID("sc");
             this.info = info;
             this.query = query;
             this.icon = icon;
+        }
+
+        public string ID
+        {
+            get { return this.id; }
         }
 
         public DefaultInfo Info
@@ -84,6 +91,21 @@ namespace Lyra2
         {
             get { return new List<Song>(this.songList); }
         }
+
+        public override bool Equals(object obj)
+        {
+            if(obj is SongCollection)
+            {
+                return this.id == ((SongCollection) obj).id;
+            }
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.id.GetHashCode();
+        }
+
 
         #region IEnumerable<Song> Members
 

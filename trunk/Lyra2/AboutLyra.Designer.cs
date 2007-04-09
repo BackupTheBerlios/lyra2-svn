@@ -38,8 +38,11 @@ namespace Lyra2
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.RichTextBox();
             this.okButton = new System.Windows.Forms.Button();
+            this.lyraIconBox = new System.Windows.Forms.PictureBox();
+            this.lyraLink = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lyraIconBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -85,8 +88,8 @@ namespace Lyra2
             this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelProductName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProductName.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.labelProductName.Location = new System.Drawing.Point(129, 0);
-            this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelProductName.Location = new System.Drawing.Point(129, 3);
+            this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 3, 3, 0);
             this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
             this.labelProductName.Name = "labelProductName";
             this.labelProductName.Size = new System.Drawing.Size(346, 17);
@@ -98,6 +101,7 @@ namespace Lyra2
             // 
             this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVersion.ForeColor = System.Drawing.Color.DimGray;
             this.labelVersion.Location = new System.Drawing.Point(129, 26);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
@@ -111,6 +115,7 @@ namespace Lyra2
             // 
             this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCopyright.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCopyright.ForeColor = System.Drawing.Color.DimGray;
             this.labelCopyright.Location = new System.Drawing.Point(129, 52);
             this.labelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
@@ -124,6 +129,7 @@ namespace Lyra2
             // 
             this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCompanyName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCompanyName.ForeColor = System.Drawing.Color.DimGray;
             this.labelCompanyName.Location = new System.Drawing.Point(129, 78);
             this.labelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
@@ -135,18 +141,18 @@ namespace Lyra2
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(195)))), ((int)(((byte)(208)))));
+            this.textBoxDescription.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDescription.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxDescription.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescription.ForeColor = System.Drawing.Color.White;
-            this.textBoxDescription.Location = new System.Drawing.Point(129, 107);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.textBoxDescription.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxDescription.Location = new System.Drawing.Point(131, 114);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(8, 10, 3, 3);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.textBoxDescription.Size = new System.Drawing.Size(346, 126);
+            this.textBoxDescription.Size = new System.Drawing.Size(344, 119);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = "Description";
@@ -161,12 +167,37 @@ namespace Lyra2
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&Ok";
             // 
+            // lyraIconBox
+            // 
+            this.lyraIconBox.Image = ((System.Drawing.Image)(resources.GetObject("lyraIconBox.Image")));
+            this.lyraIconBox.Location = new System.Drawing.Point(421, 10);
+            this.lyraIconBox.Name = "lyraIconBox";
+            this.lyraIconBox.Size = new System.Drawing.Size(64, 64);
+            this.lyraIconBox.TabIndex = 1;
+            this.lyraIconBox.TabStop = false;
+            // 
+            // lyraLink
+            // 
+            this.lyraLink.ActiveLinkColor = System.Drawing.Color.Orange;
+            this.lyraLink.AutoSize = true;
+            this.lyraLink.LinkColor = System.Drawing.Color.LightSlateGray;
+            this.lyraLink.Location = new System.Drawing.Point(137, 256);
+            this.lyraLink.Name = "lyraLink";
+            this.lyraLink.Size = new System.Drawing.Size(95, 13);
+            this.lyraLink.TabIndex = 2;
+            this.lyraLink.TabStop = true;
+            this.lyraLink.Text = "Lyra 2 im Internet";
+            this.lyraLink.VisitedLinkColor = System.Drawing.Color.LightSlateGray;
+            this.lyraLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lyraLink_LinkClicked);
+            // 
             // AboutLyra
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 283);
+            this.Controls.Add(this.lyraLink);
+            this.Controls.Add(this.lyraIconBox);
             this.Controls.Add(this.tableLayoutPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -181,7 +212,9 @@ namespace Lyra2
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lyraIconBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,5 +228,7 @@ namespace Lyra2
         private System.Windows.Forms.Label labelCompanyName;
         private System.Windows.Forms.RichTextBox textBoxDescription;
         private System.Windows.Forms.Button okButton;
+        private PictureBox lyraIconBox;
+        private LinkLabel lyraLink;
     }
 }

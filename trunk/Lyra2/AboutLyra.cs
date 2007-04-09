@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Reflection;
@@ -21,10 +22,11 @@ namespace Lyra2
             this.labelProductName.Text = "Lyra 2";
             this.labelVersion.Text = "Version " + Info.VERSION + "." + Info.BUILD + "  " + 
                 Utils.FormatShortDate(Info.RELEASE_DATE);
-            this.labelCopyright.Text = "(c) 2007 Olivier Girard, Andreas Jost";
+            this.labelCopyright.Text = "© 2007 Olivier Girard, Andreas Jost";
             this.labelCompanyName.Text = "Kontakt: o.girard@gmx.ch";
             this.textBoxDescription.Text = "Tool zum Verwalten und Anzeigen von Liedtexten." +
-                Utils.WINNL + Utils.WINNL + "http://lyra2.berlios.de/";
+                Utils.WINNL + Utils.WINNL + "[Statistik]";
+
         }
 
         #region Assembly Attribute Accessors
@@ -113,5 +115,11 @@ namespace Lyra2
             }
         }
         #endregion
+
+        private void lyraLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // start default browser and open Lyra 2 homepage
+            Process.Start("http://lyra2.berlios.de/");
+        }
     }
 }

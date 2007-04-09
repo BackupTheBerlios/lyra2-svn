@@ -15,23 +15,25 @@ namespace Lyra2
 
         private string id;
         private string templateId;
+        private Book parentBook;
         private DefaultInfo info = null;
         private int nr = Utils.NA;
         private SongLanguage defLang;
-        
+
         // lyrics
         private Dictionary<SongLanguage, Lyrics> lyrics = null;
 
-        public Song(DefaultInfo info, Lyrics defLyrics, string templId)
+        public Song(Book parent, DefaultInfo info, Lyrics defLyrics, string templId)
             :
-            this(info, Utils.NA, defLyrics, templId)
+            this(parent, info, Utils.NA, defLyrics, templId)
         {
         }
 
-        public Song(DefaultInfo info, int nr, Lyrics defLyrics, string templId)
+        public Song(Book parent, DefaultInfo info, int nr, Lyrics defLyrics, string templId)
         {
             this.id = Utils.GetID("song");
             this.info = info;
+            this.parentBook = parent;
             this.nr = nr;
             this.defLang = defLyrics.Language;
             this.lyrics = new Dictionary<SongLanguage, Lyrics>();
@@ -40,17 +42,110 @@ namespace Lyra2
             this.changed = false;
         }
 
-        public Song(XmlElement el)
+        public Song(Book parent, XmlElement el)
         {
+            this.parentBook = parent;
             this.LoadXML(el);
             this.changed = false;
+        }
+
+        public string ID
+        {
+            get { return this.id; }
+        }
+
+        public int Number
+        {
+            get { return this.nr; }
+            set { this.changed = true; this.nr = value; }
+        }
+
+        public SongLanguage DefaultLanguage
+        {
+            get { return this.defLang; }
+            set
+            {
+                if (this.lyrics.ContainsKey(value))
+                {
+                    this.changed = true;
+                    this.defLang = value;
+                }
+                else
+                {
+                    throw new LyraException("Sprache nicht definiert für dieses Lied!");
+                }
+            }
+        }
+
+        public List<Lyrics> AllLyrics
+        {
+            get { return new List<Lyrics>(this.lyrics.Values); }
+        }
+
+        public string TemplateID
+        {
+            get { return this.templateId; }
+            set { this.changed = true; this.templateId = value; }
+        }
+
+        public Book ParentBook
+        {
+            get { return this.parentBook;  }
+        }
+
+        public DefaultInfo Info
+        {
+            get { return this.info; }
+        }
+
+        public string Title
+        {
+            get { return this.lyrics[this.defLang].Title;  }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if(obj is Song)
+            {
+                Song s = (Song) obj;
+                return this.id == s.ID;
+            }
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.id.GetHashCode();
         }
 
         #region IXMLConvertable Members
 
         public XmlElement ToXML()
         {
-            throw new Exception("The method or operation is not implemented.");
+            XmlDocument xmlDoc = new XmlDocument();
+            XmlElement songEl = xmlDoc.CreateElement("song");
+            // attributes
+            XmlAttribute idAttr = xmlDoc.CreateAttribute("id");
+            idAttr.InnerText = this.id;
+            songEl.AppendChild(idAttr);
+            XmlAttribute defLangAttr = xmlDoc.CreateAttribute("deflang");
+            defLangAttr.InnerText = Utils.StringFromLanguage(this.defLang);
+            songEl.AppendChild(defLangAttr);
+            XmlAttribute templAttr = xmlDoc.CreateAttribute("template");
+            templAttr.InnerText = this.templateId;
+            songEl.AppendChild(templAttr);
+            // info
+            songEl.AppendChild(this.info.ToXML());
+            // nr
+            XmlElement nrEl = xmlDoc.CreateElement("nr");
+            nrEl.InnerText = this.nr.ToString();
+            songEl.AppendChild(nrEl);
+            // lyrics
+            foreach(Lyrics lyr in this.lyrics.Values)
+            {
+                songEl.AppendChild(lyr.ToXML());
+            }
+            return songEl;
         }
 
         public void LoadXML(XmlElement el)
@@ -60,9 +155,7 @@ namespace Lyra2
                 this.id = el.Attributes["id"].InnerText;
                 this.templateId = el.Attributes["template"].InnerText;
                 this.defLang = Utils.LanguageFromString(el.Attributes["deflang"].InnerText);
-
-                XmlElement infoEl = el["info"];
-                this.info = new DefaultInfo(infoEl["defaultinfo"]);
+                this.info = new DefaultInfo(el["defaultinfo"]);
                 this.nr = Int32.Parse(el["nr"].InnerText);
                 this.lyrics = new Dictionary<SongLanguage, Lyrics>();
                 foreach (XmlElement lyricsEl in el.GetElementsByTagName("lyrics"))

@@ -27,19 +27,19 @@ namespace Lyra2
             if (obj is BookListItem)
             {
                 BookListItem bli = (BookListItem)obj;
-                return bli.WrappedBook.ID == this.WrappedBook.ID;
+                return this.book.Equals(bli.book);
             }
             else if (obj is Book)
             {
                 Book b = (Book)obj;
-                return b.ID == this.WrappedBook.ID;
+                return this.book.Equals(b);
             }
             return base.Equals(obj);
         }
 
         public override int GetHashCode()
         {
-            return this.WrappedBook.ID.GetHashCode();
+            return this.WrappedBook.GetHashCode();
         }
 
         #region INiceListBoxItem Members

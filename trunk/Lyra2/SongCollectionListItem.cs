@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 
 namespace Lyra2
 {
@@ -23,6 +21,24 @@ namespace Lyra2
             get { return this.songCollection; }
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is SongCollection)
+            {
+                return this.songCollection.Equals((SongCollection) obj);
+            }
+            else if(obj is SongCollectionListItem)
+            {
+                return this.songCollection.Equals(((SongCollectionListItem) obj).songCollection);
+            }
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.songCollection.GetHashCode();
+        }
+
         #region INiceListBoxItem Members
 
         public string Title
@@ -40,7 +56,7 @@ namespace Lyra2
             get { return "Erstellt am " + Utils.FormatShortDate(this.songCollection.Info.CreateDate) + "."; }
         }
 
-        public System.Drawing.Image Icon
+        public Image Icon
         {
             get { return this.songCollection.Icon; }
         }

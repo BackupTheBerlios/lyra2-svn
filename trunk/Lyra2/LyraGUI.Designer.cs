@@ -45,17 +45,17 @@ namespace Lyra2
             this.songView = new System.Windows.Forms.ListView();
             this.nrColHeader = new System.Windows.Forms.ColumnHeader();
             this.titleColHeader = new System.Windows.Forms.ColumnHeader();
+            this.bookColHeader = new System.Windows.Forms.ColumnHeader();
             this.lastViewedColHeader = new System.Windows.Forms.ColumnHeader();
             this.songToolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.searchBox = new System.Windows.Forms.ToolStripTextBox();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.leftSplit = new System.Windows.Forms.SplitContainer();
-            this.bookList = new Lyra2.NiceListBox();
-            this.songCollectionList = new Lyra2.NiceListBox();
             this.leftTopPanel = new System.Windows.Forms.Panel();
             this.lyraTitlePic = new System.Windows.Forms.PictureBox();
-            this.bookColHeader = new System.Windows.Forms.ColumnHeader();
+            this.bookList = new Lyra2.NiceListBox();
+            this.songCollectionList = new Lyra2.NiceListBox();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.centerPanel.SuspendLayout();
@@ -76,14 +76,14 @@ namespace Lyra2
             this.statusStrip.Location = new System.Drawing.Point(0, 515);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.statusStrip.Size = new System.Drawing.Size(945, 22);
+            this.statusStrip.Size = new System.Drawing.Size(954, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
             // globalStateLabel
             // 
             this.globalStateLabel.Name = "globalStateLabel";
-            this.globalStateLabel.Size = new System.Drawing.Size(37, 17);
+            this.globalStateLabel.Size = new System.Drawing.Size(35, 17);
             this.globalStateLabel.Text = "Bereit";
             // 
             // menuStrip
@@ -95,7 +95,7 @@ namespace Lyra2
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(945, 24);
+            this.menuStrip.Size = new System.Drawing.Size(954, 24);
             this.menuStrip.TabIndex = 3;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -104,20 +104,20 @@ namespace Lyra2
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.dateiToolStripMenuItem.Text = "&Datei";
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.beendenToolStripMenuItem.Text = "Be&enden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
             // extrasToolStripMenuItem
             // 
             this.extrasToolStripMenuItem.Name = "extrasToolStripMenuItem";
-            this.extrasToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.extrasToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.extrasToolStripMenuItem.Text = "E&xtras";
             // 
             // hilfeToolStripMenuItem
@@ -128,32 +128,32 @@ namespace Lyra2
             this.toolStripMenuItem2,
             this.infoToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.hilfeToolStripMenuItem.Text = "&Hilfe";
             // 
             // testDialogToolStripMenuItem
             // 
             this.testDialogToolStripMenuItem.Name = "testDialogToolStripMenuItem";
-            this.testDialogToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.testDialogToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.testDialogToolStripMenuItem.Text = "Test Dialog";
             this.testDialogToolStripMenuItem.Click += new System.EventHandler(this.testDialogToolStripMenuItem_Click);
             // 
             // showViewToolStripMenuItem
             // 
             this.showViewToolStripMenuItem.Name = "showViewToolStripMenuItem";
-            this.showViewToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.showViewToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.showViewToolStripMenuItem.Text = "Show View";
             this.showViewToolStripMenuItem.Click += new System.EventHandler(this.showViewToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(130, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(135, 6);
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.infoToolStripMenuItem.Text = "&Info";
             this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
@@ -164,7 +164,7 @@ namespace Lyra2
             this.centerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centerPanel.Location = new System.Drawing.Point(0, 24);
             this.centerPanel.Name = "centerPanel";
-            this.centerPanel.Size = new System.Drawing.Size(945, 491);
+            this.centerPanel.Size = new System.Drawing.Size(954, 491);
             this.centerPanel.TabIndex = 4;
             // 
             // rightPanel
@@ -174,7 +174,7 @@ namespace Lyra2
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightPanel.Location = new System.Drawing.Point(305, 0);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(640, 491);
+            this.rightPanel.Size = new System.Drawing.Size(649, 491);
             this.rightPanel.TabIndex = 1;
             // 
             // songView
@@ -185,13 +185,13 @@ namespace Lyra2
             this.bookColHeader,
             this.lastViewedColHeader});
             this.songView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.songView.FullRowSelect = true;
             this.songView.GridLines = true;
             this.songView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.songView.HoverSelection = true;
             this.songView.Location = new System.Drawing.Point(0, 25);
             this.songView.MultiSelect = false;
             this.songView.Name = "songView";
-            this.songView.Size = new System.Drawing.Size(640, 466);
+            this.songView.Size = new System.Drawing.Size(649, 466);
             this.songView.TabIndex = 1;
             this.songView.UseCompatibleStateImageBehavior = false;
             this.songView.View = System.Windows.Forms.View.Details;
@@ -204,12 +204,17 @@ namespace Lyra2
             // titleColHeader
             // 
             this.titleColHeader.Text = "Titel";
-            this.titleColHeader.Width = 394;
+            this.titleColHeader.Width = 380;
+            // 
+            // bookColHeader
+            // 
+            this.bookColHeader.Text = "Buch";
+            this.bookColHeader.Width = 110;
             // 
             // lastViewedColHeader
             // 
             this.lastViewedColHeader.Text = "Zuletzt betrachtet";
-            this.lastViewedColHeader.Width = 107;
+            this.lastViewedColHeader.Width = 111;
             // 
             // songToolStrip
             // 
@@ -219,7 +224,7 @@ namespace Lyra2
             this.searchBox});
             this.songToolStrip.Location = new System.Drawing.Point(0, 0);
             this.songToolStrip.Name = "songToolStrip";
-            this.songToolStrip.Size = new System.Drawing.Size(640, 25);
+            this.songToolStrip.Size = new System.Drawing.Size(649, 25);
             this.songToolStrip.TabIndex = 0;
             this.songToolStrip.Text = "toolStrip1";
             // 
@@ -275,6 +280,26 @@ namespace Lyra2
             this.leftSplit.SplitterDistance = 114;
             this.leftSplit.TabIndex = 0;
             // 
+            // leftTopPanel
+            // 
+            this.leftTopPanel.BackColor = System.Drawing.Color.Transparent;
+            this.leftTopPanel.Controls.Add(this.lyraTitlePic);
+            this.leftTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.leftTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftTopPanel.Name = "leftTopPanel";
+            this.leftTopPanel.Size = new System.Drawing.Size(305, 84);
+            this.leftTopPanel.TabIndex = 0;
+            // 
+            // lyraTitlePic
+            // 
+            this.lyraTitlePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lyraTitlePic.Image = ((System.Drawing.Image)(resources.GetObject("lyraTitlePic.Image")));
+            this.lyraTitlePic.Location = new System.Drawing.Point(0, 0);
+            this.lyraTitlePic.Name = "lyraTitlePic";
+            this.lyraTitlePic.Size = new System.Drawing.Size(305, 84);
+            this.lyraTitlePic.TabIndex = 0;
+            this.lyraTitlePic.TabStop = false;
+            // 
             // bookList
             // 
             this.bookList.ActiveColor1 = System.Drawing.Color.Lavender;
@@ -315,36 +340,11 @@ namespace Lyra2
             this.songCollectionList.Size = new System.Drawing.Size(305, 289);
             this.songCollectionList.TabIndex = 0;
             // 
-            // leftTopPanel
-            // 
-            this.leftTopPanel.BackColor = System.Drawing.Color.Transparent;
-            this.leftTopPanel.Controls.Add(this.lyraTitlePic);
-            this.leftTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.leftTopPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftTopPanel.Name = "leftTopPanel";
-            this.leftTopPanel.Size = new System.Drawing.Size(305, 84);
-            this.leftTopPanel.TabIndex = 0;
-            // 
-            // lyraTitlePic
-            // 
-            this.lyraTitlePic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lyraTitlePic.Image = ((System.Drawing.Image)(resources.GetObject("lyraTitlePic.Image")));
-            this.lyraTitlePic.Location = new System.Drawing.Point(0, 0);
-            this.lyraTitlePic.Name = "lyraTitlePic";
-            this.lyraTitlePic.Size = new System.Drawing.Size(305, 84);
-            this.lyraTitlePic.TabIndex = 0;
-            this.lyraTitlePic.TabStop = false;
-            // 
-            // bookColHeader
-            // 
-            this.bookColHeader.Text = "Buch";
-            this.bookColHeader.Width = 100;
-            // 
             // LyraGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 537);
+            this.ClientSize = new System.Drawing.Size(954, 537);
             this.Controls.Add(this.centerPanel);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);

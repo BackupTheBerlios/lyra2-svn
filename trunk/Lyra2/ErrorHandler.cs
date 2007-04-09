@@ -4,7 +4,7 @@ using log4net;
 
 namespace Lyra2
 {
-    class ErrorHandler
+    public class ErrorHandler
     {
         // logger for this class
         private static readonly ILog log = LogManager.GetLogger(typeof(ErrorHandler));

@@ -47,16 +47,35 @@ namespace Lyra2
                 this.bookList.Items.Add(new BookListItem(book));
                 this.bookList.SetSelected(this.bookList.Items.IndexOf(book), book.Selected);
             }
+
+            // update the song list!
+            this.songCollectionList.SelectedIndex = 0; // TODO remember selection
+            this.updateMainView(null, true);
         }
 
         /// <summary>
         /// refreshes the main song display grid
         /// </summary>
-        /// <param name="displayedSongs">songs to be displayed</param>
+        /// <param name="displayedSongs">songs to be displayed or <code>null</code> if they should be detected automatically</param>
         /// <param name="fullupdate">set <code>true</code> to force a complete refresh, <code>false</code> to refresh only the indicated songs</param>
         private void updateMainView(List<Song> displayedSongs, bool fullupdate)
         {
-
+            if (displayedSongs == null)
+            {
+                foreach (BookListItem bookIt in this.bookList.SelectedItems)
+                {
+                    Book book = bookIt;
+                    if (this.songCollectionList.SelectedItems.Contains(this.allSongs))
+                    {
+                        ErrorHandler.ShowInfo(book.Info.Label);
+                        // show all!
+                        foreach (Song song in book)
+                        {
+                            this.songView.Items.Add(new SongListItem(song));
+                        }
+                    }
+                }
+            }
         }
 
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)

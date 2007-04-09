@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lyra2</RootNamespace>
     <AssemblyName>Lyra2</AssemblyName>
-    <ApplicationIcon>lyra2.ico</ApplicationIcon>
+    <ApplicationIcon>lyra2new2.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -183,6 +183,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lyra2.ico" />
+    <Content Include="lyra2new2.ico" />
     <Content Include="resources\icon_allbooks.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

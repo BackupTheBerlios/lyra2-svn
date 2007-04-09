@@ -70,7 +70,7 @@ namespace Lyra2
                 try
                 {
                     this.Label = el["label"].InnerText;
-                    this.Description = el["description"].InnerText;
+                    this.Description = el["desc"].InnerText;
                     this.Author = el["author"].InnerText;
                     this.CreateDate = Utils.DateFromString(el["createdate"].InnerText);
                     this.LastModified = Utils.DateFromString(el["lastmodified"].InnerText);

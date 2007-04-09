@@ -154,7 +154,15 @@ namespace Lyra2
 
         public XmlElement ToXML()
         {
-            throw new Exception("The method or operation is not implemented.");
+            if(!this.HasChanged)
+            {
+                return this.sourceXML["book"];
+            }
+            else
+            {
+                // TODO
+            }
+            return this.sourceXML["book"];
         }
 
         public void LoadXML(XmlElement el)
@@ -169,7 +177,7 @@ namespace Lyra2
                 XmlElement songsEl = el["songs"];
                 foreach(XmlElement songEl in songsEl.GetElementsByTagName("song"))
                 {
-                    this.songs.Add(new Song(songEl));
+                    this.songs.Add(new Song(this, songEl));
                 }
 
                 this.templates = new List<ViewTemplate>();
