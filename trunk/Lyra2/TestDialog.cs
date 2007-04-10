@@ -21,5 +21,17 @@ namespace Lyra2
         {
             DataManager.ConvertXMLToLBK(new DirectoryInfo(this.textBox1.Text));
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show(SongQueryEngine.CompileTest(this.textBox2.Text).ToString());
+            }
+            catch (LyraException ex)
+            {
+                ErrorHandler.HandleError(ex);
+            }
+        }
     }
 }

@@ -102,6 +102,19 @@ namespace Lyra2
             get { return this.allBooks[id]; }
         }
 
+        public Song GetSongById(string id)
+        {
+            try
+            {
+                Book book = this[Utils.GetBookId(id)];
+                return book[Utils.GetSimpleSongId(id)];
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+        }
+
         #region IEnumerable<Book> Members
 
         public IEnumerator<Book> GetEnumerator()
@@ -120,14 +133,14 @@ namespace Lyra2
 
         #endregion
 
-        #region Data Update Event
+        #region Data Changed Event
         
-        public event DataUpdateHandler DataUpdate;
+        public event DataChangedHandler DataChanged;
 
-        public void OnDataUpdate(DataUpdateEventArgs e)
+        public void OnDataChanged(DataChangedEventArgs e)
         {
-            if (DataUpdate != null)
-                DataUpdate(this, e);
+            if (DataChanged != null)
+                DataChanged(this, e);
         }
 
         #endregion

@@ -19,5 +19,6 @@ namespace Lyra2
         public static string RES_PATH = Application.StartupPath + "\\resources\\";
         public static string BOOK_PATH = Application.StartupPath + "\\books\\";
         public static string TEMP_XML = Application.StartupPath + "\\books\\temp.xml";
+        public static string INDEX_PATH = Application.StartupPath + "\\index\\";
     }
 }

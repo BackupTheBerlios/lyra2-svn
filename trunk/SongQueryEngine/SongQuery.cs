@@ -5,22 +5,28 @@ namespace Lyra2
 {
     class SongQuery : ISongQuery
     {
-        private SongFilter filter;
+        // query
         private string query;
-        private List<Song> results;
+        private IFilter compiledQuery;
 
-        public SongQuery(SongFilter filter, string query)
+        // settings
+        private SearchType type = SearchType.All;
+        private bool caseSensitive = false;
+
+        // mapped results
+        private List<Song> results = null;
+
+        // valid flag (depends on current index version)
+        private long validId = SongQueryEngine.IndexVersion;
+        public bool Valid
         {
-            this.filter = filter;
-            this.query = query;
-            this.results = null;
+            get { return this.validId == SongQueryEngine.IndexVersion; }
         }
 
         public SongQuery(string query)
         {
             this.query = query;
-            this.filter = null;
-            this.results = null;
+            this.compiledQuery = SongQueryEngine.CompileQuery(query);
         }
 
         #region ISongQuery Members
@@ -29,12 +35,7 @@ namespace Lyra2
         {
             get
             {
-                if (this.filter == null)
-                {
-                    // lazy filter creation
-                    this.filter = SongQueryEngine.CompileQuery(this.query);
-                }
-                return this.filter;
+                return this.compiledQuery.Filter;
             }
         }
 
@@ -43,31 +44,36 @@ namespace Lyra2
             get { return this.query; }
             set
             {
-                this.Reset();
                 this.query = value;
+                this.compiledQuery = SongQueryEngine.CompileQuery(value);
+                this.results = null;
             }
         }
 
-        public List<Song> Results
+        public List<Song> Results(IIDToSongMapper mapper)
         {
-            get
+            if (this.results == null)
             {
-                if(this.results == null)
-                {
-                    this.results = SongQueryEngine.ExecuteQuery(this.query);
-                }
-                return this.results;
+                
+
             }
+            return this.results;
         }
 
-        public void Reset()
+        public SearchType Type
         {
-            this.filter = null;
-            this.results = null;
+            get { return this.type; }
+            set { this.type = value; }
+        }
+
+        public bool CaseSensitive
+        {
+            get { return this.caseSensitive; }
+            set { this.caseSensitive = value; }
         }
 
         #endregion
-        
+
         #region IEnumerable<Song> Members
 
         public IEnumerator<Song> GetEnumerator()
@@ -84,6 +90,7 @@ namespace Lyra2
             return this.results.GetEnumerator();
         }
 
-        #endregion  
+        #endregion
+
     }
 }

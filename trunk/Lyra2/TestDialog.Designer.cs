@@ -48,6 +48,9 @@ namespace Lyra2
             this.okBtn = new System.Windows.Forms.Button();
             this.bottomBorder1 = new System.Windows.Forms.Panel();
             this.bottomBorder2 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.contentPane.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.topBorder1.SuspendLayout();
@@ -61,8 +64,11 @@ namespace Lyra2
             // 
             // contentPane
             // 
+            this.contentPane.Controls.Add(this.button2);
             this.contentPane.Controls.Add(this.button1);
+            this.contentPane.Controls.Add(this.label2);
             this.contentPane.Controls.Add(this.label1);
+            this.contentPane.Controls.Add(this.textBox2);
             this.contentPane.Controls.Add(this.textBox1);
             this.contentPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPane.Location = new System.Drawing.Point(0, 0);
@@ -246,6 +252,34 @@ namespace Lyra2
             this.bottomBorder2.Size = new System.Drawing.Size(431, 1);
             this.bottomBorder2.TabIndex = 0;
             // 
+            // textBox2
+            // 
+            this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
+            this.textBox2.Location = new System.Drawing.Point(12, 170);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(321, 23);
+            this.textBox2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Test Query";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(342, 170);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "query";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // TestDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -296,5 +330,8 @@ namespace Lyra2
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -21,6 +21,8 @@ namespace Lyra2
             XmlConfigurator.Configure(new FileInfo(Application.StartupPath + "\\config\\log4net.config"));
 
             log.Info("Start Lyra 2.0");
+            SongQueryEngine.INDEX_PATH = Info.INDEX_PATH;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LyraGUI());

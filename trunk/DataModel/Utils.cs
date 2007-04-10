@@ -215,5 +215,25 @@ namespace Lyra2
                     return "";
             }
         }
+
+        public static string GetSimpleSongId(string id)
+        {
+            string[] bookSongId = id.Split(':');
+            if (bookSongId.Length == 2)
+            {
+                return bookSongId[1];
+            }
+            return null;
+        }
+
+        public static string GetBookId(string id)
+        {
+            string[] bookSongId = id.Split(':');
+            if (bookSongId.Length == 2)
+            {
+                return bookSongId[0];
+            }
+            return null;
+        }
     }
 }

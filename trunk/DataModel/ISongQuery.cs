@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Lyra2
 {
@@ -13,10 +11,18 @@ namespace Lyra2
 
     public interface ISongQuery : IEnumerable<Song>
     {
+        // query
         string Query { get; }
         SongFilter Filter { get; }
-        List<Song> Results { get; }
+        // results
+        List<Song> Results(IIDToSongMapper mapper);
+        // settings
+        SearchType Type { get; set; }
+        bool CaseSensitive { get; set; }
+    }
 
-        void Reset();
+    public enum SearchType
+    {
+        All, TitleOnly, NumberQuery
     }
 }

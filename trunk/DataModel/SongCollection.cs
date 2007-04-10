@@ -104,7 +104,8 @@ namespace Lyra2
         public override int GetHashCode()
         {
             return this.id.GetHashCode();
-        }
+        }
+
 
 
         #region IEnumerable<Song> Members

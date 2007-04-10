@@ -23,6 +23,7 @@ namespace Lyra2
 
         // songs
         private List<Song> songs = null;
+        private Dictionary<string, Song> songIndex = null;
         
         // templates
         private List<ViewTemplate> templates = null;
@@ -41,6 +42,7 @@ namespace Lyra2
             this.id = Utils.GetID("book");
             this.info = info;
             this.songs = new List<Song>();
+            this.songIndex = new Dictionary<string, Song>();
             this.templates = new List<ViewTemplate>();
             this.selected = true;
             this.changed = false;
@@ -79,6 +81,18 @@ namespace Lyra2
             }
         }
 
+        public Song this[string id]
+        {
+            get
+            {
+                if (this.songIndex != null)
+                {
+                    return this.songIndex[id];
+                }
+                return null;
+            }
+        }
+
         public void MoveUp(Song song)
         {
             if (this.songs != null)
@@ -88,6 +102,7 @@ namespace Lyra2
                 {
                     this.songs.RemoveAt(pos);
                     this.songs.Insert(pos + 1, song);
+                    this.changed = true;
                 }
             }
         }
@@ -101,6 +116,7 @@ namespace Lyra2
                 {
                     this.songs.RemoveAt(pos);
                     this.songs.Insert(pos - 1, song);
+                    this.changed = true;
                 }
             }
         }
@@ -130,6 +146,12 @@ namespace Lyra2
             return this.ID.GetHashCode();
         }
 
+        public void AddSong(Song song)
+        {
+            this.songs.Add(song);
+            this.songIndex.Add(song.ID, song);
+        }
+
 
         #region IEnumerable<Song> Members
 
@@ -148,7 +170,6 @@ namespace Lyra2
         }
 
         #endregion
-
 
         #region IXMLConvertable Members
 
@@ -200,8 +221,41 @@ namespace Lyra2
 
         public bool HasChanged
         {
-            get { return this.changed || this.info.HasChanged; }
+            get 
+            { 
+                if (this.changed || this.info.HasChanged)
+                {
+                    return true;
+                }
+                foreach(Song song in this.songs)
+                {
+                    if(song.HasChanged)
+                    {
+                        return true;
+                    }
+                }
+                foreach (ViewTemplate template in this.templates)
+                {
+                    if (template.HasChanged)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
             set { this.changed = value; }
+        }
+
+        #endregion
+
+        #region Data Changed Event
+
+        public event DataChangedHandler DataChanged;
+
+        public void OnDataChanged(DataChangedEventArgs e)
+        {
+            if (DataChanged != null)
+                DataChanged(this, e);
         }
 
         #endregion

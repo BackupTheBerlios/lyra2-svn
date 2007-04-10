@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Xml;
 
 namespace Lyra2
@@ -24,8 +23,7 @@ namespace Lyra2
         private Dictionary<SongLanguage, Lyrics> lyrics = null;
 
         public Song(Book parent, DefaultInfo info, Lyrics defLyrics, string templId)
-            :
-            this(parent, info, Utils.NA, defLyrics, templId)
+            : this(parent, info, Utils.NA, defLyrics, templId)
         {
         }
 
@@ -51,7 +49,7 @@ namespace Lyra2
 
         public string ID
         {
-            get { return this.id; }
+            get { return (this.parentBook != null ? this.parentBook.ID : "") + ":" + this.id; }
         }
 
         public int Number
@@ -90,7 +88,7 @@ namespace Lyra2
 
         public Book ParentBook
         {
-            get { return this.parentBook;  }
+            get { return this.parentBook; }
         }
 
         public DefaultInfo Info
@@ -100,22 +98,27 @@ namespace Lyra2
 
         public string Title
         {
-            get { return this.lyrics[this.defLang].Title;  }
+            get { return this.lyrics[this.defLang].Title; }
+        }
+
+        public List<string> Pages
+        {
+            get { return this.lyrics[this.defLang].Pages; }
         }
 
         public override bool Equals(object obj)
         {
-            if(obj is Song)
+            if (obj is Song)
             {
-                Song s = (Song) obj;
-                return this.id == s.ID;
+                Song s = (Song)obj;
+                return this.ID == s.ID;
             }
             return base.Equals(obj);
         }
 
         public override int GetHashCode()
         {
-            return this.id.GetHashCode();
+            return this.ID.GetHashCode();
         }
 
         #region IXMLConvertable Members
@@ -141,7 +144,7 @@ namespace Lyra2
             nrEl.InnerText = this.nr.ToString();
             songEl.AppendChild(nrEl);
             // lyrics
-            foreach(Lyrics lyr in this.lyrics.Values)
+            foreach (Lyrics lyr in this.lyrics.Values)
             {
                 songEl.AppendChild(lyr.ToXML());
             }
@@ -177,7 +180,7 @@ namespace Lyra2
 
         public bool HasChanged
         {
-            get { return this.changed; }
+            get { return this.changed || this.info.HasChanged; }
             set { this.changed = value; }
         }
 

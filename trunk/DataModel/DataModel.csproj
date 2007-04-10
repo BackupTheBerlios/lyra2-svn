@@ -35,7 +35,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Book.cs" />
+    <Compile Include="DataChangedEvent.cs" />
     <Compile Include="DefaultInfo.cs" />
+    <Compile Include="IIDToSongMapper.cs" />
     <Compile Include="ISongQuery.cs" />
     <Compile Include="IXMLConvertable.cs" />
     <Compile Include="LyraException.cs" />

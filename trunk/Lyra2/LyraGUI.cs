@@ -32,7 +32,7 @@ namespace Lyra2
             
             // default song collections
             this.allSongs = new SongCollection(new DefaultInfo("Alle Liedtexte!", "Zeigt alle Liedtexte an."), 
-                SongQueryEngine.CreateQuery("*"), Image.FromFile(Info.RES_PATH + "icon_allbooks.png"));
+                SongQueryEngine.Query("*"), Image.FromFile(Info.RES_PATH + "icon_allbooks.png"));
             this.lastQuery = new SongCollection(new DefaultInfo("Letzte Suche", ""), null, Image.FromFile(Info.RES_PATH + "icon_search.png"));
             // add fields
             this.songCollectionList.Items.Add(new SongCollectionListItem(this.allSongs));
@@ -51,6 +51,7 @@ namespace Lyra2
             // update the song list!
             this.songCollectionList.SelectedIndex = 0; // TODO remember selection
             this.updateMainView(null, true);
+
         }
 
         /// <summary>
