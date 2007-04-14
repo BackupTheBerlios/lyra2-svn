@@ -4,13 +4,13 @@ options {
 
 }
 
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 62
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 62
 OR      : ',' | 'or' | 'OR' | '||' | '-' ;
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 63
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 63
 AND     : '+' | 'and' | 'AND' | '&&' ;
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 64
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 64
 LPAREN : '(' ;
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 65
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 65
 RPAREN : ')' ;
 
 //----------------------------------------------------------------------------------------------------------------
@@ -18,39 +18,39 @@ RPAREN : ')' ;
 //----------------------------------------------------------------------------------------------------------------
 
 // date 
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 72
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 72
 DATE :  DIGIT ( DIGIT )? DOT DIGIT ( DIGIT )? DOT DIGIT DIGIT ( DIGIT DIGIT )? ;
 
 // numbers
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 75
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 75
 NUMBER : INT ( DOT ( DIGIT )+ )? ;
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 76
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 76
 fragment
 INT   : ( DIGIT )+ ;
 
 // identifier
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 80
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 80
 IDENT   : ( LETTER | DIGIT )+ ;
 
 // literal
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 83
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 83
 LITERAL : ( SINGLE_QUOTE_STRING | DOUBLE_QUOTE_STRING ) { Text = Text.Trim('"'); };
 
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 85
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 85
 fragment
 SINGLE_QUOTE_STRING : '\'' (~('\''))* '\'' ;
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 87
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 87
 fragment
 DOUBLE_QUOTE_STRING : '"' (~('"'))* '"' ;
 
 //----------------------------------------------------------------------------------------------------------------
 // BASICS
 //----------------------------------------------------------------------------------------------------------------
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 93
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 93
 fragment
 DOT : '.' ;
 
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 96
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 96
 fragment
 LETTER // java letters
     :  '\u0024' |
@@ -69,11 +69,11 @@ LETTER // java letters
        '.' | '*' | '?'
     ;
 
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 114
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 114
 fragment
 DIGIT
     :  '0'..'9' ;
 
 // white space
-// $ANTLR src "D:\Work\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 119
+// $ANTLR src "D:\Documents\Work\Andreas\Lyra2\SongQueryEngine\ANTLR\Lyra2Query.g" 119
 WS : (' '|'\r'|'\t'|'\u000C'|'\n') { $channel=HIDDEN; };
