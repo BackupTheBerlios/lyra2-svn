@@ -31,10 +31,10 @@ namespace lyra
 		private PictView(string directory)
 		{
 			InitializeComponent();
-			this.Width = Screen.PrimaryScreen.Bounds.Width;
-			this.Height = Screen.PrimaryScreen.Bounds.Height;
-			this.Top = 0;
-			this.Left = 0;
+			this.Width = View.display.Bounds.Width;
+			this.Height = View.display.Bounds.Height;
+			this.Top = View.display.Bounds.Top;
+			this.Left = View.display.Bounds.Left;
 			this.pictureBox1.Height = this.Height;
 			this.pictureBox1.Width = this.Width;
 			this.pictureBox1.Top = 0;

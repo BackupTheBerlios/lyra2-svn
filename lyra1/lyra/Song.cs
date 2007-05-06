@@ -278,14 +278,7 @@ namespace lyra
 
 				if (this.view == null)
 				{
-					try
-					{
-						(new View(this, ((Translation) this.Translations.GetByIndex(i)), Song.owner, Song.owner.StandardNavigate)).Show();
-					}
-					catch (ToManyViews ex)
-					{
-						Util.MBoxError(ex.Message, ex);
-					}
+					View.ShowSong(this, (Translation) this.Translations.GetByIndex(i), Song.owner, Song.owner.StandardNavigate);
 				}
 				else
 				{

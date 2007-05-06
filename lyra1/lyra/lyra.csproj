@@ -178,6 +178,16 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "History.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "History.resx"
+                    DependentUpon = "History.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "HTML.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
@@ -280,6 +290,16 @@
                 <File
                     RelPath = "PrBackground.resx"
                     DependentUpon = "PrBackground.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Preview.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Preview.resx"
+                    DependentUpon = "Preview.cs"
                     BuildAction = "EmbeddedResource"
                 />
                 <File

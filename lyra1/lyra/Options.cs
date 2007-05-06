@@ -199,7 +199,7 @@ namespace lyra
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof (Options));
+			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Options));
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -281,7 +281,7 @@ namespace lyra
 			this.tabPage2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.tabPage1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			this.tabPage4.SuspendLayout();
 			this.panel10.SuspendLayout();
 			this.panel7.SuspendLayout();
@@ -293,7 +293,7 @@ namespace lyra
 			// 
 			// label1
 			// 
-			this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.SlateGray;
 			this.label1.Location = new System.Drawing.Point(8, 8);
 			this.label1.Name = "label1";
@@ -400,7 +400,7 @@ namespace lyra
 			// 
 			// label3
 			// 
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.DimGray;
 			this.label3.Location = new System.Drawing.Point(8, 112);
 			this.label3.Name = "label3";
@@ -458,7 +458,7 @@ namespace lyra
 			// 
 			// label2
 			// 
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.DimGray;
 			this.label2.Location = new System.Drawing.Point(8, 7);
 			this.label2.Name = "label2";
@@ -502,7 +502,7 @@ namespace lyra
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label9.ForeColor = System.Drawing.Color.DimGray;
 			this.label9.Location = new System.Drawing.Point(187, 100);
 			this.label9.Name = "label9";
@@ -621,7 +621,7 @@ namespace lyra
 			// 
 			// pictureBox8
 			// 
-			this.pictureBox8.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox8.Image")));
+			this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
 			this.pictureBox8.Location = new System.Drawing.Point(144, 152);
 			this.pictureBox8.Name = "pictureBox8";
 			this.pictureBox8.Size = new System.Drawing.Size(144, 120);
@@ -708,7 +708,7 @@ namespace lyra
 			// 
 			// label5
 			// 
-			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.DimGray;
 			this.label5.Location = new System.Drawing.Point(8, 192);
 			this.label5.Name = "label5";
@@ -760,7 +760,7 @@ namespace lyra
 			// 
 			this.checkBox1.Enabled = false;
 			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.checkBox1.ForeColor = System.Drawing.Color.SaddleBrown;
 			this.checkBox1.Location = new System.Drawing.Point(17, 16);
 			this.checkBox1.Name = "checkBox1";
@@ -771,7 +771,7 @@ namespace lyra
 			// 
 			// label4
 			// 
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.DimGray;
 			this.label4.Location = new System.Drawing.Point(8, 72);
 			this.label4.Name = "label4";
@@ -814,7 +814,7 @@ namespace lyra
 			// 
 			// pictureBox6
 			// 
-			this.pictureBox6.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox6.Image")));
+			this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
 			this.pictureBox6.Location = new System.Drawing.Point(2, 3);
 			this.pictureBox6.Name = "pictureBox6";
 			this.pictureBox6.Size = new System.Drawing.Size(24, 24);
@@ -824,7 +824,7 @@ namespace lyra
 			// 
 			// label16
 			// 
-			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label16.ForeColor = System.Drawing.Color.DimGray;
 			this.label16.Location = new System.Drawing.Point(32, 0);
 			this.label16.Name = "label16";
@@ -846,7 +846,7 @@ namespace lyra
 			// 
 			// label13
 			// 
-			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label13.ForeColor = System.Drawing.Color.DimGray;
 			this.label13.Location = new System.Drawing.Point(32, 0);
 			this.label13.Name = "label13";
@@ -857,7 +857,7 @@ namespace lyra
 			// 
 			// pictureBox3
 			// 
-			this.pictureBox3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox3.Image")));
+			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
 			this.pictureBox3.Location = new System.Drawing.Point(2, 3);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(24, 24);
@@ -879,7 +879,7 @@ namespace lyra
 			// label12
 			// 
 			this.label12.BackColor = System.Drawing.Color.Transparent;
-			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label12.ForeColor = System.Drawing.Color.DimGray;
 			this.label12.Location = new System.Drawing.Point(32, 0);
 			this.label12.Name = "label12";
@@ -891,7 +891,7 @@ namespace lyra
 			// pictureBox2
 			// 
 			this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox2.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox2.Image")));
+			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
 			this.pictureBox2.Location = new System.Drawing.Point(2, 3);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(24, 24);
@@ -902,7 +902,7 @@ namespace lyra
 			// button14
 			// 
 			this.button14.BackColor = System.Drawing.Color.DarkGray;
-			this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.button14.Location = new System.Drawing.Point(16, 58);
 			this.button14.Name = "button14";
 			this.button14.Size = new System.Drawing.Size(32, 32);
@@ -914,7 +914,7 @@ namespace lyra
 			// button15
 			// 
 			this.button15.BackColor = System.Drawing.Color.DarkGray;
-			this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.button15.Location = new System.Drawing.Point(16, 94);
 			this.button15.Name = "button15";
 			this.button15.Size = new System.Drawing.Size(32, 32);
@@ -926,7 +926,7 @@ namespace lyra
 			// button16
 			// 
 			this.button16.BackColor = System.Drawing.Color.DarkGray;
-			this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.button16.Location = new System.Drawing.Point(16, 130);
 			this.button16.Name = "button16";
 			this.button16.Size = new System.Drawing.Size(32, 32);
@@ -938,7 +938,7 @@ namespace lyra
 			// button17
 			// 
 			this.button17.BackColor = System.Drawing.Color.DarkGray;
-			this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.button17.Location = new System.Drawing.Point(16, 166);
 			this.button17.Name = "button17";
 			this.button17.Size = new System.Drawing.Size(32, 32);
@@ -950,7 +950,7 @@ namespace lyra
 			// button18
 			// 
 			this.button18.BackColor = System.Drawing.Color.DarkGray;
-			this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.button18.Location = new System.Drawing.Point(16, 202);
 			this.button18.Name = "button18";
 			this.button18.Size = new System.Drawing.Size(32, 32);
@@ -962,7 +962,7 @@ namespace lyra
 			// button19
 			// 
 			this.button19.BackColor = System.Drawing.Color.DarkGray;
-			this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.button19.Location = new System.Drawing.Point(16, 238);
 			this.button19.Name = "button19";
 			this.button19.Size = new System.Drawing.Size(32, 32);
@@ -973,7 +973,7 @@ namespace lyra
 			// 
 			// label11
 			// 
-			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label11.ForeColor = System.Drawing.Color.DimGray;
 			this.label11.Location = new System.Drawing.Point(8, 33);
 			this.label11.Name = "label11";
@@ -1003,7 +1003,7 @@ namespace lyra
 			// 
 			// pictureBox4
 			// 
-			this.pictureBox4.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox4.Image")));
+			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
 			this.pictureBox4.Location = new System.Drawing.Point(2, 3);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(24, 24);
@@ -1013,7 +1013,7 @@ namespace lyra
 			// 
 			// label14
 			// 
-			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label14.ForeColor = System.Drawing.Color.DimGray;
 			this.label14.Location = new System.Drawing.Point(32, 0);
 			this.label14.Name = "label14";
@@ -1035,7 +1035,7 @@ namespace lyra
 			// 
 			// label15
 			// 
-			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label15.ForeColor = System.Drawing.Color.DimGray;
 			this.label15.Location = new System.Drawing.Point(32, 0);
 			this.label15.Name = "label15";
@@ -1046,7 +1046,7 @@ namespace lyra
 			// 
 			// pictureBox5
 			// 
-			this.pictureBox5.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox5.Image")));
+			this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
 			this.pictureBox5.Location = new System.Drawing.Point(2, 3);
 			this.pictureBox5.Name = "pictureBox5";
 			this.pictureBox5.Size = new System.Drawing.Size(24, 24);
@@ -1067,7 +1067,7 @@ namespace lyra
 			// 
 			// pictureBox7
 			// 
-			this.pictureBox7.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox7.Image")));
+			this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
 			this.pictureBox7.Location = new System.Drawing.Point(2, 3);
 			this.pictureBox7.Name = "pictureBox7";
 			this.pictureBox7.Size = new System.Drawing.Size(24, 24);
@@ -1077,7 +1077,7 @@ namespace lyra
 			// 
 			// label17
 			// 
-			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte) (0)));
+			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label17.ForeColor = System.Drawing.Color.DimGray;
 			this.label17.Location = new System.Drawing.Point(32, 0);
 			this.label17.Name = "label17";
@@ -1165,7 +1165,7 @@ namespace lyra
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			this.tabPage4.ResumeLayout(false);
 			this.panel10.ResumeLayout(false);
 			this.panel7.ResumeLayout(false);

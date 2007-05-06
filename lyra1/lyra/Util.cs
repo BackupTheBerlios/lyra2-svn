@@ -14,9 +14,9 @@ namespace lyra
 		public static string CONFIGPATH = Application.StartupPath + "\\lyra.config";
 		// info & build 
 		public const string NAME = "lyra";
-		public const string BUILDNR = "28";
-		public const string VER = "1.8.0"; // with PocketPC
-		public static string BUILD = "{build 20061104." + Util.BUILDNR + "}";
+		public const string BUILDNR = "29";
+		public const string VER = "1.9.0"; // with PocketPC
+		public static string BUILD = "{build 20070506." + Util.BUILDNR + "}";
 		public static string GUINAME = Util.NAME; // + " v" + Util.VER + "   " + Util.BUILD;
 
 		// lyra update
@@ -93,7 +93,9 @@ namespace lyra
 		public static bool SHOWNR = true;
 		public static bool CTRLSHOWNR = false;
 		public static int TIMER = 3000;
-
+		public static int SCREEN_ID = 0;
+		public static bool SHOW_PREVIEW = false;
+		
 		// help methods
 		public const string NL = "\r\n";
 		public const string RTNL = "{\\par}";
@@ -422,7 +424,8 @@ namespace lyra
 				configFile["ac"] = Util.NOCOMMIT ? "yes" : "no";
 				configFile["shnr"] = Util.SHOWNR ? "yes" : "no";
 				configFile["timer"] = Util.TIMER.ToString();
-
+				configFile["screen_id"] = Util.SCREEN_ID.ToString();
+				configFile["show_preview"] = Util.SHOW_PREVIEW ? "yes" : "no";
 
 				configFile["fonts.standard"] = Util.FontToString(Util.FONT);
 				configFile["fonts.special"] = Util.FontToString(Util.SPECFONT);
@@ -468,7 +471,33 @@ namespace lyra
 				Util.SHOWGER = configFile["ger"].Equals("yes");
 				Util.SHOWNR = configFile["shnr"].Equals("yes");
 				Util.TIMER = Int32.Parse(configFile["timer"]);
+				
+				try
+				{
+					Util.SCREEN_ID = Int32.Parse(configFile["screen_id"]);	
+					View.display = Util.GetScreen(Util.SCREEN_ID);
+				}
+				catch(Exception)
+				{
+					Util.SCREEN_ID = 0;
+					View.display = Screen.PrimaryScreen;
+					configFile.addProperty("screen_id", "0");
+					configFile.Save(Util.CONFIGPATH);
+				}
+				
 
+				if(configFile["show_preview"] == "n/a")
+				{
+					Util.SHOW_PREVIEW = false;
+					configFile.addProperty("show_preview", "no");
+					configFile.Save(Util.CONFIGPATH);	
+				}
+				else
+				{
+					Util.SHOW_PREVIEW = configFile["show_preview"] == "yes";
+				}
+				
+				
 				Util.FONT = Util.GetFont(configFile["fonts.standard"]);
 				Util.SPECFONT = Util.GetFont(configFile["fonts.special"]);
 				Util.TRANSFONT = Util.GetFont(configFile["fonts.transfont"]);
@@ -578,7 +607,27 @@ namespace lyra
 				Util.MBoxError("error@Util.loadStats()");
 			}
 		}
-
+		
+		public static Screen GetScreen(int id)
+		{
+			if(id == 0)
+			{
+				return Screen.PrimaryScreen;
+			}
+			else if (id == 1)
+			{
+				Screen secScr = Screen.AllScreens[0];
+				if(secScr == Screen.PrimaryScreen && Screen.AllScreens.Length == 2)
+				{
+					secScr = Screen.AllScreens[1];
+				}
+				return secScr;	
+			}
+			else
+			{
+				return null;
+			}
+		}
 
 		// ### DEBUG ###
 		public static void Debug(string msg)

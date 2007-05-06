@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -45,40 +46,78 @@ namespace lyra
 		private System.Windows.Forms.Panel lyraBtn;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label label9;
-
-		public View(Song song, Translation trans, GUI owner, ListBox navigate)
+		public static Screen display = Screen.PrimaryScreen;
+		private System.Windows.Forms.Panel panel4;
+		public static bool black = false;
+		
+		private static ArrayList songHistory = new ArrayList();
+		private static void addSongToHistory(Song song)
 		{
-			if (View.countViews < Util.MAXOPEN)
+			if(songHistory.Contains(song))
 			{
-				InitializeComponent();
-				this.initTransparentBoxes();
-				this.menuItem1.Visible = false;
-				View.countViews++;
-				this.owner = owner;
-				this.navigate = navigate;
-				this.menuItem6.Checked = Util.SHOWRIGHT;
-				this.richTextBox1.Font = Util.FONT;
-				this.richTextBox2.Font = Util.FONT;
-				if (trans != null)
-				{
-					this.refresh(song, trans);
-				}
-				else
-				{
-					this.refresh(song);
-				}
-				this.richTextBox1.Focus();
+				songHistory.Remove(song);
+			}
+			songHistory.Add(song);
+			if(HistoryChanged != null)
+			{
+				HistoryChanged(null, EventArgs.Empty);
+			}
+		}
+		
+		public static ArrayList SongHistory
+		{
+			get { return View.songHistory; }
+		}
+		
+		public static event EventHandler HistoryChanged;
+		
+		private static View _this = null;
+		public static void ShowSong(Song song, Translation trans, GUI owner, ListBox navigate)
+		{
+			if(_this == null)
+			{
+				_this = new View();
+			}
+			_this.menuItem1.Visible = false;
+			_this.owner = owner;
+			_this.navigate = navigate;
+			_this.menuItem6.Checked = Util.SHOWRIGHT;
+			_this.richTextBox1.Font = Util.FONT;
+			_this.richTextBox2.Font = Util.FONT;
+			if (trans != null)
+			{
+				_this.refresh(song, trans);
 			}
 			else
 			{
-				throw new ToManyViews();
+				_this.refresh(song);
+			}
+			_this.richTextBox1.Focus();
+			_this.pos = navigate.Items.IndexOf(_this.song);
+			_this.Show();
+		}
+		
+		public static void BlackScreen(bool on)
+		{
+			View.black = on;
+			if(_this != null)
+			{
+				_this.panel4.Visible = on;
 			}
 		}
-
-		public View(Song song, GUI owner, ListBox navigate) : this(song, null, owner, navigate)
+		
+		public static void ShowSong(Song song, GUI owner, ListBox navigate)
 		{
-			this.menuItem1.Visible = true;
-			this.pos = navigate.Items.IndexOf(this.song);
+			View.ShowSong(song, null, owner, navigate);
+			_this.menuItem1.Visible = true;
+			
+		}
+		
+		public View()
+		{
+			InitializeComponent();
+			this.initTransparentBoxes();
+			this.Closed += new EventHandler(View_Closed);
 		}
 
 		private ListBox navigate = null;
@@ -120,6 +159,7 @@ namespace lyra
 
 		public void refresh()
 		{
+			addSongToHistory(this.song);
 			if(this.trans == null) this.transCount = 0;
 
 			this.label1.Text = this.song.Number.ToString();
@@ -405,6 +445,7 @@ namespace lyra
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -416,10 +457,10 @@ namespace lyra
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.lyraBtn = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
-			this.panel2.SuspendLayout();
 			this.panel3.SuspendLayout();
+			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// contextMenu1
@@ -513,6 +554,17 @@ namespace lyra
 			this.panel1.Size = new System.Drawing.Size(552, 32);
 			this.panel1.TabIndex = 4;
 			this.panel1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.View_KeyDown);
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.Transparent;
+			this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+			this.panel3.Controls.Add(this.label1);
+			this.panel3.Controls.Add(this.label7);
+			this.panel3.Location = new System.Drawing.Point(0, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(180, 32);
+			this.panel3.TabIndex = 7;
 			// 
 			// label7
 			// 
@@ -637,16 +689,14 @@ namespace lyra
 			this.lyraBtn.TabIndex = 13;
 			this.lyraBtn.Click += new System.EventHandler(this.LyraButton_Click);
 			// 
-			// panel3
+			// panel4
 			// 
-			this.panel3.BackColor = System.Drawing.Color.Transparent;
-			this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-			this.panel3.Controls.Add(this.label1);
-			this.panel3.Controls.Add(this.label7);
-			this.panel3.Location = new System.Drawing.Point(0, 0);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(180, 32);
-			this.panel3.TabIndex = 7;
+			this.panel4.BackColor = System.Drawing.Color.Black;
+			this.panel4.Location = new System.Drawing.Point(48, 272);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(64, 40);
+			this.panel4.TabIndex = 14;
+			this.panel4.Visible = false;
 			// 
 			// View
 			// 
@@ -654,6 +704,7 @@ namespace lyra
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1096, 576);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.lyraBtn);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.panel2);
@@ -669,8 +720,8 @@ namespace lyra
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.View_KeyDown);
 			this.Load += new System.EventHandler(this.View_Load);
 			this.panel1.ResumeLayout(false);
-			this.panel2.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
+			this.panel2.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -680,10 +731,10 @@ namespace lyra
 		private void View_Load(object sender, System.EventArgs e)
 		{
 			// init Screen
-			this.Width = Screen.PrimaryScreen.Bounds.Width;
-			this.Height = Screen.PrimaryScreen.Bounds.Height;
-			this.Top = 0;
-			this.Left = 0;
+			this.Width = View.display.Bounds.Width;
+			this.Height = View.display.Bounds.Height;
+			this.Top = View.display.Bounds.Top;
+			this.Left = View.display.Bounds.Left;
 
 			this.label6.Left = this.Width - this.label6.Width;
 			this.label6.Top = 0;
@@ -719,13 +770,13 @@ namespace lyra
 			this.menuItem6.Checked = true;
 
 			// show nr
-			this.panel2.Width = Screen.PrimaryScreen.Bounds.Width;
-			this.panel2.Height = Screen.PrimaryScreen.Bounds.Height;
+			this.panel2.Width = View.display.Bounds.Width;
+			this.panel2.Height = View.display.Bounds.Height;
 			this.panel2.Top = 0;
 			this.panel2.Left = 0;
 
-			this.label5.Left = Screen.PrimaryScreen.Bounds.Width/2;
-			this.label5.Top = Screen.PrimaryScreen.Bounds.Height/2 - this.label5.Height/2;
+			this.label5.Left = View.display.Bounds.Width/2;
+			this.label5.Top = View.display.Bounds.Height/2 - this.label5.Height/2;
 			this.label9.Top = this.label5.Bottom + 2;
 			this.label9.Left = this.label5.Left;
 			this.pictureBox1.Left = this.Width/2 - this.pictureBox1.Width;
@@ -742,6 +793,9 @@ namespace lyra
 			{
 				this.refresh(song);
 			}
+			
+			this.panel4.Bounds = this.Bounds;
+			this.panel4.Visible = View.black;
 		}
 
 		private bool DISABLEACTIONS = false;
@@ -841,6 +895,10 @@ namespace lyra
 			{
 				this.menuItem2_Click(sender, ke);
 			}
+			else if (ke.KeyCode == Keys.B && ke.Control)
+			{
+				View.BlackScreen(!View.black);
+			}
 			else if (ke.KeyCode == Keys.PageDown)
 			{
 				this.menuItem4_Click(sender, ke);
@@ -934,6 +992,11 @@ namespace lyra
 		private void richTextBox1_GotFocus(object sender, EventArgs e)
 		{
 			this.panel1.Focus();
+		}
+
+		private void View_Closed(object sender, EventArgs e)
+		{
+			_this = null; // delete link to closed View
 		}
 	}
 
