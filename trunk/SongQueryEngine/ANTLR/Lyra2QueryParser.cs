@@ -1,4 +1,4 @@
-// $ANTLR 3.0b7 D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g 2007-04-14 09:59:26
+// $ANTLR 3.0b5 D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g 2007-04-14 17:40:08
 namespace Lyra2.ANTLR
 {
 
@@ -79,7 +79,7 @@ public class Lyra2QueryParser : Parser
 
     
     // $ANTLR start lyraQuery
-    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:20:1: lyraQuery returns [IFilter filter] : (o= orExpr | i= INT );
+    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:20:1: lyraQuery returns [IFilter filter] : ( ( orExpr )=>o= orExpr | i= INT );
     public IFilter lyraQuery() // throws RecognitionException [1]
     {   
 
@@ -96,7 +96,7 @@ public class Lyra2QueryParser : Parser
     	    {
     	    	return filter; 
     	    }
-            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:22:6: (o= orExpr | i= INT )
+            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:22:6: ( ( orExpr )=>o= orExpr | i= INT )
             int alt1 = 2;
             int LA1_0 = input.LA(1);
             if ( (LA1_0 == LPAREN || (LA1_0 >= IDENT && LA1_0 <= LITERAL)) )
@@ -111,14 +111,14 @@ public class Lyra2QueryParser : Parser
             {
                 if ( backtracking > 0 ) {failed = true; return filter;}
                 NoViableAltException nvae_d1s0 =
-                    new NoViableAltException("20:1: lyraQuery returns [IFilter filter] : (o= orExpr | i= INT );", 1, 0, input);
+                    new NoViableAltException("20:1: lyraQuery returns [IFilter filter] : ( ( orExpr )=>o= orExpr | i= INT );", 1, 0, input);
             
                 throw nvae_d1s0;
             }
             switch (alt1) 
             {
                 case 1 :
-                    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:22:6: o= orExpr
+                    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:22:6: ( orExpr )=>o= orExpr
                     {
                     	PushFollow(FOLLOW_orExpr_in_lyraQuery70);
                     	o = orExpr();
@@ -164,7 +164,7 @@ public class Lyra2QueryParser : Parser
 
     
     // $ANTLR start orExpr
-    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:26:1: private orExpr returns [IFilter filter] : a1= andExpr ( ( OR )? a2= andExpr )* ;
+    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:26:1: private orExpr returns [IFilter filter] : a1= andExpr ( ( ( ( OR )=> OR )? andExpr )=> ( ( OR )=> OR )? a2= andExpr )* ;
     public IFilter orExpr() // throws RecognitionException [1]
     {   
 
@@ -181,8 +181,8 @@ public class Lyra2QueryParser : Parser
     	    {
     	    	return filter; 
     	    }
-            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:6: (a1= andExpr ( ( OR )? a2= andExpr )* )
-            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:6: a1= andExpr ( ( OR )? a2= andExpr )*
+            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:6: (a1= andExpr ( ( ( ( OR )=> OR )? andExpr )=> ( ( OR )=> OR )? a2= andExpr )* )
+            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:6: a1= andExpr ( ( ( ( OR )=> OR )? andExpr )=> ( ( OR )=> OR )? a2= andExpr )*
             {
             	PushFollow(FOLLOW_andExpr_in_orExpr106);
             	a1 = andExpr();
@@ -192,7 +192,7 @@ public class Lyra2QueryParser : Parser
             	{
             	   filter =  a1; 
             	}
-            	// D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:43: ( ( OR )? a2= andExpr )*
+            	// D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:43: ( ( ( ( OR )=> OR )? andExpr )=> ( ( OR )=> OR )? a2= andExpr )*
             	do 
             	{
             	    int alt3 = 2;
@@ -206,9 +206,9 @@ public class Lyra2QueryParser : Parser
             	    switch (alt3) 
             		{
             			case 1 :
-            			    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:44: ( OR )? a2= andExpr
+            			    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:44: ( ( ( OR )=> OR )? andExpr )=> ( ( OR )=> OR )? a2= andExpr
             			    {
-            			    	// D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:44: ( OR )?
+            			    	// D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:44: ( ( OR )=> OR )?
             			    	int alt2 = 2;
             			    	int LA2_0 = input.LA(1);
             			    	if ( (LA2_0 == OR) )
@@ -218,7 +218,7 @@ public class Lyra2QueryParser : Parser
             			    	switch (alt2) 
             			    	{
             			    	    case 1 :
-            			    	        // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:45: OR
+            			    	        // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:28:45: ( OR )=> OR
             			    	        {
             			    	        	Match(input,OR,FOLLOW_OR_in_orExpr112); if (failed) return filter;
             			    	        
@@ -269,7 +269,7 @@ public class Lyra2QueryParser : Parser
 
     
     // $ANTLR start andExpr
-    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:30:1: private andExpr returns [IFilter filter] : s1= simpleExpr ( AND s2= simpleExpr )* ;
+    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:30:1: private andExpr returns [IFilter filter] : s1= simpleExpr ( ( AND simpleExpr )=> AND s2= simpleExpr )* ;
     public IFilter andExpr() // throws RecognitionException [1]
     {   
 
@@ -286,8 +286,8 @@ public class Lyra2QueryParser : Parser
     	    {
     	    	return filter; 
     	    }
-            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:32:6: (s1= simpleExpr ( AND s2= simpleExpr )* )
-            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:32:6: s1= simpleExpr ( AND s2= simpleExpr )*
+            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:32:6: (s1= simpleExpr ( ( AND simpleExpr )=> AND s2= simpleExpr )* )
+            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:32:6: s1= simpleExpr ( ( AND simpleExpr )=> AND s2= simpleExpr )*
             {
             	PushFollow(FOLLOW_simpleExpr_in_andExpr143);
             	s1 = simpleExpr();
@@ -297,7 +297,7 @@ public class Lyra2QueryParser : Parser
             	{
             	   filter =  s1; 
             	}
-            	// D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:32:46: ( AND s2= simpleExpr )*
+            	// D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:32:46: ( ( AND simpleExpr )=> AND s2= simpleExpr )*
             	do 
             	{
             	    int alt4 = 2;
@@ -311,7 +311,7 @@ public class Lyra2QueryParser : Parser
             	    switch (alt4) 
             		{
             			case 1 :
-            			    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:32:47: AND s2= simpleExpr
+            			    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:32:47: ( AND simpleExpr )=> AND s2= simpleExpr
             			    {
             			    	Match(input,AND,FOLLOW_AND_in_andExpr148); if (failed) return filter;
             			    	PushFollow(FOLLOW_simpleExpr_in_andExpr152);
@@ -356,7 +356,7 @@ public class Lyra2QueryParser : Parser
 
     
     // $ANTLR start simpleExpr
-    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:34:1: private simpleExpr returns [IFilter filter] : ( ( LPAREN o= orExpr RPAREN ) | id= IDENT | lit= LITERAL );
+    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:34:1: private simpleExpr returns [IFilter filter] : ( ( ( LPAREN orExpr RPAREN ) )=> ( LPAREN o= orExpr RPAREN ) | ( IDENT )=>id= IDENT | lit= LITERAL );
     public IFilter simpleExpr() // throws RecognitionException [1]
     {   
 
@@ -374,7 +374,7 @@ public class Lyra2QueryParser : Parser
     	    {
     	    	return filter; 
     	    }
-            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:37:6: ( ( LPAREN o= orExpr RPAREN ) | id= IDENT | lit= LITERAL )
+            // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:37:6: ( ( ( LPAREN orExpr RPAREN ) )=> ( LPAREN o= orExpr RPAREN ) | ( IDENT )=>id= IDENT | lit= LITERAL )
             int alt5 = 3;
             switch ( input.LA(1) ) 
             {
@@ -390,7 +390,7 @@ public class Lyra2QueryParser : Parser
             	default:
             	    if ( backtracking > 0 ) {failed = true; return filter;}
             	    NoViableAltException nvae_d5s0 =
-            	        new NoViableAltException("34:1: private simpleExpr returns [IFilter filter] : ( ( LPAREN o= orExpr RPAREN ) | id= IDENT | lit= LITERAL );", 5, 0, input);
+            	        new NoViableAltException("34:1: private simpleExpr returns [IFilter filter] : ( ( ( LPAREN orExpr RPAREN ) )=> ( LPAREN o= orExpr RPAREN ) | ( IDENT )=>id= IDENT | lit= LITERAL );", 5, 0, input);
             
             	    throw nvae_d5s0;
             }
@@ -398,7 +398,7 @@ public class Lyra2QueryParser : Parser
             switch (alt5) 
             {
                 case 1 :
-                    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:37:6: ( LPAREN o= orExpr RPAREN )
+                    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:37:6: ( ( LPAREN orExpr RPAREN ) )=> ( LPAREN o= orExpr RPAREN )
                     {
                     	// D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:37:6: ( LPAREN o= orExpr RPAREN )
                     	// D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:37:8: LPAREN o= orExpr RPAREN
@@ -420,7 +420,7 @@ public class Lyra2QueryParser : Parser
                     }
                     break;
                 case 2 :
-                    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:38:6: id= IDENT
+                    // D:\\Documents\\Work\\Andreas\\Lyra2\\SongQueryEngine\\ANTLR\\Lyra2Query.g:38:6: ( IDENT )=>id= IDENT
                     {
                     	id = (IToken)input.LT(1);
                     	Match(input,IDENT,FOLLOW_IDENT_in_simpleExpr202); if (failed) return filter;

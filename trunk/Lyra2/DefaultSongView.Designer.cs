@@ -38,7 +38,6 @@ namespace Lyra2
             this.backBtn = new Lyra2.ImageButton(this.components);
             this.lyraBtn = new Lyra2.ImageButton(this.components);
             this.panelActivatorBtn = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.topPane.SuspendLayout();
             this.btnPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forwardBtn)).BeginInit();
@@ -89,6 +88,7 @@ namespace Lyra2
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(178, 20);
             this.searchBox.TabIndex = 0;
+            this.searchBox.Text = "Liedsuche";
             this.searchBox.TextColor = System.Drawing.Color.Black;
             // 
             // forwardBtn
@@ -143,21 +143,11 @@ namespace Lyra2
             this.panelActivatorBtn.TabStop = false;
             this.panelActivatorBtn.MouseHover += new System.EventHandler(this.panelActivatorBtn_MouseHover);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(280, 171);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
-            // 
             // DefaultSongView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 497);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.topPane);
             this.Controls.Add(this.panelActivatorBtn);
             this.Controls.Add(this.browserDisplay);
@@ -172,7 +162,6 @@ namespace Lyra2
             ((System.ComponentModel.ISupportInitialize)(this.lyraBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelActivatorBtn)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -186,6 +175,5 @@ namespace Lyra2
         private ImageButton forwardBtn;
         private ImageButton backBtn;
         private System.Windows.Forms.PictureBox panelActivatorBtn;
-        private System.Windows.Forms.Label label1;
     }
 }

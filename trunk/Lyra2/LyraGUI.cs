@@ -68,7 +68,7 @@ namespace Lyra2
                     Book book = bookIt;
                     if (this.songCollectionList.SelectedItems.Contains(this.allSongs))
                     {
-                        ErrorHandler.ShowInfo(book.Info.Label);
+                        // ErrorHandler.ShowInfo(book.Info.Label);
                         // show all!
                         foreach (Song song in book)
                         {

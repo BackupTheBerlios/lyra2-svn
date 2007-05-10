@@ -39,7 +39,7 @@ namespace Lyra2
             this.Name = "NiceListControl";
             this.Size = new System.Drawing.Size(433, 421);
             this.ResumeLayout(false);
-            this.DrawMode = DrawMode.OwnerDrawVariable;
+            // base.DrawMode = DrawMode.OwnerDrawVariable;
         }
 
         #endregion
