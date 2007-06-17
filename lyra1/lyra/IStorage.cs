@@ -24,5 +24,7 @@ namespace lyra
 		void Search(string query, ListBox resultBox, bool text, bool matchCase, bool whole, bool trans);
 
 		bool ToBeCommited { get; set; }
+		
+		bool cleanSearchIndex();
 	}
 }

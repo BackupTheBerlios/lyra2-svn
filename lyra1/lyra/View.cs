@@ -25,10 +25,6 @@ namespace lyra
 		private TransparentRichTextBox richTextBox2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-
-		private static int countViews = 0;
-		private Song song;
-		private Translation trans = null;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.MenuItem menuItem5;
 		private System.Windows.Forms.Label label3;
@@ -40,15 +36,19 @@ namespace lyra
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Panel panel2;
-		private GUI owner;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Panel lyraBtn;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label label9;
-		public static Screen display = Screen.PrimaryScreen;
 		private System.Windows.Forms.Panel panel4;
+		
+		public static Screen display = Screen.PrimaryScreen;
+		private GUI owner;
 		public static bool black = false;
+		private static int countViews = 0;
+		private Song song;
+		private Translation trans = null;
 		
 		private static ArrayList songHistory = new ArrayList();
 		private static void addSongToHistory(Song song)
@@ -72,6 +72,7 @@ namespace lyra
 		public static event EventHandler HistoryChanged;
 		
 		private static View _this = null;
+		
 		public static void ShowSong(Song song, Translation trans, GUI owner, ListBox navigate)
 		{
 			if(_this == null)
@@ -102,15 +103,25 @@ namespace lyra
 			View.black = on;
 			if(_this != null)
 			{
+				_this.panel4.Bounds = _this.Bounds; // assert the correct bounds
 				_this.panel4.Visible = on;
 			}
 		}
 		
 		public static void ShowSong(Song song, GUI owner, ListBox navigate)
 		{
+			Preview.ClosePreview();
 			View.ShowSong(song, null, owner, navigate);
 			_this.menuItem1.Visible = true;
 			
+		}
+		
+		public static void CloseView()
+		{
+			if(_this != null)
+			{
+				_this.Close();
+			}
 		}
 		
 		public View()

@@ -31,7 +31,8 @@ namespace lyra
 			this.PStorage = new PhysicalXML(Util.BASEURL + "\\" + url);
 			this.SongList = this.PStorage.getSongs();
 			this.owner = owner;
-			this.search = new Search();
+			// this.search = new Search();
+			this.search = new IndexSearch(this.SongList.Values); // lucene searcher!
 			Util.NRSONGS = this.SongList.Count;
 		}
 
@@ -43,6 +44,7 @@ namespace lyra
 				{
 					this.toBeCommited = false;
 					Util.NRSONGS = this.SongList.Count;
+					this.search = new IndexSearch(this.SongList.Values, true); // lucene searcher! (re-index!)
 					return true;
 				}
 				else
@@ -57,6 +59,25 @@ namespace lyra
 					"oder wenden Sie sich an den Administrator.");
 				return false;
 			}
+		}
+		
+		public bool cleanSearchIndex()
+		{
+			Cursor.Current = Cursors.WaitCursor;
+			this.owner.Enabled = false;
+			try
+			{
+				this.search = new IndexSearch(this.SongList.Values, true); // lucene searcher! (re-index!)	
+			}
+			catch(Exception)
+			{
+				this.owner.Enabled = true;
+				Cursor.Current = Cursors.Default;
+				return false;
+			}
+			this.owner.Enabled = true;
+			Cursor.Current = Cursors.Default;
+			return true;
 		}
 
 		// get Song by ID
@@ -144,18 +165,17 @@ namespace lyra
 
 		public void displaySongs(ListBox box)
 		{
+			box.BeginUpdate();
 			box.Items.Clear();
-			IEnumerator SLEnum = this.SongList.Values.GetEnumerator();
-			SLEnum.Reset();
-			Util.NRSONGS = 0;
-			while (SLEnum.MoveNext())
+			foreach(Song song in this.SongList.Values)
 			{
-				if (!((Song) SLEnum.Current).Deleted)
+				if(!song.Deleted)
 				{
-					Util.NRSONGS++;
-					box.Items.Add((Song) SLEnum.Current);
+					box.Items.Add(song);
 				}
 			}
+			Util.NRSONGS = box.Items.Count;
+			box.EndUpdate();
 		}
 
 		public void Clear()

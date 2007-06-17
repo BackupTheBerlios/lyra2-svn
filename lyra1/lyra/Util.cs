@@ -2,6 +2,8 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace lyra
@@ -14,9 +16,9 @@ namespace lyra
 		public static string CONFIGPATH = Application.StartupPath + "\\lyra.config";
 		// info & build 
 		public const string NAME = "lyra";
-		public const string BUILDNR = "29";
-		public const string VER = "1.9.0"; // with PocketPC
-		public static string BUILD = "{build 20070506." + Util.BUILDNR + "}";
+		public const string BUILDNR = "33";
+		public const string VER = "1.9.8"; // with PocketPC
+		public static string BUILD = "{build 20070514." + Util.BUILDNR + "}";
 		public static string GUINAME = Util.NAME; // + " v" + Util.VER + "   " + Util.BUILD;
 
 		// lyra update
@@ -31,7 +33,7 @@ namespace lyra
 		public static string NEWSURL = "doc\\buildnews.txt";
 		public static string INFORTF = "doc\\info.rtf";
 		public static string LISTURL = "data\\lists.xml";
-		public static string BASEURL = Path.GetFullPath(".");
+		public static string BASEURL = Application.StartupPath;
 
 		// format
 		public const string REF = "refrain";
@@ -117,6 +119,34 @@ namespace lyra
 			Util.Debug(umsg, ex);
 			MessageBox.Show(msg, "lyra error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
+		
+		public static string MD5FileHash(FileInfo file)
+		{
+			if(!file.Exists) return "";
+			FileStream stream = null;
+			try
+			{
+				stream = new FileStream(file.FullName, FileMode.Open);
+				MD5 md5 = MD5.Create();
+			
+				byte[] hash = md5.ComputeHash(stream);
+				StringBuilder sBuilder = new StringBuilder();
+
+				// Loop through each byte of the hashed data 
+				// and format each one as a hexadecimal string.
+				for (int i = 0; i < hash.Length; i++)
+				{
+					sBuilder.Append(hash[i].ToString("x2"));
+				}
+				stream.Close();
+				return sBuilder.ToString().ToUpper();
+			}
+			catch(Exception)
+			{
+				if(stream != null) stream.Close();
+				return "";
+			}
+		}
 
 		public static string GetDate()
 		{
@@ -130,6 +160,8 @@ namespace lyra
 
 		public static string toFour(int nr)
 		{
+			if(nr == 0) return "0000";
+			
 			string zeros = "";
 			string nrstr = nr.ToString();
 			while ((nr *= 10) < 10000)

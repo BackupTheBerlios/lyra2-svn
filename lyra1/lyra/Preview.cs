@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using System.Threading;
-using System.Windows.Forms;
 
 namespace lyra
 {
@@ -13,6 +12,9 @@ namespace lyra
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
+		
+		private DelayedTask closingTask;
+		
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -21,6 +23,8 @@ namespace lyra
 		private GUI owner;
 		
 		private static Preview _this = null;
+		private System.Windows.Forms.Button closeBtn;
+		private bool autoClose = true;
 		
 		public static void ShowPreview(GUI owner, Song song, Point location)
 		{
@@ -36,10 +40,22 @@ namespace lyra
 				}
 				_this = null;
 			}
-			
+		
 			_this = new Preview(owner, song, location);
 			_this.Show();
 			_this.Focus();
+		}
+		
+		public static void ClosePreview()
+		{
+			try
+			{
+				_this.Close();
+			}
+			catch(Exception)
+			{
+				// do nothing!
+			}
 		}
 
 		private Preview(GUI owner, Song song, Point location)
@@ -56,6 +72,8 @@ namespace lyra
 			this.label3.Text = this.getText(song.Text);
 			this.LostFocus += new EventHandler(Preview_LostFocus);
 			this.Closing += new System.ComponentModel.CancelEventHandler(Preview_Closing);
+			this.GotFocus += new EventHandler(Preview_GotFocus);
+			this.closeBtn.GotFocus += new EventHandler(closeBtn_GotFocus);
 		}
 		
 		private string getText(string text)
@@ -120,6 +138,7 @@ namespace lyra
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
+			this.closeBtn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -154,12 +173,24 @@ namespace lyra
 			this.label3.Text = "label3";
 			this.label3.Click += new System.EventHandler(this.Preview_Click);
 			// 
+			// closeBtn
+			// 
+			this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.closeBtn.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.closeBtn.Location = new System.Drawing.Point(396, 4);
+			this.closeBtn.Name = "closeBtn";
+			this.closeBtn.Size = new System.Drawing.Size(19, 19);
+			this.closeBtn.TabIndex = 2;
+			this.closeBtn.Text = "x";
+			this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+			// 
 			// Preview
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.BackColor = System.Drawing.SystemColors.Info;
 			this.ClientSize = new System.Drawing.Size(422, 246);
 			this.ControlBox = false;
+			this.Controls.Add(this.closeBtn);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label2);
@@ -176,19 +207,57 @@ namespace lyra
 		}
 		#endregion
 
+		
 		private void Preview_LostFocus(object sender, EventArgs e)
 		{
-			this.Close();
+			if(this.closingTask != null)
+			{
+				this.closingTask.Abort();
+			}
+			this.closingTask = new DelayedTask(new ThreadStart(this.Close), 3000);
+			this.closingTask.Start();
 		}
-
+		
 		private void Preview_Click(object sender, System.EventArgs e)
-		{
-			this.Close();
+		{	
+			//this.Close();
+			if(this.closingTask != null)
+			{
+				this.closingTask.Abort();
+			}
+			this.BackColor = Color.FromArgb(0xee, 0xee, 0xee);
+			this.autoClose = false;
 		}
 
 		private void Preview_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{
+			if(this.closingTask != null)
+			{
+				this.closingTask.Abort();
+			}
 			Preview._this = null;
+		}
+
+		private void Preview_GotFocus(object sender, EventArgs e)
+		{
+			if(this.closingTask != null && !this.autoClose)
+			{
+				this.closingTask.Abort();
+			}
+		}
+
+		private void closeBtn_Click(object sender, System.EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void closeBtn_GotFocus(object sender, EventArgs e)
+		{
+			if(this.closingTask != null && !this.autoClose)
+			{
+				this.closingTask.Abort();
+			}
+			this.Focus();
 		}
 	}
 }

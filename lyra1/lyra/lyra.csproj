@@ -89,6 +89,11 @@
                     AssemblyName = "System.Xml"
                     HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.XML.dll"
                 />
+                <Reference
+                    Name = "Lucene.Net"
+                    AssemblyName = "Lucene.Net"
+                    HintPath = "..\lib\Lucene.Net.dll"
+                />
             </References>
         </Build>
         <Files>
@@ -123,6 +128,11 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "DelayedTask.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "Editor.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
@@ -131,6 +141,21 @@
                     RelPath = "Editor.resx"
                     DependentUpon = "Editor.cs"
                     BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ExtendedListBoxControl.cs"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ExtendedListBoxControl.resx"
+                    DependentUpon = "ExtendedListBoxControl.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ExtendedListBoxItem.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
                 />
                 <File
                     RelPath = "FileLauncher.cs"
@@ -196,6 +221,11 @@
                     RelPath = "HTML.resx"
                     DependentUpon = "HTML.cs"
                     BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "IndexSearch.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
                 />
                 <File
                     RelPath = "Info.cs"
@@ -318,8 +348,28 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "SearchTextBox.cs"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SearchTextBox.resx"
+                    DependentUpon = "SearchTextBox.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "Song.cs"
                     SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SongList.cs"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SongListBox.cs"
+                    SubType = "Component"
                     BuildAction = "Compile"
                 />
                 <File
@@ -345,6 +395,16 @@
                 <File
                     RelPath = "TEditor.resx"
                     DependentUpon = "TEditor.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "TestForm.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "TestForm.resx"
+                    DependentUpon = "TestForm.cs"
                     BuildAction = "EmbeddedResource"
                 />
                 <File

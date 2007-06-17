@@ -137,6 +137,7 @@ namespace lyra
 		// pass Focus to owner!
 		private void PrBackground_GotFocus(object sender, EventArgs e)
 		{
+			History.ForceFocus();
 			this.owner.Focus();
 		}
 	}

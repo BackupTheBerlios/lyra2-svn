@@ -25,7 +25,7 @@ namespace lyra
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.ListBox listBox1;
+		private SongListBox listBox1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.StatusBar statusBar1;
 		private System.Windows.Forms.StatusBarPanel statusBarPanel1;
@@ -36,26 +36,21 @@ namespace lyra
 		private System.Windows.Forms.MenuItem menuItem7;
 		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.ContextMenu contextMenu2;
-		private System.Windows.Forms.ListBox listBox2;
+		private SongListBox listBox2;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
+		private SearchTextBox textBox1;
 		private System.Windows.Forms.Button button7;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.ListBox listBox3;
-		private System.Windows.Forms.Button button8;
+		private SearchTextBox textBox2;
+		private SongListBox listBox3;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Button button9;
-		private System.Windows.Forms.Button button10;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.CheckBox checkBox2;
+		private SearchTextBox textBox3;
 		private System.Windows.Forms.CheckBox checkBox3;
 		private System.Windows.Forms.PictureBox pictureBox3;
-		private System.Windows.Forms.CheckBox checkBox4;
 		private System.Windows.Forms.Button button12;
 		private System.Windows.Forms.Button button13;
 		private System.Windows.Forms.MainMenu mainMenu1;
@@ -95,16 +90,6 @@ namespace lyra
 		private System.Windows.Forms.MenuItem menuItem37;
 		private System.Windows.Forms.MenuItem menuItem25;
 		private System.Windows.Forms.MenuItem menuItem39;
-
-		#endregion
-
-		/// <summary>
-		/// my variables
-		/// </summary>
-		private Start start = null;
-
-		private IStorage storage = null;
-		public int curItem = -1;
 		private System.Windows.Forms.MenuItem menuItem38;
 		private System.Windows.Forms.MenuItem menuItem40;
 		private System.Windows.Forms.MenuItem menuItem41;
@@ -128,7 +113,25 @@ namespace lyra
 		private System.Windows.Forms.MenuItem menuItem59;
 		private System.Windows.Forms.MenuItem menuItem60;
 		private System.Windows.Forms.MenuItem menuItem61;
+		private System.Windows.Forms.PictureBox pictureBox4;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.LinkLabel linkLabel1;
+
+		#endregion
+
+		/// <summary>
+		/// my variables
+		/// </summary>
+		private Start start = null;
+		private IStorage storage = null;
+		public int curItem = -1;
 		private PLists persLists;
+		private System.Windows.Forms.MenuItem menuItem62;
+		private System.Windows.Forms.MenuItem menuItem63;
+		private System.Windows.Forms.MenuItem menuItem64;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Button button8;
+		private DelayedTask searchTask;
 
 		public ListBox StandardNavigate
 		{
@@ -175,12 +178,26 @@ namespace lyra
 			
 		}
 
+		
 		private void GUI_Load(object sender, System.EventArgs e)
 		{
 			this.menuItem41.Enabled = File.Exists(Util.BASEURL + "\\" + Util.URL + ".bac");
 			this.menuItem60.Checked = Util.SHOW_PREVIEW;
 			this.listBox1.MouseDown += new MouseEventHandler(this.listBox1_click);
 			this.listBox3.MouseDown += new MouseEventHandler(this.listBox3_click);
+			this.GotFocus += new EventHandler(GUI_GotFocus);
+			this.listBox1.Scrolled += new ScrollEventHandler(listBox_Scrolled);
+			this.listBox2.Scrolled += new ScrollEventHandler(listBox_Scrolled);
+			this.listBox3.Scrolled += new ScrollEventHandler(listBox_Scrolled);
+			
+			foreach(MenuItem item in mainMenu1.MenuItems)
+			{
+				item.Popup += new EventHandler(item_Popup);
+			}
+			
+			this.contextMenu1.Popup += new EventHandler(contextMenu_Popup);
+			this.contextMenu2.Popup += new EventHandler(contextMenu_Popup);
+			this.Move += new EventHandler(GUI_Move);
 		}
 
 		private void init()
@@ -234,34 +251,33 @@ namespace lyra
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(GUI));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.checkBox4 = new System.Windows.Forms.CheckBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.button8 = new System.Windows.Forms.Button();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.textBox2 = new lyra.SearchTextBox();
 			this.button7 = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.textBox1 = new lyra.SearchTextBox();
+			this.listBox3 = new lyra.SongListBox();
+			this.checkBox3 = new System.Windows.Forms.CheckBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.listBox3 = new System.Windows.Forms.ListBox();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.button9 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
-			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.listBox1 = new lyra.SongListBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.label3 = new System.Windows.Forms.Label();
-			this.button10 = new System.Windows.Forms.Button();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.textBox3 = new lyra.SearchTextBox();
 			this.button13 = new System.Windows.Forms.Button();
 			this.button12 = new System.Windows.Forms.Button();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.button6 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
-			this.listBox2 = new System.Windows.Forms.ListBox();
+			this.listBox2 = new lyra.SongListBox();
 			this.button5 = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.mainMenu1 = new System.Windows.Forms.MainMenu();
@@ -284,6 +300,8 @@ namespace lyra
 			this.menuItem52 = new System.Windows.Forms.MenuItem();
 			this.menuItem53 = new System.Windows.Forms.MenuItem();
 			this.menuItem40 = new System.Windows.Forms.MenuItem();
+			this.menuItem63 = new System.Windows.Forms.MenuItem();
+			this.menuItem64 = new System.Windows.Forms.MenuItem();
 			this.menuItem38 = new System.Windows.Forms.MenuItem();
 			this.menuItem41 = new System.Windows.Forms.MenuItem();
 			this.menuItem45 = new System.Windows.Forms.MenuItem();
@@ -306,6 +324,7 @@ namespace lyra
 			this.menuItem55 = new System.Windows.Forms.MenuItem();
 			this.menuItem56 = new System.Windows.Forms.MenuItem();
 			this.menuItem61 = new System.Windows.Forms.MenuItem();
+			this.menuItem62 = new System.Windows.Forms.MenuItem();
 			this.menuItem10 = new System.Windows.Forms.MenuItem();
 			this.menuItem26 = new System.Windows.Forms.MenuItem();
 			this.menuItem23 = new System.Windows.Forms.MenuItem();
@@ -331,6 +350,7 @@ namespace lyra
 			this.menuItem25 = new System.Windows.Forms.MenuItem();
 			this.contextMenu2 = new System.Windows.Forms.ContextMenu();
 			this.menuItem9 = new System.Windows.Forms.MenuItem();
+			this.button8 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -354,99 +374,75 @@ namespace lyra
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.checkBox4);
-			this.tabPage2.Controls.Add(this.pictureBox3);
-			this.tabPage2.Controls.Add(this.checkBox3);
-			this.tabPage2.Controls.Add(this.checkBox2);
-			this.tabPage2.Controls.Add(this.checkBox1);
 			this.tabPage2.Controls.Add(this.button8);
+			this.tabPage2.Controls.Add(this.label4);
+			this.tabPage2.Controls.Add(this.pictureBox4);
+			this.tabPage2.Controls.Add(this.pictureBox3);
 			this.tabPage2.Controls.Add(this.textBox2);
 			this.tabPage2.Controls.Add(this.button7);
 			this.tabPage2.Controls.Add(this.textBox1);
-			this.tabPage2.Controls.Add(this.label2);
-			this.tabPage2.Controls.Add(this.pictureBox2);
 			this.tabPage2.Controls.Add(this.listBox3);
+			this.tabPage2.Controls.Add(this.checkBox3);
+			this.tabPage2.Controls.Add(this.checkBox1);
+			this.tabPage2.Controls.Add(this.label1);
+			this.tabPage2.Controls.Add(this.pictureBox2);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Size = new System.Drawing.Size(591, 246);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Suche";
 			// 
-			// checkBox4
+			// label4
 			// 
-			this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.checkBox4.Location = new System.Drawing.Point(240, 74);
-			this.checkBox4.Name = "checkBox4";
-			this.checkBox4.Size = new System.Drawing.Size(104, 18);
-			this.checkBox4.TabIndex = 12;
-			this.checkBox4.Text = "Übersetzungen";
+			this.label4.ForeColor = System.Drawing.Color.SaddleBrown;
+			this.label4.Location = new System.Drawing.Point(7, 232);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(472, 16);
+			this.label4.TabIndex = 14;
+			this.label4.Text = "Suchergebnisse könnten fehlerhaft sein. Bitte Änderungen übernehmen!";
+			this.label4.Visible = false;
+			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+			this.pictureBox4.Location = new System.Drawing.Point(403, 8);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(22, 22);
+			this.pictureBox4.TabIndex = 12;
+			this.pictureBox4.TabStop = false;
+			this.pictureBox4.Click += new System.EventHandler(this.button8_Click);
 			// 
 			// pictureBox3
 			// 
 			this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(486, 142);
+			this.pictureBox3.Location = new System.Drawing.Point(486, 138);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(96, 96);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox3.TabIndex = 11;
 			this.pictureBox3.TabStop = false;
 			// 
-			// checkBox3
-			// 
-			this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.checkBox3.Location = new System.Drawing.Point(152, 74);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(88, 18);
-			this.checkBox3.TabIndex = 10;
-			this.checkBox3.Text = "ganzes Wort";
-			// 
-			// checkBox2
-			// 
-			this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.checkBox2.Location = new System.Drawing.Point(72, 74);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(80, 18);
-			this.checkBox2.TabIndex = 9;
-			this.checkBox2.Text = "gross/klein";
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.checkBox1.Location = new System.Drawing.Point(8, 74);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(64, 18);
-			this.checkBox1.TabIndex = 7;
-			this.checkBox1.Text = "nur Titel";
-			// 
-			// button8
-			// 
-			this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button8.Location = new System.Drawing.Point(344, 73);
-			this.button8.Name = "button8";
-			this.button8.Size = new System.Drawing.Size(56, 20);
-			this.button8.TabIndex = 6;
-			this.button8.Text = "Suche!";
-			this.button8.Click += new System.EventHandler(this.button8_Click);
-			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(8, 37);
+			this.textBox2.AutoSize = false;
+			this.textBox2.BackColor = System.Drawing.Color.LightYellow;
+			this.textBox2.DefaultText = "Suchbegriffe";
+			this.textBox2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.textBox2.ForeColor = System.Drawing.Color.DimGray;
+			this.textBox2.Location = new System.Drawing.Point(8, 8);
 			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(392, 21);
+			this.textBox2.Size = new System.Drawing.Size(392, 22);
 			this.textBox2.TabIndex = 4;
-			this.textBox2.Text = "Suchbegriffe...";
+			this.textBox2.Text = "Suchbegriffe";
 			this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
-			this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+			this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
 			// 
 			// button7
 			// 
 			this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button7.Location = new System.Drawing.Point(520, 40);
+			this.button7.Location = new System.Drawing.Point(519, 42);
 			this.button7.Name = "button7";
 			this.button7.Size = new System.Drawing.Size(64, 21);
 			this.button7.TabIndex = 3;
@@ -455,43 +451,67 @@ namespace lyra
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(504, 16);
+			this.textBox1.DefaultText = "Nummer";
+			this.textBox1.ForeColor = System.Drawing.Color.DimGray;
+			this.textBox1.Location = new System.Drawing.Point(504, 18);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(80, 21);
+			this.textBox1.Size = new System.Drawing.Size(64, 21);
 			this.textBox1.TabIndex = 2;
-			this.textBox1.Text = "Liednummer";
+			this.textBox1.Text = "Nummer";
 			this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
 			this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
 			// 
-			// label2
+			// listBox3
 			// 
-			this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.SlateGray;
-			this.label2.Location = new System.Drawing.Point(8, 9);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(280, 37);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Volltextsuche";
+			this.listBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.listBox3.ItemHeight = 15;
+			this.listBox3.Location = new System.Drawing.Point(8, 50);
+			this.listBox3.Name = "listBox3";
+			this.listBox3.Size = new System.Drawing.Size(464, 184);
+			this.listBox3.TabIndex = 5;
+			this.listBox3.DoubleClick += new System.EventHandler(this.listBox3_dblClick);
+			this.listBox3.SelectedValueChanged += new System.EventHandler(this.listBox3_SelectedValueChanged);
+			// 
+			// checkBox3
+			// 
+			this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.checkBox3.Location = new System.Drawing.Point(72, 32);
+			this.checkBox3.Name = "checkBox3";
+			this.checkBox3.Size = new System.Drawing.Size(88, 18);
+			this.checkBox3.TabIndex = 10;
+			this.checkBox3.Text = "Ganze Wörter";
+			this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.checkBox1.Location = new System.Drawing.Point(8, 32);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(64, 18);
+			this.checkBox1.TabIndex = 7;
+			this.checkBox1.Text = "Nur Titel";
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+			// 
+			// label1
+			// 
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.ForeColor = System.Drawing.Color.DimGray;
+			this.label1.Location = new System.Drawing.Point(360, 32);
+			this.label1.Name = "label1";
+			this.label1.TabIndex = 13;
+			this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(440, 0);
+			this.pictureBox2.Location = new System.Drawing.Point(464, 8);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(144, 96);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 8;
 			this.pictureBox2.TabStop = false;
-			// 
-			// listBox3
-			// 
-			this.listBox3.Location = new System.Drawing.Point(8, 102);
-			this.listBox3.Name = "listBox3";
-			this.listBox3.Size = new System.Drawing.Size(464, 134);
-			this.listBox3.Sorted = true;
-			this.listBox3.TabIndex = 5;
-			this.listBox3.DoubleClick += new System.EventHandler(this.listBox3_dblClick);
-			this.listBox3.SelectedValueChanged += new System.EventHandler(this.listBox3_SelectedValueChanged);
 			// 
 			// tabPage1
 			// 
@@ -531,10 +551,12 @@ namespace lyra
 			// 
 			// listBox1
 			// 
+			this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.listBox1.ItemHeight = 15;
 			this.listBox1.Location = new System.Drawing.Point(8, 9);
 			this.listBox1.Name = "listBox1";
 			this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.listBox1.Size = new System.Drawing.Size(472, 225);
+			this.listBox1.Size = new System.Drawing.Size(472, 214);
 			this.listBox1.Sorted = true;
 			this.listBox1.TabIndex = 0;
 			this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_dblClick);
@@ -562,8 +584,8 @@ namespace lyra
 			// 
 			// tabPage3
 			// 
+			this.tabPage3.Controls.Add(this.linkLabel1);
 			this.tabPage3.Controls.Add(this.label3);
-			this.tabPage3.Controls.Add(this.button10);
 			this.tabPage3.Controls.Add(this.textBox3);
 			this.tabPage3.Controls.Add(this.button13);
 			this.tabPage3.Controls.Add(this.button12);
@@ -579,6 +601,22 @@ namespace lyra
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Persönliche Liste";
 			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Orange;
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+			this.linkLabel1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((System.Byte)(64)), ((System.Byte)(64)), ((System.Byte)(64)));
+			this.linkLabel1.Location = new System.Drawing.Point(489, 130);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(22, 21);
+			this.linkLabel1.TabIndex = 13;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "<<";
+			this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((System.Byte)(64)), ((System.Byte)(64)), ((System.Byte)(64)));
+			this.linkLabel1.Click += new System.EventHandler(this.button10_Click);
+			// 
 			// label3
 			// 
 			this.label3.BackColor = System.Drawing.Color.Transparent;
@@ -589,24 +627,15 @@ namespace lyra
 			this.label3.TabIndex = 12;
 			this.label3.Text = "Lied hinzufügen";
 			// 
-			// button10
-			// 
-			this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.button10.Location = new System.Drawing.Point(488, 129);
-			this.button10.Name = "button10";
-			this.button10.Size = new System.Drawing.Size(32, 23);
-			this.button10.TabIndex = 10;
-			this.button10.Text = "<<";
-			this.button10.Click += new System.EventHandler(this.button10_Click);
-			// 
 			// textBox3
 			// 
-			this.textBox3.Location = new System.Drawing.Point(528, 131);
+			this.textBox3.DefaultText = "Nummer";
+			this.textBox3.ForeColor = System.Drawing.Color.DimGray;
+			this.textBox3.Location = new System.Drawing.Point(512, 130);
 			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(56, 21);
+			this.textBox3.Size = new System.Drawing.Size(72, 21);
 			this.textBox3.TabIndex = 9;
-			this.textBox3.Text = "Liednr";
+			this.textBox3.Text = "Nummer";
 			this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
 			this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
 			// 
@@ -663,6 +692,8 @@ namespace lyra
 			// 
 			// listBox2
 			// 
+			this.listBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.listBox2.ItemHeight = 15;
 			this.listBox2.Location = new System.Drawing.Point(32, 37);
 			this.listBox2.Name = "listBox2";
 			this.listBox2.Size = new System.Drawing.Size(448, 199);
@@ -683,7 +714,7 @@ namespace lyra
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(488, 136);
+			this.pictureBox1.Location = new System.Drawing.Point(488, 145);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(144, 92);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -835,6 +866,8 @@ namespace lyra
 			// 
 			this.menuItem40.Index = 5;
 			this.menuItem40.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+																					   this.menuItem63,
+																					   this.menuItem64,
 																					   this.menuItem38,
 																					   this.menuItem41,
 																					   this.menuItem45,
@@ -847,27 +880,38 @@ namespace lyra
 																					   this.menuItem48});
 			this.menuItem40.Text = "E&xpertentools";
 			// 
+			// menuItem63
+			// 
+			this.menuItem63.Index = 0;
+			this.menuItem63.Text = "Suchindex ern&euern";
+			this.menuItem63.Click += new System.EventHandler(this.menuItem63_Click);
+			// 
+			// menuItem64
+			// 
+			this.menuItem64.Index = 1;
+			this.menuItem64.Text = "-";
+			// 
 			// menuItem38
 			// 
-			this.menuItem38.Index = 0;
+			this.menuItem38.Index = 2;
 			this.menuItem38.Text = "&Update lyra Songtexte...";
 			this.menuItem38.Click += new System.EventHandler(this.menuItem38_Click);
 			// 
 			// menuItem41
 			// 
-			this.menuItem41.Index = 1;
+			this.menuItem41.Index = 3;
 			this.menuItem41.Text = "Letztes Update &rückgängig machen";
 			this.menuItem41.Click += new System.EventHandler(this.menuItem41_Click);
 			// 
 			// menuItem45
 			// 
-			this.menuItem45.Index = 2;
+			this.menuItem45.Index = 4;
 			this.menuItem45.Text = "-";
 			// 
 			// menuItem44
 			// 
 			this.menuItem44.Enabled = false;
-			this.menuItem44.Index = 3;
+			this.menuItem44.Index = 5;
 			this.menuItem44.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
 																					   this.menuItem49,
 																					   this.menuItem50});
@@ -887,34 +931,34 @@ namespace lyra
 			// 
 			// menuItem43
 			// 
-			this.menuItem43.Index = 4;
+			this.menuItem43.Index = 6;
 			this.menuItem43.Text = "-";
 			// 
 			// menuItem34
 			// 
-			this.menuItem34.Index = 5;
+			this.menuItem34.Index = 7;
 			this.menuItem34.Text = "Liste für &Pocket PC...";
 			this.menuItem34.Click += new System.EventHandler(this.menuItem34_Click);
 			// 
 			// menuItem46
 			// 
-			this.menuItem46.Index = 6;
+			this.menuItem46.Index = 8;
 			this.menuItem46.Text = "-";
 			// 
 			// menuItem42
 			// 
 			this.menuItem42.Enabled = false;
-			this.menuItem42.Index = 7;
+			this.menuItem42.Index = 9;
 			this.menuItem42.Text = "&Vorbereiten für Lyra 2.0";
 			// 
 			// menuItem47
 			// 
-			this.menuItem47.Index = 8;
+			this.menuItem47.Index = 10;
 			this.menuItem47.Text = "-";
 			// 
 			// menuItem48
 			// 
-			this.menuItem48.Index = 9;
+			this.menuItem48.Index = 11;
 			this.menuItem48.Text = "Lyra neu starten! (ohne Übernehmen)";
 			this.menuItem48.Click += new System.EventHandler(this.menuItem48_Click);
 			// 
@@ -937,7 +981,8 @@ namespace lyra
 																					   this.menuItem60,
 																					   this.menuItem58,
 																					   this.menuItem54,
-																					   this.menuItem61});
+																					   this.menuItem61,
+																					   this.menuItem62});
 			this.menuItem57.Text = "&Anzeige";
 			this.menuItem57.Popup += new System.EventHandler(this.menuItem57_Popup);
 			// 
@@ -983,8 +1028,15 @@ namespace lyra
 			// 
 			this.menuItem61.Index = 4;
 			this.menuItem61.Shortcut = System.Windows.Forms.Shortcut.CtrlB;
-			this.menuItem61.Text = "Anzeige aus";
+			this.menuItem61.Text = "Anzeige aus&blenden";
 			this.menuItem61.Click += new System.EventHandler(this.menuItem61_Click);
+			// 
+			// menuItem62
+			// 
+			this.menuItem62.Index = 5;
+			this.menuItem62.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftB;
+			this.menuItem62.Text = "Anzeige &schliessen";
+			this.menuItem62.Click += new System.EventHandler(this.menuItem62_Click);
 			// 
 			// menuItem10
 			// 
@@ -1157,6 +1209,15 @@ namespace lyra
 			this.menuItem9.Text = "zu aktueller &Liste hinzufügen";
 			this.menuItem9.Click += new System.EventHandler(this.menuItem9_Click);
 			// 
+			// button8
+			// 
+			this.button8.Location = new System.Drawing.Point(512, 104);
+			this.button8.Name = "button8";
+			this.button8.Size = new System.Drawing.Size(64, 24);
+			this.button8.TabIndex = 15;
+			this.button8.Text = "button8";
+			this.button8.Click += new System.EventHandler(this.button8_Click_1);
+			// 
 			// GUI
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
@@ -1269,6 +1330,7 @@ namespace lyra
 		// neu...
 		private void button1_Click(object sender, System.EventArgs e)
 		{
+			Preview.ClosePreview();
 			if (!Editor.open)
 				(new Editor(null, this)).Show();
 			else
@@ -1437,9 +1499,12 @@ namespace lyra
 		{
 			if (!Util.NOCOMMIT)
 			{
+				Cursor.Current = Cursors.WaitCursor;
+				this.Enabled = false;
 				if (this.storage.Commit())
 				{
 					this.ToUpdate(false);
+					this.ResetSearch();
 					this.Status = "Änderungen erfolgreich übernommen...";
 					Util.DELALL = false;
 				}
@@ -1448,6 +1513,8 @@ namespace lyra
 					Util.MBoxError("Fehler beim Übernehmen!");
 					this.Status = "Fehler beim Übernehmen!";
 				}
+				this.Enabled = true;
+				Cursor.Current = Cursors.Default;
 			}
 			else
 			{
@@ -1458,10 +1525,20 @@ namespace lyra
 			}
 		}
 
+		private void ResetSearch()
+		{
+			this.listBox3.Items.Clear();
+			this.label1.Text = "";
+			this.textBox2.Text = "Suchbegriffe";
+			this.textBox2.ForeColor = Color.DimGray;
+			this.label4.Visible = false;
+		}
+		
 		// Änderungen verwerfen -> ok
 		private void menuItem15_Click(object sender, System.EventArgs e)
 		{
 			this.storage.ResetToLast();
+			this.ResetSearch();
 			Util.DELALL = false;
 			this.Status = "Änderungen verworfen!";
 		}
@@ -1736,23 +1813,45 @@ namespace lyra
 		// Search
 		private void button8_Click(object sender, System.EventArgs e)
 		{
-			this.listBox3.Items.Clear();
-			try
+			this.executeSearch();	
+		}
+		
+		private void executeSearch()
+		{
+			if(this.textBox2.Text != "" && this.textBox2.Text != "Suchbegriffe")
 			{
-				this.storage.Search(this.textBox2.Text, this.listBox3, !this.checkBox1.Checked,
-				                    this.checkBox2.Checked, this.checkBox3.Checked, this.checkBox4.Checked);
+				try
+				{
+					this.storage.Search(this.textBox2.Text, this.listBox3, !this.checkBox1.Checked,
+					                    false, this.checkBox3.Checked, false);		
+					this.label4.Visible = this.storage.ToBeCommited;
+				}
+				catch (Exception ex)
+				{
+					Util.MBoxError("Ihre Suchanfrage hat einen Fehler verursacht.\nIn der Hilfe (F1) finden Sie eine Anleitung.", ex);
+				}
 			}
-			catch (Exception ex)
+			int res = this.listBox3.Items.Count;
+			switch(res)
 			{
-				Util.MBoxError("Ihre Suchanfrage hat einen Fehler verursacht.\nIn der Hilfe (F1) finden Sie eine Anleitung.", ex);
+				case 0:
+					this.label1.Text = "Keine Resultate!";
+					break;
+				case 1:
+					this.label1.Text = "Ein Resultat";
+					break;
+				default:
+					this.label1.Text = res + " Resultate";
+					break;
 			}
+			Preview.ClosePreview();
 		}
 
 		private void textBox2_KeyDown(object sender, KeyEventArgs ke)
 		{
 			if (ke.KeyCode == Keys.Enter)
 			{
-				this.button8_Click(sender, ke);
+				this.executeSearch();
 			}
 		}
 
@@ -1761,13 +1860,6 @@ namespace lyra
 			set { this.statusBarPanel1.Text = value; }
 		}
 
-		private void textBox2_Click(object sender, System.EventArgs e)
-		{
-			if (this.textBox2.Text == "Suchbegriffe...")
-			{
-				this.textBox2.SelectAll();
-			}
-		}
 
 		private void textBox1_Click(object sender, System.EventArgs e)
 		{
@@ -1854,6 +1946,7 @@ namespace lyra
 				this.persLists.RemoveSongFromCurrent(this.listBox2.SelectedIndex);
 				this.persLists.Refresh(this.listBox2);
 				this.Status = "Song entfernt.";
+				Preview.ClosePreview();
 			}
 		}
 
@@ -1866,6 +1959,8 @@ namespace lyra
 				this.textBox2.Focus();
 				this.textBox2.SelectAll();
 			}
+			this.label4.Visible = this.storage.ToBeCommited;
+			Preview.ClosePreview();
 		}
 
 		// anzeigen! (Menü)
@@ -1895,6 +1990,7 @@ namespace lyra
 					this.listBox2.Items.Clear();
 					this.comboBox1.Text = "";
 				}
+				Preview.ClosePreview();
 			}
 		}
 
@@ -1910,11 +2006,13 @@ namespace lyra
 		private void menuItem11_Click(object sender, System.EventArgs e)
 		{
 			NewList.ShowNewList(this);
+			Preview.ClosePreview();
 		}
 
 		private void button5_Click(object sender, System.EventArgs e)
 		{
 			this.menuItem11_Click(sender, e);
+			Preview.ClosePreview();
 		}
 
 		// import Liste
@@ -2003,9 +2101,7 @@ namespace lyra
 					else
 					{
 						if (this.checkBox1.Checked) idtext += "nur Titel,";
-						if (this.checkBox2.Checked) idtext += "gross/klein,";
 						if (this.checkBox3.Checked) idtext += "ganzes Wort,";
-						if (this.checkBox4.Checked) idtext += "&Uuml;bersetzungen";
 						if (idtext[idtext.Length - 1] == ',') idtext = idtext.Substring(0, idtext.Length - 1);
 						idtext += "]:" + Util.HTMLNL + "<b>\"" + this.textBox2.Text + "\"";
 					}
@@ -2049,6 +2145,7 @@ namespace lyra
 					this.Status = "Song nicht gefunden.";
 					Util.MBoxError("Lied konnte nicht gefunden werden!");
 				}
+				Preview.ClosePreview();
 			}
 			catch (FormatException fe)
 			{
@@ -2148,7 +2245,7 @@ namespace lyra
 			this.button2.Visible = visible;
 			this.button9.Visible = visible;
 			this.button6.Visible = visible;
-			this.button10.Visible = visible;
+			this.linkLabel1.Visible = visible;
 			this.button5.Visible = visible;
 			this.textBox3.Visible = visible;
 			this.label3.Visible = visible;
@@ -2384,9 +2481,10 @@ namespace lyra
 				{
 					Rectangle rect = this.listBox3.GetItemRectangle(this.listBox3.SelectedIndex);
 					Point location = this.listBox3.PointToScreen(new Point(rect.Left, rect.Top));
-					location.X += 15;
-					location.Y += rect.Height + 2;
-					Preview.ShowPreview(this, s, location);
+					location.X += this.listBox3.Width - 25;
+					//location.Y += rect.Height + 2;
+					Preview.ShowPreview(this, s, this.getBestLocationForPreview(location));
+					this.listBox3.Focus();
 				}
 			}
 		}
@@ -2400,9 +2498,10 @@ namespace lyra
 				{
 					Rectangle rect = this.listBox1.GetItemRectangle(this.listBox1.SelectedIndex);
 					Point location = this.listBox1.PointToScreen(new Point(rect.Left, rect.Top));
-					location.X += 15;
-					location.Y += rect.Height + 2;
-					Preview.ShowPreview(this, s, location);
+					location.X += this.listBox1.Width - 25;
+					//location.Y += rect.Height + 2;
+					Preview.ShowPreview(this, s, this.getBestLocationForPreview(location));
+					this.listBox1.Focus();
 				}
 			}		
 		}
@@ -2416,9 +2515,10 @@ namespace lyra
 				{
 					Rectangle rect = this.listBox2.GetItemRectangle(this.listBox2.SelectedIndex);
 					Point location = this.listBox2.PointToScreen(new Point(rect.Left, rect.Top));
-					location.X += 15;
-					location.Y += rect.Height + 2;
-					Preview.ShowPreview(this, s, location);
+					location.X += this.listBox2.Width - 25;
+					//location.Y += rect.Height + 2;
+					Preview.ShowPreview(this, s, this.getBestLocationForPreview(location));
+					this.listBox2.Focus();
 				}
 			}
 		}
@@ -2428,6 +2528,105 @@ namespace lyra
 			this.menuItem60.Checked = !this.menuItem60.Checked;
 			Util.SHOW_PREVIEW = this.menuItem60.Checked;
 			Util.updateRegSettings();
+		}
+
+		private void textBox2_TextChanged(object sender, System.EventArgs e)
+		{
+			if(this.searchTask != null)
+			{
+				this.searchTask.Abort();
+			}
+			this.searchTask = new DelayedTask(new ThreadStart(this.executeSearch), 300);
+			this.searchTask.Start();
+		}
+
+		private void checkBox3_CheckedChanged(object sender, System.EventArgs e)
+		{
+			this.executeSearch();
+		}
+
+		private void menuItem62_Click(object sender, System.EventArgs e)
+		{
+			View.CloseView();
+		}
+
+		private void GUI_GotFocus(object sender, EventArgs e)
+		{
+			Preview.ClosePreview();
+		}
+
+		private void listBox_Scrolled(object sender, ScrollEventArgs e)
+		{
+			Preview.ClosePreview();
+		}
+
+		private void item_Popup(object sender, EventArgs e)
+		{
+			Preview.ClosePreview();
+		}
+
+		private void contextMenu_Popup(object sender, EventArgs e)
+		{
+			Preview.ClosePreview();
+		}
+		
+		private Point getBestLocationForPreview(Point itemLocation)
+		{
+			Screen currentScreen = Screen.FromControl(this);
+			if(itemLocation.X + 424 < currentScreen.Bounds.Width)
+			{
+				if(itemLocation.Y + 248 >= currentScreen.Bounds.Height)
+				{
+					itemLocation.Y = currentScreen.Bounds.Height - 249;
+				}
+			}
+			else
+			{
+				if(itemLocation.Y + 248 < currentScreen.Bounds.Height)
+				{
+					itemLocation.X = currentScreen.Bounds.Width - 425;
+				}
+				else
+				{
+					itemLocation.X = currentScreen.Bounds.Width - 425;
+					itemLocation.Y = currentScreen.Bounds.Height - 249;
+				}
+			}
+			return itemLocation;
+		}
+
+		private void menuItem63_Click(object sender, System.EventArgs e)
+		{
+			if(this.storage.ToBeCommited)
+			{
+				MessageBox.Show(this,
+					"Index konnte nicht neu gebildet werden!" + Util.NL +
+					"Bitte zuerst alle Änderungen übernehmen oder verwerfen.",
+					"Suchindex erneuern...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			if(this.storage.cleanSearchIndex())
+			{
+				MessageBox.Show(this, "Index wurde erfolgreich neu gebildet.", "Suchindex erneuern...", MessageBoxButtons.OK,
+				                MessageBoxIcon.Information);
+			}
+			else
+			{
+				MessageBox.Show(this,
+				                "Index konnte nicht neu gebildet werden!" + Util.NL +
+				                "Bitte lyra beenden und vor dem Neustart das Verzeichnis '<lyra>\\index' manuell löschen.",
+				                "Suchindex erneuern...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+		}
+
+		private void GUI_Move(object sender, EventArgs e)
+		{
+			Preview.ClosePreview();
+		}
+
+		private void button8_Click_1(object sender, System.EventArgs e)
+		{
+			(new TestForm()).ShowDialog(this);
 		}
 	}
 }

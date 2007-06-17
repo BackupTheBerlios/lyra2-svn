@@ -10,7 +10,7 @@ namespace lyra
 	/// For further efficiency, I chose to directly load ALL data into the ram
 	/// on initialising. So there's NO lazy binding.
 	/// </summary>
-	public class Song
+	public class Song : IComparable
 	{
 		/// <summary>
 		/// Data section
@@ -313,5 +313,19 @@ namespace lyra
 			}
 			return (Translation)this.Translations.GetByIndex(index);
 		}
+				
+		#region IComparable Members
+
+		public int CompareTo(object obj)
+		{
+			if(obj is Song)
+			{
+				Song s = (Song) obj;
+				return this.ToString().CompareTo(s.ToString());
+			}
+			return 0;
+		}
+
+		#endregion
 	}
 }

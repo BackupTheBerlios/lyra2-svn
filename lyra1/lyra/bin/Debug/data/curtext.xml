@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE lyra[
   <!ELEMENT lyra (Songs,Translations)>
   <!ELEMENT Songs (Song*) >
@@ -28,10 +28,9 @@
       <Number>2</Number>
       <Title>Gloria</Title>
       <Text>Gloria, gloria, gloria Patri et Filio.
+&lt;special&gt;Ehre sei dem Vater und dem Sohn.&lt;/special&gt;
 Gloria, gloria, gloria Spiritui Sancto
-
-&lt;special&gt;Ehre sei dem Vater und dem Sohn.
-Ehre sei dem Heiligen Geist.&lt;/special&gt;
+&lt;special&gt;Ehre sei dem Heiligen Geist.&lt;/special&gt;
 
 </Text>
     </Song>
@@ -72,19 +71,13 @@ Lass uns spüren, dass du bei uns bist, o Herr, wir danken dir.	(2x)
 
 Lass uns hören, was du heut uns sagst, o Herr, wir danken dir.	(2x)
 
-&lt;refrain&gt;Bleib in unsrer Mitte...&lt;/refrain&gt;
-
-
-
-
-
-
-
-
-
-
-
-</Text>
+&lt;refrain&gt;Bleib in unsrer Mitte...&lt;/refrain&gt;</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0006" trans="" zus="">
       <Number>6</Number>
@@ -205,7 +198,14 @@ Meh as Gold und Gäld, als alles i de Wält, liebi dini Wiisige.
 
 
 
+
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0013" trans="" zus="">
       <Number>13</Number>
@@ -421,9 +421,13 @@ Fill my thoughts, my words, my deeds; my all I give in adoration.
 
 
 
-
-
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0032" trans="" zus="">
       <Number>32</Number>
@@ -514,7 +518,7 @@ denn mein Joch ist sanft, und meine Bürde ist leicht.
     <Song id="s0041" trans="" zus="">
       <Number>41</Number>
       <Title>Seid still und erkennt</Title>
-      <Text>Seid still und erkennt, dass ich bin Gott.			(3x)
+      <Text>Seid still und erkennt, dass ich bin Gott.		(3x)
 
 Ich bin der Herr, dein Gott, der dich heilt.		(3x)
 
@@ -989,16 +993,7 @@ Lob und Ehre singt.
 Ihr werdet mit Freude schöpfen aus den Quellen,
 die der Herr euch gibt, und wir werden sagen:
 Danket dem Herrn, verkündet seine Taten.
-Wie berühmt ist er!
-
-
-
-
-
-
-
-
-</Text>
+Wie berühmt ist er!</Text>
     </Song>
     <Song id="s0075" trans="" zus="">
       <Number>75</Number>
@@ -1271,7 +1266,15 @@ Sei gepriesen, denn du bist wunderbar, Herr
 
 
 
+
+
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0091" trans="" zus="">
       <Number>91</Number>
@@ -1328,8 +1331,8 @@ Staunend habe ich erkannt: Ich bin in deiner Hand,
 und du lässt mich nicht los.&lt;/refrain&gt;
 
 Auch die Menschen sind von dir und haben Leben hier
-durch deine grosseGüte. Fühlen, Wollen und Verstand
-sind Werke deiner Hand, entstammendeinem Plan.
+durch deine grosse Güte. Fühlen, Wollen und Verstand
+sind Werke deiner Hand, entstammen deinem Plan.
 Ist der Mensch auch sehr entstellt, weil er die Sünde wählt -
 du willst ihn nicht zerstören. Deine Liebe macht ihn frei
 von aller Tyrannei, wenn er auf dich vertraut.
@@ -1347,13 +1350,24 @@ alle Kreatur nach deiner Herrlichkeit!
 
 
 
+
+
+
+
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0094" trans="" zus="">
       <Number>94</Number>
       <Title>Verherrlicht unsern Gott</Title>
-      <Text>&lt;refrain&gt;Verherrlicht unsern Gott und feiert ihn, denn er vollbringt
-grosse Taten, denn er vollbringt grosse Taten.&lt;/refrain&gt;
+      <Text>&lt;refrain&gt;Verherrlicht unsern Gott und feiert ihn,
+denn er vollbringt grosse Taten,
+denn er vollbringt grosse Taten.&lt;/refrain&gt;
 
 Er hat erwählt den Armen und lädt ihn zu sich ein,
 dem niedrigsten der Menschen will er ein Bruder sein.
@@ -1365,16 +1379,7 @@ Er bietet seinen Geist uns in Überfülle an,
 damit wir tun, wie er tat, und sein Reich kommen kann.
 
 Wir preisen Gott, den Vater, der in dem Himmel ist,
-der dies an uns getan hat durch unsern Herren Christ.
-
-
-
-
-
-
-
-
-</Text>
+der dies an uns getan hat durch unsern Herren Christ.</Text>
     </Song>
     <Song id="s0095" trans="" zus="">
       <Number>95</Number>
@@ -1394,16 +1399,7 @@ Komm zu uns und berühr uns, rüst uns aus, mach uns stark.
 
 Dein Reich komme, Herr, dein Wille gescheh.
 Lass uns auf Erden sehn Jesus in Herrlichkeit.
-Lass uns deine Herrlichkeit sehn.
-
-
-
-
-
-
-
-
-</Text>
+Lass uns deine Herrlichkeit sehn.</Text>
     </Song>
     <Song id="s0096" trans="" zus="">
       <Number>96</Number>
@@ -1443,8 +1439,6 @@ fröhlichen Glaubens, unser Herr kommt bald!
 
 
 
-
-
 </Text>
     </Song>
     <Song id="s0098" trans="" zus="">
@@ -1459,28 +1453,31 @@ Abba, Vater, dir allein, dir gehöre ich.
     <Song id="s0099" trans="" zus="">
       <Number>99</Number>
       <Title>Jesus put this song</Title>
-      <Text>Jesus put this song into our hearts,   (2x)
+      <Text>Jesus put this song into our hearts,			(2x)
 it's a song of joy no one can take away.
 Jesus put ...
-Jesus taught us how to live in harmony,   (2x)
+Jesus taught us how to live in harmony,		(2x)
 different faces, different races, He made us one;
 Jesus taught ...
-Jesus taught us how to be a family,   (2x)
+Jesus taught us how to be a family,			(2x)
 loving one another with the love that He gives.
 Jesus taught ...
-Jesus turned our sorrow into dancing,   (2x)
+Jesus turned our sorrow into dancing,		(2x)
 changed our tears of sadness into rivers of joy.
 Jesus turned our sorrow into a dance.
 
-Jesus gab ein neues Lied in unser Herz.   (2x)
+Jesus gab ein neues Lied in unser Herz.	(2x)
 Dieses Lied der Freude bleibt in Ewigkeit.
 Jesus gab ...
-Jesus lehrt uns, wie man lebt in Harmonie;   (2x)
+Jesus lehrt uns, wie man lebt in Harmonie;	(2x)
 miteinander Liebe teilen, die er uns gibt.
 Jesus gab ...
-Jesus wandelt Traurigkeit in Freudentanz;   (2x)
+Jesus wandelt Traurigkeit in Freudentanz;	(2x)
 Tränen wandelt er zu einem Freudenstrom.
 Jesus gab ...
+
+
+
 
 
 
@@ -1576,6 +1573,10 @@ as I worship You with all of my might.
 
 
 
+
+
+
+
 </Text>
     </Song>
     <Song id="s0105" trans="" zus="">
@@ -1633,31 +1634,23 @@ Dafür, dass er auferstand und der Hölle Macht gebannt,
 dafür, dass er mich hat neu gemacht.
 
 Dafür, dass er heut noch lebt und mir treu zur Seite steht,
-dafür, dass mich seine Liebe trägt.
-
-
-
-
-
-
-
-
-
-</Text>
+dafür, dass mich seine Liebe trägt.</Text>
     </Song>
     <Song id="s0110" trans="" zus="">
       <Number>110</Number>
       <Title>O gebt Dank unserm Herrn</Title>
-      <Text>O gebt Dank unserm Herrn, ihr seine Kinder! O gebt Dank unserm
-Herrn, denn er ist gut. Kommt und preist, kommt und dankt, kommt
-und feiert ihn und tanzt! O gebt Dank unserm Herrn, denn er ist gut.
+      <Text>O gebt Dank unserm Herrn, ihr seine Kinder!
+O gebt Dank unserm Herrn, denn er ist gut.
+Kommt und preist, kommt und dankt,
+kommt und feiert ihn und tanzt!
+O gebt Dank unserm Herrn, denn er ist gut.
 </Text>
     </Song>
     <Song id="s0111" trans="" zus="">
       <Number>111</Number>
       <Title>Meine Seele preist</Title>
-      <Text>Meine Seele preist dich, der mich befreit. Liebe gabst du mir.
-O, wie dank ich dir!
+      <Text>Meine Seele preist dich, der mich befreit.
+Liebe gabst du mir. O, wie dank ich dir!
 Freude und Harmonie erfülln mich wie noch nie, Dank sei dir.
 </Text>
     </Song>
@@ -1687,20 +1680,18 @@ Jesus, du bist Herr, Herr der Herrlichkeit!
       <Number>113</Number>
       <Title>Ja, die Herrlichkeit des Herrn</Title>
       <Text>Die Herrlichkeit des Herrn dauert ewig, dauert ewig;
-die Herrlichkeit des Herrn wird nie vergehn. Ja, heller als die Sonne und schöner als die Engel
+die Herrlichkeit des Herrn wird nie vergehn.
+Ja, heller als die Sonne und schöner als die Engel
 ist der Strahlenglanz der Herrlichkeit des Herrn.
 
 &lt;refrain&gt;Ja, die Herrlichkeit des Herrn gehet aus von seinem Tempel,
 herrlich schreitet seine Braut einher, denn sein Reich bricht an,
 und der Herr regiert.&lt;/refrain&gt;
 
-So lasst uns tanzen, singen, voller Freude vor dem Herrn, denn der
-Tempel unsres Herrn ist fast gebaut. Wie einstens König David lasst
-uns tanzen vor dem Herrn, während seine Gegenwart den Raum erfüllt.
-
-
-
-
+So lasst uns tanzen, singen, voller Freude vor dem Herrn,
+denn der Tempel unsres Herrn ist fast gebaut.
+Wie einstens König David lasst uns tanzen vor dem Herrn,
+während seine Gegenwart den Raum erfüllt.
 
 </Text>
     </Song>
@@ -1718,8 +1709,8 @@ damit der Herr verherrlicht werd. 	  (2x)
     <Song id="s0115" trans="" zus="">
       <Number>115</Number>
       <Title>Denn der Weg des Gerechten</Title>
-      <Text>Denn der Weg des Gerechten ist wie das Morgenlicht, es scheint heller,
-heller und heller.
+      <Text>Denn der Weg des Gerechten ist wie das Morgenlicht,
+es scheint heller, heller und heller.
 Denn der Weg des Gerechten ist wie das Morgenlicht, es scheint heller.
 Heller bis zur Tageshöh.   (3x)
 </Text>
@@ -1773,8 +1764,8 @@ Wie gross ist deine Treu.
 Wir richten unsre Blicke zu dir, dreieinger Gott, und gehen nicht zurücke.
 Nur dir gebührt das Lob.
 
-Was unsre Augen sehen, schuf deine Wunderhand. Vor dir vereint wir
-stehen, du knüpfst das Liebesband.
+Was unsre Augen sehen, schuf deine Wunderhand.
+Vor dir vereint wir stehen, du knüpfst das Liebesband.
 
 
 
@@ -1787,15 +1778,16 @@ stehen, du knüpfst das Liebesband.
       <Title>Halleluja, lobet Gott</Title>
       <Text>Halleluja. Lobet Gott in seinem Heiligtum,
 lobet ihn in der Feste seiner Macht.
-Lobet ihn für seine Taten, lobet ihn. Lobet ihn in seiner grossen Herrlichkeit.
+Lobet ihn für seine Taten, lobet ihn.
+Lobet ihn in seiner grossen Herrlichkeit.
 
 &lt;refrain&gt;Alles, was Odem hat, lobe den Herrn, halleluja.   (2x)&lt;/refrain&gt;
 
 Lobet ihn mit den Posaunen, lobet ihn, lobet ihn mit Psalter und mit Harfen.
 Lobet ihn mit Pauken und mit Reigen, lobet ihn mit Saiten und mit Pfeifen.
 
-Lobet ihn mit hellen Zimbeln, lobet ihn, lobet ihn mit wohlklingenden
-Zimbeln.   (2x)
+Lobet ihn mit hellen Zimbeln, lobet ihn,
+lobet ihn mit wohlklingenden Zimbeln.   (2x)
 
 
 
@@ -1819,10 +1811,12 @@ Ich will mich freun, er hat mich froh gemacht.   (2x)
       <Text>Ho-ho-ho-hosiannna, ha-ha hallelujah,
 He-He-He-He saved me, I've got the joy of the Lord!
 
-Dies ist der Tag, dies ist der Tag, den der Herr gemacht, den der Herr
-gemacht. Wir wolln uns freun, wir wolln uns freun und fröhlich sein, und
-fröhlich sein. Dies ist der Tag, den der Herr gemacht, wir wolln uns freun
-und fröhlich sein. Dies ist der Tag, dies ist der Tag, den der Herr gemacht.
+Dies ist der Tag, dies ist der Tag, den der Herr gemacht,
+den der Herr gemacht. Wir wolln uns freun,
+wir wolln uns freun und fröhlich sein, und fröhlich sein.
+Dies ist der Tag, den der Herr gemacht,
+wir wolln uns freun und fröhlich sein.
+Dies ist der Tag, dies ist der Tag, den der Herr gemacht.
 </Text>
     </Song>
     <Song id="s0123" trans="" zus="">
@@ -1850,16 +1844,7 @@ Gib mir selber das Wort, öffne du mir das Herz,
 deine Liebe, Herr, zu schenken.
 
 Und ich dank dir, mein Gott, und ich preise dich, Herr,
-und ich schenke dir mein Leben.
-
-
-
-
-
-
-
-
-</Text>
+und ich schenke dir mein Leben.</Text>
     </Song>
     <Song id="s0125" trans="" zus="">
       <Number>125</Number>
@@ -1878,16 +1863,7 @@ S’isch Gnad - är schtirbt det för mi.
 S’isch Gnad - är bliibt ned im Grab.
 S’isch Gnad - nöis Läbe schänkt är.
 S’isch Gnad - är wird widercho.
-S’isch Gnad - halleluja.
-
-
-
-
-
-
-
-
-</Text>
+S’isch Gnad - halleluja.</Text>
     </Song>
     <Song id="s0126" trans="" zus="">
       <Number>126</Number>
@@ -1904,7 +1880,7 @@ Hallelujah, glory to the Lord.
 Mir wend Loblieder singe zur Ehr vo öisem Herr.	(3x)
 Halleluja, Ehr sig öisem Herr.
 
-Öise Herr isch de Siiger höt und alli Ziit.				(3x)
+Öise Herr isch de Siiger höt und alli Ziit.			(3x)
 Halleluja, priiset öise Herr.
 
 
@@ -1937,13 +1913,15 @@ von nun an fort bis in Ewigkeit.
     <Song id="s0129" trans="" zus="">
       <Number>129</Number>
       <Title>Ich will ihm singen</Title>
-      <Text>Ich will ihm singen, ich will ihn preisen, denn er allein ist der
-Fels, auf dem ich stehe. Ich will anbeten. Die Hände heb ich auf
-zu ihm, denn ihm allein gebührt Lobpreis und Ehr.   (2x)
+      <Text>Ich will ihm singen, ich will ihn preisen,
+denn er allein ist der Fels, auf dem ich stehe.
+Ich will anbeten. Die Hände heb ich auf zu ihm,
+denn ihm allein gebührt Lobpreis und Ehr.   (2x)
 
-Wenn die Sonne aufgeht, preisen wir den Herrn. Schon früh am
-Morgen preisen wir den Herrn. Wir singen ihm im Geiste und mit
-dem Verstand. Wenn die Sonne aufgeht, preisen wir den Herrn.   (2x)
+Wenn die Sonne aufgeht, preisen wir den Herrn.
+Schon früh am Morgen preisen wir den Herrn.
+Wir singen ihm im Geiste und mit dem Verstand.
+Wenn die Sonne aufgeht, preisen wir den Herrn.   (2x)
 </Text>
     </Song>
     <Song id="s0130" trans="" zus="">
@@ -1973,6 +1951,10 @@ Drum lasst alles andre stehen, nur ihn allein jetzt seht.
 
 
 
+
+
+
+
 </Text>
     </Song>
     <Song id="s0131" trans="" zus="">
@@ -1985,7 +1967,6 @@ schlagt die Conga, feiert ihn, den König, Gott und Herrn.
 Kommt frohlocket, preiset nur ihn allein;
 was da lebet, komme und stimme ein!
 
-
 Du bist herrlich, mächtig, nichts ist dir gleich;
 du bist König, ewig besteht dein Reich!
 
@@ -1996,6 +1977,11 @@ We're a part of a family, the family of God.
 
 Lord, we praise You, praise You, Your love is great.
 Lord, we praise You, praise You, we celebrate!
+
+
+
+
+
 
 
 
@@ -2033,28 +2019,32 @@ lasset uns ihn, den König lieben, denn der Herr, unser Gott, er regiert.
     <Song id="s0134" trans="" zus="">
       <Number>134</Number>
       <Title>Ah Lord God</Title>
-      <Text>Ah Lord God, Thou hast made the heavens and the earth
-by Thy great power.
-Ah Lord God, Thou hast made the heavens and the earth
-by Thine outstretched arm.
+      <Text>Ah Lord God, Thou hast made the heavens
+and the earth by Thy great power.
+Ah Lord God, Thou hast made the heavens
+and the earth by Thine outstretched arm.
 
 Nothing is too difficult for Thee, nothing is too difficult for Thee.
 O great and mighty God, great in counsel, mighty indeed.
 Nothing, nothing, absolutely nothing, nothing is too difficult for Thee.
 
-Grosser Gott! Himmel, Erde, Luft und Meer, sie alle sind dein Werk.
-Grosser Gott! Himmel, Erde, Luft und Meer schufst du durch dein
-mächtges Wort.
+Grosser Gott! Himmel, Erde, Luft und Meer,
+sie alle sind dein Werk.
+Grosser Gott! Himmel, Erde, Luft und Meer
+schufst du durch dein mächtges Wort.
 
 Gar nichts ist unmöglich für dich. Gar nichts ist unmöglich für dich.
 O allgewaltger Gott, grosser Tröster, mächtiger Herr,
-gar nichts, gar nichts, grosser, starker König, gar nichts ist unmöglich für dich!
+gar nichts, gar nichts, grosser, starker König,
+gar nichts ist unmöglich für dich!
 
 Herr, miin Gott! Alles hesch du gschaffe dur dis Wort voll Chraft ond Läbe.
 Grosse Gott! Alles hesch du gschaffe dur dis Wort, wo ke Gränze kennt.
+
 S' git nüt, wo unmöglich isch för de, gar nüt, wo unmöglich isch för de!
 Grosse Gott, du schtarche Held, gross in Macht und Herrlichkeit:
 Nei, s' git gar nüt, absolut au gar nüt, gar nüt wo unmöglich isch för de!
+
 
 
 
@@ -2084,8 +2074,8 @@ In dir, o Herr! In dir, o Herr! Nur in dir!
       <Text>Herr, deine Güte reicht so weit, deine Treue ist so gross,
 deine Gnade geht für uns nie zu Ende.   (2x)
 
-Ehre und Stärke, Anbetung dir, o Gott; Segen und Freude und Freiheit
-dem, der dir vertraut.
+Ehre und Stärke, Anbetung dir, o Gott;
+Segen und Freude und Freiheit dem, der dir vertraut.
 </Text>
     </Song>
     <Song id="s0137" trans="" zus="">
@@ -2103,8 +2093,8 @@ Sein Kommen werden wir feiern, fröhlich, herrlich.
       <Title>Unsere Hilfe</Title>
       <Text>Unsere Hilfe kommt von dem Herrn, der Himmel und Erde gemacht.
 Er ist der Hüter seines Volkes, der niemals schläft, weil er wacht.   (2x)
-Wunderbar ist's, der Güte des Herrn sich anzuvertraun, um jeden Tag
-seine Wunder zu schaun.
+Wunderbar ist's, der Güte des Herrn sich anzuvertraun,
+um jeden Tag seine Wunder zu schaun.
 </Text>
     </Song>
     <Song id="s0139" trans="" zus="">
@@ -2141,8 +2131,8 @@ Nur dir gebührt Macht und Majestät. Heilig bist du, Herr.
       <Title>Du bist der ewige Gott</Title>
       <Text>Du bist der ewige Gott. Du bist der Herr, stark und mächtig,
 das A und das O, der König der ganzen Welt. Du bist der Heilige.
-Du bist gerecht und wahr, prächtig und wunderbar, prächtig und
-wunderbar. Gross bist du, Herr.
+Du bist gerecht und wahr, prächtig und wunderbar,
+prächtig und wunderbar. Gross bist du, Herr.
 </Text>
     </Song>
     <Song id="s0143" trans="" zus="">
@@ -2163,16 +2153,7 @@ Sein Wort steht fest und gilt für mich. Der Himmel erfüllt mein Herz.
 Wir sind der Tempel seines Throns, der Himmel erfüllt mein Herz,
 und Jesus ist das Fundament. Der Himmel erfüllt mein Herz.
 Er kehrt zurück und holt uns heim. Der Himmel erfüllt mein Herz.
-Der Geist, die Braut, sie sprechen: "Komm!" Der Himmel erfüllt mein Herz.
-
-
-
-
-
-
-
-
-</Text>
+Der Geist, die Braut, sie sprechen: "Komm!" Der Himmel erfüllt mein Herz.</Text>
     </Song>
     <Song id="s0144" trans="" zus="">
       <Number>144</Number>
@@ -2199,26 +2180,17 @@ You, O Lord, so lov'd us, even when we were dead in our sins.
 You made us alive together with Christ
 
 and rais'd us up   (together with Him)
-and seated us   (with Him in heav'nly places)   (2x)
-in Christ.
-
-
-
-
-
-
-
-
-</Text>
+and seated us     (with Him in heav'nly places)   (2x)
+in Christ.</Text>
     </Song>
     <Song id="s0146" trans="" zus="">
       <Number>146</Number>
       <Title>Wir sind erhoben worden</Title>
-      <Text>Wir sind erhoben worden und gesetzt neben Jesus Christus in der
-himmlischen Welt, wir sind erhoben worden und gesetzt neben Jesus
-Christus, unserm Herrn. Der Herr ist gnädig und liebevoll, verurteilt uns
-nicht in seinem Zorn. Wir sind erhoben worden und gesetzt neben Jesus
-Christus, unserm Herrn.
+      <Text>Wir sind erhoben worden und gesetzt neben Jesus Christus
+in der himmlischen Welt, wir sind erhoben worden und gesetzt
+neben Jesus Christus, unserm Herrn.
+Der Herr ist gnädig und liebevoll, verurteilt uns nicht in seinem Zorn.
+Wir sind erhoben worden und gesetzt neben Jesus Christus, unserm Herrn.
 
 Be lifted up my soul, be lifted up into heavenly places with Christ Jesus,
 be lifted up my soul, be lifted up into heavenly places with the Lord.
@@ -2234,8 +2206,8 @@ blessed be the name of the Lord.   (2x)
 
 &lt;refrain&gt;Hallelujah, Hallelujah, blessed be the name of the Lord.   (2x)&lt;/refrain&gt;
 
-Jesus is the name		(3x)		of the Lord.		(2x)
-Thank you for the name	(3x)		of the Lord.		(2x)
+Jesus is the name			(3x)		of the Lord.		(2x)
+Thank you for the name		(3x)		of the Lord.		(2x)
 </Text>
     </Song>
     <Song id="s0148" trans="" zus="">
@@ -2255,16 +2227,7 @@ Ich rühm deines Namens Herrlichkeit!
 Der höchste Herr ist ein mächtger Fels!
 Der Herr ist hoch und erhaben;
 der Heilige ist ein starker Gott.
-Der Lebensfürst erfüllt mein Herz.
-
-
-
-
-
-
-
-
-</Text>
+Der Lebensfürst erfüllt mein Herz.</Text>
     </Song>
     <Song id="s0149" trans="" zus="">
       <Number>149</Number>
@@ -2309,12 +2272,13 @@ glory, honour, glory and honour to Him.
       <Number>153</Number>
       <Title>Majestät, herrliche Majestät</Title>
       <Text>Majestät, herrliche Majestät, dir sei Ehre, Herrlichkeit und Lob!
-Majestät, herrliche Majestät, von dir fliesst Kraft in grosser Macht
-zu deinem Volk.
+Majestät, herrliche Majestät, von dir fliesst Kraft
+in grosser Macht zu deinem Volk.
+
 Hebt ihn hoch, hebt ihn hoch, den Namen Jesus;
 macht ihn gross, kommt und verehrt Christus, den Herrn.
-Majestät, herrliche Majestät, Jesus, du starbst, bliebst nicht
-im Grab, halleluja.
+Majestät, herrliche Majestät, Jesus, du starbst,
+bliebst nicht im Grab, halleluja.
 </Text>
     </Song>
     <Song id="s0154" trans="" zus="">
@@ -2333,17 +2297,7 @@ Wer traurig ist und tief bedrückt durch Last und Leid,
 den krönt mit Gnade er und Glück und Herrlichkeit.
 
 So kommt und betet an unsern Gott als Herrn aller Herrn.
-Gebt eure Götter auf, ihre Macht ist am Vergehn!
-
-
-
-
-
-
-
-
-
-</Text>
+Gebt eure Götter auf, ihre Macht ist am Vergehn!</Text>
     </Song>
     <Song id="s0155" trans="" zus="">
       <Number>155</Number>
@@ -2396,8 +2350,9 @@ Von ganzem Herzen beten wir dich an.
       <Title>Du bist erhoben, für immer</Title>
       <Text>Du bist erhoben, für immer gehört dir dein Thron. Wir beten dich an!
 Du bist erhoben, in Ewigkeit loben und beten wir dich an!
-Du bist der Herr, der in Wahrheit regiert. Deiner Majestät alle Ehre
-gebührt! Du bist erhoben, für immer gehört dir der Thron.
+Du bist der Herr, der in Wahrheit regiert.
+Deiner Majestät alle Ehre gebührt!
+Du bist erhoben, für immer gehört dir der Thron.
 </Text>
     </Song>
     <Song id="s0160" trans="" zus="">
@@ -2409,8 +2364,8 @@ by His love we can conquer and do anything,
 we rejoice in His love today.
 
 Boundless love, boundless love! 
-He has conquered all of death and the
-grave. Boundless love, boundless love! 
+He has conquered all of death and the grave.
+Boundless love, boundless love! 
 By His love our souls are saved.
 
 Gross isch d'Fröid, wil är üs öber alli Masse liebt,
@@ -2420,6 +2375,9 @@ ich fröi mi öber das, was är isch!
 
 Gränzelos liebt är mich. Är isch uferschtande, und är läbt ewig.
 Gränzelos liebt är mich. Dur si Liebi bin ich erlöst.
+
+
+
 
 
 
@@ -2465,14 +2423,15 @@ und durch deine Gnad rufst  du uns nah zu dir.
 
 
 
+
 </Text>
     </Song>
     <Song id="s0162" trans="" zus="">
       <Number>162</Number>
       <Title>Preist den Herrn, halleluja</Title>
-      <Text>Praise the Lord, praise Him in His temple, praise Him in the sanctuary of
-His pow'r. Lift your voices with great rejoicing
-for God is great in all the earth.   (2x)
+      <Text>Praise the Lord, praise Him in His temple,
+praise Him in the sanctuary of His pow'r.
+Lift your voices with great rejoicing for God is great in all the earth.   (2x)
 
 Praise Him for His excellence, praise Him for His love;
 praise Him for His mercy giving us new life.
@@ -2481,19 +2440,7 @@ Preist den Herrn, halleluja, preist ihn, preiset ihn für seine grossen Taten.
 Ruft es lautstark in alle Lande: Der Herr regiert in Majestät!   (2x)
 
 Preiset seine Vortrefflichkeit. Preiset seine Huld.
-Preiset seine Gnade, die uns Leben gibt.
-
-
-
-
-
-
-
-
-
-
-
-</Text>
+Preiset seine Gnade, die uns Leben gibt.</Text>
     </Song>
     <Song id="s0163" trans="" zus="">
       <Number>163</Number>
@@ -2513,16 +2460,6 @@ juchzg ihm zue voller Fröid und Dankbarkeit;
 klatsch i d'Händ, du Volk Gottes; sing vor Fröid öisem Herr!
 
 Mir singe: Halleluja, halleluja.   (4x)
-
-
-
-
-
-
-
-
-
-
 </Text>
     </Song>
     <Song id="s0164" trans="" zus="">
@@ -2538,21 +2475,7 @@ Ich will mich freun, freun in dir, Herr, mein Gott und mein Erlöser.
 Ich will mich freun, freun in dir, jeden Tag meines Lebens mit dir.   (2x)
 
 Denn du, o Herr, erfüllst mein Herz mit all dem, was du tust.
-Ich freu mich, Herr, an deiner Macht, errungen ist der Sieg!
-
-
-
-
-
-
-
-
-
-
-
-
-
-</Text>
+Ich freu mich, Herr, an deiner Macht, errungen ist der Sieg!</Text>
     </Song>
     <Song id="s0165" trans="" zus="">
       <Number>165</Number>
@@ -2569,18 +2492,7 @@ Mit Lobpreis naht euch freudig dem Herrn; ihm lasst uns
 Lobopfer bringen!   (2x)
 
 Mit redlichem Herzen ihm singt, unser Hosianna erkling,
-die Hände zum Throne erhebt und mit Lobpreis ihn krönt, ihn, den Herrn.
-
-
-
-
-
-
-
-
-
-
-</Text>
+die Hände zum Throne erhebt und mit Lobpreis ihn krönt, ihn, den Herrn.</Text>
     </Song>
     <Song id="s0166" trans="" zus="">
       <Number>166</Number>
@@ -2599,18 +2511,7 @@ Halleluja! Er regiert und thront über der ganzen Welt.
 Niemand kann mich von Gott trennen, Christ steht für mich ein bei ihm.
 
 Halleluja! Herr, ich lieb dich, makelloses Gotteslamm.
-Halleluja! Herr, ich lieb dich, alles, alles bist du mir.
-
-
-
-
-
-
-
-
-
-
-</Text>
+Halleluja! Herr, ich lieb dich, alles, alles bist du mir.</Text>
     </Song>
     <Song id="s0167" trans="" zus="">
       <Number>167</Number>
@@ -2620,8 +2521,10 @@ Christ is risen, risen indeed, Hallelujah!&lt;/refrain&gt;
 
 	Love's work is done, the battle is won; where now, o death is your sting?
 	He rose again, to rule and to reign, Jesus our conquering king.
+
 Lord over sin, Lord over death, at His feet Satan must fall!
 Every knee bow, all will confess: Jesus is Lord over all!
+
 	Tell it abroad: "Jesus is Lord!" Shout it and let your praise ring!
 	Gladly we raise our songs of praise, worship is our offering.
 </Text>
@@ -2633,28 +2536,29 @@ Every knee bow, all will confess: Jesus is Lord over all!
 Christ ist erstanden heut, Christ ist erstanden heut.
 Himmel und Erde, ja, die sind voll Freud, Christ ist erstanden heut.
 &lt;/refrain&gt;
-	Er spricht: Ich lebe von nun an in alle Ewigkeit,
-	Christ ist erstanden heut,
-	auch ihr sollt leben von nun an in alle Ewigkeit,
-	Christ ist erstanden heut.
-Es waren Frauen, die sahen am Ostermorgen früh,
-Christ ist erstanden heut,
+Er spricht: Ich lebe von nun an in alle Ewigkeit, Christ ist erstanden heut,
+auch ihr sollt leben von nun an in alle Ewigkeit, Christ ist erstanden heut.
+
+Es waren Frauen, die sahen am Ostermorgen früh, Christ ist erstanden heut,
 sie blickten staunend und fragend ins leere Grab hinein,
 Christ ist erstanden heut.
-	Es kam ein Engel und sagte: Ach, fürchtet euch doch nicht,
-	Christ ist erstanden heut,
-	ihr suchet Jesus, doch sehet, hier findet ihr ihn nicht,
-	Christ ist erstanden heut.
+
+Es kam ein Engel und sagte: Ach, fürchtet euch doch nicht,
+Christ ist erstanden heut, ihr suchet Jesus, doch sehet,
+hier findet ihr ihn nicht, Christ ist erstanden heut.
+
 Geht hin und saget den Jüngern: Der Meister ist nicht hier,
-Christ ist erstanden heut,
-sie sollen fröhlich und freudig hier warten bis er kommt,
-Christ ist erstanden heut.
-	Und dann am Abend des Tages tritt Jesus unter sie,
-	Christ ist erstanden heut,
-	und als die Jünger ihn sahen, da wurden sie recht froh,
-	Christ ist erstanden heut.
+Christ ist erstanden heut, sie sollen fröhlich und freudig hier warten
+bis er kommt, Christ ist erstanden heut.
 
+Und dann am Abend des Tages tritt Jesus unter sie,
+Christ ist erstanden heut, und als die Jünger ihn sahen,
+da wurden sie recht froh, Christ ist erstanden heut.
 
+&lt;refrain&gt;Himmel und Erde, ja, die sind voll Freud,
+Christ ist erstanden heut, Christ ist erstanden heut.
+Himmel und Erde, ja, die sind voll Freud, Christ ist erstanden heut.
+&lt;/refrain&gt;
 
 
 
@@ -2664,11 +2568,17 @@ Christ ist erstanden heut.
 
 
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0169" trans="" zus="">
       <Number>169</Number>
       <Title>Sing Hallelujah to the Lord</Title>
-      <Text>Sing Hallelujah to the Lord.		(2x)
+      <Text>Sing Hallelujah to the Lord.			(2x)
 Sing Hallelujah.   (2x)   Sing Hallelujah to the Lord.
 
 Jesus is risen from the dead.		(2x)
@@ -2681,18 +2591,7 @@ He's coming back to give us life.	(2x)
 Jesus is coming.   (2x)   He’s coming back to give us life.
 
 Jesus is King and Lord of all.		(2x)
-Jesus is King and Lord.   (2x)   Jesus is King and Lord of all.
-
-
-
-
-
-
-
-
-
-
-</Text>
+Jesus is King and Lord.   (2x)   Jesus is King and Lord of all.</Text>
     </Song>
     <Song id="s0170" trans="" zus="">
       <Number>170</Number>
@@ -2753,10 +2652,6 @@ seine Herrlichkeit vor Gottes Thron.
 
 
 
-
-
-
-
 </Text>
     </Song>
     <Song id="s0173" trans="" zus="">
@@ -2805,18 +2700,7 @@ Nun schämen wir uns nicht und treten frei ans Licht.
 Wir nehmen staunend an, was er für uns getan.
 
 Wir wollen unser Leben aus Dankbarkeit dir geben.
-Nur darin liegt Gewinn. Du bist des Lebens Sinn.
-
-
-
-
-
-
-
-
-
-
-</Text>
+Nur darin liegt Gewinn. Du bist des Lebens Sinn.</Text>
     </Song>
     <Song id="s0175" trans="" zus="">
       <Number>175</Number>
@@ -2850,18 +2734,7 @@ dass ich alles das erkenne, dann fang an.
 Herr, weil es stimmt, dass du alles schon getan hast,
 möchte ich dich nun erleben jeden Tag.
 Auch wenn es schmerzt, brich den Stolz und meine Ehre,
-dass ich sehe, dass ich ohne dich nichts bin.
-
-
-
-
-
-
-
-
-
-
-</Text>
+dass ich sehe, dass ich ohne dich nichts bin.</Text>
     </Song>
     <Song id="s0177" trans="" zus="">
       <Number>177</Number>
@@ -2882,8 +2755,9 @@ Das Alte ist vergangen, siehe, es ist alles neu.
     <Song id="s0179" trans="" zus="">
       <Number>179</Number>
       <Title>Wen habe ich im Himmel</Title>
-      <Text>Wen habe ich im Himmel als dich, und nichts auf der Erde ist mir lieber
-als du, o Herr. Wenn mir gleich Leib und Seele verschmachten,
+      <Text>Wen habe ich im Himmel als dich,
+und nichts auf der Erde ist mir lieber als du, o Herr.
+Wenn mir gleich Leib und Seele verschmachten,
 so bist du, mein Gott, doch für immer mein Trost und Teil.
 </Text>
     </Song>
@@ -2946,15 +2820,15 @@ Man singt mit Freuden vom Sieg in den Herzen der Erlösten.
     <Song id="s0185" trans="" zus="">
       <Number>185</Number>
       <Title>Gott hat den Sieg</Title>
-      <Text>&lt;refrain&gt;Gott hat den Sieg, Gott hat den Sieg!   (2x)&lt;/refrain&gt;
+      <Text>&lt;refrain&gt;Gott hat den Sieg, Gott hat den Sieg!  	(2x)&lt;/refrain&gt;
 
-Glaubet an die Auferstehungskraft unseres Herrn!		(2x)
-Glaubet, dass er überwunden hat Sünde und Not!		(2x)
-Glaubet doch, dass er gestorben ist für alles Leid!		(2x)
-Glaubet, dass er wiederkommen wird in Herrlichkeit!	(2x)
-&lt;refrain&gt;Halleluja.   (4x)&lt;/refrain&gt;
+Glaubet an die Auferstehungskraft unseres Herrn!			(2x)
+Glaubet, dass er überwunden hat Sünde und Not!			(2x)
+Glaubet doch, dass er gestorben ist für alles Leid!			(2x)
+Glaubet, dass er wiederkommen wird in Herrlichkeit!		(2x)
+&lt;refrain&gt;Halleluja.		(4x)&lt;/refrain&gt;
 Freuet euch und preist mit mir den Herrn, unseren Gott!	(2x)
-&lt;refrain&gt;Halleluja.   (4x)&lt;/refrain&gt;
+&lt;refrain&gt;Halleluja.		(4x)&lt;/refrain&gt;
 </Text>
     </Song>
     <Song id="s0186" trans="" zus="">
@@ -2971,18 +2845,7 @@ Du bist der Herr der Welt.   (2x)&lt;/refrain&gt;
 Er schenkt seines Geistes Fülle seiner Kirche, kommt mit Macht,
 sendet uns zu allen Völkern, richtet auf sein Reich in Kraft.
 Er kommt wieder, um zu richten die Toten und die Lebenden.
-Dann muss jedes Knie sich beugen, jeder Mund bekennen:
-
-
-
-
-
-
-
-
-
-
-</Text>
+Dann muss jedes Knie sich beugen, jeder Mund bekennen:</Text>
     </Song>
     <Song id="s0187" trans="" zus="">
       <Number>187</Number>
@@ -3018,18 +2881,7 @@ der Sieg gehört unserem Gott!
 Wenn dein Feind dich bedrückt, habe nur keine Angst,
 der Sieg gehört unserem Gott!
 Hab Mut und sei stark, die Befreiung ist nah,
-der Sieg gehört unserem Gott!
-
-
-
-
-
-
-
-
-
-
-</Text>
+der Sieg gehört unserem Gott!</Text>
     </Song>
     <Song id="s0189" trans="" zus="">
       <Number>189</Number>
@@ -3044,11 +2896,12 @@ Ich will den Gott, der mich erlöst hat, hoch erheben!   (2x)
     <Song id="s0190" trans="" zus="">
       <Number>190</Number>
       <Title>Nur mit Gott</Title>
-      <Text>Nur mit Gott werden wir Sieger sein. Er vertreibt und schlägt mit
-Macht für uns den Feind. So singt und feiert seinen Sieg.
-Gott regiert; denn Gott gewann für uns die Schlacht,
-gab Freiheit seinem Volk.
-Sein Wort hat Tod dem Feind gebracht. Die Welt muss nun erkennen:
+      <Text>Nur mit Gott werden wir Sieger sein.
+Er vertreibt und schlägt mit Macht für uns den Feind.
+So singt und feiert seinen Sieg. Gott regiert;
+denn Gott gewann für uns die Schlacht, gab Freiheit seinem Volk.
+Sein Wort hat Tod dem Feind gebracht. 
+Die Welt muss nun erkennen:
 Nur mit Gott ...
 Gott regiert, Gott regiert, Gott regiert!
 </Text>
@@ -3108,18 +2961,7 @@ For the Lord He is great, He is worthy to be praised
 and His name is exalted above the earth / above the heavens.
 
 We exalt His name, we exalt the name of Jesus crowned with pow'r and
-majesty. Lift up the name, lift up the name of Jesus with a song in unity.
-
-
-
-
-
-
-
-
-
-
-</Text>
+majesty. Lift up the name, lift up the name of Jesus with a song in unity.</Text>
     </Song>
     <Song id="s0195" trans="" zus="">
       <Number>195</Number>
@@ -3149,30 +2991,20 @@ Schöpfer von Himmel und Erd. 	(2x)
 Mein Leben strömt aus dir, o mein Herr,
 Schöpfer von Himmel und Erd. 	(2x)
 
-My trust is in the name of the Lord who made heaven and earth.		(2x)
+My trust is in the name of the Lord who made heaven and earth.	(2x)
 
 &lt;refrain&gt;Sing Hallelujah, Hallelujah, Hallelujah, Hallelu- Hallelujah.&lt;/refrain&gt;
 
 My hope is in the name of the Lord who made heaven and earth.	(2x)
 
-My joy is in the name of the Lord who made heaven and earth.		(2x)
-
-
-
-
-
-
-
-
-
-
-</Text>
+My joy is in the name of the Lord who made heaven and earth.		(2x)</Text>
     </Song>
     <Song id="s0197" trans="" zus="">
       <Number>197</Number>
       <Title>Kommt und singt dem Herrn ein neues Lied</Title>
       <Text>Kommt und singt dem Herrn ein neues Lied, sein Lob erfülle die Erde!
 Er ist der ewge Gott und der Herr der Herrn, beuget euch vor ihm.   (2x)
+
 Halleluja, Ehre sei dem Herrn, halleluja, Ehre sei dem Herrn.
 </Text>
     </Song>
@@ -3255,20 +3087,26 @@ des Lichts.
     <Song id="s0203" trans="" zus="">
       <Number>203</Number>
       <Title>Noch ehe ich begann</Title>
-      <Text>Noch ehe ich begann, dich zu suchen, Herr, hast du dich erniedrigt bis
-zum Tod am Kreuz. Noch ehe ich begann zu dir zu flehen, Herr,
+      <Text>Noch ehe ich begann, dich zu suchen, Herr,
+hast du dich erniedrigt bis zum Tod am Kreuz.
+Noch ehe ich begann zu dir zu flehen, Herr,
 hast du deine Arme nach mir ausgestreckt.
 
 Aus tiefstem Herzen dank ich dir dafür,
 aus tiefstem Herzen preise ich dein Kreuz;
-aus tiefstem Herzen rufe ich dir zu: O mein Jesus,wie hab ich das verdient?
+aus tiefstem Herzen rufe ich dir zu:
+O mein Jesus,wie hab ich das verdient?
 
-You did not wait for me to draw near to You but You clothed Yourself in
-frail humanity. You did not wait for me to cry out to You but You let me
-hear Your voice calling me.
+You did not wait for me to draw near to You
+but You clothed Yourself in frail humanity.
+You did not wait for me to cry out to You
+but You let me hear Your voice calling me.
 
-And I'm forever grateful to You, I'm forever grateful for the cross,
-I'm forever grateful to You that You came to seek and save the lost.
+And I'm forever grateful to You,
+I'm forever grateful for the cross,
+I'm forever grateful to You
+that You came to seek and save the lost.
+
 
 
 
@@ -3295,33 +3133,48 @@ Dass du mich abholst aus meiner Not.
 
 Dass du mich froh machst, wenn ich betrübt.
 
-Dass du mich annimmst als dein Kind.
-
-
-
-
-
-
-
-
-
-
-</Text>
+Dass du mich annimmst als dein Kind.</Text>
     </Song>
     <Song id="s0205" trans="" zus="">
       <Number>205</Number>
       <Title>I believe in Jesus</Title>
       <Text>I believe in Jesus, I believe He is the Son of God,
-I believe He died and rose again, I believe He paid for us all.
-And I believe He's here now, standing in our midst.
-Here with the power to heal now, and the grace to forgive.
+&lt;special&gt;Ich glaube an Jesus; ich glaube, dass er der Sohn Gottes ist;&lt;/special&gt;
+I believe He died and rose again,
+&lt;special&gt;ich glaube, dass er gestorben und auferstanden ist,&lt;/special&gt;
+I believe He paid for us all.
+&lt;special&gt;ich glaube, dass er für uns alle bezahlt hat.&lt;/special&gt;
 
+And I believe He's here now, standing in our midst.
+&lt;special&gt;Und ich glaube, dass er jetzt hier ist, mitten unter uns;&lt;/special&gt;
+Here with the power to heal now, and the grace to forgive.
+&lt;special&gt;hier in Vollmacht zu heilen und zu vergeben in Gnade.&lt;/special&gt;
 
 I believe in You Lord, I believe You are the Son of God,
-I believe You died and rose again, I believe You paid for us all.
+&lt;special&gt;Ich glaube an dich, Herr; ich glaube, dass du der Sohn Gottes bist;&lt;/special&gt;
+I believe You died and rose again,
+&lt;special&gt;ich glaube, dass du gestorben und auferstanden bist,&lt;/special&gt;
+I believe You paid for us all.
+&lt;special&gt;ich glaube, dass du für uns alle bezahlt hast.&lt;/special&gt;
+
 And I believe You're here now, standing in our midst.
+&lt;special&gt;Und ich glaube, dass du jetzt hier bist, mitten unter uns;&lt;/special&gt;
 Here with the power to heal now, and the grace to forgive.
+&lt;special&gt;hier in Vollmacht zu heilen und zu vergeben in Gnade.&lt;/special&gt;
+
+
+
+
+
+
+
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0206" trans="" zus="">
       <Number>206</Number>
@@ -3369,17 +3222,20 @@ die um uns wirbt und uns nach Hause führt.
     <Song id="s0208" trans="" zus="">
       <Number>208</Number>
       <Title>Wir kommen zu dir</Title>
-      <Text>Wir kommen zu dir, wir kommen zu dir, als erlöste Schar
-stehen wir vor dir,  mit erhobenem Haupt, dem Herz voller
-Dank beten wir dich an. Wir preisen dich, Herr, wir preisen
-dich, Herr, wir loben deine Barmherzigkeit,  denn du hast uns
-befreit, hast die Ketten gesprengt, die uns gefangen.
+      <Text>Wir kommen zu dir, wir kommen zu dir,
+als erlöste Schar stehen wir vor dir,
+mit erhobenem Haupt, dem Herz voller Dank beten wir dich an.
+Wir preisen dich, Herr, wir preisen dich, Herr,
+wir loben deine Barmherzigkeit,  denn du hast uns befreit,
+hast die Ketten gesprengt, die uns gefangen.
 
-Wir lieben dich, Herr, wir lieben dich, Herr, wir erheben deinen
-grossen Nam,  denn in dir ist die Kraft, in dir ist die Macht,
-die uns den Sieg gegeben hat.  Wir beten dich an, wir beten dich an,
-in heiligem Schmuck stehen wir vor dir! Unser Lob sei dein Thron,
-komm, herrsche du unter uns!
+Wir lieben dich, Herr, wir lieben dich, Herr,
+wir erheben deinen grossen Nam,
+denn in dir ist die Kraft, in dir ist die Macht,
+die uns den Sieg gegeben hat. 
+Wir beten dich an, wir beten dich an,
+in heiligem Schmuck stehen wir vor dir!
+Unser Lob sei dein Thron, komm, herrsche du unter uns!
 </Text>
     </Song>
     <Song id="s0209" trans="" zus="">
@@ -3781,7 +3637,12 @@ Und nichts, was ich begehre, ist dir gleich.
       <Text>Er ist Herr, er ist Herr. Er ist auferstanden, und er ist Herr.
 Jedes Knie muss sich beugen, jede Zunge soll bekennen,
 dass Jesus ist der Herr.
-</Text>
+
+He is Lord He is Lord
+He is risen from the dead
+He is Lord
+Every knee shall bow every tongue confess
+That JESUS Christ is Lord!</Text>
     </Song>
     <Song id="s0241" trans="" zus="">
       <Number>241</Number>
@@ -3890,22 +3751,28 @@ dein Wort, dass ich sehe den Tag deiner Macht.
     <Song id="s0252" trans="" zus="">
       <Number>252</Number>
       <Title>Er ist hier</Title>
-      <Text>Er ist hier.					(Jesus ist hier.)			(2x)
+      <Text>Er ist hier.						(Jesus ist hier.)				(2x)
 Mein Herz sagt mir, er ist hier.	(Jesus, Jesus ist hier.)		(2x)
 
-Er ist Herr.					(Jesus ist Herr.)			(2x)
+Er ist Herr.						(Jesus ist Herr.)			(2x)
 Ich will ihn preisen, er ist Herr.	(Jesus, Jesus ist Herr.)		(2x)
 
-He is here.					(Jesus is here.)			(2x)
+He is here.						(Jesus is here.)				(2x)
 My heart tells me, He is here.	(Jesus, Jesus is here.)		(2x)
 
-He is Lord.					(Jesus is Lord.)			(2x)
-I will praise Him, He is Lord.		(Jesus, Jesus is Lord.)		(2x)
+He is Lord.						(Jesus is Lord.)				(2x)
+I will praise Him, He is Lord.	(Jesus, Jesus is Lord.)		(2x)
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0253" trans="" zus="">
       <Number>253</Number>
-      <Title>Hallelujah He is here</Title>
+      <Title>Halleluja, unser Gott ist hier</Title>
       <Text>Halleluja, unser Gott ist hier; halleluja, er ist hier,
 und mein Herz überfliesst von der Liebe, die er schenkt.
 Halleluja, unser Gott ist hier.
@@ -4404,13 +4271,13 @@ Father, reveal Your heart to us,   (3x)  reveal Your fatherheart to us!
 (O, our precious...)
 
 Ganz nah dem Vaterherzen dein, du grosser Gott,
-von deiner Liebe eng umfangen
-wolln wir für alle Zeiten deine Kinder bleiben,
+von deiner Liebe eng umfangen wolln wir
+für alle Zeiten deine Kinder bleiben,
 als Sohn und Tochter wollen wir anbeten.
 
 Ganz nah dem Vaterherzen dein, du grosser Gott,
-von deiner Liebe eng umfangen
-wolln wir für alle Zeiten deine Kinder bleiben,
+von deiner Liebe eng umfangen wolln wir
+für alle Zeiten deine Kinder bleiben,
 ganz nah dem Vaterherzen dein, ganz nah dem Vaterherzen dein!
 
 Vater, Geborgenheit schenkst du, Vater, befreist von aller Angst.
@@ -4476,18 +4343,7 @@ In der Welt, da habt ihr Angst, doch ich habe sie besiegt!
 Wer meinem Namen traut, der ist es, der mich liebt.
 
 Meine Freude sei mit euch, auch in Dunkelheit und Streit.
-Und meine Siegesmacht führt euch in Herrlichkeit."
-
-
-
-
-
-
-
-
-
-
-</Text>
+Und meine Siegesmacht führt euch in Herrlichkeit."</Text>
     </Song>
     <Song id="s0299" trans="" zus="">
       <Number>299</Number>
@@ -4563,6 +4419,11 @@ des Leids, gefüllt bis an den höchsten Rand,
 so nehmen wir ihn dankbar, ohne Zittern,
 aus deiner guten und geliebten Hand.
 
+&lt;refrain&gt;Von guten Mächten wunderbar geborgen,
+erwarten wir getrost, was kommen mag.
+Gott ist mit uns am Abend und am Morgen
+und ganz gewiss an jedem neuen Tag.&lt;/refrain&gt;
+
 Doch willst du uns noch einmal Freude schenken
 an dieser Welt und ihrer Sonne Glanz,
 dann wolln wir des Vergangenen gedenken,
@@ -4578,9 +4439,10 @@ so lass uns hören jenen vollen Klang
 der Welt, die unsichtbar sich um uns weitet,
 all deiner Kinder Lobgesang.
 
-
-
-
+&lt;refrain&gt;Von guten Mächten wunderbar geborgen,
+erwarten wir getrost, was kommen mag.
+Gott ist mit uns am Abend und am Morgen
+und ganz gewiss an jedem neuen Tag.&lt;/refrain&gt;
 
 
 
@@ -4588,6 +4450,12 @@ all deiner Kinder Lobgesang.
 
 
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0302" trans="" zus="">
       <Number>302</Number>
@@ -4698,6 +4566,7 @@ Mi Fröid chonnt zrugg scho am nächschte Tag. Denn ...
 
 
 
+
 </Text>
     </Song>
     <Song id="s0308" trans="" zus="">
@@ -4722,6 +4591,7 @@ Father God in heaven, precious Lamb of God,
 we humbly bow before You and cry holy, holy;
 all of heaven’s singing the song of the redeemed,
 giving glory to the Lamb.
+
 
 
 
@@ -4834,8 +4704,13 @@ till justice and truth shine like the sun.
 
 
 
-
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0313" trans="" zus="">
       <Number>313</Number>
@@ -5018,24 +4893,14 @@ hat mir den Kreuzesstamm zum Lebensbaum gemacht.
 Seht an das Kreuz, das Gnade spricht.
 Der Sünde fremd, litt Gott für mich.
 
-Seht an das Kreuz, das reine Lamm. Er trug die Schuld, Vergebung kam.
+Seht an das Kreuz, das reine Lamm.
+Er trug die Schuld, Vergebung kam.
 
 Seht an das Kreuz, das mich befreit.
 Durch seine Wunden bin ich heil.
 
 Sein Opfer dort, das er gebracht,
-hat mir den Kreuzesstamm zum Lebensbaum gemacht.
-
-
-
-
-
-
-
-
-
-
-</Text>
+hat mir den Kreuzesstamm zum Lebensbaum gemacht.</Text>
     </Song>
     <Song id="s0321" trans="" zus="">
       <Number>321</Number>
@@ -5229,6 +5094,9 @@ Priiset ihn, si Name isch so herrlich - es git kei Gott so wie ihn!&lt;/refrain&
 
 
 
+
+
+
 </Text>
     </Song>
     <Song id="s0329" trans="" zus="">
@@ -5255,7 +5123,6 @@ Lift up His banner and greet Him with praise,
 our Deliverer has set us free.
 Bow before Him, adore Him and worship His name,
 there is no other God like He.
-
 
 
 
@@ -5321,18 +5188,7 @@ Hocherhaben ist er über aller Welt, drum tragt seinen Ruhm hinaus.
 Glory, Glory, Glory to the King!   (2x)&lt;/refrain&gt;
 
 Who is the King of Glory? King Jesus is His name.
-He is high and lifted up above the earth, and His name I will proclaim!
-
-
-
-
-
-
-
-
-
-
-</Text>
+He is high and lifted up above the earth, and His name I will proclaim!</Text>
     </Song>
     <Song id="s0334" trans="" zus="">
       <Number>334</Number>
@@ -5361,7 +5217,6 @@ seinem Wort.
 
 In dem Namen Jesus ist meine Zuversicht, und er schenkt mir Kraft
 durch seinen Geist, welcher uns verheissen ist - durch sein Wort.
-
 
 
 
@@ -5438,7 +5293,6 @@ Sieger sind wir, Jesu Blut hat uns erlöst!
 
 
 
-
 </Text>
     </Song>
     <Song id="s0338" trans="" zus="">
@@ -5463,6 +5317,7 @@ Be it in a quiet pasture or by a gentle stream
 the Shepherd of my soul is by my side.
 Should I face a mighty mountain or a valley dark and deep
 the Shepherd of my soul will be my guide.
+
 
 
 
@@ -5677,10 +5532,10 @@ Wenn’s dunkel isch und grau, verwandlisch du d’Nacht in Tag.
 De Herr isch s’Liecht vo de Wält,dorom wird’s hell ou über dir!
 Wenn du ihn bitte tuesch,schiint sini Sonne in dir.
 
-Herr, du bisch s’Liecht vo öis allne,
-du lüüchtisch hell über öis.
-Alli, wo wennd, chönnt’s gseh:
-Herr, du bisch s’Lääbesliecht.
+Herr, du bisch s’Liecht vo öis allne, du lüüchtisch hell über öis.
+Alli, wo wennd, chönnt’s gseh: Herr, du bisch s’Lääbesliecht.
+
+
 
 
 
@@ -5755,6 +5610,8 @@ I mim Härz wohnt mi König und Gott!
 
 
 
+
+
 </Text>
     </Song>
     <Song id="s0351" trans="" zus="">
@@ -5778,6 +5635,10 @@ Hallelujah (3x), joining our hands. (2x)
 
 Raising our hands...
 Clapping our hands...
+
+
+
+
 
 
 
@@ -5825,6 +5686,8 @@ You came from heaven to earth to show the way;
 from the earth to the cross, my dept to pay.
 From the cross to the grave, from the grave to the sky,
 Lord, I lift Your name on high.
+
+
 
 
 
@@ -5949,8 +5812,6 @@ er ist Herr der Herrn.
 
 
 
-
-
 </Text>
     </Song>
     <Song id="s0359" trans="" zus="">
@@ -5996,6 +5857,12 @@ Darum sing ich halleluja: Durch Jesus bin ich frei!
 Satan band mich fest, doch Jesus macht mich frei.   (3x)
 Darum sing ich halleluja: Durch Jesus bin ich frei!
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0362" trans="" zus="">
       <Number>362</Number>
@@ -6023,7 +5890,6 @@ You’re the only One who answers when I pray.
 You’re the only One, You are the only way.
 You’re the only One who brings me to my knees.
 You’re the only One my heart desires to please.
-
 
 
 
@@ -6136,7 +6002,7 @@ A genoux devant ta majesté, nous bénissons ton saint nom.
 Prosternés devant ta sainteté, tous émus, nous t'adorons.
 
 Alléluia, nous reconnaissons ta grandeur, ta vérité.
-Tous unis, nous nous réjouissons, nous célébrons ta bonté.
+Tous unis, nous nous réjouissons, nous nous célébrons ta bonté.
 </Text>
     </Song>
     <Song id="s0370" trans="" zus="">
@@ -6161,17 +6027,12 @@ Jesus ist der Fels, und er ist Sieger.
 
 
 
-
-
-
-
 </Text>
     </Song>
     <Song id="s0371" trans="" zus="">
       <Number>371</Number>
       <Title>Anschtatt di himmlisch Herrlichkeit</Title>
-      <Text>Anschtatt di himmlisch Herrlichkeit
-wählsch du Schmach und Hohn und Leid,
+      <Text>Anschtatt di himmlisch Herrlichkeit wählsch du Schmach und Hohn und Leid,
 gisch di für mi priis us luuterem Erbarme.
 Nimmsch mir all mi Schuld und Sünd dur di Opfertod am Chrüz,
 und du herrschisch jetz zur Rächte vo dim Vater!
@@ -6285,9 +6146,12 @@ Lass mich mit deinen Augen sehn die Wunder aus deiner Hand.
       <Text>Immer mehr von dir, immer mehr; immer mehr sein wie du, immer mehr.
 Immer mehr deine Worte verstehen, deine Werke tun, o Herr, immer mehr.
 
-Du bist ein Gott, der seine Kinder liebt, der als ein Vater ihr Verlangen sieht.
+Du bist ein Gott, der seine Kinder liebt,
+der als ein Vater ihr Verlangen sieht.
 Niemand und nichts kommt dir jemals gleich, o Herr.
-Du zeigst dich uns als ewig treuer Freund und weißt genau, wie unser Herz es meint. Gib uns mehr von dir, immer mehr.
+Du zeigst dich uns als ewig treuer Freund
+und weisst genau, wie unser Herz es meint.
+Gib uns mehr von dir, immer mehr.
 </Text>
     </Song>
     <Song id="s0377" trans="" zus="">
@@ -6339,19 +6203,22 @@ I will lift on high Your name, Lord Jesus.   (2x)
       <Title>Zeig mir den Weg</Title>
       <Text>Teach me Your way, teach me Your way;
 I will walk in Your truth day after day.
-Unite my heart to fear Your name; teach me Your way, O Lord,
-teach me Your way.
+Unite my heart to fear Your name;
+teach me Your way, O Lord, teach me Your way.
 
 And Your word is a lamp to my feet, O Lord.
 Yes Your word is a light to my path, O Lord.
 
 Zeig mir den Weg. Lehre mich, Herr,
 deinen Weg mit dir gehen jeden Tag.
-Leg in mein Herz Ehrfurcht vor dir. Zeig mir den Weg, o Herr,
-zeig mir den Weg.
+Leg in mein Herz Ehrfurcht vor dir.
+Zeig mir den Weg, o Herr, zeig mir den Weg.
 
 Und dein Wort sei ein Licht auf dem Weg mit dir.
 Ja, dein Wort leuchte hell meinem Fuss, o Herr.
+
+
+
 
 
 
@@ -6444,18 +6311,7 @@ und schaue aus nach dir, Herr,
 und schaue aus nach dir, Herr.
 
 Danke für das Kreuz,   (3x)	mein Freund.
-Danke für das Kreuz,   (3x)	mein Freund.
-
-
-
-
-
-
-
-
-
-
-</Text>
+Danke für das Kreuz,   (3x)	mein Freund.</Text>
     </Song>
     <Song id="s0385" trans="" zus="">
       <Number>385</Number>
@@ -6480,10 +6336,6 @@ Ich trink aus deiner Fülle, Herr; du gibst mir mehr, als ich je fassen kann!
 Danke Herr.
 Du formst mich in dein Ebenbild, vollbringst durch mich
 deine Werke in der Welt.
-
-
-
-
 
 
 
@@ -6553,6 +6405,7 @@ I will never be ashamed. Oh...
 
 
 
+
 </Text>
     </Song>
     <Song id="s0389" trans="" zus="">
@@ -6563,10 +6416,10 @@ Lobpreis und Ehre bringen wir:
 "Du bist König und Herrscher, du, der Heilge Israels."
 Kommt und preist den heilgen Namen Jesus.
 Lobpreis und Ehre bringen wir:
-"Du bist König und Herrscher, Lob sei dir, o Herr.&lt;/refrain&gt;
+"Du bist König und Herrscher, Lob sei dir, o Herr."&lt;/refrain&gt;
 
 Dein Name strahlt über den Völkern. Dein Name setzt Gebundne frei.
-Dein Name sprengt eherne Ketten. Dein Name bringt den Sieg allein!"
+Dein Name sprengt eherne Ketten. Dein Name bringt den Sieg allein!
 </Text>
     </Song>
     <Song id="s0390" trans="" zus="">
@@ -6741,21 +6594,7 @@ Und sein Geist, er erfüllt uns, und in ihm bezeugen wir:
 Seine Liebe ist unendlich, seine Gnade, sie wird nie vergehn!
 
 &lt;refrain&gt;Gott ist gut… in der Dunkelheit.
-Gott ist gut, ja so gut	(3x)		allezeit.&lt;/refrain&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-</Text>
+Gott ist gut, ja so gut	(3x)		allezeit.&lt;/refrain&gt;</Text>
     </Song>
     <Song id="s0400" trans="" zus="">
       <Number>400</Number>
@@ -6886,8 +6725,6 @@ Lord we hear Your Spirit coming closer,
 a mighty wave to break upon our land;
 bringing justice and forgiveness,
 God we cry to You: Revive us!
-
-
 
 
 
@@ -7041,18 +6878,7 @@ weil du die Menschen liebst.&lt;/refrain&gt;
 
 Du bist die Hilfe, die nie zu spät kommt,
 du bist der Retter in grosser Not,
-du bist der Vater, der seine Kinder nie verlässt.
-
-
-
-
-
-
-
-
-
-
-</Text>
+du bist der Vater, der seine Kinder nie verlässt.</Text>
     </Song>
     <Song id="s0413" trans="" zus="">
       <Number>413</Number>
@@ -7081,7 +6907,7 @@ Denn niemand und nichts kommt dir jemals gleich,
 singet unserm ewigen Gott.
 </Text>
     </Song>
-    <Song id="s0415" trans="" zus="">
+    <Song id="s0415" trans="t0001" zus="">
       <Number>415</Number>
       <Title>Kommt, jetzt ist die Zeit</Title>
       <Text>&lt;refrain&gt;Kommt, jetzt ist die Zeit, wir beten an.
@@ -7195,7 +7021,7 @@ Des Satans Reich darniederliegt, weil Christ ihn hat gefällt,
 weil Christ ihn hat gefällt, weil Christ, weil Christ ihn hat gefällt.
 </Text>
     </Song>
-    <Song id="s1003" trans="" zus="">
+    <Song id="s1003" trans="t0001" zus="">
       <Number>1003</Number>
       <Title>Herbei, o ihr Gläubgen</Title>
       <Text>Herbei, o ihr Gläubgen, fröhlich triumphierend, o kommet, o kommet
@@ -7209,6 +7035,8 @@ im Erdental, Gott, wahrer Gott, von Ewigkeit geboren!
 
 Kommt, singet dem Herren, o ihr Engelchöre, frohlocket, frohlocket,
 ihr Seligen! Ehre sei Gott im Himmel und auf Erden!
+
+
 </Text>
     </Song>
     <Song id="s1004" trans="" zus="">
@@ -7365,12 +7193,6 @@ der aller Welt Sünde und Schuld auf sich nahm!
 
 
 
-
-
-
-
-
-
 </Text>
     </Song>
     <Song id="s1012" trans="" zus="">
@@ -7431,18 +7253,7 @@ und us de’ n’ arme Mönsche riichi gmacht.
 
 Überall, i jedem Schtall, fröie sich hüt alli Tier,
 d’Ängel ghöre’s grad wie mer.
-Chömet gschwind, ihr liebe Chind, lueget, wie die Tierli zfride sind!
-
-
-
-
-
-
-
-
-
-
-</Text>
+Chömet gschwind, ihr liebe Chind, lueget, wie die Tierli zfride sind!</Text>
     </Song>
     <Song id="s1016" trans="" zus="">
       <Number>1016</Number>
@@ -7490,9 +7301,9 @@ singet drum halleluja in Erwartung des Herrn!
 von Jesse kam die Art und hat ein Blümlein bracht,
 mitten im kalten Winter, wohl zu der halben Nacht.
 
-Das Röslein, das ich meine, davon Jesaja sagt; hat uns gebracht alleine
-Marie, die reine Magd; aus Gottes ewgem Rat
-hat sie ein Kind geboren,
+Das Röslein, das ich meine, davon Jesaja sagt;
+hat uns gebracht alleine Marie, die reine Magd;
+aus Gottes ewgem Rat hat sie ein Kind geboren,
 wohl zu der halben Nacht.
 
 Das Blümelein so kleine, das duftet uns so süss;
@@ -7538,6 +7349,17 @@ mild He lays His glory by, born that man no more may die,
 born to raise the sons of earth, born to give them second birth.
 Hark! the herald-angels sing glory to the newborn King.
 
+Hört ihr nicht die Engel singen, hört ihr nicht den Jubelton?
+Sie verkünden und sie bringen grosse Freud vom Himmelsthron.
+Allen Menschen hier auf Erden soll der Herr geboren werden!
+Hört, der Heroldengel singt, dass er uns den Frieden bringt.   (2x)
+
+Christus, Fürst der Engelsheere, Christus, Hoffnung dieser Welt!
+Der Gesang zu deiner Ehre zieht empor zum Sternenzelt.
+Bist vom Himmel abgestiegen, um das Böse zu besiegen,
+teilst mit allen deinen Lohn, wahrer Mensch und Gottessohn.
+Hört! Der Heroldengel singt, dass er uns den Frieden bringt!
+
 
 
 
@@ -7548,6 +7370,12 @@ Hark! the herald-angels sing glory to the newborn King.
 
 
 </Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s1020" trans="" zus="">
       <Number>1020</Number>
@@ -7582,6 +7410,7 @@ so feiern wir Jesus Christus am Weihnachtstag.
 
 
 
+
 </Text>
     </Song>
     <Song id="s1021" trans="" zus="">
@@ -7606,6 +7435,7 @@ Ubi sunt gaudia?  -  Nirgend mehr denn da,
 da die Engel singen  -  nova cantica
 - und die Schellen klingen in regis curia.
 Eia, wärn wir da! Eia, wärn wir da!
+
 
 
 
@@ -7707,37 +7537,13 @@ Doch nur kurz sind solche Freuden, bald verlöscht der Kerzen Licht;
 Jesus kann allein bereiten Freuden, die vergehen nicht.
 </Text>
     </Song>
-    <Song id="s0421" trans="" zus="">
-      <Number>421</Number>
-      <Title>Feiert Jesus, kommt feiert ihn</Title>
-      <Text>&lt;refrain&gt;Feiert Jesus, kommt feiert ihn. Feiert Jesus kommt feiert ihn!&lt;/refrain&gt;
-
-Auferstanden, auferstanden, nun lebt er in Ewigkeit. 
-Auferstanden, auferstanden, kommt und feiert die Auferstehung unseres Herrn.
-
-</Text>
-    </Song>
-    <Song id="s0422" trans="" zus="">
-      <Number>422</Number>
-      <Title>Jesus, Jesus, du bist der Herr, der uns liebt</Title>
-      <Text>&lt;refrain&gt;Jesus, Jesus, du bist der Herr, der uns liebt. (2x)&lt;/refrain&gt;
-
-Du gingst für uns in den Tod.
-Du trugst am Kreuz unsre Krankheit und Schuld.
-Du nahmst den Fluch, Gottes Zorn, der uns galt.
-Du bist unser Leben und Halt.
-</Text>
-    </Song>
-    <Song id="s2000" trans="" zus="LB">
+    <Song id="s2000" trans="" zus="">
       <Number>2000</Number>
       <Title>Jesus Christus ist aller Herr</Title>
-      <Text>Jesus Christus ist aller Herr,
-Herr der ganzen Welt.
+      <Text>Jesus Christus ist aller Herr, Herr der ganzen Welt.
 
-Einer ist Gott über allen Völkern,
-einer allein ist Herr!
-In keinem andern Namen
-ist die Errettung!
+Einer ist Gott über allen Völkern, einer allein ist Herr!
+In keinem andern Namen ist die Errettung!
 Jesus ist aller Herr.
 </Text>
     </Song>
@@ -7753,7 +7559,7 @@ Halleluja, ich preise dich, Herr, Ehr sei dir allein.
     </Song>
     <Song id="s2003" trans="" zus="">
       <Number>2003</Number>
-      <Title>Belebe uns Herr</Title>
+      <Title>Belebe uns, Herr</Title>
       <Text>Belebe uns, Herr, dass dein Volk deiner sich freue.
 Belebe uns, Herr, strahle heller durch dein Volk.
 
@@ -7768,7 +7574,7 @@ Du, Herr, bisch d'Quelle.</Text>
     </Song>
     <Song id="s2005" trans="" zus="">
       <Number>2005</Number>
-      <Title>All die Fülle</Title>
+      <Title>All die Fülle ist in dir</Title>
       <Text>All die Fülle ist in dir, o Herr,
 und alle Schönheit kommt von dir, o Gott.   2x
 
@@ -7789,14 +7595,14 @@ dass alli erkenne’n’und verschtöhnd:
 Mir wennd ihn gseh, mir wennd ihn gseh,
 mir wennd Jesus über allem gseh!  (2x)&lt;/refrain&gt;
 
-Schritt für Schritt göh mer vorwärts;
+Schritt für Schritt gömmer vorwärts;
 meh und meh Land nähme mer ii;
 jedes Gebät e mächtigi Waffe -
 Satans Feschtige schtürze’n’i und i und i…</Text>
     </Song>
     <Song id="s3001" trans="" zus="">
       <Number>3001</Number>
-      <Title>Danket dem Herrn!</Title>
+      <Title>Danket dem Herrn</Title>
       <Text>Danket dem Herrn! Wir danken dem Herrn;
 denn er ist freundlich und seine Güte währet ewiglich,
 sie währet ewiglich, sie währet ewiglich.
@@ -7833,12 +7639,14 @@ auch unsern Lobgesang, auch unsern Lobgesang.
     </Song>
     <Song id="s3002" trans="" zus="">
       <Number>3002</Number>
-      <Title>Des geopferten Lamms</Title>
+      <Title>Des geopferten Lamms heilges Blut</Title>
       <Text>Des geopferten Lamms heilges Blut an der Tür meines Lebens bezeugt:
 Kein Angriff der finsteren Mächte durchbricht
 den Schutzwall des Todes am Kreuz.
-Wenn Satan mich anklagt und schuldig spricht, ruf ich aus, was Gott für mich tat.
-Für mich gibt es keine Verdammnis. Ich steh unter Jesu Blut!
+Wenn Satan mich anklagt und schuldig spricht,
+ruf ich aus, was Gott für mich tat.
+Für mich gibt es keine Verdammnis.
+Ich steh unter Jesu Blut!
 
 Ich steh unter Jesu Blut, gereinigt von all meiner Schuld.
 Frei durch die Gnade des Herrn stehe ich heilig vor ihm.
@@ -7852,8 +7660,13 @@ for now there is no condemnation, I‘m under the blood of the Lamb!
 
 I‘m under the blood of the Lamb that covers the guilt of my past.
 By the mercy of God holy and righteous I stand.
-I‘m under the blood of the Lamb. I‘m safe and secure from the enemy‘s plan;
-no weapon formed against me will stand, I‘m under the blood of the Lamb!
+I‘m under the blood of the Lamb.
+I‘m safe and secure from the enemy‘s plan;
+no weapon formed against me will stand,
+I‘m under the blood of the Lamb!
+
+
+
 
 
 
@@ -7880,7 +7693,7 @@ Ich weiss, du siehst alles in mir.
 Dein Geist, der jetzt da ist, lässt mich dich verstehen.
 Herr, ich gehör nur dir.</Text>
     </Song>
-    <Song id="s3004" trans="" zus="">
+    <Song id="s3004" trans="t0003" zus="">
       <Number>3004</Number>
       <Title>Chomm, mir hebe de Blick</Title>
       <Text>Chomm, mir hebe de Blick, chomm, mir hebe de Blick,
@@ -7891,7 +7704,7 @@ Wo du bisch, Herr, chomi zur Rueh.
 Wo du bisch, Herr, isch nöii Hoffnig. 
 Chomm, mir...&lt;/refrain&gt;
 
-Chomm, mir luegen‘ewägg				vom Ballascht!
+Chomm, mir bring'n' ihm jetzt			de Ballascht!
 
 Chomm, mir strecken‘jetz d‘Händ		hi zum Herr!
 
@@ -7900,6 +7713,12 @@ Chomm, mir drücke d‘Fröid us		    	für de Herr!
 Chomm, mir priise de Herr				mitenand!
 
 Chomm, mir hebe de Blick				uf zum Herr!</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s3005" trans="" zus="">
       <Number>3005</Number>
@@ -7911,7 +7730,7 @@ singing Hallelujah,			(3x)
 unto Jesus, our Lord. We exalt Him on high.
 
 &lt;refrain&gt;Dich, Jesus, preisen,		(3x)  
-bewegt mich zutiefst im Herz,&lt;/refrain&gt;
+bewegt mich zutiefst im Herz;&lt;/refrain&gt;
 
 dir Verehrung bringen,		(3x)  
 dir, mein Jesus, mein Herr, hocherhaben bist du!
@@ -7924,90 +7743,26 @@ Nur uf Jesus, mi Herr, richti mi jetz ganz us.
 
 </Text>
     </Song>
-    <Song id="s3006" trans="" zus="">
-      <Number>3006</Number>
-      <Title>Vater, ich komme jetzt zu dir</Title>
-      <Text>Vater, ich komme jetzt zu dir, als dein Kind lauf ich in deine Arme.
-Ich bin geborgen, du stehst zu mir, lieber Vater.
-
-Vater, du gibst mir, was ich brauch, du empfängst mich mit offenen Armen.
-Du füllst all meine Sehnsucht aus, lieber Vater.
-
-&lt;refrain&gt;Vater, bei dir bin ich zu Hause. Vater, bei dir berge ich mich.
-Vater, bei dir finde ich Ruhe, o mein Vater,     (2x) 
-ich liebe dich.&lt;/refrain&gt;</Text>
-    </Song>
     <Song id="s3007" trans="" zus="">
       <Number>3007</Number>
-      <Title>There is no other</Title>
-      <Text>There is no other name by which men can be saved, 
+      <Title>There is no other name</Title>
+      <Text>&lt;refrain&gt;There is no other name by which men can be saved, 
 there is no other name under heaven.
 There is rest for my soul, and the wounded made whole, 
 and the captives set free and forgiven.
-
+&lt;/refrain&gt;
 Such love as I had never known
 I‘ve found in the grace that flowed to me in my unrighteousness;
 this is why my heart and soul and tongue confess:
 
-Es ist kein andrer Nam, welcher Rettung uns bringt, 
+&lt;refrain&gt;Es ist kein andrer Nam, welcher Rettung uns bringt, 
 es ist kein andrer Nam unter dem Himmel.
 Was verletzt ist, wird heil, tiefer Friede kehrt ein, 
-und Gebundenheit weicht der Vergebung.
+und Gebundenheit weicht der Vergebung.&lt;/refrain&gt;
 
 Niemals zuvor hab ich gesehn
 solch Liebe und Barmherzigkeit für mich in meiner Verlorenheit!
-Drum bezeugt mein Herz, mein Geist, mein Mund es laut:
-
-
-
-
-
-
-
-
-
-
-
-
-</Text>
-    </Song>
-    <Song id="s3009" trans="" zus="">
-      <Number>3009</Number>
-      <Title>Herr, du bisch e wunderbare Gott</Title>
-      <Text>Herr, du bisch e wunderbare Gott! Du bisch do und hilfsch mer i de Not.
-
-Du lohsch dini Gnad lo fliesse, nöie Muet foht afo schpriesse.
-Fröid erwacht, mit nöier Chraft wott i di priise, Herr.     (2x)</Text>
-    </Song>
-    <Song id="s3010" trans="" zus="">
-      <Number>3010</Number>
-      <Title>König vo mim Härz</Title>
-      <Text>König vo mim Härz, Liebi vo mim Läbe. 
-Tröie Fridefürscht, wunderbare Fründ.
-Schtuunend frogi mi: Wie isch das nume cho, 
-dass du mi bim Name rüefsch ond i di kenne darf?
-
-Du bisch s‘Höchschte vo mim Läbe,
-du bisch s‘Beschte woni ha.
-Mit dir lig i nie denäbe, und mit dir wird i beschtoh.
-Wär cha mir biete, was i bi dir cha ha?
-Wär isch mi Schtärchi, wenn i nümm wiiter ma?
-Immer wirsch mi König si!</Text>
-    </Song>
-    <Song id="s3011" trans="" zus="">
-      <Number>3011</Number>
-      <Title>Heilig, du Lamm Gottes</Title>
-      <Text>Heilig, heilig, heilig, heilig, du Lamm Gottes auf dem Thron.
-Heilig, heilig, heilig, heilig, Jesus Christus, Gottes Sohn.
-
-Alle Engel singen: „Heilig!“ und die Ältesten vor dem Thron.
-Alles schweige und sich beuge und verehre Gottes Sohn.
-
-&lt;refrain&gt;Du, nur du. (Nur du allein bist heilig.)	(2x)
-Du, nur du (nur du) allein bist heilig.
-Jesus, Lamm Gottes auf dem Thron.&lt;/refrain&gt;
-
-</Text>
+Drum bezeugt mein Herz, mein Geist, mein Mund es laut:</Text>
     </Song>
     <Song id="s1030" trans="" zus="NB">
       <Number>1030</Number>
@@ -8043,70 +7798,30 @@ O Herr, mein Gott, in Ewigkeit will ich dich preisen!
 Halleluja 6x
 O Herr, mein Gott, in Ewigkeit will ich dich preisen!</Text>
     </Song>
-    <Song id="s3008" trans="" zus="">
-      <Number>3008</Number>
-      <Title>Wie gross bisch du, Herr,</Title>
-      <Text>&lt;refrain&gt;Wie gross bisch du, Herr, wie gross dis Erbarme;
-wie unfassbar alls, wo du hesch `to für mi;
-wie gross bisch du, Herr!
-Di härzlechi Liebi ergriift mi töif inn, und i sing: 
-Wie gross bisch du, Herr!&lt;/refrain&gt;
-
-Wie gross isch di Gnad unändlech wie de Himmel.
-Wie gross isch das Härz, wo mi errettet het!
-
-&lt;refrain&gt;How great are You, Lord, how great is Your mercy;
-how great are the things that You have done for me.
-How great are You, Lord,
-Your loving kindness is filling my heart as I sing: 
-How great are You, Lord!&lt;/refrain&gt;
-
-How great is Your love, it reaches to the heavens.
-How great is the heart that sought and rescued me.
-
-
-
-
-
-
-
-
-
-
-
-
-</Text>
-    </Song>
-    <Song id="s2008" trans="" zus="">
-      <Number>2008</Number>
-      <Title>Feiert Jesus, kommt feiert ihn.</Title>
-      <Text>&lt;refrain&gt;Feiert Jesus, kommt feiert ihn.
-Feiert Jesus, kommt feiert ihn! (2x)&lt;/refrain&gt;
-
-Auferstanden, auferstanden, nun lebt er in Ewigkeit.
-Auferstanden, auferstanden, kommt und feiert 
-die Auferstehung unseres Herrn.</Text>
-    </Song>
     <Song id="s2009" trans="" zus="">
       <Number>2009</Number>
-      <Title>Auferstanden von den Toten.</Title>
-      <Text>&lt;refrain&gt;Auferstanden von den Toten.
-Auferstanden, Jesus Christus lebt!&lt;/refrain&gt;
+      <Title>Ich habe Freude</Title>
+      <Text>Ich habe Freude, Freude, Freude, Freude in meinem Herzen,
+in meinem Herzen, in meinem Herz.
+Ich habe Freude, Freude, Freude, Freude in meinem Herzen,
+Ehre sei dem Herrn!
+Ich bin so glücklich, ja so sehr glücklich,
+denn Jesu Liebe macht das Herz so froh.   2x
 
-Als sein Leben war erloschen, schien sein Auftrag unerfüllt;
-doch sein Opfer hat vollendet über Tod und Höll den Sieg.
+Ich habe Friede…
 
-Denn Gott liess ihn nicht im Grabe, preisgegeben dem Verfall;
-auferweckt zum ewgen Leben überwand er Satans Macht.
+Ich habe Ruhe…
 
-Wäre er nicht auferstanden, könnten wir nicht auferstehn;
-Gottes Sohn jedoch lebt ewig, unsre Hoffnung trüget nicht.
+Ich habe Liebe…
 
-Wenn der Herr mit mächtgen Engeln auf die Erde wiederkommt,
-und Posaunen hell ertönen, werden wir vom Grab erstehn.
-
-Und wir werden in dem Lichte einer selgen Himmelswelt
-ihn von Angesicht dann sehen, ihn, den Meister und den Herrn.</Text>
+Ich habe Freude, Friede, Ruhe, Liebe…
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
     </Song>
     <Song id="s0357" trans="" zus="">
       <Number>357</Number>
@@ -8119,12 +7834,6 @@ Drum hebi mini Händ uf zum Thron, bringe dir mis Lob,
 schtimme i is Jubellied mit allne Gotteschind:
 Priis, Ehr und Abättig ghöre dir elei,
 König, uferschtandne Herr, grosse Läbesfürscht!</Text>
-    </Song>
-    <Song id="s2010" trans="" zus="">
-      <Number>2010</Number>
-      <Title>Auferstanden von den Toten.</Title>
-      <Text>&lt;refrain&gt;Auferstanden von den Toten.
-Auferstanden, Jesus Christus lebt!&lt;/refrain&gt;</Text>
     </Song>
     <Song id="s0355" trans="" zus="">
       <Number>355</Number>
@@ -8147,8 +7856,1113 @@ Halleluja mi Erlöser läbt, Jesus mi Erlöser läbt.
 Halleluja mi Erlöser läbt! Jesus, dir geb i mi hi,
 Jesus, dir geb i mi hi.</Text>
     </Song>
-    <Song id="s4001" trans="" zus="">
-      <Number>4001</Number>
+    <Song id="s2010" trans="" zus="">
+      <Number>2010</Number>
+      <Title>Es isch Jesus, wo mir fiire,</Title>
+      <Text>Es isch Jesus, wo mir fiire, er het üs vo Schuld befreit.
+Es isch Jesus, wo mir ehre, er isch d‘Hoffnig wo üs treit.   (2x)
+
+Im Himmel und uf Ärde, niemer miech, was er für üs het ta.
+Ir Gägewart und Zuekunft, niemer cha, was er für üs het ta.
+Löt üs es Fescht ha zu sire Ehr!
+
+Heilig, heilig, sin Name isch heilig,
+Gnädig, gnädig, sis Handle isch gnädig.  (2x)
+Löt üs es Fescht ha zu sire Ehr!
+</Text>
+    </Song>
+    <Song id="s2011" trans="" zus="">
+      <Number>2011</Number>
+      <Title>Gott isch Herr, är cha alls,</Title>
+      <Text>Gott isch Herr, är cha alls, Gott cha alls, är isch Herr,
+nüt isch z‘schwär, nüt isch z‘gross für ihn!
+
+God can do anything, anything, anything,
+God can do anything but fail.
+</Text>
+    </Song>
+    <Song id="s2012" trans="" zus="">
+      <Number>2012</Number>
+      <Title>Du grosser Gott, wenn ich die Welt betrachte</Title>
+      <Text>Du grosser Gott, wenn ich die Welt betrachte,
+die du geschaffen durch dein Allmachtswort,
+wenn ich auf alle jene Wesen achte,
+die du regierst und nährest fort und fort, …..
+
+&lt;refrain&gt;dann jauchzt mein Herz dir, grosser Herrscher, zu:
+Wie gross bist du! Wie gross bist du!
+Dann jauchzt mein Herz dir, grosser Herrscher, zu:
+Wie gross bist du! Wie gross bist du!&lt;/refrain&gt;
+
+Wenn mir der Herr in seinem Wort begegnet,
+wenn ich die grossen Gnadentaten seh,
+wie er das Volk des Eigentums gesegnet,
+wie er‘s geliebt, begnadigt je und je, …..
+
+Und seh ich Jesum auf der Erde wandeln,
+in Knechtsgestalt, voll Lieb und grosser Huld,
+wenn ich im Geiste seh sein göttlich Handeln,
+am Kreuz bezahlen vieler Sünder Schuld, …..
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s2014" trans="" zus="">
+      <Number>2014</Number>
+      <Title>Halleluja, ich preise dich</Title>
+      <Text>Halleluja, ich preise dich, Herr, Ehre sein dir allein.
+
+Hallelujah I worship You, glory to Your name.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2015" trans="" zus="">
+      <Number>2015</Number>
+      <Title>Chomm, mir wennd de Herr jetzt priise</Title>
+      <Text>Chomm, mir wennd de Herr jetz priise,
+chomm, mir wennd em öises Härz uftue;
+chomm so, wi du bisch, und priis ihn,
+chomm so, wi du bisch zu Gott, dim Herr,
+chomm!
+
+Einisch wärde alli erkenne'n' und gseh,
+jede wird sich böige vor ihm.
+S'allergröschti Gschänk isch für dä parat,
+wo jetz zu ihm seit Ja.
+</Text>
+    </Song>
+    <Song id="s3020" trans="" zus="">
+      <Number>3020</Number>
+      <Title>Vater, ich komme jetzt zu dir</Title>
+      <Text>Vater, ich komme jetzt zu dir, als dein Kind lauf ich in deine Arme.
+Ich bin geborgen, du stehst zu mir, lieber Vater.
+
+Vater, du gibst mir, was ich brauch, du empfängst mich mit offenen Armen.
+Du füllst all meine Sehnsucht aus, lieber Vater.
+
+&lt;refrain&gt;Vater, bei dir bin ich zu Hause. Vater, bei dir berge ich mich.
+Vater, bei dir finde ich Ruhe, o mein Vater,     (2x) 
+ich liebe dich.&lt;/refrain&gt;</Text>
+    </Song>
+    <Song id="s7001" trans="" zus="">
+      <Number>3006</Number>
+      <Title>O Gott, sei gelobt für die Liebe im Sohn</Title>
+      <Text>O Gott, sei gelobt für die Liebe im Sohn,
+die den Zugang uns schafft zu dem himmlischen Thron.
+
+&lt;refrain&gt;Halleluja, sei gepriesen, halleluja, Amen.
+Halleluja, sei gepriesen, Herr, segne uns jetzt.&lt;/refrain&gt;
+
+O Gott, sei gelobt für den Heiligen Geist,
+der zu Jesus uns führt und zum Leben hinweist.
+
+Lob, Ehre und Preis sei für immer gebracht
+dir, dem Herrn, der von Sünden uns frei hat gemacht.</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s3021" trans="" zus="">
+      <Number>3021</Number>
+      <Title>Wie gross bisch du, Herr</Title>
+      <Text>&lt;refrain&gt;Wie gross bisch du, Herr, wie gross dis Erbarme;
+wie unfassbar alls, wo du hesch `to für mi;
+wie gross bisch du, Herr!
+Di härzlechi Liebi ergriift mi töif inn, und i sing: 
+Wie gross bisch du, Herr!&lt;/refrain&gt;
+
+Wie gross isch di Gnad, unändlech wie de Himmel.
+Wie gross isch das Härz, wo mi errettet het!
+
+&lt;refrain&gt;How great are You, Lord, how great is Your mercy;
+how great are the things that You have done for me.
+How great are You, Lord,
+Your loving kindness is filling my heart as I sing: 
+How great are You, Lord!&lt;/refrain&gt;
+
+How great is Your love, it reaches to the heavens.
+How great is the heart that sought and rescued me.</Text>
+    </Song>
+    <Song id="s3008" trans="" zus="">
+      <Number>3008</Number>
+      <Title>Over all the earth You reign on high</Title>
+      <Text>Over all the earth You reign on high, 
+every mountain stream, every sunset sky.
+But my one request, Lord, my only aim is that You’d reign in me again.
+
+&lt;refrain&gt;Lord reign in me, reign in Your pow’r;
+over all my dreams, in my darkest hour.
+You are the Lord of all I am, so won't You reign in me again.&lt;/refrain&gt;
+
+Over every thought, over every word
+may my life reflect the beauty of my Lord;
+‘cause You mean more to me than any earthly thing.
+So won't You reign in me again.
+
+Über alle Welt bist du der Herr,
+über jeden Berg, die Sonne und das Meer.
+Doch mein grösster Wunsch, das, was ich begehr, ist:
+Herr, regiere du in mir.
+
+&lt;refrain&gt;Regier in mir in deiner Kraft, über jeden Traum, auch in tiefster Nacht.
+Du bist mein Gott, ich gehöre dir; darum regiere du in mir.&lt;/refrain&gt;
+
+Alles, was ich denk und jedes Wort
+soll ein Spiegel sein deiner Schönheit, Gott.
+Du bedeutest mir mehr als alles hier; darum regiere du in mir.
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s3016" trans="" zus="">
+      <Number>3016</Number>
+      <Title>Herr, du bisch e wunderbare Gott</Title>
+      <Text>Herr, du bisch e wunderbare Gott! Du bisch do und hilfsch mer i de Not.
+
+Du lohsch dini Gnad lo fliesse, nöie Muet foht afo schpriesse.
+Fröid erwacht, mit nöier Chraft wott i di priise, Herr.     (2x)</Text>
+    </Song>
+    <Song id="s7002" trans="" zus="">
+      <Number>3009</Number>
+      <Title>Gott ist mein Fels</Title>
+      <Text>&lt;refrain&gt;Gott ist mein Fels, er ist mein Erretter,
+Gott ist mein sicherer Ort.
+Gott ist mein Schild und ein starker Helfer,
+Gott ist mir Zuflucht und Kraft.&lt;/refrain&gt;
+
+Was immer vor mir liegt und ich noch nicht seh,
+ob schwere Sorgen und Angst mich bedrohn:
+Jesus ist da, er ist bei mir jeden Tag;
+in ihm empfang ich das, was mir fehlt.
+
+&lt;refrain&gt;Gott isch mi Fels, mini schtarchi Feschtig,
+Gott isch mi Schtärchi und Chraft.
+Gott isch mi Burg, är isch min Erretter,
+Gott isch mi sicheri Ort.&lt;/refrain&gt;
+
+Was immer d‘Zuekunft au parat het für mi;
+wie düschter Wolke sich türme vor mir:
+Jesus umgibt mi, isch bi mir jede Tag;
+und s‘git kei andre Herr näbe‘n‘ihm!</Text>
+    </Song>
+    <Song id="s3014" trans="" zus="">
+      <Number>3014</Number>
+      <Title>König vo mim Härz</Title>
+      <Text>König vo mim Härz, Liebi vo mim Läbe. 
+Tröie Fridefürscht, wunderbare Fründ.
+Schtuunend frogi mi: Wie isch das nume cho, 
+dass du mi bim Name rüefsch ond i di kenne darf?
+
+Du bisch s‘Höchschte vo mim Läbe,
+du bisch s‘Beschte woni ha.
+Mit dir lig i nie denäbe, und mit dir wird i beschtoh.
+Wär cha mir biete, was i bi dir cha ha?
+Wär isch mi Schtärchi, wenn i nümm wiiter ma?
+Immer wirsch mi König si!</Text>
+    </Song>
+    <Song id="s3010" trans="" zus="">
+      <Number>3010</Number>
+      <Title>Vater, lass unsre Augen sehn Jesus allein</Title>
+      <Text>Vater, lass unsre Augen sehn Jesus allein.
+Geist Gottes, lass unsre Ohren hörn die Worte Jesu allein.
+Wir setzten Hoffnung auf Vergänglichkeit;
+doch wir kehren um zu dir.
+
+&lt;refrain&gt;Herr, wir schauen fest auf dich.
+Du bist das Haupt der Gemeinde, der tragende Fels, 
+der einzige Grundstein!&lt;/refrain&gt;
+
+Jesus, keiner ist wie du, voller Gnade und Kraft.
+Jesus, keiner ist wie du, voller Weisheit und Macht!
+Wir setzten Hoffnung auf Vergänglichkeit;
+doch wir kehren um zu dir.
+
+&lt;refrain&gt;Herr, wir schauen fest auf dich.
+Du bist das Haupt der Gemeinde, der tragende Fels, 
+der einzige Grundstein!
+
+Herr, wir schauen fest auf dich.
+Du bist der mächtige Herrscher, König der Welt, 
+Herr der Herrlichkeit!&lt;/refrain&gt;
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s3022" trans="" zus="">
+      <Number>3022</Number>
+      <Title>Heilig, heilig  (Du, nur du)</Title>
+      <Text>Heilig, heilig, heilig, heilig, du Lamm Gottes auf dem Thron.
+Heilig, heilig, heilig, heilig, Jesus Christus, Gottes Sohn.
+
+Alle Engel singen: „Heilig!“ und die Ältesten vor dem Thron.
+Alles schweige und sich beuge und verehre Gottes Sohn.
+
+&lt;refrain&gt;Du, nur du. (Nur du allein bist heilig.)	(2x)
+Du, nur du (nur du) allein bist heilig.
+Jesus, Lamm Gottes auf dem Thron.&lt;/refrain&gt;
+
+</Text>
+    </Song>
+    <Song id="s3011" trans="" zus="">
+      <Number>3011</Number>
+      <Title>Herr, im Glanz deiner Majestät</Title>
+      <Text>Herr, im Glanz deiner Majestät,
+auf den Stufen vor deinem Thron stehen wir
+in deinem Licht und singen dir Lieder.    (2x)
+
+Du, o Herr, bist die Quelle des Lebens,
+und von dir leben wir.      (2x)</Text>
+    </Song>
+    <Song id="s3012" trans="" zus="">
+      <Number>3012</Number>
+      <Title>Unser Gott ist ein mächtger Gott!</Title>
+      <Text>Unser Gott ist ein mächtger Gott! Er herrscht vom Himmel herab
+mit Weisheit, Liebe und Kraft. Unser Gott ist ein mächtiger Gott!
+
+Our God is an awesome God, He reigns from heaven above,
+with wisdom, pow'r and love, our God is an awesome God!</Text>
+    </Song>
+    <Song id="s3013" trans="" zus="">
+      <Number>3013</Number>
+      <Title>Du bist der Herr, der mein Haupt erhebt</Title>
+      <Text>&lt;refrain&gt;Du bist der Herr, der mein Haupt erhebt. 
+Du bist die Kraft, die mein Herz belebt.
+Du bist die Stimme, die mich ruft; du gibst mir Rückenwind.
+
+Du bist der Herr, der mein Haupt erhebt. 
+Du bist die Kraft, die mein Herz belebt.
+Du bist die Stimme, die mich ruft; drum will ich vorwärts gehn.&lt;/refrain&gt;
+
+Du flösst mir Vertrauen ein, treibst meine Ängste aus.
+Du glaubst an mich, traust mir was zu und forderst mich heraus.
+Deine Liebe ist ein Wasserfall auf meinen Wüstensand;
+auch wenn ich mir nicht sicher bin, führt mich deine Hand.
+
+Wind des Herrn, weh in meinem Leben.
+Geist des Herrn, fach das Feuer an.
+Wind des Herrn, du hast mir Kraft gegeben.
+Geist des Herrn, sei mein Rückenwind.</Text>
+    </Song>
+    <Song id="s3015" trans="" zus="">
+      <Number>3015</Number>
+      <Title>Jede Tag wott i di gseh</Title>
+      <Text>Jede Tag wott i di gseh, jede Tag dini Wunder erwarte.
+Du bisch Gott, allmächtige Herr, was sött dir unmöglich sii,
+was sött dir unmöglich si!
+
+Gränzelos isch dini Macht im Himmel und uf Ärde.
+Du bisch dä, wo alles schafft und alles loht lo wärde.
+Liebevoll umgisch du dini Schöpfig mit dim Sii.
+Du lohsch di lo finde, wemmer offe sind für di.</Text>
+    </Song>
+    <Song id="s3017" trans="" zus="">
+      <Number>3017</Number>
+      <Title>Gott zeigt mir den Weg</Title>
+      <Text>Gott zeigt mir den Weg, wenn ich keinen Ausweg seh.
+Bei ihm ist alles gut geplant, besser als ich je geahnt.
+Gott zeigt mir den Weg. Wenn ich nur ganz mit ihm geh
+und meine Sorgen auf ihn leg, zeigt er mir den Weg.
+Gott zeigt mir den Weg.
+
+God will make a way when there seems to be no way.
+He works in ways we cannot see, He will make a way for me.
+He will be my guide, hold me closely to His side
+with love and strength for each new day. He will make a way.
+He will make a way.</Text>
+    </Song>
+    <Song id="s3018" trans="" zus="">
+      <Number>3018</Number>
+      <Title>Jesus, hab Dank für Golgatha</Title>
+      <Text>Jesus, hab Dank für Golgatha, für dein Blut, das uns so reingewaschen hat.
+Wir beten dich an, loben deinen Nam; Jesus, hab Dank für Golgatha.
+
+Hab Dank von Herzen für dein Leben, das du gabst;
+für dein Blut, das floss, es heilt heute noch. 
+Hab Dank für den Sieg, den du errungen hast dort am Kreuz auf Golgatha.</Text>
+    </Song>
+    <Song id="s3019" trans="" zus="">
+      <Number>3019</Number>
+      <Title>Halleluja, halleluja, denn der Herr</Title>
+      <Text>Halleluja, halleluja, denn der Herr, unser Gott, er regiert.
+Halleluja, halleluja, denn der Herr unser Gott, er regiert.
+Halleluja!
+
+Heilig, heilig bist du, Herr, der Allmächtige.
+Würdig ist das Lamm, würdig ist das Lamm.
+Du bist heilig, heilig bist du, Herr, der Allmächtige.
+Würdig ist das Lamm, würdig ist das Lamm. Amen!
+
+Halleluja, Halleluja, for the Lord the Almighty reigns.
+Halleluja, Halleluja, for the Lord the Almighty reigns.
+Halleluja.
+
+Holy, holy is the Lord God Almighty.
+Worthy is the Lamb, worthy is the Lamb.
+You are holy, holy are You Lord God Almighty.
+Worthy is the Lamb, worthy is the Lamb. Amen!</Text>
+    </Song>
+    <Song id="s2017" trans="" zus="">
+      <Number>2017</Number>
+      <Title>Jesus gab mir die Kleider des Heils</Title>
+      <Text>Jesus gab mir die Kleider des Heils,
+Jesus gab mir die Kleider des Heils.
+Lasten, die mich bedrücken, müssen von mir fliehen,
+denn er gab mir die Kleider des Heils.
+</Text>
+    </Song>
+    <Song id="s2018" trans="" zus="">
+      <Number>2018</Number>
+      <Title>Wir heben die Hände auf zu dir Herr</Title>
+      <Text>Wir heben die Hände auf zu dir, Herr,
+unser Mund ist voll Lobpreis, unser Herz voller Dank.
+Wir preisen dich, Herr, wir preisen dich, Herr,
+mit dem Herzen voll Dank, wir preisen dich, Herr.
+</Text>
+    </Song>
+    <Song id="s2019" trans="" zus="">
+      <Number>2019</Number>
+      <Title>Jesus, Jesus, Jesus, din Tod isch s'Läbe für mich</Title>
+      <Text>Jesus, Jesus, Jesus, di Tod isch s'Läbe für mich.
+
+Jesus, Jesus, Jesus, di Name schtrahlt Hoffnig und Liecht.
+
+Jesus, Jesus, Jesus, du bisch und blibsch immer glich.
+
+Vater, Vater, Vater, du schänksch öis alls mit dim Sohn.
+</Text>
+    </Song>
+    <Song id="s2020" trans="" zus="">
+      <Number>2020</Number>
+      <Title>Frieden gebe ich euch</Title>
+      <Text>Frieden gebe ich euch.   (2x)
+Nicht wie die Welt gibt, gebe ich euch.
+Frieden gebe ich euch.
+</Text>
+    </Song>
+    <Song id="s2021" trans="" zus="">
+      <Number>2021</Number>
+      <Title>Vater im Himmel, ich weiss</Title>
+      <Text>&lt;refrain&gt;Vater im Himmel, ich weiss, du denkst an mich,	(3x)
+dort im Paradies.&lt;/refrain&gt;
+
+Jesus nahm mir meine Sünden und gab mir die Ruh,	(3x)
+dort auf Golgatha.
+
+Jesus gibt mir einen Platz in seinem Vaterhaus,			(3x)
+dort im Paradies.
+</Text>
+    </Song>
+    <Song id="s2022" trans="" zus="">
+      <Number>2022</Number>
+      <Title>Wir sehn den Herrn</Title>
+      <Text>Wir sehn den Herrn, wir sehn den Herrn.
+Er ist hoch erhaben und sein Saum erfüllt den Tempel.   (2x)
+
+Die Engel singen: "Heilig", die Engel singen: "Heilig",
+die Engel singen: "Heilig ist der Herr".
+</Text>
+    </Song>
+    <Song id="s2023" trans="" zus="">
+      <Number>2023</Number>
+      <Title>Held, der dem Grabe sieggekrönt entstieg</Title>
+      <Text>Held, der dem Grabe sieggekrönt entstieg,
+dein ist Macht und Ehre, ewig dein der Sieg.
+Wir auch sollen leben mit dem Herrn zugleich.
+Er will uns erheben in sein himmlisch Reich.
+Held, der dem Grabe sieggekrönt entstieg,
+dein ist Macht und Ehre, ewig dein der Sieg.
+
+Auf unser Flehen gibt er und vergibt.
+Jeder kann es sehen, dass er lebt und liebt.
+Volk des Herrn, o freue deines Königs dich.
+Seine Huld und Treue währet ewiglich.
+Held, der dem Grabe sieggekrönt entstieg,
+dein ist Macht und Ehre, ewig dein der Sieg.
+
+Was kann uns scheiden von der Liebe sein?
+Trübsal oder Leiden, irgendeine Pein?
+Wovor soll mir grauen?
+Als ein Kind des Lichts darf ich ihm vertrauen.
+Nein, ich fürchte nichts.
+Held, der dem Grabe sieggekrönt entstieg,
+dein ist Macht und Ehre, ewig dein der Sieg.
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s2024" trans="" zus="">
+      <Number>2024</Number>
+      <Title>O Gott, dir sei Ehre</Title>
+      <Text>O Gott, dir sei Ehre, der Grosses getan.
+Du liebtest die Welt, nahmst der Sünder dich an.
+Dein Sohn hat sein Leben zum Opfer geweiht.
+Der Himmel steht offen zur ewigen Freud.
+
+&lt;refrain&gt;Preist den Herrn. Preist den Herrn.
+Erde, hör diesen Schall!
+Preist den Herrn. Preist den Herrn.
+Völker, freuet euch all!
+O, kommt zu dem Vater. In Jesus wir nahn.
+Und gebt ihm die Ehre, der Grosses getan.&lt;/refrain&gt;
+
+O grosse Erlösung, erkauft durch sein Blut.
+Dem Sünder, der glaubt, kommt sie heute zugut.
+Die volle Vergebung wird jedem zuteil,
+der Jesus erfasset, das göttliche Heil.
+
+Wie gross ist sein Lieben. Wie gross ist sein Tun.
+Wie gross unsre Freude, in Jesus zu ruhn!
+Doch grösser und reiner und höher wird‘s sein,
+wenn jubelnd und schauend wir droben ziehn ein.
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s2025" trans="" zus="">
+      <Number>2025</Number>
+      <Title>Wie gross ist mein Gott</Title>
+      <Text>Wie gross ist mein Gott! Kein andrer wie er.
+Sein Name so hoch, nur er ist der Herr.
+Er teilte die Fluten vom roten Meer,
+hat auch heute noch dieselbe Kraft,
+nichts ist ihm zu schwer.
+</Text>
+    </Song>
+    <Song id="s2026" trans="" zus="">
+      <Number>2026</Number>
+      <Title>Es gibt jemand</Title>
+      <Text>Es gibt jemand, der deine Lasten kennt,
+jemand, der dich sein Kind nennt,
+ja, jemand, der nie dich lässt allein;
+denn er trug am Kreuze deine Last,
+die du selbst verschuldet hast,
+und er wird immer bei dir sein.
+
+Es ist Jesus, der deine Lasten kennt,
+Jesus, der dich sein Kind nennt,
+ja, Jesus, der nie dich lässt allein;
+denn er trug am Kreuze deine Last,
+die du selbst verschuldet hast,
+und er wird immer bei dir sein.
+</Text>
+    </Song>
+    <Song id="s2027" trans="" zus="">
+      <Number>2027</Number>
+      <Title>Ja, das ist Freude</Title>
+      <Text>Ja, das ist Freude, unaussprechliche Freude,
+in Jesus Christus geborgen zu sein.
+Ja, das ist Freude, unaussprechliche Freude,
+in Jesus Christus geborgen zu sein.
+</Text>
+    </Song>
+    <Song id="s2028" trans="" zus="">
+      <Number>2028</Number>
+      <Title>Wenn ich bedenke, was der Herr getan</Title>
+      <Text>Wenn ich bedenke, was der Herr getan,
+dann kann ich niemals mehr zurück. (Halleluja)
+Wenn ich bedenke, was der Herr getan,
+dann kann ich niemals mehr zurück.
+Nein, nein, nein, nein, nein,
+dann kann ich niemals mehr zurück. (Halleluja)
+Wenn ich bedenke, was der Herr getan,
+dann kann ich niemals mehr zurück!
+</Text>
+    </Song>
+    <Song id="s2029" trans="" zus="">
+      <Number>2029</Number>
+      <Title>Den ganzen Tag</Title>
+      <Text>Den ganzen Tag, die ganze Nacht
+traue auf Gottes Wort,
+das uns ans Licht gebracht.
+Dunkelheit flieht auf sein Gebot.
+Immer, bei Tag und Nacht,
+hält Gott sein Wort.
+</Text>
+    </Song>
+    <Song id="s2030" trans="" zus="">
+      <Number>2030</Number>
+      <Title>Wir loben dich, unsern Gott</Title>
+      <Text>&lt;refrain&gt;Wir loben dich, unsern Gott.
+Wir preisen dich, unsern Herrn.
+Wir loben dich und beten dich an.   (2x)&lt;/refrain&gt;
+
+Du hast uns das Leben geschenkt,
+unsere Sünden versenkt
+im äussersten Meer!
+Du hast uns mit Gutem verwöhnt,
+mit deiner Liebe gekrönt,
+wir danken dir, Herr.
+</Text>
+    </Song>
+    <Song id="s2031" trans="" zus="">
+      <Number>2031</Number>
+      <Title>Der Herr segne dich</Title>
+      <Text>Der Herr segne dich, behüte dich,
+lasse sein Angesicht leuchten über dir,
+und der Herr sei dir gnädig!
+Er erhebe sein Angesicht über dich
+und erfülle dein Herz mit seinem Licht,
+tiefer Friede begleite dich.
+</Text>
+    </Song>
+    <Song id="s2032" trans="" zus="">
+      <Number>2032</Number>
+      <Title>Mächtige Ströme des Segens</Title>
+      <Text>Mächtige Ströme des Segens! Lass Sie durchfluten die Welt.
+Sende die Zeit der Erquickung. Labe das dürstende Feld!
+
+&lt;refrain&gt;Heilige Ströme, Ströme dein Wort uns verheisst:
+Herr, wir bitten und flehen, send' uns in Strömen den Geist!&lt;/refrain&gt;
+
+Mächtige Ströme des Segens! Hört ihr es rauschen von fern?
+Über die Herzen der Sünder kommt's wie vom Geist des Herrn!
+
+Mächtige Ströme des Segens! Sende sie Herr, uns noch heut!
+Jetzt, wo wir flehend und beugen, jetzt, wo die Herzen bereit.
+</Text>
+    </Song>
+    <Song id="s2033" trans="" zus="">
+      <Number>2033</Number>
+      <Title>Herr, unser Gott, wie erhaben ist dein Nam</Title>
+      <Text>Herr, unser Gott, wie erhaben ist dein Nam 
+in allen Landen der Erde.
+Herr, unser Gott, der du thronst im Heiligtum, 
+dein Glanz erstrahlt über den Himmeln.
+
+&lt;refrain&gt;Wir erheben dich. Wir erheben dich, der du regierst auf ewig.
+Wir erheben dich und wir preisen dich, der du regierst auf ewig.&lt;/refrain&gt;
+
+Herr, unser Gott, die Welt ist deiner Finger Werk;
+Sterne und Mond hast du geschaffen.
+Herr, unser Gott, die Himmel preisen deine Macht,
+die ganze Schöpfung bezeugt den Schöpfer.
+</Text>
+    </Song>
+    <Song id="s2034" trans="" zus="">
+      <Number>2034</Number>
+      <Title>Shine, Jesus shine</Title>
+      <Text>Lord, the light of Your love is shining, in the midst of the darkness shining; 
+&lt;special&gt;Herr, das Licht deiner Liebe leuchtet in der Dunkelheit auf;&lt;/special&gt;
+Jesus, light of the world, shine upon us, 
+&lt;special&gt;Jesus, Licht der Welt, schein auf uns,&lt;/special&gt;
+set us free by the truth You now bring us.
+&lt;special&gt;mach uns frei durch die Wahrheit, die du uns bringst!&lt;/special&gt;
+Shine on me, shine on me.
+&lt;special&gt;Schein auf mich, schein auf mich.&lt;/special&gt;
+
+&lt;refrain&gt;Shine, Jesus shine, fill this land with the Father’s glory; &lt;/refrain&gt;
+&lt;special&gt;Schein, Jesus, schein, erfülle dieses Land mit deines Vaters Ehre;&lt;/special&gt;
+&lt;refrain&gt;blaze, Spirit blaze, set our hearts on fire. &lt;/refrain&gt;
+&lt;special&gt;wehe, Geist, wehe, setz unsre Herzen in Brand.&lt;/special&gt;
+&lt;refrain&gt;Flow, river flow, flood the nations with grace and mercy; &lt;/refrain&gt;
+&lt;special&gt;Fliesse, Strom, fliesse, überflute die Nationen mit Gnade und Erbarmen;&lt;/special&gt;
+&lt;refrain&gt;send forth Your word Lord, and let there be light.&lt;/refrain&gt;
+&lt;special&gt;sende dein Wort, Herr,  und lass es Licht werden!&lt;/special&gt;
+
+
+Lord, I come to Your awesome presence, 
+&lt;special&gt;Herr, ich komme in deine ehrfurchtgebietende Gegenwart,&lt;/special&gt;
+from the shadows into Your radiance.
+&lt;special&gt;aus dem Schatten in deine strahlende Klarheit.&lt;/special&gt;
+By the blood I may enter Your brightness, 
+&lt;special&gt;Durch dein Blut hab ich Zugang in dein Licht,&lt;/special&gt;
+search me, try me, consume all my darkness. 
+&lt;special&gt;prüf mich, durchforsch mich, verzehr alles Dunkle in mir.&lt;/special&gt;
+Shine on me, shine on me.
+&lt;special&gt;Schein auf mich, schein auf mich.&lt;/special&gt;
+
+&lt;refrain&gt;Shine, Jesus shine, fill this land with the Father’s glory; &lt;/refrain&gt;
+&lt;special&gt;Schein, Jesus, schein, erfülle dieses Land mit deines Vaters Ehre;&lt;/special&gt;
+&lt;refrain&gt;blaze, Spirit blaze, set our hearts on fire. &lt;/refrain&gt;
+&lt;special&gt;wehe, Geist, wehe, setz unsre Herzen in Brand.&lt;/special&gt;
+&lt;refrain&gt;Flow, river flow, flood the nations with grace and mercy; &lt;/refrain&gt;
+&lt;special&gt;Fliesse, Strom, fliesse, überflute die Nationen mit Gnade und Erbarmen;&lt;/special&gt;
+&lt;refrain&gt;send forth Your word Lord, and let there be light.&lt;/refrain&gt;
+&lt;special&gt;sende dein Wort, Herr,  und lass es Licht werden!&lt;/special&gt;
+
+As we gaze on Your kingly brightness 
+&lt;special&gt;Wenn wir den Blick auf deinen königlichen Glanz richten,&lt;/special&gt;
+so our faces display Your likeness;
+&lt;special&gt;wird unser Angesicht deine Herrlichkeit widerspiegeln&lt;/special&gt;
+ever changing from glory to glory, 
+&lt;special&gt;und immer herrlicher verändert,&lt;/special&gt;
+mirrored here may our lives tell Your story.
+&lt;special&gt;wird unser Leben hier schon dich bezeugen.&lt;/special&gt;
+Shine on me, shine on me.
+&lt;special&gt;Schein auf mich, schein auf mich.&lt;/special&gt;</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2035" trans="" zus="">
+      <Number>2035</Number>
+      <Title>Denn wo zwei oder drei versammelt sind in meinem Namen</Title>
+      <Text>Denn wo zwei oder drei versammelt sind in meinem Namen,
+da bin ich mitten unter ihnen.   2x</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s6001" trans="" zus="">
+      <Number>6001</Number>
+      <Title>Är cha hälfe</Title>
+      <Text>Jesus liebt mi, är liebt mi am Morge,
+är liebt mi am Mittag.
+Jesus liebt mi, är liebt mi, wenn d'Sunne undergoht.
+
+Är isch bi mir, är isch do am Morge,
+är isch do am Mittag.
+Är isch bi mir, är isch do, wenn d'Sunne undergoht.
+
+Är cha hälfe, är hilft mir am Morge,
+är hilft mir am Mittag.
+Är cha hälfe, är hilft ou, wenn d'Sunne undergoht.</Text>
+    </Song>
+    <Song id="s6002" trans="" zus="">
+      <Number>6002</Number>
+      <Title>Grosse Gott, zum fröhlech Si</Title>
+      <Text>Grosse Gott, zum fröhlech Si, halleluja,
+muess i gar ned grösser si, halleluja!
+Jedi Sorg bring i zu dir, halleluja,
+jedi Not teilsch du mit mir, halleluja.
+Du bisch do, wo mir jetzt sind, halleluja,
+sägnisch alli, gross und chli, halleluja.
+Wil du sälber d'Liebi bisch, halleluja,
+machsch du öisi Liebi frisch, halleluja.
+Danke für di ganzi Pracht, halleluja,
+d'Schöpfig lobt di Tag und Nacht, halleluja.
+Blüje wämmer ganz für di, halleluja,
+und ou läbe dir zur Ehr, halleluja.
+
+</Text>
+    </Song>
+    <Song id="s6003" trans="" zus="">
+      <Number>6003</Number>
+      <Title>Wer unter dem Schirm des Höchsten sitzt</Title>
+      <Text>Wer unter dem Schirm des Höchsten sitzt
+und unter dem Schatten des Allmächtigen bleibt,
+der spricht zu dem Herrn: Meine Zuversicht,
+meine Burg, mein Gott, meine Hoffnung.
+</Text>
+    </Song>
+    <Song id="s6004" trans="" zus="">
+      <Number>6004</Number>
+      <Title>Chlatschet i dHänd</Title>
+      <Text>&lt;refrain&gt;Chlatschet i dHänd und winket ihm zue, Gott isch so guet!
+Chlatschet i dHänd und jublet ihm zue, Gott isch so guet!&lt;/refrain&gt;
+
+Gross isch sini Güeti,
+gross isch sini Tröii,
+gross isch sini Schtärchi,
+doch am Gröschte isch sini Liebi zu mer.
+
+</Text>
+    </Song>
+    <Song id="s2037" trans="" zus="">
+      <Number>2037</Number>
+      <Title>Halleluja. Denn der Herr, unser Gott, der Allmächtige regiert</Title>
+      <Text>&lt;refrain&gt;Halleluja. Denn der Herr, unser Gott, der Allmächtige regiert.   (2x)&lt;/refrain&gt;
+Lasset uns freun und fröhlich sein und ihm die Ehre geben.
+
+&lt;refrain&gt;Hallelujah. For the Lord our God, the Almighty reigns.   (2x)&lt;/refrain&gt;
+Let us rejoice and be glad and give the glory unto Him.
+
+</Text>
+    </Song>
+    <Song id="s2038" trans="" zus="">
+      <Number>2038</Number>
+      <Title>Wenn ich singen will, bist du da (Kumbaya my Lord)</Title>
+      <Text>Wenn ich singen will, bist du da; wenn ich lachen will, bist du da; 
+wenn ich jauchzen will, bist du da; o Herr, du bist immer da.
+
+Wenn ich traurig bin, bist du da; und wenn Angst ich hab, bist du da;
+wenn mich Kummer drückt, bist du da; o Herr, du bist immer da.
+
+Herr, ich danke dir, du bist da; Herr, ich lobe dich, du bist da;
+Herr, ich freue mich, du bist da; zu jeder Zeit bist du mir nah.
+
+Wenn i singe tue, bisch du do; wenn i lache tue, bisch du do;
+wenn i juchzge tue, bisch du do; o Herr, du bisch immer do.
+
+Wenn i truurig bi, bisch du do; wenn i ängschtlech bi, bisch du do;
+wemmi Chummer drückt, bisch du do; o Herr, du bisch immer do.
+
+Herr, i danke dir, du bisch do; Herr, i lobe di, du bisch do;
+Herr, i fröie mi, du bisch do; zu jeder Ziit bisch du mir nöch.
+
+Kumbaya my Lord, kumbaya.    (3x)
+Oh Lord kumbaya.
+
+Someone’s crying Lord, kumbaya.
+
+Someone’s laughing Lord, kumbaya.
+
+Someone’s sleeping Lord, kumbaya.
+
+
+
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s6005" trans="" zus="">
+      <Number>6005</Number>
+      <Title>Jesus ghört sofort</Title>
+      <Text>Jesus ghört sofort, was du ihm seisch, alli Wünsch, wo du ihm äneleisch.
+Är lost immer, immer zue, bringt dis jungi Härz zur Rueh.
+
+Jesus ghört sofort, was du ihm seisch, jedi Sorg, wo du ihm äneleisch.
+Är lost immer, immer zue, bringt dis jungi Härz zur Rueh.</Text>
+    </Song>
+    <Song id="s2041" trans="" zus="">
+      <Number>2041</Number>
+      <Title>Give me oil in my lamp</Title>
+      <Text>Give me oil in my lamp, keep me burning,
+give me oil in my lamp, I pray. Give me oil in my lamp,
+keep me burning, keep me burning till the break of day.
+
+&lt;refrain&gt;Sing Hosanna, sing Hosanna, sing Hosanna to the King of Kings.
+Sing Hosanna, sing Hosanna, sing Hosanna to the King.&lt;/refrain&gt;
+
+Gib mir Öl, oh Herr, dass ich brenne.
+Gib mir Öl, oh Herr, mein Gott.
+Gib mir Öl, oh Herr, dass ich brenne,
+dass ich brenne, Herr, für dich, mein Gott.
+
+&lt;refrain&gt;Sing Hosianna, sing Hosianna, sing Hosianna zu dem Herrn der Welt.
+Sing Hosianna, sing Hosianna, sing Hosianna zu dem Herrn.&lt;/refrain&gt;
+
+Gib mir Liebe ins Herz, lass mich leuchten,
+gib mir Liebe ins Herz, bet ich.
+Herr, du selbst bist das Licht, das erleuchtet,
+darum scheine du nun selbst durch mich.
+
+Lass mich sein wie lebendiges Wasser,
+das durch Trockenheit fliesst, bet ich.
+Herr, du selbst bist das lebende Wasser,
+darum fliesse du nun selbst durch mich.
+
+Lass mich sein für die Welt wie ein Hirte,
+der für andere lebt, bet ich.
+Herr, du selbst bist der allertreuste Hirte,
+darum sei du nun auch das durch mich.
+
+&lt;refrain&gt;Sing Hosianna, sing Hosianna, sing Hosianna zu dem Herrn der Welt.
+Sing Hosianna, sing Hosianna, sing Hosianna zu dem Herrn.&lt;/refrain&gt;
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2042" trans="" zus="">
+      <Number>2042</Number>
+      <Title>There is power</Title>
+      <Text>There is power, power, wonder working power
+in the blood, in the blood.
+There is power, power wonder working power
+in the precious blood of the Lord!
+
+Es ist Kraft, Kraft, Kraft die Wunder wirkt
+in dem Blut, in dem Blut.
+Es ist Kraft, Kraft, Kraft die Wunder wirkt
+in dem kostbaren Blut unsres Herrn!
+</Text>
+    </Song>
+    <Song id="s2043" trans="" zus="">
+      <Number>2043</Number>
+      <Title>He has done for me</Title>
+      <Text>He has done for me, He has done for me. 2x
+What my father couldn't do He has done for me.
+What my mother couldn't do He has done for me.
+
+Är hets to für mi, är hets to für mi. 2x
+Was mi Vater nid cha tue - är hets to für mi.
+Was mi Muetter nid cha tue - är hets to für mi.
+
+Är hets to für mi, är hets to für mi. 2x
+Was kei Mönsch für mi cha tue - är hets to für mi.
+Was kei Mönsch für mi cha tue - är hets to für mi.
+
+
+</Text>
+    </Song>
+    <Song id="s4010" trans="" zus="">
+      <Number>4010</Number>
+      <Title>I will trust in You</Title>
+      <Text>I will trust in You. You're my comforter, my provider. 
+&lt;special&gt;Ich will dir vertrauen. Du bist mein Tröster, mein Versorger.&lt;/special&gt;
+I will trust in You. I will trust in Your holy Name.   (2x) 
+&lt;special&gt;Dir will ich  vertrauen. Mein Glaube baut auf deinen heiligen Namen.&lt;/special&gt;
+For You are my Shepherd. Place from above.
+&lt;special&gt;Denn du bist mein Hirte. Mein himmlischer Ort. &lt;/special&gt;
+Jehovah the Creator. Almighty God.
+&lt;special&gt;Herr, der Schöpfer. Unbesiegbarer Gott.
+&lt;/special&gt;
+
+I vertraue dir, du mi Hälfer, mi Versorger.
+I vertraue dir, trau dim Name, du heilige Gott.
+
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s4011" trans="" zus="">
+      <Number>4011</Number>
+      <Title>In the secret place</Title>
+      <Text>&lt;refrain&gt;In the secret place where You and I meet,&lt;/refrain&gt;
+&lt;special&gt;Am vertrauten Ort, wo du und ich zusammenkommen, &lt;/special&gt;
+&lt;refrain&gt;there's room for both laughing and crying.&lt;/refrain&gt;
+&lt;special&gt;ist Platz für Lachen und Weinen.&lt;/special&gt;
+&lt;refrain&gt;We share our dreams, open our hearts,&lt;/refrain&gt;
+&lt;special&gt;Wir teilen unsre Träume, öffnen unsre Herzen,&lt;/special&gt;
+&lt;refrain&gt;and You wipe my tears away.   (2x)&lt;/refrain&gt;
+&lt;special&gt;und du trocknest meine Tränen ab.&lt;/special&gt;
+
+When I rejoice, You rejoice with me.
+&lt;special&gt;Wenn ich mich freue, freust du dich mit mir.&lt;/special&gt;
+When I'm bound, You set me free.
+&lt;special&gt;Wenn mich etwas gefangen hält, machst du mich frei.&lt;/special&gt;
+I will meet You in the secret place,
+&lt;special&gt;Ich will dir begegnen am stillen Ort,&lt;/special&gt;
+I will rest in Your warm embrace,
+&lt;special&gt;ruhen in deiner warmen, vertrauten Nähe.&lt;/special&gt;
+I belong with You in the secret place.
+&lt;special&gt;Ich gehör zu dir an diesem vertrauten Ort.&lt;/special&gt;
+Well I will meet You in the secret place,
+&lt;special&gt;Ja, ich will dir begegnen am stillen Ort,&lt;/special&gt;
+I will rest in Your warm embrace,
+&lt;special&gt;ruhen in deiner warmen, vertrauten Nähe.&lt;/special&gt;
+I belong with You in the secret place.
+&lt;special&gt;Ich weiss, ich gehör zu dir an diesem vertrauten Ort.&lt;/special&gt;
+
+
+</Text>
+    </Song>
+    <Song id="s4012" trans="" zus="">
+      <Number>4012</Number>
+      <Title>I love You Lord</Title>
+      <Text>I love You Lord, love You Lord, love You Lord. 
+&lt;special&gt;Ich lieb dich, Herr, liebe dich, Herr, ich lieb dich so sehr.&lt;/special&gt;
+I love You Lord, love You Lord, love You, love You Lord. 
+&lt;special&gt;Ich lieb dich, Herr, liebe dich, Herr, ich lieb dich so sehr.&lt;/special&gt;
+I love You Lord and Saviour because You first loved me. 
+&lt;special&gt;Ich lieb dich, du mein Erlöser, weil du mich schon vorher liebtest.&lt;/special&gt;
+You took away my sin and shame when You died on Calvary. 
+&lt;special&gt;Du nahmst meine Schuld und Scham, als du auf Golgatha starbst.&lt;/special&gt;
+I don't know how to thank You, my words will never do,
+&lt;special&gt;Ich weiss nicht wie dir danken, meine Worte sind viel zu wenig,&lt;/special&gt;
+but know: that I love You!
+&lt;special&gt;aber du sollst wissen, Herr: Ich liebe dich!&lt;/special&gt;
+</Text>
+    </Song>
+    <Song id="s4013" trans="" zus="">
+      <Number>4013</Number>
+      <Title>Shine upon me Lord</Title>
+      <Text>Shine upon me Lord, and take away the things
+&lt;special&gt;Wirf dein Licht auf mich, Herr, und nimm hinweg all das,&lt;/special&gt;
+not pleasing You in my life, Lord I pray. (2x)
+&lt;special&gt;was dir nicht gefällt in meinem Leben; Herr, ich bitte dich.&lt;/special&gt;
+Lord I long to live with passion for You and You alone. 
+&lt;special&gt;Mich verlangt nach einem leidenschaftlichen Leben für dich allein.&lt;/special&gt;
+Father, please come fill me as I bow before Your throne. (2x) 
+&lt;special&gt;Vater, bitte füll mich, während ich hier knie vor deinem Thron.&lt;/special&gt;
+You and You alone I love to live for. (2x)
+&lt;special&gt;Für dich, nur für dich allein möchte ich da sein.&lt;/special&gt;
+</Text>
+    </Song>
+    <Song id="s4014" trans="" zus="">
+      <Number>4014</Number>
+      <Title>O Herr, do bini, uströchnet ond läär</Title>
+      <Text>O Herr, do bini, uströchnet ond läär.
+Beschwärt und z’tiefscht bedürftig schrei i zu dir, mi Gott.
+
+Wie chani dir begägne, wie vor di äneschtoh,
+wie mini Schtimm erhebe, wie cho zu dim Altar?
+(wie zu dir änecho?)
+
+O Herr, erbarm di! Zum Chrüz chomi hi:
+Leg mini Schold dir äne ond böig mi töif vor dir.
+	
+So chani dir begägne und vor dich äneschtoh,
+so mini Schtimm erhebe und cho zo dim Altar.
+(und zu dir änecho.)
+
+O Herr, tue sägne! Tuusch s’herte Härz us:
+Und schänk eis voll Erbarme, wo lost ond tuet, wasd seisch.
+
+So will i dir begägne, so vor dich äneschtoh,
+so mini Schtimm erhebe, so cho zo dim Altar!
+(so zu dir änecho.)
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s4015" trans="" zus="">
+      <Number>4015</Number>
+      <Title>Majestät, Majestät</Title>
+      <Text>Hier bin ich, klein vor deiner Herrlichkeit. Deine Gnade hat mich befreit!
+Hier bin ich, kenne meine Sünde gut,
+doch du machst mich rein durch dein Blut.
+
+Ich fand ja die allergrösste Liebe da, 
+wo du dein Leben gabst, das grösste Opfer warst.
+&lt;refrain&gt;Majestät, Majestät, ich bin, wie deine Gnade mich fand,
+leer und dennoch leb ich in deiner Hand.&lt;/refrain&gt;
+
+Hier bin ich, demütig, weil du mich liebst. Vergeben kann ich, weil du vergibst.
+Hier bin ich, weiss nur, dich verlangt nach mir,
+geheiligt durch das Feuer in dir.
+
+Ich fand ja…
+&lt;refrain&gt;Majestät, Majestät, ich bin, wie deine Gnade mich fand,
+leer und dennoch leb ich in deiner Hand.
+Majestät, Majestät, verändert bin ich für alle Zeit
+in der Nähe deiner Herrlichkeit.
+Majestät.&lt;/refrain&gt;
+
+Here I am, humbled by Your majesty, covered by Your grace so free.
+Here I am, knowing I’m a sinful man, sactified by glory and fire.
+
+Now I’ve found the greatest love of all is mine,
+since You laid down Your life, the greatest sacrifice.
+&lt;refrain&gt;Majesty, majesty, Your grace has found me just as I am: 
+empty handed, but alive in Your hands.&lt;/refrain&gt;
+
+Here I am, humbled by the love that You give, forgiven so that I can forgive.
+Here I stand, knowing that I’m Your desire, sanctified by glory and fire.
+
+Now I’ve found …
+&lt;refrain&gt;Majesty, majesty, Your grace has found me just as I am: 
+empty handed, but alive in Your hands.
+Majesty, majesty, forever I am changed by Your love 
+in the presence of Your majesty.
+Majesty.&lt;/refrain&gt;
+
+
+
+</Text>
+    </Song>
+    <Song id="s4016" trans="" zus="">
+      <Number>4016</Number>
+      <Title>Preist den Namen Jesus (Praise the name of Jesus)</Title>
+      <Text>Preist den Namen Jesus; ihn, unsern Retter, unsern Erlöser.
+Gestern, heut, für immer derselbe; Jesus du bleibst für immer gleich.
+
+Praise the name of Jesus. Perfect Redeemer, Star of the morning.
+Yesterday, today and forever Jesus the same. Jesus the same.
+</Text>
+    </Song>
+    <Song id="s4017" trans="" zus="">
+      <Number>4017</Number>
+      <Title>Und ich heb die Hände auf</Title>
+      <Text>Und ich heb die Hände auf, bringe dir mein Lob, 
+gebe dir die Ehr, dass du mir Gnade zeigst;
+deine Liebe, die du schenkst, hat mich befreit.
+Ich vertraue deinem Wort, baue auf dein Kreuz, traue auf dein Blut, 
+vertrau dir ganz, o Herr. Deine Kraft, sie wirkt in mir, verändert mich.
+
+Und so hebi mini Händ, hebi mini Schtimm,
+bringe dir mis Lob und priise dini Gnad.
+Denn di Liebi het mi packt und mi befreit.
+Und i traue uf dis Wort, vertraue uf dis Chrüz, traue uf dis Bluet,
+vertrau dir ganz, o Herr. S’isch di Chraft, wo i mim Härz Verändrig schafft.
+
+So I’m lifting up my hands, lifting up my voice,
+lifting up Your name, and in Your grace I rest,
+for Your love has come to me and set me free.
+And I’m trusting in Your word, trusting in Your cross, trusting in Your blood and all Your faithfulness,
+for Your pow’r at work in me is changing me.
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s4018" trans="" zus="">
+      <Number>4018</Number>
+      <Title>Ich will dich anbeten (Licht dieser Welt)</Title>
+      <Text>Licht dieser Welt, du strahlst in unsrer Nacht auf, 
+leuchtest den Weg, lässt mich sehn.
+Herr, deine Schönheit lässt mich anbeten.
+Ewig werd ich vor dir stehn.
+
+&lt;refrain&gt;Ich will dich anbeten, will mich vor dir beugen, will dir sagen:
+Du nur bist mein Gott.
+Denn du allein bist herrlich, du allein bist würdig,
+du nur bist vollkommen gut zu mir.&lt;/refrain&gt;
+
+Herr aller Zeiten, du bist hoch erhaben, 
+herrlich im Himmel erhöht.
+Doch voller Demut kamst du auf die Erde,
+zeigst, worin Liebe besteht.
+
+Herr, nie begreife ich die Last, die du am Kreuz getragen hast!
+</Text>
+    </Song>
+    <Song id="s4020" trans="" zus="">
+      <Number>4020</Number>
       <Title>Nobody knows the trouble</Title>
       <Text>&lt;refrain&gt;Nobody knows the trouble I've seen,
 nobody knows but Jesus.
@@ -8165,9 +8979,9 @@ Eines Tages tat sich der Himmel auf und Liebe erfasste mich.
 
 Nie werde ich diesen Tag vergessen, als Jesus meine Sünden wegnahm.</Text>
     </Song>
-    <Song id="s4002" trans="" zus="">
-      <Number>4002</Number>
-      <Title>Were you there when they crucified my lord?</Title>
+    <Song id="s4021" trans="" zus="">
+      <Number>4021</Number>
+      <Title>Were you there when they crucified my lord</Title>
       <Text>Warst du dabei, als sie meinen Herrn kreuzigten?
 Oh, manchmal erschüttert es mich zutiefst, wenn ich mir vorstelle,
 dass sie meinen Herrn kreuzigten.
@@ -8206,21 +9020,1867 @@ dass Jesus vom Tod erstand!
 
 </Text>
     </Song>
+    <Song id="s4023" trans="" zus="">
+      <Number>4023</Number>
+      <Title>Come, now is the time to worship (Chomm, mir wennd de Herr jetz priise)</Title>
+      <Text>Come, now is the time to worship
+Come, now is the time to give your heart
+Come, just as you are to worship
+Come, just as you are before your God
+Come
+
+One day every tongue will confess You are God
+One day every knee will bow
+Still, the greates treasure remains for those
+Who gladly choose You now
+
+
+Chomm, mir wennd de Herr jetz priise,        
+chomm, mir wennd em öises Härz uftue;
+chomm so, wi du bisch, und priis ihn,          
+chomm so, wi du bisch zu Gott, dim Herr,
+chomm!
+
+Einisch wärde alli erkenne'n' und gseh,          
+jede wird sich böige vor ihm.
+S'allergröschti Gschänk isch für dä parat,      
+wo jetz zu ihm seit Ja.
+
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s4024" trans="" zus="">
+      <Number>4024</Number>
+      <Title>Mein Leben (Amazing Grace)</Title>
+      <Text>Mein Leben lag in Finsternis, mein Leben war nur Qual.
+Als mich der Herr beim Namen rief, traf mich der Gnade Strahl.
+
+Der Glaube gibt mir Kraft und Mut, die Hoffnung Zuversicht.
+Die Liebe Gottes hüllt mich ein; ich leb in seinem Licht.
+
+Lebst du in einer Welt aus Stein und kalter Einsamkeit,
+ruf gläubig Gottes Namen an, er schenkt Geborgenheit.
+
+Das Leben ist kein flücht’ger Traum, das Leben ist kein Spiel.
+Es führt uns all, durch Zeit und Raum, hin auf das grosse Ziel.</Text>
+    </Song>
+    <Song id="s4001" trans="" zus="">
+      <Number>4001</Number>
+      <Title>Würdig das Lamm</Title>
+      <Text>Würdig das Lamm, das geopfert ist; würdig das Lamm, zu nehmen:
+Macht und Reichtum, Weisheit und Stärke, Ehre und Ruhm und Lobpreis.
+</Text>
+    </Song>
+    <Song id="s4002" trans="" zus="">
+      <Number>4002</Number>
+      <Title>Hallelujah lift up Jesus</Title>
+      <Text>&lt;refrain&gt;Hallelujah lift up Jesus; He is King, King over all the earth.
+Hallelujah lift up Jesus; He is king for all eternity.&lt;/refrain&gt;
+
+&lt;refrain&gt;Halleluja, ehret Jesus. Er ist König, Herr der ganzen Welt.
+Halleluja, ehret Jesus. Er ist Herr in alle Ewigkeit.&lt;/refrain&gt;
+
+&lt;refrain&gt;Halleluja, ehret Jesus. Är isch König vo de ganze Wält.
+Halleluja, ehret Jesus. Är isch König bis in Ewigkeit.&lt;/refrain&gt;
+
+God has created everything. Heaven and earth are in His hand.
+&lt;special&gt;Gott hat alles erschaffen. Himmel und Erde sind in seiner Hand.&lt;/special&gt;
+All He has formed is, for one purpose, that everything shall praise His name.
+&lt;special&gt;Was er erschaffen hat, soll seinen Namen preisen; das war seine Absicht.&lt;/special&gt;
+
+King Jesus is our Conqueror. He rules and reigns over everything.
+&lt;special&gt;König Jesus ist unser Eroberer; er herrscht über alles und jedes.&lt;/special&gt;
+Even in death Christ was victorious: He rose again in power and might.
+&lt;special&gt;Gar im Tod war Christus siegreich: er auferstand in Macht und Autorität.
+&lt;/special&gt;
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s4003" trans="" zus="">
+      <Number>4003</Number>
+      <Title>Jesus the Lord of creation (You reign in power and glory)</Title>
+      <Text>Jesus the Lord of creation died but You rose up again.
+&lt;special&gt;Jesus, Herr der Schöpfung, du starbst und auferstandst zum Leben &lt;/special&gt;
+Seated at God's throne in heaven, in wisdom and power You reign.
+&lt;special&gt;setztest dich zur Rechten von Gottes Thron, herrschst in Weisheit und Kraft.&lt;/special&gt;
+No one can conquer Your glory. No one can conquer Your name.
+&lt;special&gt;Niemand kann deine Ehre antasten. Niemand deinen Namen besiegen.&lt;/special&gt;
+Your righteousness flows in aboundance and soon You are coming again.
+&lt;special&gt;Deine Gerechtigkeit überfliesst, und bald wirst du  wiederkommen.&lt;/special&gt;
+
+&lt;refrain&gt;You reign in power and glory. You reign victoriously.&lt;/refrain&gt;
+&lt;special&gt;Du herrschst mit Macht und Herrlichkeit. Du herrschst siegreich.&lt;/special&gt;
+&lt;refrain&gt;You reign forever and ever.&lt;/refrain&gt;
+&lt;special&gt;Du herrschst für immer und ewig.&lt;/special&gt;
+&lt;refrain&gt;Lord of creation, almighty King Jesus You reign.&lt;/refrain&gt;
+&lt;special&gt;Herr der Schöpfung, allmächtiger König, du herrschst.&lt;/special&gt;</Text>
+    </Song>
+    <Song id="s4004" trans="" zus="">
+      <Number>4004</Number>
+      <Title>Majesty, King of eternity</Title>
+      <Text>Majesty, King of eternity; the sky, the sea, this land, created by Your power.
+Majesty, King of eternity; the rock of my salvation, a refuge for my soul.
+
+We will exalt your name, King Jesus.
+Every knee shall bow before your throne
+We will exalt your name, King Jesus.
+There is none like You, there is none like You.
+
+Majestät König der Ewigkeit;
+Himmel, Meer und Erde, erschaffen durch dein Wort.
+Majestät König der Ewigkeit
+Fels meiner Errettung, du mein Zufluchtsort.
+
+Wir erheben dich, König Jesus. Jeder wird sich beugen vor dir, Herr. 
+Wir erheben dich, König Jesus. Keiner ist dir gleich. Keiner ist dir gleich.</Text>
+    </Song>
+    <Song id="s4005" trans="" zus="">
+      <Number>4005</Number>
+      <Title>Let Your dream be my dream</Title>
+      <Text>Let Your dream be my dream. Let Your truth be my truth. 
+&lt;special&gt;Lass deinen Traum auch zu meinem Traum werden. Deine Wahrheit zu meiner.&lt;/special&gt;
+Let Your life be my life more and more.
+&lt;special&gt;Lass dein Leben mein Leben werden, mehr und mehr.&lt;/special&gt;
+
+Jesus, Jesus, overshadow me.  (2x)
+&lt;special&gt;Jesus, Jesus, überschatte mich.&lt;/special&gt;</Text>
+    </Song>
+    <Song id="s4006" trans="" zus="">
+      <Number>4006</Number>
+      <Title>Jesus, Jesus, alli Chraft</Title>
+      <Text>&lt;refrain&gt;Jesus, Jesus, alli Chraft, alli Macht isch im Name Jesus.
+Jesus, Jesus, du bisch Herr in Ewigkeit.
+Dir ghört alli Ehr, mir bätte’n’a.&lt;/refrain&gt;
+
+Im Name Jesus wärde Chranki gsund, Lahmi gumpe, Blindi chöne gseh.
+Gäg si Name het de Tod kei Macht;
+Jesus Chrischtus cha nöis Läbe gäh!
+
+Im Name Jesus wärde Siig vollbracht, Muure falle und de Find muess goh.  
+Finschtri Mächt, die wiiche plötzlech zrugg;
+niemer cha dem Name widerschtoh!
+
+Im Name Jesus hend ou mir de Siig, siini Macht wird i öis offebar. 
+I sim Name hemmer Schutz und Chraft;
+Jesu Name isch so wunderbar!
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s4007" trans="" zus="">
+      <Number>4007</Number>
+      <Title>I want to worship You</Title>
+      <Text>I want to worship You, Jesus I want to worship You.
+I don't know what to say and I don't know what to do,
+but I want to worship You.
+
+Anbeten will ich dich, Jesus, anbeten will ich dich.
+Ich weiss nicht, wie ich’s sag, und ich weiss nicht wie es tun,
+doch anbeten will ich dich.
+
+All heaven gaze upon your beauty
+They see the splendor in your face
+I humbly bow my knees before you
+and enter in there by your grace</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s4008" trans="" zus="">
+      <Number>4008</Number>
+      <Title>Lord I need Your grace</Title>
+      <Text>Lord I need Your grace
+&lt;special&gt;Herr, ich brauche deine Gnade&lt;/special&gt;
+everyday of my life
+&lt;special&gt;an jedem Tag meines Lebens;&lt;/special&gt;
+Lord I need Your grace
+&lt;special&gt;Herr, deine Gnade hab ich nötig.&lt;/special&gt;
+
+Like a river needs water to flow
+&lt;special&gt;So wie ein Fluss Wasser braucht zum Fliessen&lt;/special&gt;
+Like the flowers need the sun to grow 
+&lt;special&gt;und wie die Blumen die Sonne brauchen zum Wachsen.&lt;/special&gt;
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s4009" trans="" zus="">
+      <Number>4009</Number>
+      <Title>Send your wind</Title>
+      <Text>Send your wind, (send your wind)
+&lt;special&gt;Schick deinen Wind&lt;/special&gt;
+Send your rain, (send your rain)
+&lt;special&gt;Schick deinen Regen&lt;/special&gt;
+Send the fire of your spirit, oh Lord.
+&lt;special&gt;Schick das Feuer deines Geistes, o Herr.&lt;/special&gt;
+Let this nation be a blessing to You, oh Lord
+&lt;special&gt;Damit du Wohlgefallen hast an diesem Volk. &lt;/special&gt;
+
+Lord, we long to see this nation sing praises unto You,
+&lt;special&gt;Herr, wir möchten dieses Volk sehen, wie es dir Lobpreislieder singt;&lt;/special&gt;
+long to see them worship You in spirit and in truth.
+&lt;special&gt;wie es dich anbetet im Geist und in Wahrheit;&lt;/special&gt;
+That You and You alone are their desire.
+&lt;special&gt;wie du, und nur du allein sein Verlangen bist,&lt;/special&gt;
+their love for You  a burning, blazing fire.
+&lt;special&gt;wie seine Liebe brennt für dich wie ein loderndes Feuer.&lt;/special&gt;</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s4019" trans="" zus="">
+      <Number>4019</Number>
+      <Title>Look what the Lord has done</Title>
+      <Text>Look what the Lord has done.   2x
+&lt;special&gt;Schau, was der Herr getan hat!&lt;/special&gt;
+He healed my body. He touched my mind. 
+&lt;special&gt;Er hat meinen Leib geheilt, meinen Geist erfasst.&lt;/special&gt;
+He saved me just in time.
+&lt;special&gt;Zur rechten Zeit hat er mich gerettet.&lt;/special&gt;
+Oh I’m gonna praise His name. Each day He’s just the same.
+&lt;special&gt;Oh, wie preise ich seinen Namen! Tag für Tag ist er der selbe.&lt;/special&gt;
+Come on and praise Him, look what the Lord has done.
+&lt;special&gt;Komm, preis ihn mit mir und sieh, was der Herr getan hat!&lt;/special&gt;
+</Text>
+    </Song>
+    <Song id="s5005" trans="" zus="">
+      <Number>5005</Number>
+      <Title>Gott ist gegenwärtig (Gesangbuch 201)</Title>
+      <Text>Gott ist gegenwärtig. Lasset uns anbeten und in Ehrfurcht vor ihn treten.
+Gott ist in der Mitte. Alles in uns schweige und sich innigst vor ihm beuge.
+Wer ihn kennt, wer ihn nennt, schlag die Augen nieder;
+gebt das Herz ihm wieder.
+
+Gott ist gegenwärtig, dem die Cherubinen Tag und Nacht gebeuget dienen.
+„Heilig, heilig, heilig!“ singen ihm zur Ehre aller Engel hohe Chöre.
+Herr, vernimm unsre Stimm, wenn auch wir Geringen 
+unsre Opfer bringen.
+
+Luft, die alles füllet, drin wir immer schweben, aller Dinge Grund und Leben,
+Meer ohn Grund und Ende, Wunder aller Wunder,
+ich senk mich in dich hinunter.
+Ich in dir, du in mir; lass mich ganz verschwinden,
+dich nur sehn und finden.
+
+Du durchdringest alles; lass dein schönstes Lichte,
+Herr, berühren mein Gesichte.
+Wie die zarten Blumen willig sich entfalten und der Sonne stille halten,
+lass mich so, still und froh, deine Strahlen fassen und dich wirken lassen.
+
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s5004" trans="" zus="">
+      <Number>5004</Number>
+      <Title>Wir warten dein, o Gottes Sohn (Gesangbuch 383)</Title>
+      <Text>	
+		&lt;refrain&gt;Gesangbuch Lied 383&lt;/refrain&gt;
+		&lt;refrain&gt;Strofen 	1, 2, 4&lt;/refrain&gt;</Text>
+    </Song>
+    <Song id="s5003" trans="" zus="">
+      <Number>5003</Number>
+      <Title>Dies ist der Tag (Gesangbuch 126)</Title>
+      <Text>	
+		&lt;refrain&gt;Gesangbuch Lied 126&lt;/refrain&gt;
+		&lt;refrain&gt;Strofen 	1 - 5, 8&lt;/refrain&gt;</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s5002" trans="" zus="">
+      <Number>5002</Number>
+      <Title>Lob Gott, ihr Christen (Gesangbuch 113)</Title>
+      <Text>	
+		&lt;refrain&gt;Gesangbuch Lied 113&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s5001" trans="" zus="">
+      <Number>5001</Number>
+      <Title>Fröhlich soll mein Herze springen (Gesangbuch 119)</Title>
+      <Text>	
+		&lt;refrain&gt;Gesangbuch Lied 119&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s5000" trans="" zus="">
+      <Number>5000</Number>
+      <Title>Dass Jesus siegt</Title>
+      <Text>Dass Jesus siegt, bleibt ewig ausgemacht; sein wird die ganze Welt.
+Denn alles ist nach seines Todes Nacht in seine Hand gestellt.
+Nachdem am Kreuz er ausgerungen,
+hat er zum Thron sich aufgeschwungen.
+Ja, Jesus siegt.
+
+Ja, Jesus siegt. Wir glauben es gewiss, und glaubend kämpfen wir.
+Wie du uns führst durch alle Finsternis, wir folgen, Jesus dir.
+Denn alles muss vor dir sich beugen,
+bis auch der letzte Feind wird schweigen.
+Ja, Jesus siegt.
+</Text>
+    </Song>
+    <Song id="s3023" trans="" zus="">
+      <Number>3023</Number>
+      <Title>No more bondage</Title>
+      <Text>No more bondage, no more bondage, Oh now, I’m free from the enemy.
+Whom the Son has set free is free indeed!
+No more bondage, just glorious liberty.
+
+Don’t have to be sick &lt;refrain&gt;no more!&lt;/refrain&gt;
+Don’t have to be poor &lt;refrain&gt;no more!&lt;/refrain&gt;
+Don’t have to be bound &lt;refrain&gt;no more&lt;/refrain&gt; by anything!
+Whom the Son has set free is free indeed!
+No more bondage, just glorious liberty.
+
+Keine Knechtschaft! Keine Fesseln! Oh ja, vom Feind bin ich befreit.
+Wen der Sohn frei macht, ist wahrhaft frei; nie mehr Knechtschaft, 
+nein, wunderbar befreit!
+
+Mich packt keine Angst &lt;refrain&gt;nie mehr!&lt;/refrain&gt;
+Krank muss ich nicht sein &lt;refrain&gt;nie mehr!&lt;/refrain&gt;
+Mich knechtet kein Zwang &lt;refrain&gt;nie mehr&lt;/refrain&gt;, das ist gewiss!
+Wen der Sohn frei macht, ist wahrhaft frei; nie mehr Knechtschaft, 
+nein, wunderbar befreit!
+
+
+
+
+
+
+
+
+
+
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s3024" trans="" zus="">
+      <Number>3024</Number>
+      <Title>Du kennst mein Verlangen</Title>
+      <Text>Du kennst mein Verlangen, bei dir zu sein.
+Mit allem, was ich bin, bete ich an.
+Mit ganzem Herzen suche ich dich allein.
+Nichts auf dieser Welt ist so wie du!
+
+Herr, ich geb dir mein Herz, mein Leben, mein Sein;
+ich leb für dich allein.
+In jedem Schritt, den ich geh, jedem Ziel, das ich seh,
+sollst du verherrlicht sein!
+
+This is my desire to honour You. Lord,
+with all my heart I worship You.
+All I have within me I give You praise.
+All that I adore is in You.
+
+Lord, I give You my heart, give You my soul.
+I live for You alone.
+Every breath that I take, every moment I’m awake,
+Lord, have Your way in me!
+
+
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s3025" trans="" zus="">
+      <Number>3025</Number>
+      <Title>Herr, mein Gott ich will dich loben (Mit jedem Atemzug)</Title>
+      <Text>&lt;refrain&gt;Herr, mein Gott (ich will dich loben)
+mit meinem Lied (mit meinem Leben.)
+Herr, mein Gott (ich will dich loben)
+mit jedem Atemzug, mit jedem Atemzug.&lt;/refrain&gt;
+
+Mein Leben soll so wie ein Loblied klingen,
+ich habe allen Grund dazu.
+Ich kann begeistert voller Hoffnung singen.
+Der Grund dafür bist du.
+
+Mein Lied soll hoch hinauf zum Himmel steigen,
+man soll es hörn in meiner Welt.
+Ein Stück von deiner Liebe soll es zeigen,
+die mich am Leben hält.
+</Text>
+    </Song>
+    <Song id="s3026" trans="" zus="">
+      <Number>3026</Number>
+      <Title>Vater, wir kommen vor deinen Thron (Du bist gross)</Title>
+      <Text>Vater, wir kommen vor deinen Thron.
+Du bist voll Freude, erwartest uns schon.
+Du gibst uns Raum, und du hast für uns Zeit,
+öffnest dein Herz uns weit.
+
+&lt;refrain&gt;Du bist gross, du gibst den Sternen ihren Lauf.
+Du bist gut, und deine Liebe hört nie auf.&lt;/refrain&gt;
+
+Du bist uns heilig, wir lieben dich, Herr.
+Dein Einfluss wachse bei uns immer mehr.
+Dein heiliger Name wird so in der Welt
+neu wiederhergestellt.
+</Text>
+    </Song>
+    <Song id="s3027" trans="" zus="">
+      <Number>3027</Number>
+      <Title>Du allein bist König</Title>
+      <Text>Du allein bist König über alle Welt. 
+Jeder muss sich beugen, du bist Herr!
+Deine grosse Liebe hat mich vom Tod befreit,
+meine Schuld vergeben, weil du liebst.
+
+Du bist heilig, und wir beugen uns vor dir.
+Du bist würdig, voller Ehrfurcht stehn wir hier.
+
+Du bist wahrlich Gottes Sohn, du Lamm Gottes auf dem Thron!
+Du bist heilig, du bist würdig, du bist mächtig, du bist gnädig.
+
+Du bist heilig.
+</Text>
+    </Song>
+    <Song id="s3028" trans="" zus="">
+      <Number>3028</Number>
+      <Title>Ich spür, wie dein Wort (Ich atme auf)</Title>
+      <Text>Ich spür, wie dein Wort mich tief berührt.
+Ich spür, wie dein Geist mich zu dir führt.
+Herr, du lädtst mich ein, öffnest mir die Tür.
+Alles, was ich brauch, was mein Herz begehrt, finde ich bei dir.
+
+&lt;refrain&gt;Herr, ich atme auf in deiner Gegenwart.
+Du kommst in meine Nacht, schenkst einen neuen Tag.
+Du erfüllst mein Herz und machst mich wieder stark.
+Ich atme auf in deiner Gegenwart.&lt;/refrain&gt;
+
+Du berührst die Wunden tief in mir,
+meine grösste Schuld verzeihst du mir.
+Wo die Angst mich quält, kehrt dein Friede ein.
+Niemals mehr will ich ohne deine Kraft, deine Liebe sein!
+</Text>
+    </Song>
+    <Song id="s3029" trans="" zus="">
+      <Number>3029</Number>
+      <Title>Jesus You’re everything</Title>
+      <Text>&lt;refrain&gt;Jesus You’re everything to me. You’re all, all that I need.
+Jesus open my eyes so that I can see Your love to me.&lt;/refrain&gt;
+
+Come and fill up my heart with the Spirit of God.
+You’re the Prince of peace, the Lord who heals.
+You’re the light of life that shines in the dark.
+
+&lt;refrain&gt;Jesus, du allein bist genug, du bist alles für mich.
+Jesus, öffne mein Herz, lass mich sehn und verstehn,
+dass du mich liebst.&lt;/refrain&gt;
+
+Komm und fülle mein Herz. Gib mir neu deinen Geist.
+Du bist unser Gott, der Heilung bringt,
+Licht des Lebens, das das Dunkel durchdringt.
+</Text>
+    </Song>
+    <Song id="s3030" trans="" zus="">
+      <Number>3030</Number>
+      <Title>Ich will dich anbeten (Licht dieser Welt *)</Title>
+      <Text>Ich will dich anbeten, will mich vor dir beugen, will dir sagen:
+Du nur bist mein Gott.
+Denn du allein bist herrlich, du allein bist würdig,
+du nur bist vollkommen gut zu mir.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s3031" trans="" zus="">
+      <Number>3031</Number>
+      <Title>Jesus, Hoffnung der Völker (Jesus, hope of the nations)</Title>
+      <Text>Jesus, Hoffnung der Völker, Jesus, Helfer in aller Not;
+durch dich kommt ewge Hoffnung in die Welt.
+Jesus, du bist die Wahrheit, Jesus, du bist das Licht  der Welt;
+im Dunkel leuchtet auf dein Himmelslicht.
+
+Du kamst als Mensch, du starbst am Kreuz;
+dein Grab war leer, der Sieg ist dein!
+
+Du lebst in uns, bist unser Fels. Du brichst den Fluch und machst uns frei.
+Du bist das Licht, damit die ganze Welt erkennt: 
+Du hast triumphiert über die Angst; mein Friedefürst, du gibst mir Ruh.
+Herr, nur in dir finden wir Hoffnung, die nicht trügt.
+Herr, wir sind dein.
+
+Jesus, hope of the nations, Jesus, comfort for all who mourn;
+You are the source of heaven’s hope on earth.
+Jesus, light in the darkness, Jesus, truth in each circumstance;
+You are the source of heaven’s light on earth.
+
+In history You lived and died; You broke the chains, You rose to life.
+
+You are the hope living in us; You are the rock in whom we trust;
+You are the light, shining for all the world to see;
+You rose from the dead, conquering fear;
+our prince of peace drawing us near;
+Jesus our hope, living for all who will receive;
+Lord we believe.
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s3032" trans="" zus="">
+      <Number>3032</Number>
+      <Title>Majestät, Majestät</Title>
+      <Text>Majestät, Majestät, ich bin, wie deine Gnade mich fand,
+leer und dennoch leb ich in deiner Hand.
+
+Majestät, Majestät, verändert bin ich für alle Zeit
+in der Nähe deiner Herrlichkeit.
+
+Majestät.
+</Text>
+    </Song>
+    <Song id="s3033" trans="" zus="">
+      <Number>3033</Number>
+      <Title>Ich stehe vor dem Gnadenthron</Title>
+      <Text>Ich stehe vor dem Gnadenthron und bete an. 
+Ich seh den Vater und den Sohn, das Opferlamm.
+
+Und ich bete an, ja, ich bete an. Ich erhebe meine Hände in Anbetung, 
+ich bete dich an. Ja, ich bete an, Herr, ich bete an. 
+Ich erhebe meine Hände in Anbetung, ich bete dich an.
+
+Wir stehen vor dem Gnadenthron und beten an.
+Wir sehn den Vater und den Sohn, das Opferlamm.
+
+Und wir beten an, ja, wir beten an.
+Wir erheben unsre Hände in Anbetung, wir beten dich an. 
+Ja, wir beten an, Herr, wir beten an.
+Wir erheben unsre Hände in Anbetung, wir beten dich an.</Text>
+    </Song>
+    <Song id="s3034" trans="" zus="">
+      <Number>3034</Number>
+      <Title>Ich steh in deiner Gegenwart</Title>
+      <Text>Ich steh in deiner Gegenwart und bete an.
+Ich hebe meine Hände auf zu dir.
+Ich fühle so viel mehr als ich jetzt sagen kann.
+Drum sing ich nur dies eine Wort zu dir:
+
+&lt;refrain&gt;Halleluja. Halleluja. Halleluja! Ich erhebe dich.
+Halleluja. Halleluja! Ich erhebe dich, o Herr.&lt;/refrain&gt;</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s4025" trans="" zus="">
+      <Number>4025</Number>
+      <Title>Wo isch so’n’e Gott wi du (Herr, i chome vor di Gnadethron *)</Title>
+      <Text>&lt;refrain&gt;Wo isch so’n’e Gott wi du, so’n’e tröie Gott!
+Wo isch so’n’e Gott wi du, jederziit tröi und grächt!
+&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s4026" trans="" zus="">
+      <Number>4026</Number>
+      <Title>Herr, i chome vor di Gnadethron (Wo isch so’n’e Gott wi du)</Title>
+      <Text>Herr, i chome vor di Gnadethron,
+finde Rueh i diner Nöchi, a dem koschtbare Ort.
+Und es Lied schtiigt voll Bewundrig us mim Härz empor:
+So’n’e wundervolle Gott han i!
+
+&lt;refrain&gt;Wo isch so’n’e Gott wi du, so’n’e tröie Gott!
+Wo isch so’n’e Gott wi du, jederziit tröi und grächt!&lt;/refrain&gt;
+
+Herr, us Gnad hesch du mis Rüefe ghört. Chonnt e Schturm,
+bisch du mi Lüchtturm, bisch mis Lied i dunkler Nacht!
+Ganz noch bi dir findi Geborgeheit, drum erheb i mini Schtimm zu dir:
+
+Wil du mi hesch froh und glücklech gmacht,
+lass mi all dene, wo liide, ächti Hoffnig wiitergäh.
+</Text>
+    </Song>
+    <Song id="s4027" trans="" zus="">
+      <Number>4027</Number>
+      <Title>Denn so sehr hast du die Welt geliebt (ich stehe hier *)</Title>
+      <Text>&lt;refrain&gt;Denn so sehr hast du die Welt geliebt,
+dass du dein Leben für uns gabst.
+So sehr hast du die Welt geliebt,
+und jeder, der an dich glaubt,
+wird nicht verloren gehen.
+&lt;/refrain&gt;</Text>
+    </Song>
+    <Song id="s4028" trans="" zus="">
+      <Number>4028</Number>
+      <Title>Ich stehe hier an deinem Kreuz (Denn so sehr hast du die Welt geliebt)</Title>
+      <Text>Ich stehe hier an deinem Kreuz, deine Hände sind durchbohrt mit Nägeln.
+Ich stehe hier an deinem Kreuz, und dein Haupt trägt eine Dornenkrone.
+
+&lt;refrain&gt;Denn so sehr hast du die Welt geliebt,
+dass du dein Leben für uns gabst.
+So sehr hast du die Welt geliebt, und jeder, der an dich glaubt, 
+wird nicht verloren gehen.&lt;/refrain&gt;
+
+Ich stehe hier vor deinem Grab, auferstanden bist du, der König.
+Ich stehe hier an deinem Grab, und du wischst alle Tränen von mir ab.
+
+Ich stehe hier vor deinem Thron, gebe dir mein Herz, mein Leben.
+Ich stehe hier vor deinem Thron, gereinigt, geheiligt durch dein Blut.
+</Text>
+    </Song>
+    <Song id="s4029" trans="" zus="">
+      <Number>4029</Number>
+      <Title>Du bist das Licht der Welt (Denn so sehr hast du die Welt geliebt *)</Title>
+      <Text>&lt;refrain&gt;Du bist das Licht der Welt, das die Nacht erhellt, heller Morgenstern. 
+Du kamst in die Welt, warst uns gleichgestellt, du bist „Gott mit uns“.
+Du bist das Licht der Welt.&lt;/refrain&gt;
+
+&lt;refrain&gt;Wir sind das Licht der Welt, das die Nacht erhellt. Wir sind Gottes Volk.
+Gott hat uns erwählt, in sein Reich gestellt als sein Eigentum. 
+Wir sind das Licht der Welt.&lt;/refrain&gt;</Text>
+    </Song>
+    <Song id="s4030" trans="" zus="">
+      <Number>4030</Number>
+      <Title>Denn so sehr hast du die Welt geliebt (Du bist das Licht der Welt)</Title>
+      <Text>So sehr hat Gott die Welt geliebt, dass er seinen Sohn für uns gab
+damit alle, die an ihn glauben, nicht verloren gehen,
+sondern leben in Ewigkeit.
+
+&lt;refrain&gt;Du bist das Licht der Welt, das die Nacht erhellt, heller Morgenstern. 
+Du kamst in die Welt, warst uns gleichgestellt, du bist „Gott mit uns“. 
+Du bist das Licht der Welt.&lt;/refrain&gt;
+
+Für unsre Schuld ging er in den Tod und bahnte den Weg uns zu Gott.
+In seinen Wunden fanden wir das Heil. Sein Blut hat uns befreit.
+
+&lt;refrain&gt;Wir sind das Licht der Welt, das die Nacht erhellt. Wir sind Gottes Volk.
+Gott hat uns erwählt, in sein Reich gestellt als sein Eigentum.
+Wir sind das Licht der Welt.&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s4031" trans="" zus="">
+      <Number>4031</Number>
+      <Title>Gottes Lamm, erhabner Herr (Er kam zu uns *)</Title>
+      <Text>&lt;refrain&gt;Gottes Lamm, erhabner Herr, dieses Lied ist mein Gebet. 
+Fassen kann ich’s nicht, doch ich weiss bestimmt:
+Der Herr starb auch für mich.&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s4032" trans="" zus="">
+      <Number>4032</Number>
+      <Title>Er kam zu uns (Gottes Lamm, erhabner Herr)</Title>
+      <Text>Er kam zu uns, Gott selbst ward Mensch
+und gab sein Leben als ein Opfer für viele.
+Des Höchsten Sohn kommt als ein Knecht,
+trug unsre Schuld, nahm auf sich all unsre Schmerzen.
+
+&lt;refrain&gt;Gottes Lamm, erhabner Herr, dieses Lied ist mein Gebet. 
+Fassen kann ich’s nicht, doch ich weiss bestimmt:
+Der Herr starb auch für mich.&lt;/refrain&gt;
+
+Mein Herz ist schwer, wenn ich sie seh,
+die grosse Last, die ich auf Jesus geladen.
+Doch da ist Trost für jedes Herz, er macht mich neu,
+das lässt mich freudig singen: 
+
+So will ich nun bis an mein End an jedem Tag mein Leben leben für Jesus.
+Unendlich viel hat er getan für uns, die glaubend ihm in allem vertrauen.
+</Text>
+    </Song>
+    <Song id="s4033" trans="" zus="">
+      <Number>4033</Number>
+      <Title>Ehre sei dem Vater. Ehre sei dem Sohn (Gloria *)</Title>
+      <Text>&lt;refrain&gt;Ehre sei dem Vater. Ehre sei dem Sohn.
+Ehre sei dem Heilgen. Jetzt und auch in Ewigkeit!&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s4034" trans="" zus="">
+      <Number>4034</Number>
+      <Title>Da ist kein andrer Gott wie du (Ehre sei dem Vater. Ehre sei dem Sohn)</Title>
+      <Text>&lt;refrain&gt;Ehre sei dem Vater. Ehre sei dem Sohn.
+Ehre sei dem Heilgen. 
+Jetzt und auch in Ewigkeit!&lt;/refrain&gt;
+
+Da ist kein andrer Gott wie du, in aller deiner Macht. 
+Du warst und bist, wirst ewig sein, kein andrer ist wie du!
+Wer mass der Meere Wasserflut mit seiner hohlen Hand? 
+Wer spannte aus das Himmelszelt, schuf Berge, Luft und Land?
+
+ Was ist der Mensch, dass du ihn liebst und gnädig ihm vergibst,
+der du über dem Erdkreis thronst und ewig König bist?
+Obwohl du unvergleichlich bist, beugst du dich tief zu mir,
+erbarmst dich meiner, tilgst die Schuld, hebst mich empor zu dir!
+</Text>
+    </Song>
+    <Song id="s4035" trans="" zus="">
+      <Number>4035</Number>
+      <Title>Herr, nur dir, nur a dir ghört de Lobpriis und d’Ehr (Was isch gsii, isch verbii *)</Title>
+      <Text>&lt;refrain&gt;Herr, nur dir, nur a dir ghört de Lobpriis und d’Ehr; 
+mächtige Herr, Abättig sig dir, o halleluja.&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s4036" trans="" zus="">
+      <Number>4036</Number>
+      <Title>Was isch gsii, isch verbii (Herr, nur dir, nur a dir ghört de Lobpriis und d’Ehr)</Title>
+      <Text>Was isch gsii, isch verbii; Herr, du schaffsch alles nöi.
+Nur mit dir und i dir nämmer s’globte Land i.
+
+&lt;refrain&gt;Herr, nur dir, nur a dir ghört de Lobpriis und d’Ehr; 
+mächtige Herr, Abättig sig dir, o halleluja.&lt;/refrain&gt;
+
+S’isch di Chraft,l wo’n’es schafft, nur i dir simmer schtarch;
+alli Macht, alli Chraft, all das chonnt nur us dir.
+
+Dass’d di Geischt in is leisch, isch di Gnad ganz elei; 
+du i öis, mer i dir, und i dir simmer eis.
+</Text>
+    </Song>
+    <Song id="s4037" trans="" zus="">
+      <Number>4037</Number>
+      <Title>I’m coming back / Was du verdienst (When the music fades *)</Title>
+      <Text>&lt;refrain&gt;I’m coming back to the heart of worship
+and it’s all about You, all about You Jesus.
+I’m sorry Lord for the things I’ve made it when it’s all about You, 
+all about You Jesus.&lt;/refrain&gt;
+
+&lt;refrain&gt;Was du verdienst, ist ein Herz voll Lobpreis;
+es geht alles um dich, in allem um dich, Jesus.
+Vergib mir, was ich daraus gemacht hab,
+denn es geht doch um dich, einzig um dich, Jesus.&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s4038" trans="" zus="">
+      <Number>4038</Number>
+      <Title>When the music fades / Die Musik verklingt (Heart of worship / Was du verdienst)</Title>
+      <Text>When the music fades, all is stripped away and I simply come; 
+longing just to bring something that’s of worth, that will bless Your heart.
+I’ll bring You more than a song,
+for a song in itself is not what You have required.
+You search much deeper within through the way things appear:
+You’re looking into my heart.
+
+&lt;refrain&gt;I’m coming back to the heart of worship
+and it’s all about You, all about You Jesus.
+I’m sorry Lord for the things I’ve made it when it’s all about You, 
+all about You Jesus.&lt;/refrain&gt;
+
+King of endless worth, no one could express how much You deserve. 
+Though I’m weak and poor, all I have is Yours, every single breath.
+I’ll bring You more than a song…
+
+Die Musik verklingt, alles ist nun still, und ich bin vor dir. 
+Gerne möcht ich dir bringen, was dich ehrt, was dein Herz berührt.
+Ich bring dir mehr als Lied, denn ein Lied nur an sich ist nicht,
+wonach du dich sehnst.
+Du siehst viel tiefer hinein, durch den äusseren Schein,
+du siehst direkt in mein Herz.
+
+&lt;refrain&gt;Was du verdienst, ist ein Herz voll Lobpreis;
+es geht alles um dich, in allem um dich, Jesus.
+Vergib mir, was ich daraus gemacht hab,
+denn es geht doch um dich, einzig um dich, Jesus.&lt;/refrain&gt;
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s4039" trans="" zus="">
+      <Number>4039</Number>
+      <Title>Glory glory Hallelujah (burdens down)</Title>
+      <Text>Glory glory Hallelujah since I laid my burdens down.
+
+I feel better, so much better since I laid my burdens down.
+
+Feel like shouting Hallelujah since I laid my burdens down.
+The heavy load is so much lighter since I …
+
+I’m going home to meet my Saviour since I laid my burdens down.
+I’m going home to live with Jesus…
+
+All my days are so much brighter since I laid my burdens down..
+</Text>
+    </Song>
+    <Song id="s4040" trans="" zus="">
+      <Number>4040</Number>
+      <Title>You are the rock on which I stand *</Title>
+      <Text>&lt;refrain&gt;You are the rock on which I stand;
+a strong foundation, not shifting sand, 
+strengthened by Your mighty hand.
+You are the rock on which I stand.&lt;/refrain&gt;
+</Text>
+    </Song>
+    <Song id="s4041" trans="" zus="">
+      <Number>4041</Number>
+      <Title>You are the rock on which I stand (In Your mercy Lord You rescued me)</Title>
+      <Text>&lt;refrain&gt;You are the rock on which I stand;
+a strong foundation, not shifting sand, 
+strengthened by Your mighty hand.
+You are the rock on which I stand.&lt;/refrain&gt;
+
+In Your mercy Lord You rescued me from the darkness of my own ways. 
+You placed my feet upon the solid ground; I lift my voice to sing Your praise.
+
+Whenever life begins to wear me down, when I need a place to hide,
+You lift my spirit with Your tender touch, then I know: You will provide!
+</Text>
+    </Song>
+    <Song id="s4022" trans="" zus="">
+      <Number>4022</Number>
+      <Title>Deep river</Title>
+      <Text>Deep river, my home is over Jordan.
+Deep river, Lord I want to cross over into campground.
+Oh don’t you want to go to that Gospel feast,
+that promised land where all is peace?
+Oh deep river…
+</Text>
+    </Song>
+    <Song id="s2044" trans="" zus="">
+      <Number>2044</Number>
+      <Title>Jesus isch do</Title>
+      <Text>Jesus isch do,  3x
+är isch wahrhaftig do.</Text>
+    </Song>
+    <Song id="s1033" trans="" zus="">
+      <Number>1033</Number>
+      <Title>Seht das Wunder, das geschah</Title>
+      <Text>&lt;refrain&gt;Seht das Wunder, das geschah! Wir sind nicht mehr allein.
+Gott kommt uns als Mensch ganz nah, will immer bei uns sein.&lt;/refrain&gt;
+
+Der Engel Chor erreicht unser Ohr: Wie herrlich ist unser Gott!
+Wir stimmen ein: Friede wird sein. Er wendet unsre Not.
+
+Der Hirten Wort eilt von Ort zu Ort: Christus, der Retter, ist da!
+Wir öffnen dir, Jesus, die Tür. Mach du uns rein und klar.
+
+Weisen von fern erkennen den Stern: Jetzt beginnt die neue Zeit.
+Wir wollen gehn, nicht abseits stehn, dienen dem Herrn noch heut!
+</Text>
+    </Song>
+    <Song id="s6006" trans="" zus="">
+      <Number>6006</Number>
+      <Title>Chömet cho luege</Title>
+      <Text>Drum simmer nümm verlore, drum isch das Chind gebore;
+de Himmel het Erbarme gha, de Heiland isch da.
+
+O chömet cho luege, s Chrischtchind isch gebore,
+o chömet doch alli uf Bethlehem.
+Dert liit’s im Chrippli, öis zur Fröid gebore.
+Drum simmer nümm verlore, drum isch das Chind gebore;
+de Himmel het Erbarme gha, de Heiland isch da.
+
+Drum singet, dir Mönsche, singet, jubilieret, 
+wil allne uf Ärde isch Grosses gscheh!
+Ghörsch, wie vom Himmel d’Ängel tüend verkünde,
+dass är öis wird erlöse vom Leid und allem Böse;
+de Himmel het Erbarme gha, de Heiland isch da.
+
+O chömet cho luege…
+</Text>
+    </Song>
+    <Song id="s2045" trans="" zus="">
+      <Number>2045</Number>
+      <Title>Lord You are welcome</Title>
+      <Text>Lord You are welcome in this place,   (3x)		have Your way.
+&lt;special&gt;Herr, du bist willkommen an diesem Ort				wirk auf deine Weise.&lt;/special&gt;
+
+Move by Your Spirit in this place   (3x)			have Your way.
+&lt;special&gt;Beweg uns durch deinen Geist an diesem Ort,		wirk auf deine Weise.&lt;/special&gt;
+
+Send Your anointing in this place   (3x)			have Your way.
+&lt;special&gt;Schicke deine Salbung in diesen Ort,				wirk auf deine Weise.&lt;/special&gt;
+
+Heal and deliver in this place   (3x)				have Your way.
+&lt;special&gt;Heile und befreie an diesem Ort						wirk auf deine Weise.&lt;/special&gt;
+
+
+Herr, bis willkomme under öis, 				wörk wie DU’s wottsch.
+Herr, du söllsch Ruum ha under öis, 		wörk wie DU’s wottsch.
+Setz_is i Bewegig, Heilge Geischt, 			wörk wie DU’s wottsch.
+Schick Schtröm vo Wasser under öis, 		wörk wie DU’s wottsch.
+Schänk jetz grad Heilig under öis, 
+und schänk Befreiig under öis; 
+schänk jetz grad Heilig under öis, 			wörk wie DU’s wottsch.
+
+
+
+
+
+
+
+
+
+
+
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s6007" trans="" zus="">
+      <Number>6007</Number>
+      <Title>Vor vilne hundert Johr</Title>
+      <Text>Vor vilne hundert Johr, do isch es Chind uf dÄrde cho
+und het mit sinre grosse Liebi öis i dArme gno.
+Es chliises Liechtli, det im Schtall, het brönnt i dere Nacht;
+s’isch heller worde, tuusigmal, und het es Füür entfacht.
+
+Vil heller no als andri Schtärne het eis Schtärnli gschtrahlt
+und het das wunderbare Gscheh a Wienachtshimmel gmalt.
+Vo wiitem hets det glüüchtet, und bim Schtall, do bliibts denn schtoh,
+und alli singe mit der Ängelschar halleluja.
+
+&lt;refrain&gt;Halleluja, halleluja. Halleluja, halleluja.
+Halleluja, halleluja. Halleluja, halleluja.&lt;/refrain&gt;
+
+Und dHirte ufem Fäld und alli die, wo’s hend vernoh,
+si i dem chliine Schtall in Bethlehem de zämecho.
+Sogar di Weise usem Morgeland si ou scho do,
+und alli singe mit der Ängelschar halleluja
+
+&lt;refrain&gt;Halleluja, halleluja…&lt;/refrain&gt;
+
+Und so isch dGschicht vo Land zu Land und um di ganzi Wält
+und wird nach vilne hundert Johr ou hüt no gärn verzellt.
+Es chliises Liechtli, denn im Schtall, het brönnt i dere Nacht;
+s’isch heller worde, tuusigmal, und het es Füür entfacht.
+
+
+
+
+
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s5006" trans="" zus="">
+      <Number>5006</Number>
+      <Title>Macht hoch die Tür (101)</Title>
+      <Text>
+					&lt;refrain&gt;Gesangbuch Lied 101&lt;/refrain&gt;
+					&lt;refrain&gt;Strofen 	1, 2, 5&lt;/refrain&gt;</Text>
+    </Song>
+    <Song id="s2046" trans="" zus="">
+      <Number>2046</Number>
+      <Title>This little light of mine</Title>
+      <Text>&lt;refrain&gt;This little light of mine, I’m gonna let it shine,   (3x)&lt;/refrain&gt;
+&lt;special&gt;Mein kleines Licht will ich scheinen lassen&lt;/special&gt;
+&lt;refrain&gt;let it shine, let it shine, let it shine.&lt;/refrain&gt;
+&lt;special&gt;es scheinen lassen, es scheinen lassen, es scheinen lassen.&lt;/special&gt;
+
+The light that shines is the light of love
+&lt;special&gt;Das Licht, das leuchtet, ist das Licht der Liebe&lt;/special&gt;
+it lights the darkness from above.
+&lt;special&gt;es bescheint die Dunkelheit von oben.&lt;/special&gt;
+It shines on you and it shines on me
+&lt;special&gt;Es scheint auf dich und mich&lt;/special&gt;
+and shows what the light of love can do.
+&lt;special&gt;und zeigt, was das Licht der Liebe bewirken kann.&lt;/special&gt;
+I’m gonna shine my light both far and near.
+&lt;special&gt;Ich will mein Licht leuchten lassen in der Nähe und in der Ferne.&lt;/special&gt;
+I’m gonna shine my light both bright and clear.
+&lt;special&gt;Ich will mein Licht hell und klar leuchten lassen.&lt;/special&gt;
+Where there’s a dark corner in this land,
+&lt;special&gt;Wo immer es Dunkelheit gibt in diesem Land,&lt;/special&gt;
+I’m gonna let my little light shine.
+&lt;special&gt;will ich mein Licht leuchten lassen.&lt;/special&gt;
+
+&lt;refrain&gt;This little light of mine, I’m gonna let it shine,   (3x)&lt;/refrain&gt;
+&lt;special&gt;Mein kleines Licht will ich scheinen lassen&lt;/special&gt;
+&lt;refrain&gt;let it shine, let it shine, let it shine.&lt;/refrain&gt;
+&lt;special&gt;es scheinen lassen, es scheinen lassen, es scheinen lassen.&lt;/special&gt;
+
+On monday He gave me the gift of love.
+&lt;special&gt;Am Montag beschenkte Er mich mit Liebe.&lt;/special&gt;
+Tuesday peace came from above.
+&lt;special&gt;Am Dienstag bekam ich Frieden von oben.&lt;/special&gt;
+On Wednesday He told me to have more faith.
+&lt;special&gt;Am Mittwoch ermutigte Er mich, mehr Glauben zu haben.&lt;/special&gt;
+On Thursday He gave me a little more grace.
+&lt;special&gt;Am Donnerstag gab Er mir mehr von Seiner Gnade.&lt;/special&gt;
+Friday He told me to watch and pray.
+&lt;special&gt;Am Freitag mahnte Er mich zu wachen und zu beten.&lt;/special&gt;
+Saturday He told me what to say.
+&lt;special&gt;Am Samstag zeigte Er mir was ich sagen solle.&lt;/special&gt;
+On Sunday He gave me the power divine
+&lt;special&gt;Am Sonntag erfüllte Er mich mit göttlicher Kraft,&lt;/special&gt;
+to let my little light shine.
+&lt;special&gt;um mein kleines Licht leuchten zu lassen.&lt;/special&gt;
+
+&lt;refrain&gt;This little light of mine, I’m gonna let it shine,   (3x)&lt;/refrain&gt;
+&lt;special&gt;Mein kleines Licht will ich scheinen lassen&lt;/special&gt;
+&lt;refrain&gt;let it shine, let it shine, let it shine.&lt;/refrain&gt;
+&lt;special&gt;es scheinen lassen, es scheinen lassen, es scheinen lassen.&lt;/special&gt;
+
+
+
+
+
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s1035" trans="" zus="">
+      <Number>1035</Number>
+      <Title>Gähnd das Liecht wiiter</Title>
+      <Text>Gähnd das Liecht wiiter i di dunkli Wält.
+Gähnd das Liecht wiiter det, wo dLiebi fählt.
+Gähnd das Liecht wiiter, wome sich so hasst;
+det, wo me sguete Gschpröch am Ändi verpasst.
+
+&lt;refrain&gt;Jo, zündet es Liecht a i öiene Gmeinde,
+wo brönnt för die Wält, för die Ziit.
+Jo, zündet es Liecht a i öiene Gmeinde,
+wo brönnt för die Wält, und ewig bliibt.&lt;/refrain&gt;
+
+Gähnd das Liecht wiiter und machet alli mit.
+Gähnd das Liecht wiiter, tüend de erschti Schritt!
+Gähnd das Liecht wiiter, so wie’s jede cha.
+Wo du es Liecht bringsch, foht de Fride bald a.
+
+Gähnd das Liecht wiiter, dass me dWärmi gschpürt.
+Gähnd das Liecht wiiter zu dem Mönsch, wo früürt.
+Gähnd das Liecht wiiter, lueget nid nur zue.
+Denn für de Fride chame doch öppis tue.
+
+
+
+
+
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s1034" trans="" zus="">
+      <Number>1034</Number>
+      <Title>Fröhliche Weihnacht überall!</Title>
+      <Text>&lt;refrain&gt;"Fröhliche Weihnacht überall!" tönet durch die Lüfte froher Schall.
+Weihnachtston, Weihnachtsbaum, Weihnachtsduft in jedem Raum.
+"Fröhliche Weihnacht überall!" tönet durch die Lüfte froher Schall.&lt;/refrain&gt;
+
+Darum alle stimmet ein in den Jubelton;
+denn es kommt das Licht der Welt von des Vaters Thron.
+
+Licht auf dunklem Lebensweg, unser Licht bist du;
+denn du führst, die dir vertraun, ein zur selgen Ruh.
+
+Was wir andern je getan, sei getan für dich,
+dass bekennen jeder muss: `s Christkind kam für mich.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2047" trans="" zus="">
+      <Number>2047</Number>
+      <Title>Ich hebe meine Augen</Title>
+      <Text>Ich hebe meine Augen empor zu den Bergen;
+woher wird Hilfe kommen?
+Die Hilfe kommt vom Herrn.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s5128" trans="" zus="">
+      <Number>5128</Number>
+      <Title>O du fröhliche, o du selige</Title>
+      <Text>O du fröhliche, o du selige,
+gnadenbringende Weihnachtszeit.
+Welt ging verloren, Christ ist geboren:
+Freue, freue dich, o Christenheit.
+
+O du fröhliche, o du selige,
+gnadenbringende Weihnachtszeit.
+Christ ist erschienen, uns zu versühnen:
+Freue, freue dich, o Christenheit!
+
+O du fröhliche, o du selige,
+gnadenbringende Weihnachtszeit.
+Himmlische Heere jauchzen Dir Ehre:
+Freue, freue dich, o Christenheit!
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s6008" trans="" zus="">
+      <Number>6008</Number>
+      <Title>Wie lang gohts no bis zur Wienacht?</Title>
+      <Text>Wie lang gohts no bis zur Wienacht?
+Den einte gohts z’langsam, den andere z'gschwind.
+Nur eis isch klar: De Dezämber isch ke Monet wi anderi sind.
+Es Gheimnis liit i de Luft, öppis Bsunders, wo d' nid chasch verschtoh.
+Alls redt nur vom Guetzli bache, Päckli poschte, Gschänkli mache;
+aber sGheimnis, das isch trotzdem do.
+S'Wienachtsgheimnis isch halt eifach do.
+
+</Text>
+    </Song>
+    <Song id="s2048" trans="" zus="">
+      <Number>2048</Number>
+      <Title>Du bist hoch erhaben / You are high and lifted up</Title>
+      <Text>You are high and lifted up, there is no one like You.
+Halle-, Halle-, Halle-, Hallelujah.   2x
+
+&lt;refrain&gt;Halle-, Halle-, Halle-, Hallelujah.   2x&lt;/refrain&gt;
+
+Du bist hoch erhaben, Herr, es ist keiner wie du!
+Halle-, halle-, halle-, halleluja.   2x
+
+&lt;refrain&gt;Halle-, halle-, halle-, halleluja.   2x&lt;/refrain&gt;
+
+
+</Text>
+    </Song>
+    <Song id="s6009" trans="" zus="">
+      <Number>6009</Number>
+      <Title>Hend kei Angscht</Title>
+      <Text>Hend kei Angscht vor öis,
+mir singe öich es nöis Lied i öichi Nacht,
+wo’n’ech fröhlich macht.
+
+Es Chind het Fride ´bracht,
+gebore i de Nacht zBethlehem im Schtall, 
+laufet, Hirte’n’all!
+</Text>
+    </Song>
+    <Song id="s6010" trans="" zus="">
+      <Number>6010</Number>
+      <Title>Jesus hat's versprochen</Title>
+      <Text>Jesus hat’s versprochen: "Nie bist du allein;
+alle, alle Tage will ich bei dir sein!"
+
+Er beschützt und führt mich. Er ist stets bereit,
+Böses zu vergeben, das mich herzlich reut.
+
+Bin ich einmal traurig, denk ich schnell daran:
+O wie gut, dass Jesus mir jetzt helfen kann!
+
+Darum bin ich glücklich: Immer, Tag und Nacht,
+hält der starke Heiland selber bei mir Wacht.
+
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2049" trans="" zus="">
+      <Number>2049</Number>
+      <Title>Är läbt, är läbt, är läbt in Ewigkeit</Title>
+      <Text>är läbt, är läbt, är läbt in Ewigkeit.
+Jo wörklech, Jesus läbt, är läbt in Ewigkeit.
+är läbt, är läbt, är läbt in Ewigkeit.
+Jo wörklech, Jesus läbt!
+
+Sing halleluja, halleluja. 
+Jo wörklech, Jesus läbt in Ewigkeit,
+Sing halleluja, halleluja. 
+Jo wörklech, Jesus läbt!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s6011" trans="" zus="">
+      <Number>6011</Number>
+      <Title>Vater, i will di priise</Title>
+      <Text>Vater, i will di priise, denn dis Wort isch wunderbar   (2x)
+und vollkomme.
+
+Jede Morge schtuuni nöi, was dis Wort is git.
+
+Jo i weiss, dis Wort isch wohr; s’haltet, was’s verschpricht.
+
+Fröid, Chraft, Muet und Zueversicht, all das schänkt dis Wort.                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+
+
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s6012" trans="" zus="">
+      <Number>6012</Number>
+      <Title>Bi Jesus si mir geborge</Title>
+      <Text>Bi Jesus si mir geborge,
+hüt und morn, am Tag und i de Nacht.
+Bi Jesus si mir geborge, er het öis i siner Hand.
+
+Denn öise Gott isch grösser als alles i de Wält,
+und niemer chan is risse us siner schtarche Hand!
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2039" trans="" zus="">
+      <Number>2039</Number>
+      <Title>I'm not moved by what I see</Title>
+      <Text>I'm not moved by what I see, Hallelujah.
+I'm not moved by what I feel, Hallelujah.
+
+I'm not moved by what I hear, Hallelujah.
+I'm only moved by the word of God, Hallelujah.
+
+Was ich seh, bewegt mich nicht, halleluja.
+Was ich hör, bewegt mich nicht, halleluja.
+
+Was ich fühl, bewegt mich nicht, halleluja.
+Mich bewegt allein DEIN Wort, halleluja!
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2040" trans="" zus="">
+      <Number>2040</Number>
+      <Title>Send Your power</Title>
+      <Text>Send Your power, Holy Ghost power. 
+Send Your power again, Holy Ghost power.
+
+Send dein Feuer, deines Geistes Feuer.
+Send dein Feuer, o Herr, deines Geistes Feuer.
+
+Send dein Feuer, herrlich und gewaltig. 
+In uns wirke in Kraft, herrlich und gewaltig.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2051" trans="" zus="">
+      <Number>2051</Number>
+      <Title>Der Herr ist treu</Title>
+      <Text>&lt;refrain&gt;Der Herr ist treu, er hält sein Wort. Er enttäuscht uns nicht!
+Was sein Wort verspricht, das wird geschehn.
+Der Herr ist treu, halt dich an sein Wort.
+Komm und gib nicht nach, denn was Gott versprach,
+das wird geschehn.&lt;/refrain&gt;
+
+Sein Wort tut gut, sein Wort gibt Mut, macht alles neu.
+Sein Wort ist wahr, sein Wort sagt klar: Der Herr ist treu!
+Sein Wort macht reich, denn es macht euch von Ängsten frei.
+Er nimmt sie fort, nehmt ihn beim Wort: Der Herr ist treu!
+
+Er spricht uns los, egal wie gross die Schuld auch sei.
+Er nimmt sie weg. Lobt unsern Herrn! Der Herr ist treu.
+Sein Wort baut auf, baut fest darauf: Gott steht euch bei!
+Bleibt an ihm dran und betet an. Der Herr ist treu!
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2036" trans="" zus="">
+      <Number>2036</Number>
+      <Title>Wir sind versammelt vor dir</Title>
+      <Text>Wir sind versammelt vor dir und preisen dich, Herr.
+Wir sind versammelt vor dir in einem Geist.
+Ich weiss, Grosses wird geschehen, und viel Gutes kommt von dir.
+Wir sind versammelt vor dir und preisen dich, Herr.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2050" trans="" zus="">
+      <Number>2050</Number>
+      <Title>Er ist ein wunderwirkender Gott</Title>
+      <Text>Er ist ein wunderwirkender Gott.
+Er ist ein wunderwirkender Gott.
+Er ist der Anfang und die Vollendung.
+Er ist ein wunderwirkender Gott.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2016" trans="" zus="">
+      <Number>2016</Number>
+      <Title>Lasst uns singen: Danke, Jesus</Title>
+      <Text>Lasst uns singen:
+"Danke, Jesus, danke mein Herr!"
+
+Lasst uns singen:
+"Danke, Jesus, danke mein Herr!"
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s4042" trans="" zus="">
+      <Number>4042</Number>
+      <Title>Der Herr ist treu *</Title>
+      <Text>&lt;refrain&gt;Der Herr ist treu, er hält sein Wort.
+Er enttäuscht uns nicht!
+Was sein Wort verspricht, das wird geschehn.
+Der Herr ist treu, halt dich an sein Wort.
+Komm und gib nicht nach, denn was Gott versprach,
+das wird geschehn.&lt;/refrain&gt;
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2002" trans="" zus="">
+      <Number>2002</Number>
+      <Title>Rufe mich an</Title>
+      <Text>Rufe mich an, so spricht der Herr,   2x
+so werde ich dir antworten,
+so spricht der Herr;
+dir kundtun grosse, unfassbare Dinge,
+spricht der Herr,
+
+von denen du  (3x)  nichts weißt.    2x
+</Text>
+    </Song>
+    <Song id="s2008" trans="" zus="">
+      <Number>2008</Number>
+      <Title>Ich komme, wie ich bin</Title>
+      <Text>Ich komme, wie ich bin.   2x
+Du starbst für mich, drum komme ich,
+ich komme, wie ich bin.
+</Text>
+    </Song>
+    <Song id="s6013" trans="" zus="">
+      <Number>6013</Number>
+      <Title>Vom Afang bis zum Ändi</Title>
+      <Text>Vom Afang bis zum Ändi wachet Gott schtändig über mir und über dir.
+Jo, är het’s so verschproche, het nie sis Wort broche:
+Glaub’s mir doch, i bi bi dir.
+
+Immer und überall, immer und überall, immer bin i do.   2x
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2052" trans="" zus="">
+      <Number>2052</Number>
+      <Title>Du gibst mir Kraft</Title>
+      <Text>&lt;refrain&gt;Jesus, Gottes Lamm, Ehre deinem Namen.
+Jesus, Gottes Lamm, Ehre sei dir, Herr.&lt;/refrain&gt;
+
+Du gibst mir Kraft, wenn sie mir fehlt, du bist der Wert, der wirklich zählt.
+Alles bist du mir, Herr.
+Falle ich hin, stehst du mir bei, stillst meinen Durst und sprichst mich frei.
+Alles bist du mir, Herr.
+
+Bei aller Last von Schuld und Scham lobe ich dich, der sie mir nahm.
+Alles bist du mir, Herr.
+Dich, meinen Retter, meinen Herrn, lobe ich für mein Leben gern.
+Alles bist du mir, Herr.
+
+&lt;refrain&gt;Jesus, Lamb of God, worthy is Your name.   2x&lt;/refrain&gt;
+
+You are my strength when I am weak. You are the treasure that I seek.
+You are my all in all.
+When I fall down You pick me up, when I am dry You fill my cup.
+You are my all in all.
+
+Bearing my guilt, my sin, my shame, rising again I bless Your name,
+You are my all in all.
+Crucified Lord, Redeemer, King, joyfully now my praise I bring,
+You are my all in all.
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s2053" trans="" zus="">
+      <Number>2053</Number>
+      <Title>Es ist wahr, er trug die Strafe </Title>
+      <Text>Es ist wahr, er trug die Strafe und lud auf sich all unsre Schuld;
+er bezahlte mit seinem Leben und gab uns Frieden mit Gott.
+
+Wie ein Lamm ward er geschlachtet, er, der ganz ohne Sünde war.
+Es ist wahr: Er trug die Krankheit, und Heilung ist uns geschenkt.
+
+Wie die Schafe irrten wir, jeder ging den eignen Weg. 
+Aber Gott, er lud auf ihn unser aller Missetat.
+
+He was pierced for our transgressions and bruised for our iniquities;
+and to bring us peace He was punished, and by His stripes we are healed.
+
+He was led like a lamb to the slaughter, although He was innocent of crime;
+and cut off from the land of the living He paid for the guilt that was mine.
+
+We like sheep have gone astray, turned each oneto his own way,
+and the Lord has laid Him the iniquitiy of us all.
+
+
+
+
+
+
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s4060" trans="" zus="">
+      <Number>4060</Number>
+      <Title>O Gnade Gottes, wunderbar</Title>
+      <Text>O Gnade Gottes, wunderbar hast du errettet mich.
+Ich war verloren ganz und gar, war blind, jetzt sehe ich.
+
+Durch Schwierigkeiten mancher Art wurd' ich ja schon geführt,
+doch hat die Gnade mich bewahrt, die Ehre Gott gebührt.</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2054" trans="" zus="">
+      <Number>2054</Number>
+      <Title>Herr, es ist wahr</Title>
+      <Text>Herr, es ist wahr, was man von dir erzählt;
+du liebst auch mich, du hast auch mich erwählt.
+Gern will ich folgen deinem Ruf sogleich
+und gehn mit dir den Weg ins Himmelreich.
+
+Auf Golgatha floss einst dein heilges Blut
+für meine Schuld, Gott wird den Sündern gut;
+dein Opfer, als du riefst: es ist vollbracht,
+bringt strahlend Licht in meine Sündennacht.
+
+Ach, Herr, die Welt sieht dieses Opfer nicht,
+in ihr ist Nacht, doch sie meint, es sei Licht;
+was kann ich tun, o Herr, für diese Welt,
+die ohne dich tief ins Verderben fällt.
+
+Herr, es ist wahr, ich darf dein Bote sein,
+ins Erntefeld riefst du auch mich hinein.
+Gern will ich folgen deinem Ruf sogleich
+und meinen Freund bringen ins Himmelreich.
+
+
+
+
+
+
+</Text>
+    </Song>
+    <Song id="s2055" trans="" zus="">
+      <Number>2055</Number>
+      <Title>Jesus, Jesus, du bist der Herr, der uns liebt</Title>
+      <Text>&lt;refrain&gt;Jesus, Jesus, du bist der Herr, der uns liebt.   2x &lt;/refrain&gt;
+
+Du gingst für uns in den Tod.
+Du trugst am Kreuz unsre Krankheit und Schuld.
+Du nahmst den Fluch, Gottes Zorn, der uns galt.
+Du bist unser Leben und Halt.
+
+</Text>
+    </Song>
+    <Song id="s2056" trans="" zus="">
+      <Number>2056</Number>
+      <Title>A miner Schtell</Title>
+      <Text>A miner Schtell hesch du mi Chranket uf di gnoh.
+A miner Schtell hesch dini Händ durchbohre loh.
+A miner Schtell hesch mini Sünde uf di gnoh.
+A miner Schtell hesch du dis eigne Läbe loh.
+
+Jesus, dini Liebi isch so unändlich gross; wie lieb, 
+wie lieb muesch du mi ha! I schtoh do und schtuune bloss
+und bäte di a, i bäte di, mi Jesus, a.
+</Text>
+    </Song>
+    <Song id="s2060" trans="" zus="">
+      <Number>2060</Number>
+      <Title>Jesus, du schänksch Fride, bringsch mis Härz zur Rueh,</Title>
+      <Text>&lt;refrain&gt;Jesus, du schänksch Fride, bringsch mis Härz zur Rueh,
+s het dir sLäbe koscht am Chrüz, dass i cha Fride ha.
+Jesus, du schänksch Friede, bringsch mis Härz zur Rueh,
+i bruch din Fride, o Herr, i bruche di.&lt;/refrain&gt;
+
+Töif i mir tobt en grosse Schturm, verschtoh mi sälber nümm,
+bi ruhelos und gseh kei Wäg, wie söll's nur wiiter goh?
+
+I weiss, du bisch vil grösser, Herr, als mis verschtörte Härz,
+dGedanke woni ha, weisch du und kennsch mi töifschti Schmärz.
+
+Wenn Fähler mi belaschte tüend, mi dSchuld a Bode drückt,
+und wenni mi als Hüüchler füehl, denn weisch du wie’n’is mein.
+
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2061" trans="" zus="">
+      <Number>2061</Number>
+      <Title>In deine Hand gebe ich mich hin mit allem, was ich bin, Herr.</Title>
+      <Text>In deine Hand gebe ich mich hin mit allem, was ich bin, Herr.
+Denn du, mein Gott, hältst die Welt in der Hand, und ich bin dein für immer.
+
+&lt;refrain&gt;Jesus, ich vertraue dir. Jesus, ich gehöre dir.
+Und ich lebe nur durch dich. 
+Für dich nur singe ich mit allem was ich bin.&lt;/refrain&gt;
+
+Ich geh mit dir, wohin du auch gehst. In Freud und Leid vertrau ich dir.
+Nach deinem Wort und Willen will ich leben jeden Tag, mein Jesus.
+
+Dich anbeten möchte ich, mein Herr. (4x)
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2057" trans="" zus="">
+      <Number>2057</Number>
+      <Title>Feiert Jesus, kommt feiert ihn</Title>
+      <Text>&lt;refrain&gt;Feiert Jesus, kommt feiert ihn.
+Feiert Jesus, kommt feiert ihn! (2x)&lt;/refrain&gt;
+
+Auferstanden, auferstanden, nun lebt er in Ewigkeit.
+Auferstanden, auferstanden, kommt und feiert 
+die Auferstehung unseres Herrn.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2059" trans="" zus="">
+      <Number>2059</Number>
+      <Title>Alles, woni säge, söll i dim Name gscheh</Title>
+      <Text>Alles, woni säge, söll i dim Name gscheh.
+Und alles woni mache, das wetti tue für di.   (2x)
+
+&lt;refrain&gt;I läbe für di,		du bisch sLäbe, Herr.
+I läbe für di,		bi dir bin i deheim.
+Du bisch gschtorbe für mi, hesch dis Läbe gloh.
+Drum gib i dir mis Läbe hi.
+I läbe für di!
+&lt;/refrain&gt;
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s2058" trans="" zus="">
+      <Number>2058</Number>
+      <Title>Auferstanden</Title>
+      <Text>&lt;refrain&gt;Auferstanden von den Toten. 
+Auferstanden. Jesus Christus lebt!&lt;/refrain&gt;
+
+Als sein Leben war erloschen, schien sein Auftrag unerfüllt;
+doch sein Opfer hat vollendet über Tod und Höll den Sieg.
+
+Denn Gott liess ihn nicht im Grabe, preisgegeben dem Verfall;
+auferweckt zum ewgen Leben überwand er Satans Macht.
+
+Wäre er nicht auferstanden, könnten wir nicht auferstehn;
+Gottes Sohn jedoch lebt ewig, unsre Hoffnung trüget nicht.
+
+Wenn der Herr mit mächtgen Engeln auf die Erde wiederkommt
+und Posaunen hell ertönen, werden wir vom Grab erstehn.
+
+Und wir werden in dem Lichte einer selgen Himmelswelt
+ihn von Angesicht dann sehen, ihn, den Meister und den Herrn.
+</Text>
+    </Song>
+    <Song id="s4043" trans="" zus="">
+      <Number>4043</Number>
+      <Title>I am delivered / Ich bin errettet</Title>
+      <Text>I am delivered, praise the Lord!
+I am delivered by His blood.
+Once I was bound by the chains of satan;
+now I'm delivered, praise the Lord!
+
+Ich bin errettet, preis dem Herrn!
+Ich bin errettet durch sein Blut.
+War einst gebunden in den Ketten Satans;
+doch nun errettet, preis dem Herrn.
+</Text>
+      <Background>
+        <uri>
+        </uri>
+        <transparency>0</transparency>
+        <scale>no</scale>
+      </Background>
+    </Song>
+    <Song id="s6014" trans="" zus="">
+      <Number>6014</Number>
+      <Title>Underem Schirm vom Höchschte</Title>
+      <Text>&lt;refrain&gt;Underem Schirm vom Höchschte, do bin i geborge. Tag und Nacht.
+Underem Schirm vom Höchschte, do bin i geborge. Tag und Nacht.&lt;/refrain&gt;
+
+Öb du gschiit bisch oder dumm, dNase grad isch oder chrumm,
+öb du lachisch oder brüehlsch, Gott het di lieb.
+Öb du chrank bisch oder gsund, dChleider grau sind oder bunt,
+öb du gross bisch oder chli, Gott het di lieb.
+
+Öb du riich bisch oder arm, öb du chalt hesch oder warm,
+öb du dick bisch oder dünn, Gott het di lieb.
+Öb du wach bisch oder schlofsch, öb du gärn i dChile gosch,
+öb du schtarch bisch oder schwach, Gott het di lieb.
+
+Öb du fröhlich Lieder singsch oder lieber umeschpringsch,
+öb du jung bisch oder alt, Gott het di lieb.
+Öb du dMusig gärn luut ghörsch, oder öb du di dra schtörsch;
+öb du Jung und Alt verschtohsch, Gott het di lieb.
+</Text>
+    </Song>
   </Songs>
   <Translations>
-    <Translation lang="en" id="t0001" unform="no">
-      <Title>O let the Son of God</Title>
-      <Text>O let the Son of God enfold you with His spirit and His love,
-let Him fill your heart and satisfy your soul.
-O let Him have the things that hold you, and His spirit like a dove
-will descend upon your life and make you whole.
+    <Translation lang="ot" id="t0001" unform="no">
+      <Title>Chomm, mir wennd de Herr jetz priise</Title>
+      <Text>&lt;refrain&gt;Chomm, mir wennd de Herr jetz priise,
+chomm, mir wennd em öises Härz uftue;
+chomm so, wi du bisch, und priis ihn,
+chomm so, wi du bisch zu Gott, dim Herr,
+chomm!&lt;/refrain&gt;
 
-&lt;refrain&gt;Jesus, o Jesus, come and fill Your lambs.	(2x)&lt;/refrain&gt;
+Einisch wärde alli erkenne'n' und gseh,
+jede wird sich böige vor ihm.
+S'allergröschti Gschänk isch für dä parat,
+wo jetz zu ihm seit Ja.
+</Text>
+    </Translation>
+    <Translation lang="dt" id="t0002" unform="no">
+      <Title>Chomm, mir wennd de Herr jetz priise,</Title>
+      <Text>Chomm, mir wennd de Herr jetz priise,
+chomm, mir wennd em öises Härz uftue;
+chomm so, wi du bisch, und priis ihn,
+chomm so, wi du bisch zu Gott, dim Herr,
+chomm!
 
-O come and sing this song with gladness as your hearts are filled with joy,
-lift your hands in sweet surrender to His name.
-O give Him all your tears and sadness, give Him all your years of pain,
-and you'll enter into life in Jesus' name.
+Einisch wärde alli erkenne'n' und gseh,
+jede wird sich böige vor ihm.
+S'allergröschti Gschänk isch für dä parat,
+wo jetz zu ihm seit Ja.
+</Text>
+    </Translation>
+    <Translation lang="en" id="t0003" unform="no">
+      <Title>Chomm, mir hebe de Blick</Title>
+      <Text>Chomm, mir hebe de Blick ..			uf zum Herr
+Chomm, wirf dSorge uf ihn …			uf e Herr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chomm, vertrau nur uf ihn …			uf e Herr
+Chomm, mir schtrecke jetz dHänd …	hi zum Herr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chomm, mir priise de Herr …			mitenand
+Chomm, mir hebe de Blick …			uf zum Herr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </Text>
     </Translation>
   </Translations>
