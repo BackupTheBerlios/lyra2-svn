@@ -16,9 +16,9 @@ namespace lyra
 		public static string CONFIGPATH = Application.StartupPath + "\\lyra.config";
 		// info & build 
 		public const string NAME = "lyra";
-		public const string BUILDNR = "33";
+		public const string BUILDNR = "34";
 		public const string VER = "1.9.8"; // with PocketPC
-		public static string BUILD = "{build 20070514." + Util.BUILDNR + "}";
+		public static string BUILD = "{build 20070617." + Util.BUILDNR + "}";
 		public static string GUINAME = Util.NAME; // + " v" + Util.VER + "   " + Util.BUILD;
 
 		// lyra update
@@ -592,13 +592,13 @@ namespace lyra
 		public static string getUseTime()
 		{
 			long ms = (Util.TOTALUSE + DateTime.Now.Ticks - Util.startticks)/TimeSpan.TicksPerMillisecond;
-			long s = (long) Math.Floor(ms/1000);
+			long s = (long) Math.Floor((double)ms/1000);
 			ms = ms - s*1000;
-			long min = (long) Math.Floor(s/60);
+            long min = (long)Math.Floor((double)s / 60);
 			s = s - 60*min;
-			long h = (long) Math.Floor(min/60);
+            long h = (long)Math.Floor((double)min / 60);
 			min = min - 60*h;
-			long d = (long) Math.Floor(h/24);
+            long d = (long)Math.Floor((double)h / 24);
 			h = h - 24*d;
 			return Convert.ToString(d) + "d " + Convert.ToString(h) + "h " + Convert.ToString(min) + "min " + Convert.ToString(s) + "s ";
 		}

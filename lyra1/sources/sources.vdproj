@@ -1,7 +1,7 @@
 "DeployProject"
 {
-"VSVersion" = "3:701"
-"ProjectType" = "8:{E36CE389-F511-4EF9-BC99-3240554E2D02}"
+"VSVersion" = "3:800"
+"ProjectType" = "8:{3EA9E505-35AC-4774-B492-AD1749C4943A}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:sources"
 "LanguageId" = "3:1033"
@@ -31,6 +31,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:1"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:FALSE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
         "Release"
         {
@@ -47,6 +58,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:1"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:FALSE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
     }
     "Deployable"
@@ -55,6 +77,9 @@
         {
         "FriendlyName" = "8:sources"
         "Version" = "8:1.7.0.0"
+        "PreBuildEvent" = "8:"
+        "PostBuildEvent" = "8:"
+        "RunPostBuildEvent" = "3:0"
             "Dependencies"
             {
             }
@@ -64,7 +89,7 @@
         }
         "SimpleProjectOutput"
         {
-            "{EE76FCFF-8608-4382-AE45-6C3DC5FD2264}:_4D5D4B6EF8EF46F8A50795C01DE18422"
+            "{3169EF16-0292-4576-A031-DDE5527F1848}:_4D5D4B6EF8EF46F8A50795C01DE18422"
             {
             "SourcePath" = "8:"
             "TargetName" = "8:"

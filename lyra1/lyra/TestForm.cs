@@ -11,7 +11,7 @@ namespace lyra
 	/// </summary>
 	public class TestForm : System.Windows.Forms.Form
 	{
-		private ExtendedListBoxControl listBox1;
+		private ListBox listBox1;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -23,15 +23,6 @@ namespace lyra
 			// Required for Windows Form Designer support
 			//
 			InitializeComponent();
-			this.listBox1.BeginUpdate();
-			for(int i = 0; i < 50; i++)
-			{
-				ExtendedListBoxItem item = new ExtendedListBoxItem();
-				item.MaxString = "Das ist ein Liedtext, resp. eine tolle Vorschau...";
-				item.MinString = (i+1) + " Liedtitel";
-				this.listBox1.AddItem(item);
-			}
-			this.listBox1.EndUpdate();
 		}
 
 		/// <summary>
@@ -56,7 +47,7 @@ namespace lyra
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.listBox1 = new lyra.ExtendedListBoxControl();
+			this.listBox1 = new ListBox();
 			this.SuspendLayout();
 			// 
 			// listBox1

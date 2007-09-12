@@ -1,7 +1,7 @@
 "DeployProject"
 {
-"VSVersion" = "3:701"
-"ProjectType" = "8:{2C2AF0D9-9B47-4FE5-BEF2-169778172667}"
+"VSVersion" = "3:800"
+"ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:setuplyra"
 "LanguageId" = "3:1031"
@@ -69,14 +69,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_63511F565F3C4B7FB03B62521A828B23"
-        "OwnerKey" = "8:_F2475D80BA9B4D2599675FFF76B2A1C1"
+        "MsmKey" = "8:_678E0242A7344EC68B459C96CD894E4F"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_678E0242A7344EC68B459C96CD894E4F"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_6B87936177C8BA50EF8FD0A6FA5E91BD"
+        "OwnerKey" = "8:_F2475D80BA9B4D2599675FFF76B2A1C1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -151,6 +151,18 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6B87936177C8BA50EF8FD0A6FA5E91BD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F2475D80BA9B4D2599675FFF76B2A1C1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -169,6 +181,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
         "Release"
         {
@@ -185,6 +208,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
     }
     "Deployable"
@@ -202,21 +236,20 @@
         {
             "LaunchCondition"
             {
-                "{2522A265-4974-4402-83C5-3B575A2E935A}:_0D59AE0AC2304A46B4884504EDD150C5"
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_0D59AE0AC2304A46B4884504EDD150C5"
                 {
                 "Name" = "8:MsiNetAssemblySupport"
                 "Message" = "8:[VSDNETMSG]"
-                "SupportedRuntimes" = "8:1.1.4322"
+                "Version" = "8:2.0.50727"
+                "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=9832"
+                "SupportedRuntimes" = "8:1.1.4322"
                 }
             }
         }
-        "Feature"
-        {
-        }
         "File"
         {
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_072E0A8F59CE40A2AF5093FC6CE68E53"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_072E0A8F59CE40A2AF5093FC6CE68E53"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Debug\\Converter\\out.ltx"
             "TargetName" = "8:out.ltx"
@@ -236,7 +269,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_08C41D710EAF406A97E4ABAED1595386"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_08C41D710EAF406A97E4ABAED1595386"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\data\\curtext.xml"
             "TargetName" = "8:curtext.xml"
@@ -256,7 +289,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_109FCEFB67354637B3D9C6E2A2161F4C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_109FCEFB67354637B3D9C6E2A2161F4C"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\data\\lyra.ico"
             "TargetName" = "8:lyra.ico"
@@ -276,7 +309,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_170DFB97DFC142FBA5E2D1C54E3BFBFC"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_170DFB97DFC142FBA5E2D1C54E3BFBFC"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\data\\console.ico"
             "TargetName" = "8:console.ico"
@@ -296,7 +329,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_1EA9CA0E7BBA4E15A07CE57A007CE200"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1EA9CA0E7BBA4E15A07CE57A007CE200"
             {
             "SourcePath" = "8:..\\lyra\\licence.rtf"
             "TargetName" = "8:licence.rtf"
@@ -316,7 +349,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_2048E086FC77458E8F01F6C5379E3F73"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2048E086FC77458E8F01F6C5379E3F73"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Debug\\Converter\\table.txt"
             "TargetName" = "8:table.txt"
@@ -336,7 +369,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_4BBA207D274B49588E52DB4CEDD51F4D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4BBA207D274B49588E52DB4CEDD51F4D"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\doc\\lyrahelp.chm"
             "TargetName" = "8:lyrahelp.chm"
@@ -356,7 +389,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_5E37E968E3BE4EF5A2550A05390C97E9"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5E37E968E3BE4EF5A2550A05390C97E9"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\doc\\bsp.ltx"
             "TargetName" = "8:bsp.ltx"
@@ -376,7 +409,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_629383F56B104BF7AD755B06642B26C9"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_629383F56B104BF7AD755B06642B26C9"
             {
             "SourcePath" = "8:splashsetup17.jpg"
             "TargetName" = "8:splashsetup17.jpg"
@@ -396,7 +429,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_678E0242A7344EC68B459C96CD894E4F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_678E0242A7344EC68B459C96CD894E4F"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\doc\\logo.jpg"
             "TargetName" = "8:logo.jpg"
@@ -416,7 +449,38 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_72C2FB0CEE3443E69AA96070CBBF9B92"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6B87936177C8BA50EF8FD0A6FA5E91BD"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Lucene.Net, Version=2.0.0.4, Culture=neutral"
+                "ScatterAssemblies"
+                {
+                    "_6B87936177C8BA50EF8FD0A6FA5E91BD"
+                    {
+                    "Name" = "8:Lucene.Net.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Lucene.Net.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_DBC974D603824FCD9919CAAD0F3BBD8D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_72C2FB0CEE3443E69AA96070CBBF9B92"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\data\\curtext.xsd"
             "TargetName" = "8:curtext.xsd"
@@ -436,7 +500,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_8974C53DA8EC47659A02860644AB4CC6"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8974C53DA8EC47659A02860644AB4CC6"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Debug\\Converter\\src\\LTXConverter.java"
             "TargetName" = "8:LTXConverter.java"
@@ -456,7 +520,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A02F4DDBE27843478E067C9E2E935A58"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A02F4DDBE27843478E067C9E2E935A58"
             {
             "SourcePath" = "8:..\\sources\\Release\\sources.CAB"
             "TargetName" = "8:sources.CAB"
@@ -476,7 +540,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A0AAF9CF115A4D4CB076ACDD6BD893EE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A0AAF9CF115A4D4CB076ACDD6BD893EE"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\data\\lists.xml"
             "TargetName" = "8:lists.xml"
@@ -496,7 +560,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_AE5ECF659760417B99C2A18399F2F000"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AE5ECF659760417B99C2A18399F2F000"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Debug\\Converter\\Converter.jar"
             "TargetName" = "8:Converter.jar"
@@ -516,7 +580,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_C6A108B962694F40BB33A904D553A2F5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C6A108B962694F40BB33A904D553A2F5"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\doc\\logo_kl.jpg"
             "TargetName" = "8:logo_kl.jpg"
@@ -536,7 +600,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_CB8C81A4FB7549FBAD66E6AF8535048C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CB8C81A4FB7549FBAD66E6AF8535048C"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Debug\\Converter\\Converter.exe"
             "TargetName" = "8:Converter.exe"
@@ -556,7 +620,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_DAFE01ADB8B84EDE96BD96913CA7CE41"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DAFE01ADB8B84EDE96BD96913CA7CE41"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\doc\\info.rtf"
             "TargetName" = "8:info.rtf"
@@ -576,11 +640,11 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{FB480208-1853-44D0-9ABD-A3B734C3FAAA}:_F2475D80BA9B4D2599675FFF76B2A1C1"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F2475D80BA9B4D2599675FFF76B2A1C1"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:lyra, Version=1.0.1918.29383, Culture=neutral"
+            "AssemblyAsmDisplayName" = "8:lyra, Version=1.0.2724.21450, Culture=neutral"
                 "ScatterAssemblies"
                 {
                     "_F2475D80BA9B4D2599675FFF76B2A1C1"
@@ -607,7 +671,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F6FF8B85B8114971A64EB81235022D51"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F6FF8B85B8114971A64EB81235022D51"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Release\\data\\hh.ico"
             "TargetName" = "8:hh.ico"
@@ -627,7 +691,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F763E500AC6843CFBD26F3E5DA950D66"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F763E500AC6843CFBD26F3E5DA950D66"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Debug\\Converter\\Converter.bat"
             "TargetName" = "8:Converter.bat"
@@ -647,7 +711,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_F84BFEC7077644FAAA86B196FF2F047A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F84BFEC7077644FAAA86B196FF2F047A"
             {
             "SourcePath" = "8:..\\lyra\\bin\\Debug\\Converter\\in.txt"
             "TargetName" = "8:in.txt"
@@ -673,7 +737,7 @@
         }
         "Folder"
         {
-            "{78BAF5CE-F2E5-45BE-83BC-DB6AF387E941}:_2A0D2BB9C138499C98AC8921F47E03F9"
+            "{1525181F-901A-416C-8A58-119130FE478E}:_2A0D2BB9C138499C98AC8921F47E03F9"
             {
             "Name" = "8:#1916"
             "AlwaysCreate" = "11:FALSE"
@@ -684,7 +748,7 @@
                 {
                 }
             }
-            "{78BAF5CE-F2E5-45BE-83BC-DB6AF387E941}:_98A3325E69644576A94C69FD73FD814E"
+            "{1525181F-901A-416C-8A58-119130FE478E}:_98A3325E69644576A94C69FD73FD814E"
             {
             "Name" = "8:#1919"
             "AlwaysCreate" = "11:FALSE"
@@ -693,7 +757,7 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
-                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_60F4B1F5D8A8436ABF94B34FF761853F"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_60F4B1F5D8A8436ABF94B34FF761853F"
                     {
                     "Name" = "8:lyra"
                     "AlwaysCreate" = "11:FALSE"
@@ -702,7 +766,7 @@
                     "Property" = "8:_EB0AE2C3F3614725BFD63909C06C8513"
                         "Folders"
                         {
-                            "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_95630F47E17647D993CA5970B17BD4D4"
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_95630F47E17647D993CA5970B17BD4D4"
                             {
                             "Name" = "8:help"
                             "AlwaysCreate" = "11:FALSE"
@@ -717,7 +781,7 @@
                     }
                 }
             }
-            "{58C0ADA3-3CEA-43BD-A3B3-2EA121BC8217}:_DBC974D603824FCD9919CAAD0F3BBD8D"
+            "{3C67513D-01DD-4637-8A68-80971EB9504F}:_DBC974D603824FCD9919CAAD0F3BBD8D"
             {
             "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
             "Name" = "8:#1925"
@@ -727,7 +791,7 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_3F22219200F84FC5AD8F88839DFBAC72"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_3F22219200F84FC5AD8F88839DFBAC72"
                     {
                     "Name" = "8:doc"
                     "AlwaysCreate" = "11:FALSE"
@@ -738,7 +802,7 @@
                         {
                         }
                     }
-                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_8206CB1BA0D64EF28035E49E156621E5"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_8206CB1BA0D64EF28035E49E156621E5"
                     {
                     "Name" = "8:Converter"
                     "AlwaysCreate" = "11:FALSE"
@@ -747,7 +811,7 @@
                     "Property" = "8:_043A7BC569804ED2B828195380A7F1B4"
                         "Folders"
                         {
-                            "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_216CEB36774B47A28236CC1350386A01"
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_216CEB36774B47A28236CC1350386A01"
                             {
                             "Name" = "8:source"
                             "AlwaysCreate" = "11:FALSE"
@@ -760,7 +824,7 @@
                             }
                         }
                     }
-                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_B9906C0529FF44F184F4B71C333FE4F2"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B9906C0529FF44F184F4B71C333FE4F2"
                     {
                     "Name" = "8:source"
                     "AlwaysCreate" = "11:FALSE"
@@ -771,7 +835,7 @@
                         {
                         }
                     }
-                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_F020EC59A5A64753A2915E1F29C08A09"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F020EC59A5A64753A2915E1F29C08A09"
                     {
                     "Name" = "8:data"
                     "AlwaysCreate" = "11:FALSE"
@@ -805,6 +869,7 @@
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
+        "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.7.0"
         "Manufacturer" = "8:privat"
         "ARPHELPTELEPHONE" = "8:"
@@ -819,6 +884,10 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
+        "TargetPlatform" = "3:0"
+        "PreBuildEvent" = "8:"
+        "PostBuildEvent" = "8:"
+        "RunPostBuildEvent" = "3:0"
         }
         "Registry"
         {
@@ -826,7 +895,7 @@
             {
                 "Keys"
                 {
-                    "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_A8D998E5DB8F4B2384C57D81101301E3"
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_A8D998E5DB8F4B2384C57D81101301E3"
                     {
                     "Name" = "8:Software"
                     "Condition" = "8:"
@@ -846,7 +915,7 @@
             {
                 "Keys"
                 {
-                    "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_10046D8A7B9D4AC0AA1C3897D8B60863"
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_10046D8A7B9D4AC0AA1C3897D8B60863"
                     {
                     "Name" = "8:Software"
                     "Condition" = "8:"
@@ -855,7 +924,7 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-                            "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_03275D0D499846599BCFAC896410D2CB"
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_03275D0D499846599BCFAC896410D2CB"
                             {
                             "Name" = "8:lyra"
                             "Condition" = "8:"
@@ -864,7 +933,7 @@
                             "Transitive" = "11:FALSE"
                                 "Keys"
                                 {
-                                    "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_18191D2B7E88494EA70A081FAE9E43CC"
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_18191D2B7E88494EA70A081FAE9E43CC"
                                     {
                                     "Name" = "8:stats"
                                     "Condition" = "8:"
@@ -876,7 +945,7 @@
                                         }
                                         "Values"
                                         {
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_36CC2E55BA4944258FBAF1165826B4BD"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_36CC2E55BA4944258FBAF1165826B4BD"
                                             {
                                             "Name" = "8:NRUSE"
                                             "Condition" = "8:"
@@ -884,7 +953,7 @@
                                             "ValueTypes" = "3:3"
                                             "Value" = "3:0"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_3E31437D8F674B2BB9C7948AFD0DF342"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_3E31437D8F674B2BB9C7948AFD0DF342"
                                             {
                                             "Name" = "8:TSRC"
                                             "Condition" = "8:"
@@ -892,7 +961,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:0"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_40895C9DB30D4ED0BA21211616EC7F6C"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_40895C9DB30D4ED0BA21211616EC7F6C"
                                             {
                                             "Name" = "8:NRSRC"
                                             "Condition" = "8:"
@@ -900,7 +969,7 @@
                                             "ValueTypes" = "3:3"
                                             "Value" = "3:0"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_5556D79E6AD14C40B99FFA9695BC7D37"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_5556D79E6AD14C40B99FFA9695BC7D37"
                                             {
                                             "Name" = "8:TUSE"
                                             "Condition" = "8:"
@@ -908,7 +977,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:0"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_D273D0F1EE514BB8997F80FFC4C2E915"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_D273D0F1EE514BB8997F80FFC4C2E915"
                                             {
                                             "Name" = "8:TLD"
                                             "Condition" = "8:"
@@ -918,7 +987,7 @@
                                             }
                                         }
                                     }
-                                    "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_38EA709AF51E4276B08CCD1B6959FA45"
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_38EA709AF51E4276B08CCD1B6959FA45"
                                     {
                                     "Name" = "8:fonts"
                                     "Condition" = "8:"
@@ -930,7 +999,7 @@
                                         }
                                         "Values"
                                         {
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_29F14F83081F433BBD0ACA76EAC9A67D"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_29F14F83081F433BBD0ACA76EAC9A67D"
                                             {
                                             "Name" = "8:special"
                                             "Condition" = "8:"
@@ -938,7 +1007,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:Times New Roman;20;i"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_6643CEFE786E4797AF1E3F580AE25E61"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_6643CEFE786E4797AF1E3F580AE25E61"
                                             {
                                             "Name" = "8:color"
                                             "Condition" = "8:"
@@ -946,7 +1015,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:00;00;00"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_7FC910FCC25D4966A61391AB4F5F187D"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_7FC910FCC25D4966A61391AB4F5F187D"
                                             {
                                             "Name" = "8:refcolor"
                                             "Condition" = "8:"
@@ -954,7 +1023,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:0;0;128"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_C2C4A06BECEF46C885C27BA68C3DFDAF"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_C2C4A06BECEF46C885C27BA68C3DFDAF"
                                             {
                                             "Name" = "8:transfont"
                                             "Condition" = "8:"
@@ -962,7 +1031,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:Arial;20;s"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_F4407053F16144729BB391B715C92383"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_F4407053F16144729BB391B715C92383"
                                             {
                                             "Name" = "8:refmode"
                                             "Condition" = "8:"
@@ -970,7 +1039,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:fett"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_F8654AF304794D9AA72B36E4FFDCC1C7"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_F8654AF304794D9AA72B36E4FFDCC1C7"
                                             {
                                             "Name" = "8:standard"
                                             "Condition" = "8:"
@@ -980,7 +1049,7 @@
                                             }
                                         }
                                     }
-                                    "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_4CB4387F59F841D2915AAF1AC0235E54"
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_4CB4387F59F841D2915AAF1AC0235E54"
                                     {
                                     "Name" = "8:FX"
                                     "Condition" = "8:"
@@ -992,7 +1061,7 @@
                                         }
                                         "Values"
                                         {
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_169A684422164A02A95C65DB01D5938A"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_169A684422164A02A95C65DB01D5938A"
                                             {
                                             "Name" = "8:f4"
                                             "Condition" = "8:"
@@ -1000,7 +1069,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:-"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_1CE22824103F4A3AA13D802FDAF8F086"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_1CE22824103F4A3AA13D802FDAF8F086"
                                             {
                                             "Name" = "8:f3"
                                             "Condition" = "8:"
@@ -1008,7 +1077,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:-"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_4523887948E54622BC400741B9AFF924"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_4523887948E54622BC400741B9AFF924"
                                             {
                                             "Name" = "8:f2"
                                             "Condition" = "8:"
@@ -1016,7 +1085,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:-"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_5F48C275E6184598B8BD37D66E5F7CBB"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_5F48C275E6184598B8BD37D66E5F7CBB"
                                             {
                                             "Name" = "8:f1"
                                             "Condition" = "8:"
@@ -1024,7 +1093,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:-"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_6F7081496F954582963F6155624AC5D9"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_6F7081496F954582963F6155624AC5D9"
                                             {
                                             "Name" = "8:f6"
                                             "Condition" = "8:"
@@ -1032,7 +1101,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:-"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_E3A5B486A88B4DA0940FC21A7B3C654D"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_E3A5B486A88B4DA0940FC21A7B3C654D"
                                             {
                                             "Name" = "8:f5"
                                             "Condition" = "8:"
@@ -1042,7 +1111,7 @@
                                             }
                                         }
                                     }
-                                    "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_9FFDD20D6E8649F7BC81E6378E9BDD61"
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_9FFDD20D6E8649F7BC81E6378E9BDD61"
                                     {
                                     "Name" = "8:presentation"
                                     "Condition" = "8:"
@@ -1054,7 +1123,7 @@
                                         }
                                         "Values"
                                         {
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_0DD208359D5145A9BDD9765CF866983C"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_0DD208359D5145A9BDD9765CF866983C"
                                             {
                                             "Name" = "8:gradcol1"
                                             "Condition" = "8:"
@@ -1062,7 +1131,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:128;128;255"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_72BEAE3B929E404F98BD9DCD161D52E2"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_72BEAE3B929E404F98BD9DCD161D52E2"
                                             {
                                             "Name" = "8:picuri"
                                             "Condition" = "8:"
@@ -1070,7 +1139,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_7CE28C85B6BF4468B4A6538D569C8D04"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_7CE28C85B6BF4468B4A6538D569C8D04"
                                             {
                                             "Name" = "8:cascade"
                                             "Condition" = "8:"
@@ -1078,7 +1147,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:no"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_87ABF626F7834B20B1813C812EA89151"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_87ABF626F7834B20B1813C812EA89151"
                                             {
                                             "Name" = "8:mode"
                                             "Condition" = "8:"
@@ -1086,7 +1155,7 @@
                                             "ValueTypes" = "3:3"
                                             "Value" = "3:1"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_A318DF541D3B49D88284BBE841E1145A"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_A318DF541D3B49D88284BBE841E1145A"
                                             {
                                             "Name" = "8:unicol"
                                             "Condition" = "8:"
@@ -1094,7 +1163,7 @@
                                             "ValueTypes" = "3:1"
                                             "Value" = "8:212;212;212"
                                             }
-                                            "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_B07C3D4FCD424062B2EA299A8453F674"
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_B07C3D4FCD424062B2EA299A8453F674"
                                             {
                                             "Name" = "8:gradcol2"
                                             "Condition" = "8:"
@@ -1107,7 +1176,7 @@
                                 }
                                 "Values"
                                 {
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_0C94B66BFFD84BD1BEC92D0319642E9F"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_0C94B66BFFD84BD1BEC92D0319642E9F"
                                     {
                                     "Name" = "8:1"
                                     "Condition" = "8:"
@@ -1115,7 +1184,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:no"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_295A2FD444D9423E9B3FB261E7C03465"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_295A2FD444D9423E9B3FB261E7C03465"
                                     {
                                     "Name" = "8:pw"
                                     "Condition" = "8:"
@@ -1123,7 +1192,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:$$5861637$#"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_51DE086A6ED54AA8B2E9CC9CE91BC7CB"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_51DE086A6ED54AA8B2E9CC9CE91BC7CB"
                                     {
                                     "Name" = "8:validated"
                                     "Condition" = "8:"
@@ -1131,7 +1200,7 @@
                                     "ValueTypes" = "3:4"
                                     "Value" = "8:01"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_60CE027F2D744D5F8D764BB503D19909"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_60CE027F2D744D5F8D764BB503D19909"
                                     {
                                     "Name" = "8:url"
                                     "Condition" = "8:"
@@ -1139,7 +1208,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:data\\curtext.xml"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_6F5057957E8F4135AD90F4E33B7F2A71"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_6F5057957E8F4135AD90F4E33B7F2A71"
                                     {
                                     "Name" = "8:right"
                                     "Condition" = "8:"
@@ -1147,7 +1216,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:yes"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_70C83299582B4C26B99BB02BAC11CEBE"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_70C83299582B4C26B99BB02BAC11CEBE"
                                     {
                                     "Name" = "8:ac"
                                     "Condition" = "8:"
@@ -1155,7 +1224,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:yes"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_97E587826ED748ACBE9A423142A9FB02"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_97E587826ED748ACBE9A423142A9FB02"
                                     {
                                     "Name" = "8:timer"
                                     "Condition" = "8:"
@@ -1163,7 +1232,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:2"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_B8C94B76C9264CF3BCE39AD55AE44ED1"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_B8C94B76C9264CF3BCE39AD55AE44ED1"
                                     {
                                     "Name" = "8:shnr"
                                     "Condition" = "8:"
@@ -1171,7 +1240,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:no"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_E52FD4BB577D4879B2723D878D939BCC"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_E52FD4BB577D4879B2723D878D939BCC"
                                     {
                                     "Name" = "8:help"
                                     "Condition" = "8:"
@@ -1179,7 +1248,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:doc\\lyrahelp.chm"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_F577A1067DCE4B68AC9E39C5F3F21531"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_F577A1067DCE4B68AC9E39C5F3F21531"
                                     {
                                     "Name" = "8:ger"
                                     "Condition" = "8:"
@@ -1187,7 +1256,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:yes"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_FA25CA03CA0C4F4F8A7B377AD6CF826F"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_FA25CA03CA0C4F4F8A7B377AD6CF826F"
                                     {
                                     "Name" = "8:lists"
                                     "Condition" = "8:"
@@ -1195,7 +1264,7 @@
                                     "ValueTypes" = "3:1"
                                     "Value" = "8:data\\lists.xml"
                                     }
-                                    "{35AE352C-BC79-4EF9-ABD8-61F467188583}:_FD692907E7D2494687A61C10A466A33F"
+                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_FD692907E7D2494687A61C10A466A33F"
                                     {
                                     "Name" = "8:schema"
                                     "Condition" = "8:"
@@ -1236,7 +1305,7 @@
         }
         "Shortcut"
         {
-            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_3B76BC70FEAF41F6B70BFD81CF6B4FBC"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3B76BC70FEAF41F6B70BFD81CF6B4FBC"
             {
             "Name" = "8:lyra help"
             "Arguments" = "8:"
@@ -1250,7 +1319,7 @@
             "Icon" = "8:_F6FF8B85B8114971A64EB81235022D51"
             "Feature" = "8:"
             }
-            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_8C93AD63551B4862BDF692CE1D0E1E39"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8C93AD63551B4862BDF692CE1D0E1E39"
             {
             "Name" = "8:lyra"
             "Arguments" = "8:"
@@ -1264,7 +1333,7 @@
             "Icon" = "8:_109FCEFB67354637B3D9C6E2A2161F4C"
             "Feature" = "8:"
             }
-            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_8DD574D7028C497A9CEB61FCE4780840"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8DD574D7028C497A9CEB61FCE4780840"
             {
             "Name" = "8:lyra"
             "Arguments" = "8:"
@@ -1278,7 +1347,7 @@
             "Icon" = "8:_109FCEFB67354637B3D9C6E2A2161F4C"
             "Feature" = "8:"
             }
-            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_D687FA8B34694D1CB3DF3FC423BEE6D7"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D687FA8B34694D1CB3DF3FC423BEE6D7"
             {
             "Name" = "8:Converter"
             "Arguments" = "8:"
@@ -1292,7 +1361,7 @@
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{478F747B-8505-45D1-9AAE-8C3B645C26E3}:_EA93CE41AAE741118BD4B8603D8C0939"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EA93CE41AAE741118BD4B8603D8C0939"
             {
             "Name" = "8:lyra debug"
             "Arguments" = "8:-d"
@@ -1309,14 +1378,14 @@
         }
         "UserInterface"
         {
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_09274C41E4A3471A94747F2A9A26338E"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_09274C41E4A3471A94747F2A9A26338E"
             {
             "Name" = "8:#1902"
             "Sequence" = "3:2"
             "Attributes" = "3:3"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_328FF490F7C64825913DA514F69B3E04"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_328FF490F7C64825913DA514F69B3E04"
                     {
                     "Sequence" = "3:110"
                     "DisplayName" = "8:Finished"
@@ -1338,7 +1407,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_ABEC44238AB84BF4BE985F372F86B691"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_ABEC44238AB84BF4BE985F372F86B691"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Read Me"
@@ -1387,14 +1456,14 @@
                     }
                 }
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_16DF40FE27544B4EBB8433412D9B97F6"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_16DF40FE27544B4EBB8433412D9B97F6"
             {
             "Name" = "8:#1900"
             "Sequence" = "3:1"
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_1A1BDD6EF6C64FBDB221290A1BA30699"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_1A1BDD6EF6C64FBDB221290A1BA30699"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Splash"
@@ -1430,7 +1499,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_7989A65726B74571A5783817C7A35C0B"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7989A65726B74571A5783817C7A35C0B"
                     {
                     "Sequence" = "3:200"
                     "DisplayName" = "8:License Agreement"
@@ -1477,7 +1546,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_7F7F8C4A212646BE8EB07439FA78F392"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7F7F8C4A212646BE8EB07439FA78F392"
                     {
                     "Sequence" = "3:400"
                     "DisplayName" = "8:Confirm Installation"
@@ -1499,7 +1568,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_9A17E7AC5C2D417C8A0E490F057E31CF"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_9A17E7AC5C2D417C8A0E490F057E31CF"
                     {
                     "Sequence" = "3:300"
                     "DisplayName" = "8:Installation Folder"
@@ -1519,9 +1588,22 @@
                             "Setting" = "3:1"
                             "UsePlugInResources" = "11:TRUE"
                             }
+                            "InstallAllUsersVisible"
+                            {
+                            "Name" = "8:InstallAllUsersVisible"
+                            "DisplayName" = "8:#1059"
+                            "Description" = "8:#1159"
+                            "Type" = "3:5"
+                            "ContextData" = "8:1;True=1;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:1"
+                            "DefaultValue" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_C51E2C80FBF248E69B0594159C0AA70B"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C51E2C80FBF248E69B0594159C0AA70B"
                     {
                     "Sequence" = "3:110"
                     "DisplayName" = "8:Welcome"
@@ -1571,14 +1653,14 @@
                     }
                 }
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_189DC9A5162741EF84419C684956C4C1"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_189DC9A5162741EF84419C684956C4C1"
             {
             "Name" = "8:#1900"
             "Sequence" = "3:2"
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_30855E6F09CE412A909A9EFF1A2587B2"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_30855E6F09CE412A909A9EFF1A2587B2"
                     {
                     "Sequence" = "3:110"
                     "DisplayName" = "8:Welcome"
@@ -1626,7 +1708,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_5E0CD3D4C75C40E8A234B309298A9ED1"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_5E0CD3D4C75C40E8A234B309298A9ED1"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Splash"
@@ -1662,7 +1744,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_8A175BCA78E74DEF86F0A586F2218FBF"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_8A175BCA78E74DEF86F0A586F2218FBF"
                     {
                     "Sequence" = "3:300"
                     "DisplayName" = "8:Installation Folder"
@@ -1684,7 +1766,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_B27EFD8160B6409AAF0026C182D54670"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_B27EFD8160B6409AAF0026C182D54670"
                     {
                     "Sequence" = "3:200"
                     "DisplayName" = "8:License Agreement"
@@ -1731,7 +1813,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_C1670C9298E649F18EE9F2E31318DB69"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C1670C9298E649F18EE9F2E31318DB69"
                     {
                     "Sequence" = "3:400"
                     "DisplayName" = "8:Confirm Installation"
@@ -1755,26 +1837,26 @@
                     }
                 }
             }
-            "{B654A020-6903-4E6A-A86C-75DC463DB54B}:_41FACF0B8E3F45ED9C2B0747E499A3AD"
+            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_41FACF0B8E3F45ED9C2B0747E499A3AD"
             {
             "UseDynamicProperties" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "SourcePath" = "8:<VsdDialogDir>\\VsdUserInterface.wim"
             }
-            "{B654A020-6903-4E6A-A86C-75DC463DB54B}:_4F44179310724E8CAD1D46CE900B9131"
+            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_4F44179310724E8CAD1D46CE900B9131"
             {
             "UseDynamicProperties" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "SourcePath" = "8:<VsdDialogDir>\\VsdBasicDialogs.wim"
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_565559ADA2A04006914A26AEB7721B6E"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_565559ADA2A04006914A26AEB7721B6E"
             {
             "Name" = "8:#1902"
             "Sequence" = "3:1"
             "Attributes" = "3:3"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_19E95A64454D45F3857B7D6B19C6BAD5"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_19E95A64454D45F3857B7D6B19C6BAD5"
                     {
                     "Sequence" = "3:110"
                     "DisplayName" = "8:Finished"
@@ -1809,7 +1891,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_7FFCC67485704B699DFE6CBD8D2D2A9E"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7FFCC67485704B699DFE6CBD8D2D2A9E"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Read Me"
@@ -1858,14 +1940,14 @@
                     }
                 }
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_62C5DAD1DA1644A99EAE4147C3121FB8"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_62C5DAD1DA1644A99EAE4147C3121FB8"
             {
             "Name" = "8:#1901"
             "Sequence" = "3:1"
             "Attributes" = "3:2"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_D938A3AE9ABD494BB5956B4B3F609415"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_D938A3AE9ABD494BB5956B4B3F609415"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Progress"
@@ -1902,14 +1984,14 @@
                     }
                 }
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_9C62DC3A251C432EA5087ABFD6DFAF77"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_9C62DC3A251C432EA5087ABFD6DFAF77"
             {
             "Name" = "8:#1901"
             "Sequence" = "3:2"
             "Attributes" = "3:2"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_A27615E36C80434DAB9EC5A446D2B239"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_A27615E36C80434DAB9EC5A446D2B239"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Progress"
@@ -1949,20 +2031,6 @@
         }
         "MergeModule"
         {
-            "{35A69C6E-5BA4-440D-803D-762B59A45393}:_63511F565F3C4B7FB03B62521A828B23"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:dotnetfxredist_x86.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:1033"
-            "Exclude" = "11:TRUE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
         }
         "ProjectOutput"
         {

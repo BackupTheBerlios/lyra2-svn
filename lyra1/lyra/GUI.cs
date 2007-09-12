@@ -122,7 +122,6 @@ namespace lyra
 		/// <summary>
 		/// my variables
 		/// </summary>
-		private Start start = null;
 		private IStorage storage = null;
 		public int curItem = -1;
 		private PLists persLists;
@@ -130,7 +129,6 @@ namespace lyra
 		private System.Windows.Forms.MenuItem menuItem63;
 		private System.Windows.Forms.MenuItem menuItem64;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Button button8;
 		private DelayedTask searchTask;
 
 		public ListBox StandardNavigate
@@ -142,8 +140,6 @@ namespace lyra
 		{
 			InitializeComponent();
 			base.Text = Util.GUINAME;
-			this.start = new Start();
-			this.start.Show();
 			Util.init();
 			if(Screen.AllScreens.Length == 1)
 			{
@@ -163,11 +159,13 @@ namespace lyra
 			
 			if (Util.SHOWBUILDNEWS)
 				(new Frst()).Show();
+
 			this.Height = GUI.DEBUG ? 343 : 343 - this.statusBar1.Height;
 			this.statusBar1.Visible = GUI.DEBUG;
 			this.statusBarPanel1.Text = "ok";
 			this.statusBarPanel2.Text = Util.URL;
-			(new Thread(new ThreadStart(this.init))).Start();
+			// (new Thread(new ThreadStart(this.Initialize))).Start();
+		    this.Initialize();
 			// debug console
 			if (GUI.DEBUG)
 			{
@@ -178,36 +176,28 @@ namespace lyra
 			
 		}
 
-		
-		private void GUI_Load(object sender, System.EventArgs e)
-		{
-			this.menuItem41.Enabled = File.Exists(Util.BASEURL + "\\" + Util.URL + ".bac");
-			this.menuItem60.Checked = Util.SHOW_PREVIEW;
-			this.listBox1.MouseDown += new MouseEventHandler(this.listBox1_click);
-			this.listBox3.MouseDown += new MouseEventHandler(this.listBox3_click);
-			this.GotFocus += new EventHandler(GUI_GotFocus);
-			this.listBox1.Scrolled += new ScrollEventHandler(listBox_Scrolled);
-			this.listBox2.Scrolled += new ScrollEventHandler(listBox_Scrolled);
-			this.listBox3.Scrolled += new ScrollEventHandler(listBox_Scrolled);
-			
-			foreach(MenuItem item in mainMenu1.MenuItems)
-			{
-				item.Popup += new EventHandler(item_Popup);
-			}
-			
-			this.contextMenu1.Popup += new EventHandler(contextMenu_Popup);
-			this.contextMenu2.Popup += new EventHandler(contextMenu_Popup);
-			this.Move += new EventHandler(GUI_Move);
-		}
 
-		private void init()
+		private void Initialize()
 		{
-			Thread.Sleep(Util.WAIT);
-			this.start.Label = "lade Daten...";
+            this.menuItem41.Enabled = File.Exists(Util.BASEURL + "\\" + Util.URL + ".bac");
+            this.menuItem60.Checked = Util.SHOW_PREVIEW;
+            this.listBox1.MouseDown += new MouseEventHandler(this.listBox1_click);
+            this.listBox3.MouseDown += new MouseEventHandler(this.listBox3_click);
+            this.GotFocus += new EventHandler(GUI_GotFocus);
+            this.listBox1.Scrolled += new ScrollEventHandler(listBox_Scrolled);
+            this.listBox2.Scrolled += new ScrollEventHandler(listBox_Scrolled);
+            this.listBox3.Scrolled += new ScrollEventHandler(listBox_Scrolled);
+
+            foreach (MenuItem item in mainMenu1.MenuItems)
+            {
+                item.Popup += new EventHandler(item_Popup);
+            }
+
+            this.contextMenu1.Popup += new EventHandler(contextMenu_Popup);
+            this.contextMenu2.Popup += new EventHandler(contextMenu_Popup);
+            this.Move += new EventHandler(GUI_Move);
 			this.storage = new Storage(Util.URL, this);
 			this.storage.displaySongs(this.listBox1);
-			this.start.Label = "Daten geladen";
-			Thread.Sleep(Util.WAIT);
 			this.WindowState = FormWindowState.Normal;
 			Song.owner = this;
 			this.persLists = new PLists(this.comboBox1, this.storage);
@@ -221,7 +211,6 @@ namespace lyra
 			}
 			this.menuItem10.Visible = false;
 			this.Deactivate += new EventHandler(this.DeactivateMe);
-			this.start.Close();
 		}
 
 		/// <summary>
@@ -350,7 +339,6 @@ namespace lyra
 			this.menuItem25 = new System.Windows.Forms.MenuItem();
 			this.contextMenu2 = new System.Windows.Forms.ContextMenu();
 			this.menuItem9 = new System.Windows.Forms.MenuItem();
-			this.button8 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -374,7 +362,6 @@ namespace lyra
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.button8);
 			this.tabPage2.Controls.Add(this.label4);
 			this.tabPage2.Controls.Add(this.pictureBox4);
 			this.tabPage2.Controls.Add(this.pictureBox3);
@@ -452,12 +439,12 @@ namespace lyra
 			// textBox1
 			// 
 			this.textBox1.DefaultText = "Nummer";
-			this.textBox1.ForeColor = System.Drawing.Color.DimGray;
+			this.textBox1.ForeColor = System.Drawing.Color.Black;
 			this.textBox1.Location = new System.Drawing.Point(504, 18);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(64, 21);
 			this.textBox1.TabIndex = 2;
-			this.textBox1.Text = "Nummer";
+			this.textBox1.Text = "";
 			this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
 			this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
 			// 
@@ -1209,15 +1196,6 @@ namespace lyra
 			this.menuItem9.Text = "zu aktueller &Liste hinzufügen";
 			this.menuItem9.Click += new System.EventHandler(this.menuItem9_Click);
 			// 
-			// button8
-			// 
-			this.button8.Location = new System.Drawing.Point(512, 104);
-			this.button8.Name = "button8";
-			this.button8.Size = new System.Drawing.Size(64, 24);
-			this.button8.TabIndex = 15;
-			this.button8.Text = "button8";
-			this.button8.Click += new System.EventHandler(this.button8_Click_1);
-			// 
 			// GUI
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
@@ -1234,7 +1212,6 @@ namespace lyra
 			this.Text = "lyra";
 			this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
 			this.Closing += new System.ComponentModel.CancelEventHandler(this.Exit);
-			this.Load += new System.EventHandler(this.GUI_Load);
 			this.Activated += new System.EventHandler(this.MeGotFocus);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
@@ -1248,20 +1225,6 @@ namespace lyra
 
 		#endregion
 
-		/// <summary>
-		/// Der Haupteinstiegspunkt für die Anwendung.
-		/// </summary>
-		[STAThread]
-		static void Main(string[] args)
-		{
-			if (args.Length == 1 && args[0].Equals("-d"))
-			{
-				GUI.DEBUG = true;
-			}
-
-			// GUI.DEBUG = true; // testing state
-			Application.Run(new GUI());
-		}
 
 		public static bool DEBUG = false;
 
