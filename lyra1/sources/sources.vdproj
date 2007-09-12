@@ -89,7 +89,34 @@
         }
         "SimpleProjectOutput"
         {
-            "{3169EF16-0292-4576-A031-DDE5527F1848}:_4D5D4B6EF8EF46F8A50795C01DE18422"
+            "{3169EF16-0292-4576-A031-DDE5527F1848}:_9626603D5883440C99309B4DAE635F20"
+            {
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Documentation"
+            "OutputProjectCanonicalName" = "8:..\\lyra2\\lyra2.csproj"
+            "OutputProjectGuid" = "8:{7B830E64-82E7-4C06-833A-F55C0C61A624}"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{3169EF16-0292-4576-A031-DDE5527F1848}:_D5EF5EDDD99F444B81B974B7C7BFE924"
             {
             "SourcePath" = "8:"
             "TargetName" = "8:"
@@ -110,8 +137,8 @@
             "IsolateTo" = "8:"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:SourceFiles"
-            "OutputProjectCanonicalName" = "8:lyra.csproj"
-            "OutputProjectGuid" = "8:{CACF63D5-C9CB-4878-95CC-7DA19367B68A}"
+            "OutputProjectCanonicalName" = "8:..\\lyra2\\lyra2.csproj"
+            "OutputProjectGuid" = "8:{7B830E64-82E7-4C06-833A-F55C0C61A624}"
                 "ExcludeFilters"
                 {
                 }
