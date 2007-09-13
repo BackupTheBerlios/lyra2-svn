@@ -17,8 +17,7 @@ namespace lyra2
             Application.SetCompatibleTextRenderingDefault(false);
             GUI.DEBUG = (args.Length == 1 && args[0].Equals("-d"));
             
-            Application.Run(new LyraGUI());
-            //Application.Run();
+            Application.Run(new GUI());
         }
     }
 }
