@@ -110,7 +110,7 @@
             "IsolateTo" = "8:"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Documentation"
-            "OutputProjectCanonicalName" = "8:..\\lyra2\\lyra2.csproj"
+            "OutputProjectCanonicalName" = "8:E:\\Documents\\Work\\Andreas\\Lyra\\lyra2\\lyra2.csproj"
             "OutputProjectGuid" = "8:{7B830E64-82E7-4C06-833A-F55C0C61A624}"
                 "ExcludeFilters"
                 {
@@ -137,7 +137,7 @@
             "IsolateTo" = "8:"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:SourceFiles"
-            "OutputProjectCanonicalName" = "8:..\\lyra2\\lyra2.csproj"
+            "OutputProjectCanonicalName" = "8:E:\\Documents\\Work\\Andreas\\Lyra\\lyra2\\lyra2.csproj"
             "OutputProjectGuid" = "8:{7B830E64-82E7-4C06-833A-F55C0C61A624}"
                 "ExcludeFilters"
                 {

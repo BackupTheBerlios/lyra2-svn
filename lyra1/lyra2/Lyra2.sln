@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyra2", "lyra2.csproj", "{7B830E64-82E7-4C06-833A-F55C0C61A624}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "sources", "..\sources\sources.vdproj", "{A9EDD825-03C3-4F3C-995F-9BA0F23855D7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setuplyra", "..\setuplyra\setuplyra.vdproj", "{146A3E24-2724-446F-AE7E-409098DCBBE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B830E64-82E7-4C06-833A-F55C0C61A624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B830E64-82E7-4C06-833A-F55C0C61A624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B830E64-82E7-4C06-833A-F55C0C61A624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B830E64-82E7-4C06-833A-F55C0C61A624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9EDD825-03C3-4F3C-995F-9BA0F23855D7}.Debug|Any CPU.ActiveCfg = Debug
+		{A9EDD825-03C3-4F3C-995F-9BA0F23855D7}.Debug|Any CPU.Build.0 = Debug
+		{A9EDD825-03C3-4F3C-995F-9BA0F23855D7}.Release|Any CPU.ActiveCfg = Release
+		{A9EDD825-03C3-4F3C-995F-9BA0F23855D7}.Release|Any CPU.Build.0 = Release
+		{146A3E24-2724-446F-AE7E-409098DCBBE6}.Debug|Any CPU.ActiveCfg = Debug
+		{146A3E24-2724-446F-AE7E-409098DCBBE6}.Debug|Any CPU.Build.0 = Debug
+		{146A3E24-2724-446F-AE7E-409098DCBBE6}.Release|Any CPU.ActiveCfg = Release
+		{146A3E24-2724-446F-AE7E-409098DCBBE6}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
