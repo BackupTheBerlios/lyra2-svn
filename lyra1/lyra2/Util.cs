@@ -13,7 +13,7 @@ namespace lyra2
 	/// </summary>
 	public class Util
 	{
-		public static string CONFIGPATH = Application.StartupPath + "\\lyra2.config";
+		public static string CONFIGPATH = Application.StartupPath + "\\lyra.config";
 		// info & build 
 		public const string NAME = "lyra2";
 		public const string BUILDNR = "34";
