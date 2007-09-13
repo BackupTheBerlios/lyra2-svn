@@ -59,5 +59,26 @@ namespace lyra2.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Icon console {
+            get {
+                object obj = ResourceManager.GetObject("console", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon hh {
+            get {
+                object obj = ResourceManager.GetObject("hh", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon lyra {
+            get {
+                object obj = ResourceManager.GetObject("lyra", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
