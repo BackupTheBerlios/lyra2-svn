@@ -48,7 +48,6 @@ namespace lyra2
 			InitializeComponent();
 			this.label21.Text = Util.VER;
 			this.label22.Text = Util.BUILD;
-			this.label23.Text = GUI.DEBUG ? "ja" : "nein";
 			this.label24.Text = ".NET " + Util.DOTNET;
 			this.label25.Text = Util.NRSONGS.ToString();
 			this.label26.Text = Util.NRUSE != 0 ? Convert.ToString(Util.TOTALLOAD/Util.NRUSE/TimeSpan.TicksPerMillisecond) + " ms" : "0 ms";

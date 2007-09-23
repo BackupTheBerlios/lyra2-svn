@@ -15,7 +15,7 @@ namespace lyra2
 	{
 		public static string CONFIGPATH = Application.StartupPath + "\\lyra.config";
 		// info & build 
-		public const string NAME = "lyra2";
+		public const string NAME = "lyra";
 		public const string BUILDNR = "34";
 		public const string VER = "1.9.8"; // with PocketPC
 		public static string BUILD = "{build 20070617." + Util.BUILDNR + "}";
@@ -674,10 +674,7 @@ namespace lyra2
 
 		public static void Debug(string msg, Exception dbex)
 		{
-			if (GUI.DEBUG) // if -d flag set
-			{
-				DebugConsole.Append(msg, dbex);
-			}
+			// TODO: debugging (use log4net)
 		}
 	}
 }

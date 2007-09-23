@@ -82,7 +82,6 @@ namespace lyra2
 		private System.Windows.Forms.MenuItem menuItem27;
 		private System.Windows.Forms.MenuItem menuItem28;
 		private System.Windows.Forms.MenuItem menuItem29;
-		private System.Windows.Forms.MenuItem menuItem32;
 		private System.Windows.Forms.MenuItem menuItem33;
 		private System.Windows.Forms.MenuItem menuItem34;
 		private System.Windows.Forms.MenuItem menuItem35;
@@ -156,23 +155,16 @@ namespace lyra2
 					this.menuItem56.Checked = true;
 				}
 			}
-			
-			if (Util.SHOWBUILDNEWS)
-				(new Frst()).Show();
 
-			this.Height = GUI.DEBUG ? 343 : 343 - this.statusBar1.Height;
-			this.statusBar1.Visible = GUI.DEBUG;
-			this.statusBarPanel1.Text = "ok";
+            if (Util.SHOWBUILDNEWS)
+            {
+                (new Frst()).Show();
+            }
+
+		    this.statusBarPanel1.Text = "ok";
 			this.statusBarPanel2.Text = Util.URL;
 			// (new Thread(new ThreadStart(this.Initialize))).Start();
 		    this.Initialize();
-			// debug console
-			if (GUI.DEBUG)
-			{
-				DebugConsole.ShowDebugConsole(this);
-				this.menuItem29.Visible = true;
-				this.menuItem32.Visible = true;
-			}
 			
 		}
 
@@ -326,7 +318,6 @@ namespace lyra2
 			this.menuItem5 = new System.Windows.Forms.MenuItem();
 			this.menuItem33 = new System.Windows.Forms.MenuItem();
 			this.menuItem29 = new System.Windows.Forms.MenuItem();
-			this.menuItem32 = new System.Windows.Forms.MenuItem();
 			this.menuItem37 = new System.Windows.Forms.MenuItem();
 			this.statusBar1 = new System.Windows.Forms.StatusBar();
 			this.statusBarPanel1 = new System.Windows.Forms.StatusBarPanel();
@@ -1086,8 +1077,7 @@ namespace lyra2
 			this.menuItem4.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
 																					  this.menuItem5,
 																					  this.menuItem33,
-																					  this.menuItem29,
-																					  this.menuItem32});
+																					  this.menuItem29});
 			this.menuItem4.Text = "&Hilfe";
 			// 
 			// menuItem5
@@ -1108,14 +1098,6 @@ namespace lyra2
 			this.menuItem29.Index = 2;
 			this.menuItem29.Text = "-";
 			this.menuItem29.Visible = false;
-			// 
-			// menuItem32
-			// 
-			this.menuItem32.Index = 3;
-			this.menuItem32.Shortcut = System.Windows.Forms.Shortcut.CtrlD;
-			this.menuItem32.Text = "&Debug Console";
-			this.menuItem32.Visible = false;
-			this.menuItem32.Click += new System.EventHandler(this.menuItem32_Click);
 			// 
 			// menuItem37
 			// 
@@ -1224,9 +1206,6 @@ namespace lyra2
 		}
 
 		#endregion
-
-
-		public static bool DEBUG = false;
 
 		// Activated -> assure, that the open Editor gets focus back!
 		private void MeGotFocus(object sender, System.EventArgs e)
@@ -2080,13 +2059,6 @@ namespace lyra2
 			}
 			HTML.showHTML(this, box, idtext);
 		}
-
-		// Debugging
-		private void menuItem32_Click(object sender, System.EventArgs e)
-		{
-			DebugConsole.ShowDebugConsole(this);
-		}
-
 
 		// add song directly to list by nr
 		private void button10_Click(object sender, System.EventArgs e)
