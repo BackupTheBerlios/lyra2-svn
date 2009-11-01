@@ -16,6 +16,7 @@
  */
 
 using System;
+using System.Diagnostics;
 
 namespace Lucene.Net.QueryParsers
 {
@@ -42,14 +43,16 @@ namespace Lucene.Net.QueryParsers
 		{
 			input = r;
 		}
-		
+        
+		[DebuggerStepThrough]
 		public char ReadChar()
 		{
 			if (bufferPosition >= bufferLength)
 				Refill();
 			return buffer[bufferPosition++];
 		}
-		
+
+        [DebuggerStepThrough]
 		private void  Refill()
 		{
 			int newPosition = bufferLength - tokenStart;
@@ -92,11 +95,12 @@ namespace Lucene.Net.QueryParsers
 			}
 			
 			if (charsRead <= 0)
-				throw new System.IO.IOException("read past eof");
+				 throw new System.IO.IOException("read past eof");
 			else
 				bufferLength += charsRead;
 		}
-		
+
+        [DebuggerStepThrough]
 		public char BeginToken()
 		{
 			tokenStart = bufferPosition;

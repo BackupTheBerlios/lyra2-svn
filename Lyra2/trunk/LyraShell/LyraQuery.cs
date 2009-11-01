@@ -27,7 +27,6 @@ namespace Lyra2.LyraShell
                     this.numbers.Add(i);
                 }
             }
-            this.numbers.Sort((a, b) => b - a);
             
             this.exact = exact;
         }

@@ -70,6 +70,8 @@ namespace Lyra2.LyraShell
         {
             set
             {
+                if (!File.Exists(value)) return;
+
                 try
                 {
                     Util.BGIMG = Image.FromFile(value);

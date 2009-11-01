@@ -21,7 +21,7 @@ namespace Lyra2.LyraShell
 
 		void displaySongs(ListBox box);
 
-		void Search(string query, ListBox resultBox, bool text, bool matchCase, bool whole, bool trans);
+        void Search(string query, SongListBox resultBox, bool text, bool matchCase, bool whole, bool trans, SortMethod sortMethod);
 
 		bool ToBeCommited { get; set; }
 		

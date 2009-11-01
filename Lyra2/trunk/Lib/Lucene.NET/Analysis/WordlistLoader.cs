@@ -77,7 +77,10 @@ namespace Lucene.Net.Analysis
                 while ((word = br.ReadLine()) != null)
                 {
                     System.String tmp = word.Trim();
-                    result.Add(tmp, tmp);
+                    if (!result.ContainsKey(tmp))
+                    {
+                        result.Add(tmp, tmp);
+                    }
                 }
             }
             finally

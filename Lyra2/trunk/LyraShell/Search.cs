@@ -9,8 +9,8 @@ namespace Lyra2.LyraShell
     /// </summary>
     public class Search : ISearch
     {
-        public bool SearchCollection(string query, SortedList list, ListBox resultBox,
-                                     bool text, bool matchCase, bool whole, bool trans)
+        public bool SearchCollection(string query, SortedList list, SongListBox resultBox,
+                                     bool text, bool matchCase, bool whole, bool trans, SortMethod sortMethod)
         {
             long start = Util.getCurrentTicks();
             IDictionaryEnumerator en = list.GetEnumerator();

@@ -2,12 +2,12 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Windows.Forms;
+using Lucene.Net.Analysis;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
-using Lyra2.UtilShared;
 using System.Collections.Generic;
 
 namespace Lyra2.LyraShell
@@ -17,23 +17,25 @@ namespace Lyra2.LyraShell
     /// </summary>
     public class IndexSearch : ISearch
     {
-        private string INDEXDIR = Application.StartupPath + "\\index";
+        private readonly string indexDir = Application.StartupPath + "\\index";
         private ICollection songList;
         private Hashtable nrIndex;
+        private readonly StandardAnalyzer indexAnalyzer;
 
         public IndexSearch(ICollection songList, bool forceReIndex)
         {
-            this.setSongList(songList);
-            DirectoryInfo indexDir = new DirectoryInfo(INDEXDIR);
+            this.SetSongList(songList);
+            DirectoryInfo indexDirInfo = new DirectoryInfo(this.indexDir);
+            this.indexAnalyzer = new StandardAnalyzer(new FileInfo(Application.StartupPath + "\\data\\stopwords.txt"), false);
 
             try
             {
-                if (!indexDir.Exists || forceReIndex || this.checkIfFileChanged()) this.generateIndex(this.songList);
+                if (!indexDirInfo.Exists || forceReIndex || this.CheckIfFileChanged()) this.GenerateIndex(this.songList);
             }
             catch (Exception ex)
             {
                 Console.Out.WriteLine(ex.Message + "\n" + ex.StackTrace);
-                throw ex;
+                throw;
             }
         }
 
@@ -44,10 +46,10 @@ namespace Lyra2.LyraShell
 
         public void ReIndex(ICollection songList)
         {
-            this.setSongList(songList);
+            this.SetSongList(songList);
             try
             {
-                this.generateIndex(this.songList);
+                this.GenerateIndex(this.songList);
             }
             catch (Exception ex)
             {
@@ -55,7 +57,7 @@ namespace Lyra2.LyraShell
             }
         }
 
-        public void setSongList(ICollection songList)
+        private void SetSongList(ICollection songList)
         {
             this.songList = songList;
             this.nrIndex = new Hashtable();
@@ -68,11 +70,11 @@ namespace Lyra2.LyraShell
         #region ISearch Members
 
         public bool SearchCollection(string query, SortedList list,
-                                     ListBox resultBox, bool text, bool matchCase, bool whole, bool trans)
+                                     SongListBox resultBox, bool text, bool matchCase, bool whole, bool trans, SortMethod sortMethod)
         {
-            DirectoryInfo indexDir = new DirectoryInfo(INDEXDIR);
+            DirectoryInfo indexDir = new DirectoryInfo(this.indexDir);
             IndexSearcher searcher = new IndexSearcher(indexDir.FullName);
-            QueryParser parser = new QueryParser(text ? "text" : "title", new StandardAnalyzer());
+            QueryParser parser = new QueryParser(text ? "text" : "title", this.indexAnalyzer);
 
             LyraQuery lQuery = SearchUtil.CreateLyraQuery(query, whole);
             if (lQuery.LuceneQuery != "")
@@ -80,22 +82,19 @@ namespace Lyra2.LyraShell
                 Query luceneQuery = parser.Parse(lQuery.LuceneQuery);
                 Hits hits = searcher.Search(luceneQuery);
 
-                ArrayList docs = new ArrayList();
+                List<ISong> songs = new List<ISong>();
+                resultBox.Ratings.Clear();
+
                 for (int i = 0; i < hits.Length(); i++)
                 {
                     Document doc = hits.Doc(i);
-                    docs.Add(doc);
-                }
-                ArrayList songs = new ArrayList();
-                foreach (Document doc in docs)
-                {
                     int nr = Int32.Parse(doc.GetField("nr").StringValue());
-                    Song s = (Song)this.nrIndex[nr];
-                    if (s != null)
+                    Song song = (Song)this.nrIndex[nr];
+                    if (song != null)
                     {
-                        songs.Add(s);
+                        songs.Add(song);
+                        resultBox.Ratings.Add(song, hits.Score(i));
                     }
-                    // Console.Out.WriteLine(s.Number + " " + s.Title + " [boost:" + doc.GetBoost() + "]");
                 }
 
                 // sort results
@@ -104,8 +103,9 @@ namespace Lyra2.LyraShell
                 // search for nr
                 if (lQuery.Numbers != null)
                 {
-                    foreach (int nr in lQuery.Numbers)
+                    for (int i = lQuery.Numbers.Count - 1; i >= 0; i--)
                     {
+                        int nr = lQuery.Numbers[i];
                         Song song = this.nrIndex[nr] as Song;
                         if (song != null)
                         {
@@ -124,20 +124,17 @@ namespace Lyra2.LyraShell
                     {
                         resultBox.Items.Add(song);
                     }
-                    if (resultBox is SongListBox)
-                    {
-                        ((SongListBox)resultBox).SetSearchTags(GetTags(query));
-                        ((SongListBox)resultBox).NrOfNumberMatches = countNumbers;
-
-                    }
+                    resultBox.SetSearchTags(GetTags(query));
+                    resultBox.NrOfNumberMatches = countNumbers;
                     resultBox.EndUpdate();
+                    resultBox.Sort(sortMethod);
                 }
             }
             searcher.Close();
             return true;
         }
 
-        private IList<string> GetTags(string query)
+        private static IList<string> GetTags(string query)
         {
             IList<string> tags =
                    new List<string>(
@@ -156,14 +153,14 @@ namespace Lyra2.LyraShell
 
         #endregion
 
-        public void generateIndex(ICollection songList)
+        private void GenerateIndex(ICollection songList)
         {
             try
             {
                 // set new songList and recreate number index
-                this.setSongList(songList);
+                this.SetSongList(songList);
                 // create empty index directory
-                DirectoryInfo indexDir = new DirectoryInfo(INDEXDIR);
+                DirectoryInfo indexDir = new DirectoryInfo(this.indexDir);
                 if (indexDir.Exists)
                 {
                     indexDir.Delete(true);
@@ -171,10 +168,10 @@ namespace Lyra2.LyraShell
                 indexDir.Create();
 
                 // open index writer
-                IndexWriter writer = new IndexWriter(INDEXDIR, new StandardAnalyzer(), true);
+                IndexWriter writer = new IndexWriter(this.indexDir, this.indexAnalyzer, true);
                 foreach (Song song in songList)
                 {
-                    this.addSong(writer, song);
+                    AddSong(writer, song);
                 }
 
                 // save index
@@ -183,7 +180,7 @@ namespace Lyra2.LyraShell
 
                 // save hash
                 FileInfo curtext = new FileInfo(Application.StartupPath + "\\" + Util.URL);
-                FileInfo hash = new FileInfo(INDEXDIR + "\\hash");
+                FileInfo hash = new FileInfo(this.indexDir + "\\hash");
                 if (hash.Exists) hash.Delete();
                 StreamWriter fwriter = new StreamWriter(hash.FullName);
                 fwriter.Write(Util.MD5FileHash(curtext));
@@ -196,7 +193,7 @@ namespace Lyra2.LyraShell
             }
         }
 
-        private void addSong(IndexWriter writer, Song song)
+        private static void AddSong(IndexWriter writer, ISong song)
         {
             try
             {
@@ -213,15 +210,15 @@ namespace Lyra2.LyraShell
             {
                 MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace);
             }
-            
+
         }
 
-        public bool checkIfFileChanged()
+        private bool CheckIfFileChanged()
         {
             try
             {
                 FileInfo curtext = new FileInfo(Application.StartupPath + "\\" + Util.URL);
-                FileInfo hash = new FileInfo(INDEXDIR + "\\hash");
+                FileInfo hash = new FileInfo(indexDir + "\\hash");
                 if (!hash.Exists) return true;
                 StreamReader reader = new StreamReader(hash.FullName);
                 string hashStr = reader.ReadToEnd();
@@ -229,40 +226,44 @@ namespace Lyra2.LyraShell
                 // Console.Out.WriteLine(hashStr != Util.MD5FileHash(curtext) ? "changed" : "ok");
                 return hashStr != Util.MD5FileHash(curtext); // file changed if hash not equal
             }
-            catch (Exception)
+            // ReSharper disable EmptyGeneralCatchClause
+            catch
+            // ReSharper restore EmptyGeneralCatchClause
             {
             }
             return false;
         }
     }
 
-    internal class BoostSorter : IComparer
-    {
-        #region IComparer Members
-
-        public int Compare(object x, object y)
+    /*
+        internal class BoostSorter : IComparer
         {
-            Document xDoc = x as Document;
-            Document yDoc = y as Document;
-            if (xDoc != null && yDoc != null)
-            {
-                float diff = xDoc.GetBoost() - yDoc.GetBoost();
-                if (Math.Abs(diff) < 0.1)
-                {
-                    return 0;
-                }
-                else if (diff < 0)
-                {
-                    return -1;
-                }
-                else
-                {
-                    return 1;
-                }
-            }
-            return 0;
-        }
+            #region IComparer Members
 
-        #endregion
-    }
+            public int Compare(object x, object y)
+            {
+                Document xDoc = x as Document;
+                Document yDoc = y as Document;
+                if (xDoc != null && yDoc != null)
+                {
+                    float diff = xDoc.GetBoost() - yDoc.GetBoost();
+                    if (Math.Abs(diff) < 0.1)
+                    {
+                        return 0;
+                    }
+                    else if (diff < 0)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        return 1;
+                    }
+                }
+                return 0;
+            }
+
+            #endregion
+        }
+    */
 }

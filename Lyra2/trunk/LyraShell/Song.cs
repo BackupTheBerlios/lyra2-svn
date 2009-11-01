@@ -271,6 +271,7 @@ namespace Lyra2.LyraShell
         {
             try
             {
+                if(this.transMenu == null) return;
                 foreach (MenuItem mi in this.transMenu.MenuItems)
                 {
                     mi.Checked = false;

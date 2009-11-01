@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace Lyra2.LyraShell
@@ -27,6 +29,7 @@ namespace Lyra2.LyraShell
             base.ItemHeight = 15;
             this.DrawItem += SongListBox_DrawItem;
             this.HighLightBackColor = Color.LightGray;
+            this.Sorted = false;
         }
 
         private readonly Brush highlight = new SolidBrush(Color.FromArgb(251, 225, 98));
@@ -36,6 +39,9 @@ namespace Lyra2.LyraShell
         private readonly Pen highlightBorder = new Pen(Color.FromArgb(251, 225, 98));
         private readonly Pen highlightBorderLight = new Pen(Color.FromArgb(253, 253, 176));
         private readonly Pen separatorLine = new Pen(Color.FromArgb(230, 220, 197));
+
+        private const int RatingWidth = 200;
+        private const int RatingOffset = 0;
 
         private void SongListBox_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -56,26 +62,43 @@ namespace Lyra2.LyraShell
                 if (item is Song)
                 {
                     Song song = (Song)item;
+                    if (e.Index < this.nrOfNumberMatches && (e.State & DrawItemState.Selected) != DrawItemState.Selected)
+                    {
+                        e.Graphics.FillRectangle(highlightLight, e.Bounds);
+                    }
                     this.DrawString(e.Graphics, Util.toFour(song.Number), e.Font, Brushes.DimGray,
                                         new RectangleF(e.Bounds.X, e.Bounds.Y, 50, e.Bounds.Height), highlightLight,
                                         highlightBorderLight);
                     if (e.Index < this.nrOfNumberMatches)
                     {
                         // it's a number match...
-                        this.DrawString(e.Graphics, song.Title, new Font(e.Font, FontStyle.Bold), numberMatchTextColor,
-                                          new RectangleF(e.Bounds.X + 50, e.Bounds.Y, e.Bounds.Width - 50, e.Bounds.Height), highlight, highlightBorder);
+                        RectangleF titleFrame = new RectangleF(e.Bounds.X + 50, e.Bounds.Y, e.Bounds.Width - 50,
+                                                              e.Bounds.Height);
+                        this.DrawString(e.Graphics, song.Title, new Font(e.Font, FontStyle.Bold), normalTextColor,
+                                         titleFrame, highlight, highlightBorder);
                     }
                     else
                     {
                         this.DrawString(e.Graphics, song.Title, new Font(e.Font, FontStyle.Bold), normalTextColor,
                                           new RectangleF(e.Bounds.X + 50, e.Bounds.Y, e.Bounds.Width - 50, e.Bounds.Height), highlight, highlightBorder);
+
+                        if (this.method == SortMethod.RatingDescending || this.method == SortMethod.RatingAscending)
+                        {
+                            float rating = this.Ratings[song];
+                            float space = RatingWidth * Math.Min(1f, rating * 2);
+
+                            Brush b = new LinearGradientBrush(new Point(e.Bounds.Right - RatingWidth - RatingOffset, e.Bounds.Top),
+                                                              new Point(e.Bounds.Right - RatingOffset, e.Bounds.Top), Color.White,
+                                                              Color.FromArgb(100, 0, 85, 170));
+                            e.Graphics.FillRectangle(b, new RectangleF(e.Bounds.Right - space - RatingOffset, e.Bounds.Top, space, e.Bounds.Height));
+                        }
                     }
                 }
                 else
                 {
                     e.Graphics.DrawString(item.ToString(), e.Font, foreColBrush, new RectangleF(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
                 }
-                if(this.nrOfNumberMatches > 0 && e.Index == this.nrOfNumberMatches - 1 && this.Items.Count > this.nrOfNumberMatches)
+                if (this.nrOfNumberMatches > 0 && e.Index == this.nrOfNumberMatches - 1 && this.Items.Count > this.nrOfNumberMatches)
                 {
                     e.Graphics.DrawLine(separatorLine, e.Bounds.X, e.Bounds.Bottom - 1, e.Bounds.Right, e.Bounds.Bottom - 1);
                 }
@@ -169,6 +192,72 @@ namespace Lyra2.LyraShell
 
                 g.DrawString(text, font, brush, bounds, stringFormat);
             }
+        }
+
+        private readonly IDictionary<ISong, float> ratings = new Dictionary<ISong, float>();
+
+        public IDictionary<ISong, float> Ratings
+        {
+            get { return this.ratings; }
+        }
+
+        private int CompareRating(ISong a, ISong b)
+        {
+            float ar = 0f;
+            float br = 0f;
+            if (this.ratings.ContainsKey(a)) ar = this.ratings[a];
+            if (this.ratings.ContainsKey(b)) br = this.ratings[b];
+
+            if (ar == br)
+            {
+                return 0;
+            }
+            return ar > br ? -1 : 1;
+        }
+
+        private SortMethod method;
+
+        public void Sort(SortMethod method)
+        {
+            this.BeginUpdate();
+            this.method = method;
+            List<ISong> sortedSongs = new List<ISong>();
+            for (int i = this.nrOfNumberMatches; i < this.Items.Count; i++)
+            {
+                ISong song = this.Items[i] as ISong;
+
+                if (song != null)
+                {
+                    sortedSongs.Add(song);
+                }
+            }
+            switch (method)
+            {
+                case SortMethod.NumberAscending:
+                    sortedSongs.Sort((a, b) => a.Number.CompareTo(b.Number));
+                    break;
+                case SortMethod.NumberDescending:
+                    sortedSongs.Sort((a, b) => -a.Number.CompareTo(b.Number));
+                    break;
+                case SortMethod.RatingAscending:
+                    sortedSongs.Sort((a, b) => -CompareRating(a, b));
+                    break;
+                case SortMethod.RatingDescending:
+                    sortedSongs.Sort(CompareRating);
+                    break;
+                case SortMethod.TitleAscending:
+                    sortedSongs.Sort((a, b) => a.Title.CompareTo(b.Title));
+                    break;
+                case SortMethod.TitleDescending:
+                    sortedSongs.Sort((a, b) => -a.Title.CompareTo(b.Title));
+                    break;
+            }
+            foreach (ISong song in sortedSongs)
+            {
+                this.Items.Remove(song);
+            }
+            this.Items.AddRange(sortedSongs.ToArray());
+            this.EndUpdate();
         }
 
         private bool HasSearchTagMatch(string text)

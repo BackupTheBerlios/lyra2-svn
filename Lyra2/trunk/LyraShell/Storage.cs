@@ -195,9 +195,9 @@ namespace Lyra2.LyraShell
 
 
         // Search
-        public void Search(string query, ListBox resultBox, bool text, bool matchCase, bool whole, bool trans)
+        public void Search(string query, SongListBox resultBox, bool text, bool matchCase, bool whole, bool trans, SortMethod sortMethod)
         {
-            if (!this.search.SearchCollection(query, this.SongList, resultBox, text, matchCase, whole, trans))
+            if (!this.search.SearchCollection(query, this.SongList, resultBox, text, matchCase, whole, trans, sortMethod))
             {
                 resultBox.Items.Add("Leider keinen passenden Eintrag gefunden.");
                 this.owner.Status = "query done - no results :-(";
