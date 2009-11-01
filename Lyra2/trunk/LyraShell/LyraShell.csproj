@@ -266,7 +266,6 @@
     <Compile Include="IStorage.cs" />
     <Compile Include="ITranslation.cs" />
     <Compile Include="LyraButtonControl.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="LyraQuery.cs" />
     <Compile Include="LyraUpdate.cs">
