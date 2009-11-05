@@ -60,15 +60,20 @@ namespace Lyra2.LyraShell
             return -1;
         }
 
+        const string fieldTitle = "title:";
+        const string boostTitle = "^2";
+        const string fieldText = "text:";
+
         public static LyraQuery CreateLyraQuery(string lyraQuery, bool exact)
         {
-            ArrayList words = new ArrayList();
+            IList<string> words = new List<string>();
             IList<int> numbers = new List<int>();
-            string[] wordParts = lyraQuery.Split(' ');
+            lyraQuery = lyraQuery.Trim();
+            string[] wordParts = lyraQuery.Split(new[] { ' ' } , StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; i < wordParts.Length; i++)
             {
-                if (wordParts[i] != "")
+                if (!string.IsNullOrEmpty(wordParts[i]))
                 {
                     string word = wordParts[i];
                     if (word.StartsWith("\""))
@@ -80,22 +85,21 @@ namespace Lyra2.LyraShell
                         }
                         word = "\"" + nextWord.Trim('\"') + "\"";
                     }
-                    while (word.StartsWith("*") || word.StartsWith("?"))
-                    {
-                        word = word.Length > 1 ? word.Substring(1) : "";
-                    }
-                    int nr = SearchUtil.IsNumber(word);
+                    word = word.TrimStart('*', '?');
+                    
+                    int nr = IsNumber(word);
                     if (nr != -1)
                     {
-                        numbers.Add(nr);
+                        if(!numbers.Contains(nr)) numbers.Add(nr);
                     }
-                    else if (!SearchUtil.IsStopWord(word))
+                    else if (!words.Contains(word))
                     {
                         words.Add(word);
                     }
                 }
             }
             string query = "";
+
             foreach (string word in words)
             {
                 if (exact || word.EndsWith("\"") || word.IndexOfAny(new[] { '*', '?' }) > 0)
@@ -107,11 +111,12 @@ namespace Lyra2.LyraShell
                     query += "+" + word + "* ";
                 }
             }
-            if (lyraQuery.IndexOf('\"') < 0)
+
+            if (query != "")
             {
-                query += "\"" + lyraQuery + "\" ";
+                query = fieldTitle + "(" + query + ")" + boostTitle + " OR " + fieldText + "(" + query + ")";
             }
-            
+
             Console.Out.WriteLine(lyraQuery + " --> " + query);
 
             LyraQuery resultQuery = new LyraQuery(lyraQuery, query, numbers, exact);

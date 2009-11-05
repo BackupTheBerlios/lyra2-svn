@@ -1,3 +1,5 @@
+using System;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 
@@ -11,8 +13,8 @@ namespace Lyra2.LyraShell
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox nameTextBox;
+		private System.Windows.Forms.TextBox authorTextBox;
 		private LyraButtonControl button3;
 		private LyraButtonControl button1;
 
@@ -26,12 +28,25 @@ namespace Lyra2.LyraShell
 
 		public static void ShowNewList(GUI owner)
 		{
-			if (NewList.newList == null)
-			{
-				NewList.newList = new NewList(owner);
-			}
-			NewList.newList.Show();
+			ShowNewList(owner, "Neue Liste", null);
 		}
+
+        public static void ShowNewList(GUI owner, string name, string[] songs)
+        {
+            if (NewList.newList == null)
+            {
+                NewList.newList = new NewList(owner);
+            }
+            newList.songs = songs;
+            newList.nameTextBox.Text = name;
+            WindowsIdentity wi = WindowsIdentity.GetCurrent();
+            if (wi != null)
+            {
+                string[] parts = wi.Name.Split('\\');
+                if (parts.Length > 0) newList.authorTextBox.Text = parts[parts.Length - 1];
+            }
+            NewList.newList.Show();
+        }
 
 		private NewList(GUI owner)
 		{
@@ -70,8 +85,8 @@ namespace Lyra2.LyraShell
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.nameTextBox = new System.Windows.Forms.TextBox();
+			this.authorTextBox = new System.Windows.Forms.TextBox();
 			this.button3 = new LyraButtonControl();
 			this.button1 = new LyraButtonControl();
 			this.SuspendLayout();
@@ -104,21 +119,21 @@ namespace Lyra2.LyraShell
 			this.label3.Text = "Autor:";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// textBox1
+			// nameTextBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(58, 29);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(296, 20);
-			this.textBox1.TabIndex = 10;
-			this.textBox1.Text = "";
+			this.nameTextBox.Location = new System.Drawing.Point(58, 29);
+			this.nameTextBox.Name = "nameTextBox";
+			this.nameTextBox.Size = new System.Drawing.Size(296, 20);
+			this.nameTextBox.TabIndex = 10;
+			this.nameTextBox.Text = "";
 			// 
-			// textBox2
+			// authorTextBox
 			// 
-			this.textBox2.Location = new System.Drawing.Point(58, 56);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(296, 20);
-			this.textBox2.TabIndex = 11;
-			this.textBox2.Text = "";
+			this.authorTextBox.Location = new System.Drawing.Point(58, 56);
+			this.authorTextBox.Name = "authorTextBox";
+			this.authorTextBox.Size = new System.Drawing.Size(296, 20);
+			this.authorTextBox.TabIndex = 11;
+			this.authorTextBox.Text = "";
 			// 
 			// button3
 			// 
@@ -145,8 +160,8 @@ namespace Lyra2.LyraShell
 			this.ControlBox = false;
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.authorTextBox);
+			this.Controls.Add(this.nameTextBox);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
@@ -169,9 +184,10 @@ namespace Lyra2.LyraShell
 			this.Close();
 		}
 
+	    private string[] songs;
 		private void button1_Click(object sender, System.EventArgs e)
 		{
-			this.owner.createNewList(this.textBox1.Text, this.textBox2.Text);
+			this.owner.CreateNewList(this.nameTextBox.Text, this.authorTextBox.Text, songs);
 			this.Close();
 		}
 

@@ -41,7 +41,7 @@ namespace Lyra2.LyraShell
         private LyraButtonControl button4;
         private LyraButtonControl button5;
         private LyraButtonControl button6;
-        private ComboBox comboBox1;
+        private ComboBox persListCombo;
         private SearchTextBox textBox1;
         private LyraButtonControl button7;
         private SearchTextBox mainSearchBox;
@@ -201,10 +201,10 @@ namespace Lyra2.LyraShell
             this.Enabled = true;
             this.storage.displaySongs(this.allSongsListBox);
             Song.owner = this;
-            this.persLists = new PLists(this.comboBox1, this.storage);
-            if (this.comboBox1.Items.Count > 0)
+            this.persLists = new PLists(this.persListCombo, this.storage);
+            if (this.persListCombo.Items.Count > 0)
             {
-                this.comboBox1.SelectedIndex = 0;
+                this.persListCombo.SelectedIndex = 0;
             }
             else
             {
@@ -279,7 +279,9 @@ namespace Lyra2.LyraShell
             if(this.sortMethod != newSortMethod)
             {
                 this.sortMethod = newSortMethod;
+                this.searchListBox.BeginUpdate();
                 this.searchListBox.Sort(newSortMethod);
+                this.searchListBox.EndUpdate();
             }
         }
 
@@ -362,7 +364,9 @@ namespace Lyra2.LyraShell
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.searchSplitter = new System.Windows.Forms.SplitContainer();
+            this.searchListBox = new Lyra2.LyraShell.SongListBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.songPreview3 = new Lyra2.LyraShell.SongPreview();
             this.panel4 = new System.Windows.Forms.Panel();
             this.sortCombo = new System.Windows.Forms.ComboBox();
             this.sortLabel = new System.Windows.Forms.Label();
@@ -370,22 +374,37 @@ namespace Lyra2.LyraShell
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mainSearchBox = new Lyra2.LyraShell.SearchTextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.resultsLabel = new System.Windows.Forms.Label();
             this.panel1 = new Infragistics.Win.Misc.UltraPanel();
+            this.textBox1 = new Lyra2.LyraShell.SearchTextBox();
+            this.button7 = new Lyra2.LyraShell.LyraButtonControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.allSongsSplitter = new System.Windows.Forms.SplitContainer();
+            this.allSongsListBox = new Lyra2.LyraShell.SongListBox();
+            this.songPreview1 = new Lyra2.LyraShell.SongPreview();
             this.controlPaneRight = new Infragistics.Win.Misc.UltraPanel();
+            this.button3 = new Lyra2.LyraShell.LyraButtonControl();
+            this.button1 = new Lyra2.LyraShell.LyraButtonControl();
+            this.button2 = new Lyra2.LyraShell.LyraButtonControl();
+            this.button9 = new Lyra2.LyraShell.LyraButtonControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.persListSplitter = new System.Windows.Forms.SplitContainer();
+            this.personalListsListBox = new Lyra2.LyraShell.SongListBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.persListCombo = new System.Windows.Forms.ComboBox();
+            this.button5 = new Lyra2.LyraShell.LyraButtonControl();
             this.panel9 = new System.Windows.Forms.Panel();
             this.button12 = new Infragistics.Win.Misc.UltraButton();
             this.button13 = new Infragistics.Win.Misc.UltraButton();
+            this.songPreview2 = new Lyra2.LyraShell.SongPreview();
             this.panel7 = new Infragistics.Win.Misc.UltraPanel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button6 = new Lyra2.LyraShell.LyraButtonControl();
+            this.button4 = new Lyra2.LyraShell.LyraButtonControl();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new Lyra2.LyraShell.SearchTextBox();
             this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.menuItem13 = new System.Windows.Forms.MenuItem();
@@ -461,23 +480,6 @@ namespace Lyra2.LyraShell
             this.menuItem66 = new System.Windows.Forms.MenuItem();
             this.menuItem67 = new System.Windows.Forms.MenuItem();
             this.menuItem9 = new System.Windows.Forms.MenuItem();
-            this.searchListBox = new Lyra2.LyraShell.SongListBox();
-            this.songPreview3 = new Lyra2.LyraShell.SongPreview();
-            this.mainSearchBox = new Lyra2.LyraShell.SearchTextBox();
-            this.textBox1 = new Lyra2.LyraShell.SearchTextBox();
-            this.button7 = new Lyra2.LyraShell.LyraButtonControl();
-            this.allSongsListBox = new Lyra2.LyraShell.SongListBox();
-            this.songPreview1 = new Lyra2.LyraShell.SongPreview();
-            this.button3 = new Lyra2.LyraShell.LyraButtonControl();
-            this.button1 = new Lyra2.LyraShell.LyraButtonControl();
-            this.button2 = new Lyra2.LyraShell.LyraButtonControl();
-            this.button9 = new Lyra2.LyraShell.LyraButtonControl();
-            this.personalListsListBox = new Lyra2.LyraShell.SongListBox();
-            this.button5 = new Lyra2.LyraShell.LyraButtonControl();
-            this.songPreview2 = new Lyra2.LyraShell.SongPreview();
-            this.button6 = new Lyra2.LyraShell.LyraButtonControl();
-            this.button4 = new Lyra2.LyraShell.LyraButtonControl();
-            this.textBox3 = new Lyra2.LyraShell.SearchTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.searchSplitter.Panel1.SuspendLayout();
@@ -516,7 +518,7 @@ namespace Lyra2.LyraShell
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(825, 244);
+            this.tabControl1.Size = new System.Drawing.Size(950, 470);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -528,7 +530,7 @@ namespace Lyra2.LyraShell
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(817, 218);
+            this.tabPage2.Size = new System.Drawing.Size(942, 444);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Suche";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -550,20 +552,44 @@ namespace Lyra2.LyraShell
             // 
             this.searchSplitter.Panel2.Controls.Add(this.songPreview3);
             this.searchSplitter.Panel2MinSize = 50;
-            this.searchSplitter.Size = new System.Drawing.Size(705, 158);
-            this.searchSplitter.SplitterDistance = 150;
+            this.searchSplitter.Size = new System.Drawing.Size(830, 384);
+            this.searchSplitter.SplitterDistance = 282;
             this.searchSplitter.TabIndex = 18;
+            // 
+            // searchListBox
+            // 
+            this.searchListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.searchListBox.HighLightBackColor = System.Drawing.Color.LightGray;
+            this.searchListBox.ItemHeight = 15;
+            this.searchListBox.Location = new System.Drawing.Point(0, 0);
+            this.searchListBox.Name = "searchListBox";
+            this.searchListBox.NrOfNumberMatches = 0;
+            this.searchListBox.Size = new System.Drawing.Size(830, 259);
+            this.searchListBox.TabIndex = 5;
+            this.searchListBox.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
+            this.searchListBox.DoubleClick += new System.EventHandler(this.listBox3_dblClick);
+            this.searchListBox.SelectedValueChanged += new System.EventHandler(this.listBox3_SelectedValueChanged);
             // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label4.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label4.Location = new System.Drawing.Point(0, 135);
+            this.label4.Location = new System.Drawing.Point(0, 267);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(705, 15);
+            this.label4.Size = new System.Drawing.Size(830, 15);
             this.label4.TabIndex = 14;
             this.label4.Text = "Suchergebnisse könnten fehlerhaft sein. Bitte Änderungen übernehmen!";
             this.label4.Visible = false;
+            // 
+            // songPreview3
+            // 
+            this.songPreview3.AutoScroll = true;
+            this.songPreview3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.songPreview3.Location = new System.Drawing.Point(0, 0);
+            this.songPreview3.Name = "songPreview3";
+            this.songPreview3.Size = new System.Drawing.Size(830, 98);
+            this.songPreview3.TabIndex = 0;
             // 
             // panel4
             // 
@@ -576,7 +602,7 @@ namespace Lyra2.LyraShell
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(705, 60);
+            this.panel4.Size = new System.Drawing.Size(830, 60);
             this.panel4.TabIndex = 17;
             // 
             // sortCombo
@@ -614,7 +640,7 @@ namespace Lyra2.LyraShell
             this.searchPaneTop.Controls.Add(this.label2);
             this.searchPaneTop.Controls.Add(this.pictureBox1);
             this.searchPaneTop.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchPaneTop.Location = new System.Drawing.Point(505, 0);
+            this.searchPaneTop.Location = new System.Drawing.Point(630, 0);
             this.searchPaneTop.Name = "searchPaneTop";
             this.searchPaneTop.Size = new System.Drawing.Size(200, 60);
             this.searchPaneTop.TabIndex = 2;
@@ -651,6 +677,22 @@ namespace Lyra2.LyraShell
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // mainSearchBox
+            // 
+            this.mainSearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(176)))));
+            this.mainSearchBox.DefaultText = "Suchbegriffe";
+            this.mainSearchBox.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainSearchBox.ForeColor = System.Drawing.Color.DimGray;
+            this.mainSearchBox.Location = new System.Drawing.Point(8, 8);
+            this.mainSearchBox.Name = "mainSearchBox";
+            this.mainSearchBox.Size = new System.Drawing.Size(616, 22);
+            this.mainSearchBox.TabIndex = 0;
+            this.mainSearchBox.Text = "Suchbegriffe";
+            this.mainSearchBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.mainSearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            // 
             // checkBox1
             // 
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -685,10 +727,31 @@ namespace Lyra2.LyraShell
             this.panel1.ClientArea.Controls.Add(this.textBox1);
             this.panel1.ClientArea.Controls.Add(this.button7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(705, 0);
+            this.panel1.Location = new System.Drawing.Point(830, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(112, 218);
+            this.panel1.Size = new System.Drawing.Size(112, 444);
             this.panel1.TabIndex = 15;
+            // 
+            // textBox1
+            // 
+            this.textBox1.DefaultText = "Nummer";
+            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox1.Location = new System.Drawing.Point(16, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(88, 21);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Nummer";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(16, 29);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(88, 28);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "Anzeigen";
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // tabPage1
             // 
@@ -697,7 +760,7 @@ namespace Lyra2.LyraShell
             this.tabPage1.Controls.Add(this.controlPaneRight);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(817, 218);
+            this.tabPage1.Size = new System.Drawing.Size(942, 444);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Songliste";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -718,9 +781,35 @@ namespace Lyra2.LyraShell
             // 
             this.allSongsSplitter.Panel2.Controls.Add(this.songPreview1);
             this.allSongsSplitter.Panel2MinSize = 50;
-            this.allSongsSplitter.Size = new System.Drawing.Size(705, 218);
-            this.allSongsSplitter.SplitterDistance = 151;
+            this.allSongsSplitter.Size = new System.Drawing.Size(830, 444);
+            this.allSongsSplitter.SplitterDistance = 307;
             this.allSongsSplitter.TabIndex = 8;
+            // 
+            // allSongsListBox
+            // 
+            this.allSongsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.allSongsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.allSongsListBox.HighLightBackColor = System.Drawing.Color.LightGray;
+            this.allSongsListBox.ItemHeight = 15;
+            this.allSongsListBox.Location = new System.Drawing.Point(0, 0);
+            this.allSongsListBox.Name = "allSongsListBox";
+            this.allSongsListBox.NrOfNumberMatches = 0;
+            this.allSongsListBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.allSongsListBox.Size = new System.Drawing.Size(830, 304);
+            this.allSongsListBox.Sorted = true;
+            this.allSongsListBox.TabIndex = 0;
+            this.allSongsListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.allSongsListBox.DoubleClick += new System.EventHandler(this.listBox1_dblClick);
+            this.allSongsListBox.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
+            // 
+            // songPreview1
+            // 
+            this.songPreview1.AutoScroll = true;
+            this.songPreview1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.songPreview1.Location = new System.Drawing.Point(0, 0);
+            this.songPreview1.Name = "songPreview1";
+            this.songPreview1.Size = new System.Drawing.Size(830, 133);
+            this.songPreview1.TabIndex = 0;
             // 
             // controlPaneRight
             // 
@@ -736,10 +825,48 @@ namespace Lyra2.LyraShell
             this.controlPaneRight.ClientArea.Controls.Add(this.button2);
             this.controlPaneRight.ClientArea.Controls.Add(this.button9);
             this.controlPaneRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.controlPaneRight.Location = new System.Drawing.Point(705, 0);
+            this.controlPaneRight.Location = new System.Drawing.Point(830, 0);
             this.controlPaneRight.Name = "controlPaneRight";
-            this.controlPaneRight.Size = new System.Drawing.Size(112, 218);
+            this.controlPaneRight.Size = new System.Drawing.Size(112, 444);
             this.controlPaneRight.TabIndex = 7;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Brown;
+            this.button3.Location = new System.Drawing.Point(10, 8);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(96, 46);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Anzeigen!";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(10, 72);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 28);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Neues Lied…";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(10, 106);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 28);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Editieren…";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(10, 140);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(96, 28);
+            this.button9.TabIndex = 5;
+            this.button9.Text = "Löschen";
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // tabPage3
             // 
@@ -748,9 +875,9 @@ namespace Lyra2.LyraShell
             this.tabPage3.Controls.Add(this.panel7);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(817, 218);
+            this.tabPage3.Size = new System.Drawing.Size(942, 444);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Persönliche Liste";
+            this.tabPage3.Text = "Listen";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // persListSplitter
@@ -771,28 +898,52 @@ namespace Lyra2.LyraShell
             // 
             this.persListSplitter.Panel2.Controls.Add(this.songPreview2);
             this.persListSplitter.Panel2MinSize = 50;
-            this.persListSplitter.Size = new System.Drawing.Size(705, 218);
-            this.persListSplitter.SplitterDistance = 151;
+            this.persListSplitter.Size = new System.Drawing.Size(830, 444);
+            this.persListSplitter.SplitterDistance = 307;
             this.persListSplitter.TabIndex = 17;
+            // 
+            // personalListsListBox
+            // 
+            this.personalListsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personalListsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.personalListsListBox.HighLightBackColor = System.Drawing.Color.LightGray;
+            this.personalListsListBox.ItemHeight = 15;
+            this.personalListsListBox.Location = new System.Drawing.Point(24, 30);
+            this.personalListsListBox.Name = "personalListsListBox";
+            this.personalListsListBox.NrOfNumberMatches = 0;
+            this.personalListsListBox.Size = new System.Drawing.Size(806, 274);
+            this.personalListsListBox.TabIndex = 0;
+            this.personalListsListBox.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            this.personalListsListBox.DoubleClick += new System.EventHandler(this.listBox2_DoubleClick);
+            this.personalListsListBox.SelectedValueChanged += new System.EventHandler(this.listBox2_SelectedValueChanged);
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.comboBox1);
+            this.panel8.Controls.Add(this.persListCombo);
             this.panel8.Controls.Add(this.button5);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(24, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(681, 30);
+            this.panel8.Size = new System.Drawing.Size(806, 30);
             this.panel8.TabIndex = 15;
             // 
-            // comboBox1
+            // persListCombo
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Location = new System.Drawing.Point(1, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(448, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.persListCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.persListCombo.Location = new System.Drawing.Point(1, 4);
+            this.persListCombo.Name = "persListCombo";
+            this.persListCombo.Size = new System.Drawing.Size(448, 21);
+            this.persListCombo.TabIndex = 4;
+            this.persListCombo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(455, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(96, 21);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Neue Liste…";
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel9
             // 
@@ -801,7 +952,7 @@ namespace Lyra2.LyraShell
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(24, 151);
+            this.panel9.Size = new System.Drawing.Size(24, 307);
             this.panel9.TabIndex = 16;
             // 
             // button12
@@ -855,6 +1006,15 @@ namespace Lyra2.LyraShell
             this.button13.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // songPreview2
+            // 
+            this.songPreview2.AutoScroll = true;
+            this.songPreview2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.songPreview2.Location = new System.Drawing.Point(0, 0);
+            this.songPreview2.Name = "songPreview2";
+            this.songPreview2.Size = new System.Drawing.Size(830, 133);
+            this.songPreview2.TabIndex = 0;
+            // 
             // panel7
             // 
             appearance3.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.right_pane_bg;
@@ -870,9 +1030,9 @@ namespace Lyra2.LyraShell
             this.panel7.ClientArea.Controls.Add(this.label3);
             this.panel7.ClientArea.Controls.Add(this.textBox3);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(705, 0);
+            this.panel7.Location = new System.Drawing.Point(830, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(112, 218);
+            this.panel7.Size = new System.Drawing.Size(112, 444);
             this.panel7.TabIndex = 14;
             // 
             // linkLabel1
@@ -891,6 +1051,24 @@ namespace Lyra2.LyraShell
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.linkLabel1.Click += new System.EventHandler(this.button10_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(10, 72);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(96, 27);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Lied entfernen";
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(10, 8);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(96, 46);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Anzeigen!";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
@@ -900,6 +1078,18 @@ namespace Lyra2.LyraShell
             this.label3.Size = new System.Drawing.Size(96, 19);
             this.label3.TabIndex = 12;
             this.label3.Text = "Lied hinzufügen";
+            // 
+            // textBox3
+            // 
+            this.textBox3.DefaultText = "Nummer";
+            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox3.Location = new System.Drawing.Point(34, 144);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(72, 21);
+            this.textBox3.TabIndex = 9;
+            this.textBox3.Text = "Nummer";
+            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
             // 
             // mainMenu1
             // 
@@ -1335,13 +1525,13 @@ namespace Lyra2.LyraShell
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 244);
+            this.statusBar1.Location = new System.Drawing.Point(0, 470);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
             this.statusBarPanel1,
             this.statusBarPanel2});
             this.statusBar1.ShowPanels = true;
-            this.statusBar1.Size = new System.Drawing.Size(825, 18);
+            this.statusBar1.Size = new System.Drawing.Size(950, 18);
             this.statusBar1.TabIndex = 1;
             this.statusBar1.Text = "d";
             // 
@@ -1427,199 +1617,11 @@ namespace Lyra2.LyraShell
             this.menuItem9.Text = "Zu aktueller &Liste hinzufügen";
             this.menuItem9.Click += new System.EventHandler(this.menuItem9_Click);
             // 
-            // searchListBox
-            // 
-            this.searchListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.searchListBox.HighLightBackColor = System.Drawing.Color.LightGray;
-            this.searchListBox.ItemHeight = 15;
-            this.searchListBox.Location = new System.Drawing.Point(0, 0);
-            this.searchListBox.Name = "searchListBox";
-            this.searchListBox.NrOfNumberMatches = 0;
-            this.searchListBox.Size = new System.Drawing.Size(705, 124);
-            this.searchListBox.TabIndex = 5;
-            this.searchListBox.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
-            this.searchListBox.DoubleClick += new System.EventHandler(this.listBox3_dblClick);
-            this.searchListBox.SelectedValueChanged += new System.EventHandler(this.listBox3_SelectedValueChanged);
-            // 
-            // songPreview3
-            // 
-            this.songPreview3.AutoScroll = true;
-            this.songPreview3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.songPreview3.Location = new System.Drawing.Point(0, 0);
-            this.songPreview3.Name = "songPreview3";
-            this.songPreview3.Size = new System.Drawing.Size(705, 50);
-            this.songPreview3.TabIndex = 0;
-            // 
-            // mainSearchBox
-            // 
-            this.mainSearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainSearchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(176)))));
-            this.mainSearchBox.DefaultText = "Suchbegriffe";
-            this.mainSearchBox.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainSearchBox.ForeColor = System.Drawing.Color.DimGray;
-            this.mainSearchBox.Location = new System.Drawing.Point(8, 8);
-            this.mainSearchBox.Name = "mainSearchBox";
-            this.mainSearchBox.Size = new System.Drawing.Size(491, 22);
-            this.mainSearchBox.TabIndex = 0;
-            this.mainSearchBox.Text = "Suchbegriffe";
-            this.mainSearchBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.mainSearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
-            // 
-            // textBox1
-            // 
-            this.textBox1.DefaultText = "Nummer";
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(16, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(88, 21);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Nummer";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(16, 29);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(88, 28);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Anzeigen";
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // allSongsListBox
-            // 
-            this.allSongsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.allSongsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.allSongsListBox.HighLightBackColor = System.Drawing.Color.LightGray;
-            this.allSongsListBox.ItemHeight = 15;
-            this.allSongsListBox.Location = new System.Drawing.Point(0, 0);
-            this.allSongsListBox.Name = "allSongsListBox";
-            this.allSongsListBox.NrOfNumberMatches = 0;
-            this.allSongsListBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.allSongsListBox.Size = new System.Drawing.Size(705, 139);
-            this.allSongsListBox.Sorted = true;
-            this.allSongsListBox.TabIndex = 0;
-            this.allSongsListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            this.allSongsListBox.DoubleClick += new System.EventHandler(this.listBox1_dblClick);
-            this.allSongsListBox.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
-            // 
-            // songPreview1
-            // 
-            this.songPreview1.AutoScroll = true;
-            this.songPreview1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.songPreview1.Location = new System.Drawing.Point(0, 0);
-            this.songPreview1.Name = "songPreview1";
-            this.songPreview1.Size = new System.Drawing.Size(705, 63);
-            this.songPreview1.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Brown;
-            this.button3.Location = new System.Drawing.Point(10, 8);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 46);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Anzeigen!";
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(10, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Neues Lied…";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(10, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Editieren…";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(10, 140);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(96, 28);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "Löschen";
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // personalListsListBox
-            // 
-            this.personalListsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.personalListsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.personalListsListBox.HighLightBackColor = System.Drawing.Color.LightGray;
-            this.personalListsListBox.ItemHeight = 15;
-            this.personalListsListBox.Location = new System.Drawing.Point(24, 30);
-            this.personalListsListBox.Name = "personalListsListBox";
-            this.personalListsListBox.NrOfNumberMatches = 0;
-            this.personalListsListBox.Size = new System.Drawing.Size(681, 109);
-            this.personalListsListBox.TabIndex = 0;
-            this.personalListsListBox.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
-            this.personalListsListBox.DoubleClick += new System.EventHandler(this.listBox2_DoubleClick);
-            this.personalListsListBox.SelectedValueChanged += new System.EventHandler(this.listBox2_SelectedValueChanged);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(455, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(96, 21);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Neue Liste…";
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // songPreview2
-            // 
-            this.songPreview2.AutoScroll = true;
-            this.songPreview2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.songPreview2.Location = new System.Drawing.Point(0, 0);
-            this.songPreview2.Name = "songPreview2";
-            this.songPreview2.Size = new System.Drawing.Size(705, 63);
-            this.songPreview2.TabIndex = 0;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(10, 72);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(96, 27);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Lied entfernen";
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(10, 8);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 46);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Anzeigen!";
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.DefaultText = "Nummer";
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(34, 144);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(72, 21);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.Text = "Nummer";
-            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
-            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
-            // 
             // GUI
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(825, 262);
+            this.ClientSize = new System.Drawing.Size(950, 488);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusBar1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2130,7 +2132,7 @@ namespace Lyra2.LyraShell
             if (this.prback == null)
             {
                 int i = this.allSongsListBox.IndexFromPoint(e.X, e.Y);
-                this.menuItem8.Visible = (this.comboBox1.Items.Count > 0);
+                this.menuItem8.Visible = (this.persListCombo.Items.Count > 0);
 
                 if (i != -1)
                 {
@@ -2156,7 +2158,7 @@ namespace Lyra2.LyraShell
         // Kontextmenü Suche
         private void listBox3_click(object sender, MouseEventArgs e)
         {
-            if (this.comboBox1.Items.Count > 0 && this.prback == null)
+            if (this.persListCombo.Items.Count > 0 && this.prback == null)
             {
                 int i = this.searchListBox.IndexFromPoint(e.X, e.Y);
                 if (e.Button == MouseButtons.Right && i != -1 &&
@@ -2357,7 +2359,7 @@ namespace Lyra2.LyraShell
         // MyLists-Change
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.persLists.setCurrent((MyList)this.comboBox1.SelectedItem, this.personalListsListBox);
+            this.persLists.setCurrent((MyList)this.persListCombo.SelectedItem, this.personalListsListBox);
             this.songPreview2.Reset();
             this.Status = "";
         }
@@ -2453,7 +2455,7 @@ namespace Lyra2.LyraShell
         // lösche Liste (Menü)
         private void menuItem28_Click(object sender, EventArgs e)
         {
-            if (this.comboBox1.Items.Count == 1)
+            if (this.persListCombo.Items.Count == 1)
             {
                 MessageBox.Show(this,
                                 "Liste kann nicht gelöscht werden!" + Util.NL +
@@ -2461,29 +2463,35 @@ namespace Lyra2.LyraShell
                                 "lyra Warnung",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (this.comboBox1.SelectedItem != null)
+            else if (this.persListCombo.SelectedItem != null)
             {
                 this.persLists.DeleteCurrent();
-                this.comboBox1.Items.RemoveAt(this.comboBox1.SelectedIndex);
-                if (this.comboBox1.Items.Count > 0)
+                this.persListCombo.Items.RemoveAt(this.persListCombo.SelectedIndex);
+                if (this.persListCombo.Items.Count > 0)
                 {
-                    this.comboBox1.SelectedIndex = 0;
+                    this.persListCombo.SelectedIndex = 0;
                 }
                 else
                 {
                     this.personalListsListBox.Items.Clear();
-                    this.comboBox1.Text = "";
+                    this.persListCombo.Text = "";
                 }
             }
         }
 
         // neue Liste
-        public void createNewList(string name, string author)
+        public void CreateNewList(string name, string author)
+        {
+            this.CreateNewList(name, author, null);
+        }
+
+        public void CreateNewList(string name, string author, string[] songs)
         {
             string date = Util.GetDate();
-            this.persLists.addNewList(name, author, date, "");
-            this.comboBox1.SelectedIndex = this.comboBox1.Items.Count - 1;
+            this.persLists.AddNewList(name, author, date, songs);
+            this.persListCombo.SelectedIndex = this.persListCombo.Items.Count - 1;
             this.Status = "Neue Liste erstellt.";
+            this.tabControl1.SelectedIndex = 2;
         }
 
         private void menuItem11_Click(object sender, EventArgs e)
@@ -2523,9 +2531,9 @@ namespace Lyra2.LyraShell
                     string name = reader.ReadLine();
                     string author = reader.ReadLine();
                     string date = reader.ReadLine();
-                    string songs = reader.ReadLine();
-                    this.persLists.addNewList(name, author, date, songs);
-                    this.comboBox1.SelectedIndex = this.comboBox1.Items.Count - 1;
+                    string[] songs = reader.ReadLine().Split(',');
+                    this.persLists.AddNewList(name, author, date, songs);
+                    this.persListCombo.SelectedIndex = this.persListCombo.Items.Count - 1;
                 }
                 else
                 {
@@ -2555,7 +2563,7 @@ namespace Lyra2.LyraShell
                 {
                     StreamWriter writer = new StreamWriter(sfd.FileName);
                     writer.WriteLine("<LYRA LISTFILE>");
-                    ((MyList)this.comboBox1.SelectedItem).exportMe(writer);
+                    ((MyList)this.persListCombo.SelectedItem).exportMe(writer);
                 }
                 catch (Exception ex)
                 {
@@ -2593,7 +2601,7 @@ namespace Lyra2.LyraShell
                     break;
                 case 2:
                     box = this.personalListsListBox;
-                    idtext = "pers&ouml;nliche Liste:" + Util.HTMLNL + this.comboBox1.SelectedItem.ToString();
+                    idtext = "pers&ouml;nliche Liste:" + Util.HTMLNL + this.persListCombo.SelectedItem.ToString();
                     break;
             }
             HTML.showHTML(this, box, idtext);

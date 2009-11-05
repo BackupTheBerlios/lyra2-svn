@@ -128,6 +128,21 @@
       <HintPath>..\Lib\Infragistics2009.1\Infragistics2.Win.UltraWinExplorerBar.v9.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinStatusBar.v9.1, Version=9.1.20091.2039, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Infragistics2009.1\Infragistics2.Win.UltraWinStatusBar.v9.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v9.1, Version=9.1.20091.2039, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Infragistics2009.1\Infragistics2.Win.UltraWinTabControl.v9.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v9.1, Version=9.1.20091.2039, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Infragistics2009.1\Infragistics2.Win.UltraWinToolbars.v9.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Infragistics2.Win.v9.1, Version=9.1.20091.2039, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Infragistics2009.1\Infragistics2.Win.v9.1.dll</HintPath>
@@ -397,6 +412,7 @@
     <EmbeddedResource Include="PrBackground.resx">
       <DependentUpon>PrBackground.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -85,7 +85,7 @@ namespace Lyra2.LyraShell
                         if (this.method == SortMethod.RatingDescending || this.method == SortMethod.RatingAscending)
                         {
                             float rating = this.Ratings[song];
-                            float space = RatingWidth * Math.Min(1f, rating * 2);
+                            float space = RatingWidth * rating;
 
                             Brush b = new LinearGradientBrush(new Point(e.Bounds.Right - RatingWidth - RatingOffset, e.Bounds.Top),
                                                               new Point(e.Bounds.Right - RatingOffset, e.Bounds.Top), Color.White,
@@ -215,22 +215,24 @@ namespace Lyra2.LyraShell
             return ar > br ? -1 : 1;
         }
 
+        private List<ISong> sortedSongs;
+        private List<ISong> numberSongs;
+
         private SortMethod method;
 
         public void Sort(SortMethod method)
         {
-            this.BeginUpdate();
-            this.method = method;
-            List<ISong> sortedSongs = new List<ISong>();
-            for (int i = this.nrOfNumberMatches; i < this.Items.Count; i++)
-            {
-                ISong song = this.Items[i] as ISong;
+            #region    Precondition
 
-                if (song != null)
-                {
-                    sortedSongs.Add(song);
-                }
-            }
+            if (sortedSongs == null ||
+                numberSongs == null) return;
+
+            #endregion Precondition
+
+            this.method = method;
+
+            this.BeginUpdate();
+
             switch (method)
             {
                 case SortMethod.NumberAscending:
@@ -252,11 +254,11 @@ namespace Lyra2.LyraShell
                     sortedSongs.Sort((a, b) => -a.Title.CompareTo(b.Title));
                     break;
             }
-            foreach (ISong song in sortedSongs)
-            {
-                this.Items.Remove(song);
-            }
+
+            this.Items.Clear();
+            this.Items.AddRange(numberSongs.ToArray());
             this.Items.AddRange(sortedSongs.ToArray());
+
             this.EndUpdate();
         }
 
@@ -283,6 +285,14 @@ namespace Lyra2.LyraShell
             {
                 this.Scrolled(this, e);
             }
+        }
+
+        public void ShowSongs(List<ISong> numberSongs, List<ISong> songs, SortMethod method)
+        {
+            this.numberSongs = numberSongs;
+            this.nrOfNumberMatches = numberSongs.Count;
+            this.sortedSongs = songs;
+            this.Sort(method);
         }
     }
 }

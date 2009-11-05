@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using Lyra2.UtilShared;
 
@@ -11,13 +14,14 @@ namespace Lyra2.LyraShell
     public class History : Form
     {
         private SongListBox historyListBox;
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private Container components;
+        private IContainer components;
         private readonly GUI owner;
         private SplitContainer historySplitter;
         private SongPreview historySongPreview;
+        private Infragistics.Win.Misc.UltraPanel topPanel;
+        private Infragistics.Win.Misc.UltraButton ultraButton1;
+        private Infragistics.Win.Misc.UltraButton historyAsListBtn;
+        private Infragistics.Win.Misc.UltraPanel line;
 
         private static History _this;
 
@@ -83,27 +87,22 @@ namespace Lyra2.LyraShell
         /// </summary>
         private void InitializeComponent()
         {
-            this.historyListBox = new Lyra2.LyraShell.SongListBox();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             this.historySplitter = new System.Windows.Forms.SplitContainer();
+            this.historyListBox = new Lyra2.LyraShell.SongListBox();
             this.historySongPreview = new Lyra2.LyraShell.SongPreview();
+            this.topPanel = new Infragistics.Win.Misc.UltraPanel();
+            this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
+            this.historyAsListBtn = new Infragistics.Win.Misc.UltraButton();
+            this.line = new Infragistics.Win.Misc.UltraPanel();
             this.historySplitter.Panel1.SuspendLayout();
             this.historySplitter.Panel2.SuspendLayout();
             this.historySplitter.SuspendLayout();
+            this.topPanel.ClientArea.SuspendLayout();
+            this.topPanel.SuspendLayout();
+            this.line.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // historyListBox
-            // 
-            this.historyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.historyListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.historyListBox.HighLightBackColor = System.Drawing.Color.LightGray;
-            this.historyListBox.ItemHeight = 15;
-            this.historyListBox.Location = new System.Drawing.Point(0, 0);
-            this.historyListBox.Name = "historyListBox";
-            this.historyListBox.Size = new System.Drawing.Size(593, 424);
-            this.historyListBox.TabIndex = 6;
-            this.historyListBox.SelectedIndexChanged += new System.EventHandler(this.historyListBox_SelectedIndexChanged);
-            this.historyListBox.DoubleClick += new System.EventHandler(this.listBox3_DoubleClick);
-            this.historyListBox.SelectedValueChanged += new System.EventHandler(this.listBox3_SelectedValueChanged);
             // 
             // historySplitter
             // 
@@ -119,9 +118,24 @@ namespace Lyra2.LyraShell
             // historySplitter.Panel2
             // 
             this.historySplitter.Panel2.Controls.Add(this.historySongPreview);
-            this.historySplitter.Size = new System.Drawing.Size(593, 673);
-            this.historySplitter.SplitterDistance = 424;
+            this.historySplitter.Size = new System.Drawing.Size(593, 644);
+            this.historySplitter.SplitterDistance = 405;
             this.historySplitter.TabIndex = 7;
+            // 
+            // historyListBox
+            // 
+            this.historyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.historyListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.historyListBox.HighLightBackColor = System.Drawing.Color.LightGray;
+            this.historyListBox.ItemHeight = 15;
+            this.historyListBox.Location = new System.Drawing.Point(0, 0);
+            this.historyListBox.Name = "historyListBox";
+            this.historyListBox.NrOfNumberMatches = 0;
+            this.historyListBox.Size = new System.Drawing.Size(593, 394);
+            this.historyListBox.TabIndex = 6;
+            this.historyListBox.SelectedIndexChanged += new System.EventHandler(this.historyListBox_SelectedIndexChanged);
+            this.historyListBox.DoubleClick += new System.EventHandler(this.listBox3_DoubleClick);
+            this.historyListBox.SelectedValueChanged += new System.EventHandler(this.listBox3_SelectedValueChanged);
             // 
             // historySongPreview
             // 
@@ -129,14 +143,63 @@ namespace Lyra2.LyraShell
             this.historySongPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.historySongPreview.Location = new System.Drawing.Point(0, 0);
             this.historySongPreview.Name = "historySongPreview";
-            this.historySongPreview.Size = new System.Drawing.Size(593, 245);
+            this.historySongPreview.Size = new System.Drawing.Size(593, 235);
             this.historySongPreview.TabIndex = 1;
+            // 
+            // topPanel
+            // 
+            appearance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            appearance1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            appearance1.BackGradientStyle = Infragistics.Win.GradientStyle.GlassTop50;
+            this.topPanel.Appearance = appearance1;
+            // 
+            // topPanel.ClientArea
+            // 
+            this.topPanel.ClientArea.Controls.Add(this.line);
+            this.topPanel.ClientArea.Controls.Add(this.ultraButton1);
+            this.topPanel.ClientArea.Controls.Add(this.historyAsListBtn);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.topPanel.Location = new System.Drawing.Point(0, 644);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(593, 29);
+            this.topPanel.TabIndex = 8;
+            // 
+            // ultraButton1
+            // 
+            this.ultraButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ultraButton1.Location = new System.Drawing.Point(207, 3);
+            this.ultraButton1.Name = "ultraButton1";
+            this.ultraButton1.Size = new System.Drawing.Size(203, 23);
+            this.ultraButton1.TabIndex = 0;
+            this.ultraButton1.Text = "History in Text Datei speichern...";
+            this.ultraButton1.Click += new System.EventHandler(this.SaveHistoryAsTextFile);
+            // 
+            // historyAsListBtn
+            // 
+            this.historyAsListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.historyAsListBtn.Location = new System.Drawing.Point(416, 3);
+            this.historyAsListBtn.Name = "historyAsListBtn";
+            this.historyAsListBtn.Size = new System.Drawing.Size(165, 23);
+            this.historyAsListBtn.TabIndex = 0;
+            this.historyAsListBtn.Text = "History als Liste speichern...";
+            this.historyAsListBtn.Click += new System.EventHandler(this.SaveAsListButtonClickHandler);
+            // 
+            // line
+            // 
+            appearance2.BackColor = System.Drawing.Color.DimGray;
+            this.line.Appearance = appearance2;
+            this.line.Dock = System.Windows.Forms.DockStyle.Top;
+            this.line.Location = new System.Drawing.Point(0, 0);
+            this.line.Name = "line";
+            this.line.Size = new System.Drawing.Size(593, 1);
+            this.line.TabIndex = 1;
             // 
             // History
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(593, 673);
             this.Controls.Add(this.historySplitter);
+            this.Controls.Add(this.topPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -146,6 +209,9 @@ namespace Lyra2.LyraShell
             this.historySplitter.Panel1.ResumeLayout(false);
             this.historySplitter.Panel2.ResumeLayout(false);
             this.historySplitter.ResumeLayout(false);
+            this.topPanel.ClientArea.ResumeLayout(false);
+            this.topPanel.ResumeLayout(false);
+            this.line.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -278,6 +344,49 @@ namespace Lyra2.LyraShell
 
                 personalizer[PersonalizationItemNames.HistoryIsShown] = "1";
                 personalizer.Write();
+            }
+        }
+
+        private void SaveAsListButtonClickHandler(object sender, EventArgs e)
+        {
+
+            List<string> songs = new List<string>();
+            foreach (object song in this.historyListBox.Items)
+            {
+                if(song is ISong)
+                {
+                    songs.Add(((ISong)song).ID);
+                }
+                
+            }
+            NewList.ShowNewList(this.owner, "History vom " + DateTime.Now.ToString("dddd, dd.MM.yyyy"), songs.ToArray());
+        }
+
+        private void SaveHistoryAsTextFile(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Title = "Bitte Text Datei angeben";
+            fd.AddExtension = true;
+            fd.DefaultExt = ".txt";
+            fd.Filter = "Text Dateien|*.txt";
+            fd.RestoreDirectory = true;
+            fd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            fd.FileName = "Lyra_History_" + DateTime.Now.ToString("ddd_ddMMyyyy") + ".txt";
+            if(fd.ShowDialog(this.owner) == DialogResult.OK)
+            {
+                using(StreamWriter sw = new StreamWriter(fd.FileName, false, Encoding.UTF8))
+                {
+                    sw.WriteLine("History vom " + DateTime.Now.ToString("dddd, dd.MM.yyyy"));
+                    sw.WriteLine();
+                    foreach (object item in this.historyListBox.Items)
+                    {
+                        if(item is ISong)
+                        {
+                            ISong s = (ISong) item;
+                            sw.WriteLine(s.Number.ToString().PadLeft(5, ' ') + " : " + s.Title);
+                        }
+                    }   
+                }
             }
         }
     }

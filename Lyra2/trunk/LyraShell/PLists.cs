@@ -47,7 +47,7 @@ namespace Lyra2.LyraShell
             string check = "";
             while (en.MoveNext())
             {
-                ISong toshow = (ISong) en.Value;
+                ISong toshow = (ISong)en.Value;
                 if (!toshow.Deleted)
                 {
                     show.Items.Add(toshow);
@@ -136,7 +136,7 @@ namespace Lyra2.LyraShell
             }
         }
 
-        public MyList addNewList(string name, string author, string date, string songs)
+        public MyList AddNewList(string name, string author, string date, string[] songs)
         {
             try
             {
@@ -149,7 +149,15 @@ namespace Lyra2.LyraShell
                 XmlNode datenode = this.doc.CreateNode(XmlNodeType.Element, "Date", this.doc.NamespaceURI);
                 datenode.InnerText = date;
                 XmlNode songsnode = this.doc.CreateNode(XmlNodeType.Element, "Songs", this.doc.NamespaceURI);
-                songsnode.InnerText = songs;
+                string songsString = "";
+                if (songs != null)
+                {
+                    foreach (string song in songs)
+                    {
+                        songsString += song + ",";
+                    }
+                }
+                songsnode.InnerText = songsString.TrimEnd(',');
                 list.AppendChild(namenode);
                 list.AppendChild(authornode);
                 list.AppendChild(datenode);
@@ -261,7 +269,7 @@ namespace Lyra2.LyraShell
             string list = "";
             while (en.MoveNext())
             {
-                list += ((ISong) en.Value).ID + ",";
+                list += ((ISong)en.Value).ID + ",";
             }
             if (list.Length > 0) list = list.Substring(0, list.Length - 1);
             return list;

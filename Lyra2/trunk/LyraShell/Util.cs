@@ -17,9 +17,9 @@ namespace Lyra2.LyraShell
         public static string CONFIGPATH = Application.StartupPath + "\\lyra.config";
         // info & build 
         public const string NAME = "Lyra";
-        public const string BUILDNR = "41";
-        public const string VER = "2.1.0"; // with PocketPC
-        public static string BUILD = "{build 20090830." + Util.BUILDNR + "}";
+        public const string BUILDNR = "42";
+        public const string VER = "2.1.1"; // with PocketPC
+        public static string BUILD = "{build 20091106." + Util.BUILDNR + "}";
         public static string GUINAME = Util.NAME; // + " v" + Util.VER + "   " + Util.BUILD;
 
         // lyra update

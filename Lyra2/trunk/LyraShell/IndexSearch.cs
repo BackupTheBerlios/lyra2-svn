@@ -77,12 +77,26 @@ namespace Lyra2.LyraShell
             QueryParser parser = new QueryParser(text ? "text" : "title", this.indexAnalyzer);
 
             LyraQuery lQuery = SearchUtil.CreateLyraQuery(query, whole);
-            if (lQuery.LuceneQuery != "")
+            List<ISong> numberSongs = new List<ISong>();
+            // search for nr
+            if (lQuery.Numbers != null)
+            {
+                foreach (int nr in lQuery.Numbers)
+                {
+                    Song song = this.nrIndex[nr] as Song;
+                    if (song != null)
+                    {
+                        numberSongs.Add(song);
+                    }
+                }
+            }
+
+            List<ISong> songs = new List<ISong>();
+
+            if (!string.IsNullOrEmpty(lQuery.LuceneQuery))
             {
                 Query luceneQuery = parser.Parse(lQuery.LuceneQuery);
                 Hits hits = searcher.Search(luceneQuery);
-
-                List<ISong> songs = new List<ISong>();
                 resultBox.Ratings.Clear();
 
                 for (int i = 0; i < hits.Length(); i++)
@@ -97,40 +111,18 @@ namespace Lyra2.LyraShell
                     }
                 }
 
-                // sort results
-                songs.Sort();
-                int countNumbers = 0;
-                // search for nr
-                if (lQuery.Numbers != null)
-                {
-                    for (int i = lQuery.Numbers.Count - 1; i >= 0; i--)
-                    {
-                        int nr = lQuery.Numbers[i];
-                        Song song = this.nrIndex[nr] as Song;
-                        if (song != null)
-                        {
-                            songs.Insert(0, song);
-                            countNumbers++;
-                        }
-                    }
-                }
-
-                //docs.Sort(new BoostSorter());
-                lock (resultBox)
-                {
-                    resultBox.BeginUpdate();
-                    resultBox.Items.Clear();
-                    foreach (Song song in songs)
-                    {
-                        resultBox.Items.Add(song);
-                    }
-                    resultBox.SetSearchTags(GetTags(query));
-                    resultBox.NrOfNumberMatches = countNumbers;
-                    resultBox.EndUpdate();
-                    resultBox.Sort(sortMethod);
-                }
+              
             }
             searcher.Close();
+
+            lock (resultBox)
+            {
+                resultBox.BeginUpdate();
+                resultBox.Items.Clear();
+                resultBox.SetSearchTags(GetTags(query));
+                resultBox.ShowSongs(numberSongs, songs, sortMethod);
+                resultBox.EndUpdate();
+            }
             return true;
         }
 
@@ -234,36 +226,4 @@ namespace Lyra2.LyraShell
             return false;
         }
     }
-
-    /*
-        internal class BoostSorter : IComparer
-        {
-            #region IComparer Members
-
-            public int Compare(object x, object y)
-            {
-                Document xDoc = x as Document;
-                Document yDoc = y as Document;
-                if (xDoc != null && yDoc != null)
-                {
-                    float diff = xDoc.GetBoost() - yDoc.GetBoost();
-                    if (Math.Abs(diff) < 0.1)
-                    {
-                        return 0;
-                    }
-                    else if (diff < 0)
-                    {
-                        return -1;
-                    }
-                    else
-                    {
-                        return 1;
-                    }
-                }
-                return 0;
-            }
-
-            #endregion
-        }
-    */
 }
