@@ -102,6 +102,27 @@ namespace Lyra2.LyraShell.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap button_enabled {
+            get {
+                object obj = ResourceManager.GetObject("button_enabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap button_pressed {
+            get {
+                object obj = ResourceManager.GetObject("button_pressed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap button_rollover {
+            get {
+                object obj = ResourceManager.GetObject("button_rollover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap clear_normal_16 {
             get {
                 object obj = ResourceManager.GetObject("clear_normal_16", resourceCulture);
@@ -133,6 +154,20 @@ namespace Lyra2.LyraShell.Properties {
         internal static System.Drawing.Bitmap right_pane_bg {
             get {
                 object obj = ResourceManager.GetObject("right_pane_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap scroll_down_bg {
+            get {
+                object obj = ResourceManager.GetObject("scroll_down_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap scroll_up_bg {
+            get {
+                object obj = ResourceManager.GetObject("scroll_up_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

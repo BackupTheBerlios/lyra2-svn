@@ -44,6 +44,7 @@ namespace Lyra2.LyraShell
         public const string ITALIC = "i";
         public const string BLOCK = "p";
         public const string PGBR = "pagebreak";
+        public const string JMP = "jumpmark";
         public static Color REFCOLOR;
         public static Color COLOR;
         public static Font SPECFONT;

@@ -102,7 +102,6 @@ namespace Lyra2.LyraShell
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.favoritesListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.favoritesListBox.HighLightBackColor = System.Drawing.Color.LightGray;
             this.favoritesListBox.ItemHeight = 15;
             this.favoritesListBox.Location = new System.Drawing.Point(0, 26);
             this.favoritesListBox.Name = "favoritesListBox";

@@ -180,7 +180,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\curtext.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="data\curtext.xml.bac">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -330,6 +330,7 @@
     </Compile>
     <Compile Include="SearchUtil.cs" />
     <Compile Include="Song.cs" />
+    <Compile Include="SongDisplayedEventArgs.cs" />
     <Compile Include="SongList.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -454,6 +455,11 @@
     <Content Include="data\stopwords.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\scroll_up_bg.png" />
+    <None Include="Resources\scroll_down_bg.png" />
+    <None Include="Resources\button_rollover.png" />
+    <None Include="Resources\button_pressed.png" />
+    <None Include="Resources\button_enabled.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

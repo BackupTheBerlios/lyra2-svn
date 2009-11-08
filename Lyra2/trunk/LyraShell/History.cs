@@ -18,9 +18,9 @@ namespace Lyra2.LyraShell
         private readonly GUI owner;
         private SplitContainer historySplitter;
         private SongPreview historySongPreview;
-        private Infragistics.Win.Misc.UltraPanel topPanel;
-        private Infragistics.Win.Misc.UltraButton ultraButton1;
-        private Infragistics.Win.Misc.UltraButton historyAsListBtn;
+        private Infragistics.Win.Misc.UltraPanel bottomPanel;
+        private LyraButtonControl ultraButton1;
+        private LyraButtonControl historyAsListBtn;
         private Infragistics.Win.Misc.UltraPanel line;
 
         private static History _this;
@@ -92,15 +92,15 @@ namespace Lyra2.LyraShell
             this.historySplitter = new System.Windows.Forms.SplitContainer();
             this.historyListBox = new Lyra2.LyraShell.SongListBox();
             this.historySongPreview = new Lyra2.LyraShell.SongPreview();
-            this.topPanel = new Infragistics.Win.Misc.UltraPanel();
-            this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
-            this.historyAsListBtn = new Infragistics.Win.Misc.UltraButton();
+            this.bottomPanel = new Infragistics.Win.Misc.UltraPanel();
             this.line = new Infragistics.Win.Misc.UltraPanel();
+            this.ultraButton1 = new Lyra2.LyraShell.LyraButtonControl();
+            this.historyAsListBtn = new Lyra2.LyraShell.LyraButtonControl();
             this.historySplitter.Panel1.SuspendLayout();
             this.historySplitter.Panel2.SuspendLayout();
             this.historySplitter.SuspendLayout();
-            this.topPanel.ClientArea.SuspendLayout();
-            this.topPanel.SuspendLayout();
+            this.bottomPanel.ClientArea.SuspendLayout();
+            this.bottomPanel.SuspendLayout();
             this.line.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,7 +126,6 @@ namespace Lyra2.LyraShell
             // 
             this.historyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.historyListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.historyListBox.HighLightBackColor = System.Drawing.Color.LightGray;
             this.historyListBox.ItemHeight = 15;
             this.historyListBox.Location = new System.Drawing.Point(0, 0);
             this.historyListBox.Name = "historyListBox";
@@ -146,43 +145,23 @@ namespace Lyra2.LyraShell
             this.historySongPreview.Size = new System.Drawing.Size(593, 235);
             this.historySongPreview.TabIndex = 1;
             // 
-            // topPanel
+            // bottomPanel
             // 
             appearance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             appearance1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             appearance1.BackGradientStyle = Infragistics.Win.GradientStyle.GlassTop50;
-            this.topPanel.Appearance = appearance1;
+            this.bottomPanel.Appearance = appearance1;
             // 
-            // topPanel.ClientArea
+            // bottomPanel.ClientArea
             // 
-            this.topPanel.ClientArea.Controls.Add(this.line);
-            this.topPanel.ClientArea.Controls.Add(this.ultraButton1);
-            this.topPanel.ClientArea.Controls.Add(this.historyAsListBtn);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.topPanel.Location = new System.Drawing.Point(0, 644);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(593, 29);
-            this.topPanel.TabIndex = 8;
-            // 
-            // ultraButton1
-            // 
-            this.ultraButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ultraButton1.Location = new System.Drawing.Point(207, 3);
-            this.ultraButton1.Name = "ultraButton1";
-            this.ultraButton1.Size = new System.Drawing.Size(203, 23);
-            this.ultraButton1.TabIndex = 0;
-            this.ultraButton1.Text = "History in Text Datei speichern...";
-            this.ultraButton1.Click += new System.EventHandler(this.SaveHistoryAsTextFile);
-            // 
-            // historyAsListBtn
-            // 
-            this.historyAsListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.historyAsListBtn.Location = new System.Drawing.Point(416, 3);
-            this.historyAsListBtn.Name = "historyAsListBtn";
-            this.historyAsListBtn.Size = new System.Drawing.Size(165, 23);
-            this.historyAsListBtn.TabIndex = 0;
-            this.historyAsListBtn.Text = "History als Liste speichern...";
-            this.historyAsListBtn.Click += new System.EventHandler(this.SaveAsListButtonClickHandler);
+            this.bottomPanel.ClientArea.Controls.Add(this.line);
+            this.bottomPanel.ClientArea.Controls.Add(this.ultraButton1);
+            this.bottomPanel.ClientArea.Controls.Add(this.historyAsListBtn);
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 644);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(593, 29);
+            this.bottomPanel.TabIndex = 8;
             // 
             // line
             // 
@@ -194,12 +173,32 @@ namespace Lyra2.LyraShell
             this.line.Size = new System.Drawing.Size(593, 1);
             this.line.TabIndex = 1;
             // 
+            // ultraButton1
+            // 
+            this.ultraButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ultraButton1.Location = new System.Drawing.Point(217, 3);
+            this.ultraButton1.Name = "ultraButton1";
+            this.ultraButton1.Size = new System.Drawing.Size(179, 23);
+            this.ultraButton1.TabIndex = 0;
+            this.ultraButton1.Text = "History in Text Datei speichern...";
+            this.ultraButton1.Click += new System.EventHandler(this.SaveHistoryAsTextFile);
+            // 
+            // historyAsListBtn
+            // 
+            this.historyAsListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.historyAsListBtn.Location = new System.Drawing.Point(404, 3);
+            this.historyAsListBtn.Name = "historyAsListBtn";
+            this.historyAsListBtn.Size = new System.Drawing.Size(179, 23);
+            this.historyAsListBtn.TabIndex = 0;
+            this.historyAsListBtn.Text = "History als Liste speichern...";
+            this.historyAsListBtn.Click += new System.EventHandler(this.SaveAsListButtonClickHandler);
+            // 
             // History
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(593, 673);
             this.Controls.Add(this.historySplitter);
-            this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.bottomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -209,8 +208,8 @@ namespace Lyra2.LyraShell
             this.historySplitter.Panel1.ResumeLayout(false);
             this.historySplitter.Panel2.ResumeLayout(false);
             this.historySplitter.ResumeLayout(false);
-            this.topPanel.ClientArea.ResumeLayout(false);
-            this.topPanel.ResumeLayout(false);
+            this.bottomPanel.ClientArea.ResumeLayout(false);
+            this.bottomPanel.ResumeLayout(false);
             this.line.ResumeLayout(false);
             this.ResumeLayout(false);
 

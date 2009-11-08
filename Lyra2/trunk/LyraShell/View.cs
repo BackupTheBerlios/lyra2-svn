@@ -85,6 +85,22 @@ namespace Lyra2.LyraShell
 
         public static event EventHandler HistoryChanged;
 
+        public static event SongDisplayedEventHandler SongDisplayed;
+
+        private static void OnSongDisplayed(SongDisplayedEventArgs args)
+        {
+            if (SongDisplayed != null && View._this != null)
+            {
+                SongDisplayed(View._this, args);
+            }
+        }
+
+        private static SongDisplayedEventArgs currentSongInfo;
+        public static SongDisplayedEventArgs CurrentSongInfo
+        {
+            get { return currentSongInfo; }
+        }
+
         private static View _this = null;
 
         /// <summary>
@@ -185,7 +201,7 @@ namespace Lyra2.LyraShell
         {
             InitializeComponent();
             this.initTransparentBoxes();
-            this.Closed += new EventHandler(View_Closed);
+            this.Closed += View_Closed;
         }
 
         private ListBox navigate = null;
@@ -195,7 +211,7 @@ namespace Lyra2.LyraShell
         {
             get
             {
-                this.pos = (this.pos + this.navigate.Items.Count + 1)%this.navigate.Items.Count;
+                this.pos = (this.pos + this.navigate.Items.Count + 1) % this.navigate.Items.Count;
                 return this.pos;
             }
         }
@@ -204,7 +220,7 @@ namespace Lyra2.LyraShell
         {
             get
             {
-                this.pos = (this.pos + this.navigate.Items.Count - 1)%this.navigate.Items.Count;
+                this.pos = (this.pos + this.navigate.Items.Count - 1) % this.navigate.Items.Count;
                 return this.pos;
             }
         }
@@ -223,11 +239,14 @@ namespace Lyra2.LyraShell
             this.refresh(song, null);
         }
 
+
+
         private bool haspgbr = false;
 
         public void refresh()
         {
             addSongToHistory(this.song);
+            SetCurrentSongInfo();
             if (this.trans == null) this.transCount = 0;
 
             this.label1.Text = this.song.Number.ToString();
@@ -236,7 +255,7 @@ namespace Lyra2.LyraShell
             this.label3.Text = "";
             this.label4.Text = "";
             this.label4.Visible = false;
-            this.label2.Width = this.richTextBox1.Width - 2*this.label2.Left;
+            this.label2.Width = this.richTextBox1.Width - 2 * this.label2.Left;
             this.richTextBox1.Width = this.Width - 80;
             this.richTextBox2.Text = "";
             this.richTextBox2.Visible = false;
@@ -253,7 +272,7 @@ namespace Lyra2.LyraShell
                     this.label4.Visible = true;
                     this.label4.Text = this.trans.ToString();
                     this.label4.Width = this.richTextBox2.Width;
-                    this.label2.Width = this.richTextBox1.Width - 2*this.label2.Left;
+                    this.label2.Width = this.richTextBox1.Width - 2 * this.label2.Left;
                 }
                 else
                 {
@@ -298,8 +317,8 @@ namespace Lyra2.LyraShell
                 }
             }
 
-            this.label1.Width = this.label1.Text.Length*20 + 10;
-            this.label7.Width = this.label5.Text.Length == 0 ? 0 : this.label7.Text.Length*20 + 6;
+            this.label1.Width = this.label1.Text.Length * 20 + 10;
+            this.label7.Width = this.label5.Text.Length == 0 ? 0 : this.label7.Text.Length * 20 + 6;
             this.label7.Left = 0;
             this.label1.Left = this.label7.Width - 1;
             this.label2.Left = this.label1.Left + this.label1.Width + 10;
@@ -322,9 +341,10 @@ namespace Lyra2.LyraShell
             {
                 this.formatall(myrtb);
             }
+
             if (Util.SHOWNR && Util.CTRLSHOWNR)
             {
-                (new Thread(new ThreadStart(this.showNrAtStart))).Start();
+                (new Thread(this.showNrAtStart)).Start();
             }
             else
             {
@@ -344,7 +364,22 @@ namespace Lyra2.LyraShell
 
             this.richTextBox1.ScrollToTop();
             this.richTextBox2.ScrollToTop();
+            OnSongDisplayed(currentSongInfo);
             this.Focus();
+        }
+
+        private void SetCurrentSongInfo()
+        {
+            currentSongInfo = new SongDisplayedEventArgs(this.song,
+                                                         (ISong)
+                                                         this.navigate.Items[
+                                                             (this.pos + this.navigate.Items.Count + 1) %
+                                                             this.navigate.Items.Count],
+                                                         (ISong)
+                                                         this.navigate.Items[
+                                                             (this.pos + this.navigate.Items.Count - 1) %
+                                                             this.navigate.Items.Count]);
+
         }
 
         private void formatall(RichTextBox rtb)
@@ -366,6 +401,28 @@ namespace Lyra2.LyraShell
             this.formatBlock(rtb);
             this.format(rtb, Util.BOLD, null, Util.COLOR, 0, "", "");
             this.format(rtb, Util.ITALIC, null, Util.COLOR, 0, "", "");
+            GetJumpMarks(rtb);
+        }
+
+        private void GetJumpMarks(RichTextBox rtb)
+        {
+            int start = 0;
+            int startText = 0;
+            currentSongInfo.Jumpmarks.Clear();
+            while ((start = rtb.Find("<" + Util.JMP, start, RichTextBoxFinds.MatchCase)) >= 0)
+            {
+                int end = 0;
+                int endText = 0;
+                if ((end = rtb.Find("/>", start, RichTextBoxFinds.MatchCase)) >= 0)
+                {
+                    startText = rtb.Text.IndexOf("<" + Util.JMP, startText);
+                    endText = rtb.Text.IndexOf("/>", startText) + 2;
+                    string jumpmark = rtb.Text.Substring(startText, endText - startText);
+                    currentSongInfo.Jumpmarks.Add(new JumpMark("bla", start));
+                    rtb.Rtf = rtb.Rtf.Replace(jumpmark, "");
+                    start = 0;
+                }
+            }
         }
 
         private void formatUnform(RichTextBox rtb)
@@ -814,7 +871,7 @@ namespace Lyra2.LyraShell
         private void View_Load(object sender, EventArgs e)
         {
             // init Screen
-            this.Width = display.Bounds.Width;
+            this.Width = display.Bounds.Width / 2;
             this.Height = display.Bounds.Height;
             this.Top = display.Bounds.Top;
             this.Left = display.Bounds.Left;
@@ -840,7 +897,7 @@ namespace Lyra2.LyraShell
             this.richTextBox1.Height = this.Height - this.richTextBox1.Top - 10;
             this.richTextBox2.Top = this.richTextBox1.Top;
             this.richTextBox2.Height = this.richTextBox1.Height;
-            this.richTextBox2.Width = this.richTextBox1.Width/2 - 5;
+            this.richTextBox2.Width = this.richTextBox1.Width / 2 - 5;
             this.richTextBox2.Left = this.richTextBox1.Left + this.richTextBox2.Width + 10;
             this.richTextBox2.Height = this.richTextBox1.Height;
 
@@ -858,11 +915,11 @@ namespace Lyra2.LyraShell
             this.panel2.Top = 0;
             this.panel2.Left = 0;
 
-            this.label5.Left = display.Bounds.Width/2;
-            this.label5.Top = display.Bounds.Height/2 - this.label5.Height/2;
+            this.label5.Left = display.Bounds.Width / 2;
+            this.label5.Top = display.Bounds.Height / 2 - this.label5.Height / 2;
             this.label9.Top = this.label5.Bottom + 2;
             this.label9.Left = this.label5.Left;
-            this.pictureBox1.Left = this.Width/2 - this.pictureBox1.Width;
+            this.pictureBox1.Left = this.Width / 2 - this.pictureBox1.Width;
             this.pictureBox1.Top = this.label5.Top;
             this.label5.Text = this.song.Number.ToString();
             this.label9.Text = this.song.Desc;
@@ -896,7 +953,7 @@ namespace Lyra2.LyraShell
                                                this.DISABLEACTIONS = true;
                                            };
             this.Invoke(showNr);
-            Thread.Sleep(Util.TIMER*1000);
+            Thread.Sleep(Util.TIMER * 1000);
             CrossThreadInvoke hideNr = delegate
                                            {
                                                this.DISABLEACTIONS = false;
@@ -931,13 +988,13 @@ namespace Lyra2.LyraShell
         {
             try
             {
-                Util.CTRLSHOWNR = !((KeyEventArgs) e).Control;
+                Util.CTRLSHOWNR = !((KeyEventArgs)e).Control;
             }
             catch (Exception)
             {
                 Util.CTRLSHOWNR = Util.SHOWNR;
             }
-            this.refresh((ISong) this.navigate.Items[this.NextPos]);
+            this.refresh((ISong)this.navigate.Items[this.NextPos]);
         }
 
         // forward
@@ -945,13 +1002,13 @@ namespace Lyra2.LyraShell
         {
             try
             {
-                Util.CTRLSHOWNR = !((KeyEventArgs) e).Control;
+                Util.CTRLSHOWNR = !((KeyEventArgs)e).Control;
             }
             catch (Exception)
             {
                 Util.CTRLSHOWNR = Util.SHOWNR;
             }
-            this.refresh((ISong) this.navigate.Items[this.LastPos]);
+            this.refresh((ISong)this.navigate.Items[this.LastPos]);
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -1079,10 +1136,10 @@ namespace Lyra2.LyraShell
         private void updatePreview()
         {
             string next =
-                ((ISong) this.navigate.Items[(this.pos + this.navigate.Items.Count + 1)%this.navigate.Items.Count]).
+                ((ISong)this.navigate.Items[(this.pos + this.navigate.Items.Count + 1) % this.navigate.Items.Count]).
                     Number.ToString();
             string last =
-                ((ISong) this.navigate.Items[(this.pos + this.navigate.Items.Count - 1)%this.navigate.Items.Count]).
+                ((ISong)this.navigate.Items[(this.pos + this.navigate.Items.Count - 1) % this.navigate.Items.Count]).
                     Number.ToString();
             this.label8.Text = "PgUp:" + next + Util.NL + "PgDn:" + last;
         }
@@ -1100,8 +1157,36 @@ namespace Lyra2.LyraShell
 
     public class ToManyViews : Exception
     {
-        public ToManyViews() : base("Zu viele Songtexte geöffnet.")
+        public ToManyViews()
+            : base("Zu viele Songtexte geöffnet.")
         {
+        }
+    }
+
+    public class JumpMark
+    {
+        private string name;
+        private long position;
+
+        public JumpMark(string name, long position)
+        {
+            this.name = name;
+            this.position = position;
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+
+        public long Position
+        {
+            get { return position; }
+        }
+
+        public override string ToString()
+        {
+            return this.name + "  [Pos " + this.position + "]";
         }
     }
 }

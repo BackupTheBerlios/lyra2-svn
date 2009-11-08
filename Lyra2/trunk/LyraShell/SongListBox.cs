@@ -16,29 +16,39 @@ namespace Lyra2.LyraShell
         public event ScrollEventHandler Scrolled = null;
         private int oldTopIndex = 0;
 
-        private Color backColor;
-        public Color HighLightBackColor
-        {
-            get { return this.backColor; }
-            set { this.backColor = value; }
-        }
-
         public SongListBox()
         {
             base.DrawMode = DrawMode.OwnerDrawFixed;
             base.ItemHeight = 15;
             this.DrawItem += SongListBox_DrawItem;
-            this.HighLightBackColor = Color.LightGray;
             this.Sorted = false;
+            this.bgBrush = new SolidBrush(base.BackColor);
+            this.foreColBrush = new SolidBrush(base.ForeColor);
+        }
+
+        protected override void OnBackColorChanged(EventArgs e)
+        {
+            base.OnBackColorChanged(e);
+            this.bgBrush = new SolidBrush(base.BackColor);
+        }
+
+        protected override void OnForeColorChanged(EventArgs e)
+        {
+            base.OnForeColorChanged(e);
+            this.foreColBrush = new SolidBrush(base.ForeColor);
         }
 
         private readonly Brush highlight = new SolidBrush(Color.FromArgb(251, 225, 98));
         private readonly Brush highlightLight = new SolidBrush(Color.FromArgb(253, 253, 176));
         private readonly Brush normalTextColor = Brushes.Navy;
-        private readonly Brush numberMatchTextColor = new SolidBrush(Color.FromArgb(0, 102, 128));
+        private readonly Brush selectedBackColorOverlay = new SolidBrush(Color.FromArgb(80, 0, 85, 170));
+        private Brush bgBrush;
+        private Brush foreColBrush;
         private readonly Pen highlightBorder = new Pen(Color.FromArgb(251, 225, 98));
         private readonly Pen highlightBorderLight = new Pen(Color.FromArgb(253, 253, 176));
         private readonly Pen separatorLine = new Pen(Color.FromArgb(230, 220, 197));
+
+        private readonly Font titleFont = new Font("Verdana", 9f, GraphicsUnit.Point);
 
         private const int RatingWidth = 200;
         private const int RatingOffset = 0;
@@ -47,41 +57,38 @@ namespace Lyra2.LyraShell
         {
             if (e.Index < this.Items.Count && e.Index >= 0)
             {
-                Color bgcol = BackColor;
-                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+                // background
+                if (e.Index < this.nrOfNumberMatches)
                 {
-                    bgcol = HighLightBackColor;
-                    e.DrawFocusRectangle();
+                    e.Graphics.FillRectangle(highlightLight, e.Bounds);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(bgBrush, e.Bounds);
+                }
+                if (selected)
+                {
+                    e.Graphics.FillRectangle(selectedBackColorOverlay, e.Bounds);
                 }
 
-                e.Graphics.FillRectangle(new SolidBrush(bgcol), e.Bounds);
-
-
-                Brush foreColBrush = new SolidBrush(e.ForeColor);
                 object item = this.Items[e.Index];
                 if (item is Song)
                 {
                     Song song = (Song)item;
-                    if (e.Index < this.nrOfNumberMatches && (e.State & DrawItemState.Selected) != DrawItemState.Selected)
-                    {
-                        e.Graphics.FillRectangle(highlightLight, e.Bounds);
-                    }
+
                     this.DrawString(e.Graphics, Util.toFour(song.Number), e.Font, Brushes.DimGray,
                                         new RectangleF(e.Bounds.X, e.Bounds.Y, 50, e.Bounds.Height), highlightLight,
                                         highlightBorderLight);
-                    if (e.Index < this.nrOfNumberMatches)
-                    {
-                        // it's a number match...
-                        RectangleF titleFrame = new RectangleF(e.Bounds.X + 50, e.Bounds.Y, e.Bounds.Width - 50,
-                                                              e.Bounds.Height);
-                        this.DrawString(e.Graphics, song.Title, new Font(e.Font, FontStyle.Bold), normalTextColor,
-                                         titleFrame, highlight, highlightBorder);
-                    }
-                    else
-                    {
-                        this.DrawString(e.Graphics, song.Title, new Font(e.Font, FontStyle.Bold), normalTextColor,
-                                          new RectangleF(e.Bounds.X + 50, e.Bounds.Y, e.Bounds.Width - 50, e.Bounds.Height), highlight, highlightBorder);
 
+                    // it's a number match...
+                    RectangleF titleFrame = new RectangleF(e.Bounds.X + 50, e.Bounds.Y, e.Bounds.Width - 50,
+                                                          e.Bounds.Height);
+                    this.DrawString(e.Graphics, song.Title, titleFont, normalTextColor, titleFrame, highlight, highlightBorder);
+
+                    if (this.nrOfNumberMatches <= e.Index)
+                    {
                         if (this.method == SortMethod.RatingDescending || this.method == SortMethod.RatingAscending)
                         {
                             float rating = this.Ratings[song];
@@ -293,6 +300,17 @@ namespace Lyra2.LyraShell
             this.nrOfNumberMatches = numberSongs.Count;
             this.sortedSongs = songs;
             this.Sort(method);
+        }
+
+        public void ClearSongs()
+        {
+            this.BeginUpdate();
+            this.numberSongs = null;
+            this.nrOfNumberMatches = 0;
+            this.sortedSongs = null;
+            this.Items.Clear();
+            this.ResetSearchTags();
+            this.EndUpdate();
         }
     }
 }

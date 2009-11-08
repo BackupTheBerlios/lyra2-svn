@@ -4,12 +4,12 @@ using System.Reflection;
 // gesteuert. Ändern Sie diese Attributswerte, um die Informationen zu modifizieren,
 // die mit einer Assembly verknüpft sind.
 //
-[assembly : AssemblyTitle("lyra")]
+[assembly: AssemblyTitle("Lyra 2")]
 [assembly : AssemblyDescription("Tool zum Anzeigen, Speichern und Verwalten von Liedtexten.")]
 [assembly : AssemblyConfiguration("")]
 [assembly : AssemblyCompany("")]
 [assembly : AssemblyProduct("")]
-[assembly : AssemblyCopyright("(c) ogirard, 2003 gemäss GNU GPL")]
+[assembly: AssemblyCopyright("(c) 2009 Olivier Girard")]
 [assembly : AssemblyTrademark("")]
 [assembly : AssemblyCulture("")]
 
@@ -24,7 +24,7 @@ using System.Reflection;
 // Sie können alle Werte oder die standardmäßige Revision und Buildnummer 
 // mit '*' angeben:
 
-[assembly : AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("2.1.1.*")]
 
 //
 // Um die Assembly zu signieren, müssen Sie einen Schlüssel angeben. Weitere Informationen 
