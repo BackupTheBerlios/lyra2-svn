@@ -489,9 +489,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lib\Lucene.NET\Lucene.Net-2.3.2.csproj">
-      <Project>{F04CA2F4-E182-46A8-B914-F46AF5319E83}</Project>
-      <Name>Lucene.Net-2.3.2</Name>
+    <ProjectReference Include="..\Lib\Lucene.Net\Lucene.Net.csproj">
+      <Project>{5D4AD9BE-1FFB-41AB-9943-25737971BF57}</Project>
+      <Name>Lucene.Net</Name>
     </ProjectReference>
     <ProjectReference Include="..\UtilShared\UtilShared.csproj">
       <Project>{E50A5684-9203-40B5-BC17-2C011C21C5B9}</Project>
