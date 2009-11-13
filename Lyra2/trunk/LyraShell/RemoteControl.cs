@@ -8,15 +8,15 @@ using Lyra2.UtilShared;
 
 namespace Lyra2.LyraShell
 {
-	/// <summary>
-	/// Summary description for RemoteControl.
-	/// </summary>
-	public class RemoteControl : Form
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private Container components = null;
+    /// <summary>
+    /// Summary description for RemoteControl.
+    /// </summary>
+    public class RemoteControl : Form
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private Container components = null;
 
         private GUI owner = null;
         private Infragistics.Win.Misc.UltraPanel remotePanel;
@@ -40,71 +40,56 @@ namespace Lyra2.LyraShell
         private Infragistics.Win.Misc.UltraLabel titleLabel;
         private PictureBox scrollImage;
 
-		private static RemoteControl _this = null;
+        private static RemoteControl _this = null;
 
-		public static void ShowRemoteControl(GUI owner)
-		{
-			if (_this == null)
-			{
-				_this = new RemoteControl(owner);
-                LoadPersonalizationSettings(owner.Personalizer);
-			}
-			_this.Show();
-			_this.Focus();
-		}
-
-		public static void ForceFocus()
-		{
-			if (_this != null)
-			{
-				_this.Focus();
-			}
-		}
-
-        private readonly BackgroundWorker bgw = new BackgroundWorker();
-		private RemoteControl(GUI owner)
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
-			this.owner = owner;
-			this.Closing += RemoteControl_Closing;
-            View.SongDisplayed += ViewSongDisplayed;
-            this.Update(View.CurrentSongInfo);
-            this.scrollBox.ClientArea.MouseEnter += ScroolBoxEnterHandler;
-            this.scrollBox.ClientArea.MouseLeave += ScrollBoxLeaveHandler;
-            bgw.DoWork += UnblinkWork;
-            bgw.WorkerSupportsCancellation = true;
-		}
-
-        void UnblinkWork(object sender, DoWorkEventArgs e)
+        public static void ShowRemoteControl(GUI owner)
         {
-            Thread.Sleep(100);
-            if (!e.Cancel)
+            if (_this == null)
             {
-                this.Invoke(new MethodInvoker(() => this.scrollImage.Visible = false));
+                _this = new RemoteControl(owner);
+                LoadPersonalizationSettings(owner.Personalizer);
+            }
+            _this.Show();
+            _this.Focus();
+        }
+
+        public static void ForceFocus()
+        {
+            if (_this != null)
+            {
+                _this.Focus();
             }
         }
 
-	    private bool doScroll = false;
-
-        private void ScrollBoxLeaveHandler(object sender, EventArgs e)
+        private readonly BackgroundWorker bgw = new BackgroundWorker();
+        private RemoteControl(GUI owner)
         {
-            this.doScroll = false;
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.owner = owner;
+            this.Closing += RemoteControl_Closing;
+            View.SongDisplayed += ViewSongDisplayed;
+            this.Update(View.CurrentSongInfo);
+            bgw.DoWork += UnblinkWork;
+            bgw.WorkerSupportsCancellation = true;
+            foreach (Control control in this.Controls)
+            {
+                control.MouseWheel += MouseWheelHandler;
+            }
+            this.scrollBox.MouseWheel += MouseWheelHandler;
+            this.MouseWheel += MouseWheelHandler;
+            this.jumpMarksListBox.MouseWheel += MouseWheelHandler;
         }
 
-        private void ScroolBoxEnterHandler(object sender, EventArgs e)
-        {
-            this.doScroll = true;
-        }
-
-        protected override void OnMouseWheel(MouseEventArgs e)
+        private void MouseWheelHandler(object sender, MouseEventArgs e)
         {
             #region    Precondition
 
-            if(!this.doScroll) return;
+            Point mousePos = scrollBox.PointToClient(Control.MousePosition);
+            if (!scrollBox.ClientRectangle.Contains(mousePos)) return;
 
             #endregion Precondition
 
@@ -119,9 +104,17 @@ namespace Lyra2.LyraShell
                 this.scrollUpBtn_Click(this, e);
                 this.ScrollBoxBlink(false);
             }
-            
         }
-        
+
+        void UnblinkWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(100);
+            if (!e.Cancel)
+            {
+                this.Invoke(new MethodInvoker(() => this.scrollImage.Visible = false));
+            }
+        }
+
         private void ScrollBoxBlink(bool down)
         {
             this.scrollImage.Image = down ? Properties.Resources.scroll_down_bg : Properties.Resources.scroll_up_bg;
@@ -130,7 +123,7 @@ namespace Lyra2.LyraShell
             {
                 this.bgw.RunWorkerAsync(Color.DimGray);
             }
-            
+
         }
 
         private void ViewSongDisplayed(object sender, SongDisplayedEventArgs args)
@@ -156,7 +149,7 @@ namespace Lyra2.LyraShell
             this.nrLabel.Text = songInfo.DisplayedSong != null ? songInfo.DisplayedSong.Number.ToString().PadLeft(4, '0') : "n/a";
             this.nextBtn.Enabled = songInfo.NextSong != null;
             this.lastBtn.Enabled = songInfo.PreviousSong != null;
-            this.nextLabel.Text = songInfo.NextSong != null ? songInfo.NextSong.Number.ToString().PadLeft(4,'0') : "";
+            this.nextLabel.Text = songInfo.NextSong != null ? songInfo.NextSong.Number.ToString().PadLeft(4, '0') : "";
             this.prevLabel.Text = songInfo.PreviousSong != null ? songInfo.PreviousSong.Number.ToString().PadLeft(4, '0') : "";
             this.jumpMarksListBox.BeginUpdate();
             this.jumpMarksListBox.Items.Clear();
@@ -167,30 +160,30 @@ namespace Lyra2.LyraShell
             this.jumpMarksListBox.EndUpdate();
         }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				if (components != null)
-				{
-					components.Dispose();
-				}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
                 View.SongDisplayed -= ViewSongDisplayed;
-			}
-			base.Dispose(disposing);
-		}
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
@@ -219,6 +212,7 @@ namespace Lyra2.LyraShell
             this.jumperLabel = new System.Windows.Forms.Label();
             this.scrollPane = new System.Windows.Forms.Panel();
             this.scrollBox = new Infragistics.Win.Misc.UltraPanel();
+            this.scrollImage = new System.Windows.Forms.PictureBox();
             this.jumpEndBtn = new Infragistics.Win.Misc.UltraButton();
             this.scrollDownwardsBtn = new Infragistics.Win.Misc.UltraButton();
             this.scrollUpwardsBtn = new Infragistics.Win.Misc.UltraButton();
@@ -232,17 +226,16 @@ namespace Lyra2.LyraShell
             this.line = new Infragistics.Win.Misc.UltraPanel();
             this.nextBtn = new Infragistics.Win.Misc.UltraButton();
             this.lastBtn = new Infragistics.Win.Misc.UltraButton();
-            this.scrollImage = new System.Windows.Forms.PictureBox();
             this.remotePanel.ClientArea.SuspendLayout();
             this.remotePanel.SuspendLayout();
             this.mainPane.SuspendLayout();
             this.scrollPane.SuspendLayout();
             this.scrollBox.ClientArea.SuspendLayout();
             this.scrollBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scrollImage)).BeginInit();
             this.bottomPanel.ClientArea.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             this.line.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scrollImage)).BeginInit();
             this.SuspendLayout();
             // 
             // remotePanel
@@ -271,13 +264,18 @@ namespace Lyra2.LyraShell
             // 
             // jumpMarksListBox
             // 
+            this.jumpMarksListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(176)))));
+            this.jumpMarksListBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jumpMarksListBox.FormattingEnabled = true;
+            this.jumpMarksListBox.ItemHeight = 16;
             this.jumpMarksListBox.Items.AddRange(new object[] {
             "Test 1"});
             this.jumpMarksListBox.Location = new System.Drawing.Point(9, 19);
             this.jumpMarksListBox.Name = "jumpMarksListBox";
             this.jumpMarksListBox.Size = new System.Drawing.Size(376, 212);
             this.jumpMarksListBox.TabIndex = 0;
+            this.jumpMarksListBox.DoubleClick += new System.EventHandler(this.JumpMarksDoubleClickHandler);
+            this.jumpMarksListBox.Click += new System.EventHandler(this.JumpMarksDoubleClickHandler);
             // 
             // jumperLabel
             // 
@@ -315,28 +313,38 @@ namespace Lyra2.LyraShell
             // scrollBox.ClientArea
             // 
             this.scrollBox.ClientArea.Controls.Add(this.scrollImage);
-            this.scrollBox.Location = new System.Drawing.Point(3, 93);
+            this.scrollBox.Location = new System.Drawing.Point(4, 91);
             this.scrollBox.Name = "scrollBox";
             this.scrollBox.Size = new System.Drawing.Size(64, 64);
             this.scrollBox.TabIndex = 13;
+            // 
+            // scrollImage
+            // 
+            this.scrollImage.Location = new System.Drawing.Point(6, 5);
+            this.scrollImage.Name = "scrollImage";
+            this.scrollImage.Size = new System.Drawing.Size(48, 48);
+            this.scrollImage.TabIndex = 12;
+            this.scrollImage.TabStop = false;
             // 
             // jumpEndBtn
             // 
             appearance6.BackColorAlpha = Infragistics.Win.Alpha.Transparent;
             appearance6.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance6.Image = global::Lyra2.LyraShell.Properties.Resources.scroll_bottom;
             appearance6.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_enabled;
             appearance6.ImageBackgroundStretchMargins = new Infragistics.Win.ImageBackgroundStretchMargins(5, 5, 5, 7);
+            appearance6.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance6.ImageVAlign = Infragistics.Win.VAlign.Middle;
             this.jumpEndBtn.Appearance = appearance6;
             appearance7.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_rollover;
             this.jumpEndBtn.HotTrackAppearance = appearance7;
-            this.jumpEndBtn.Location = new System.Drawing.Point(5, 194);
+            this.jumpEndBtn.Location = new System.Drawing.Point(20, 194);
             this.jumpEndBtn.Name = "jumpEndBtn";
             appearance8.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_pressed;
             this.jumpEndBtn.PressedAppearance = appearance8;
             this.jumpEndBtn.ShowFocusRect = false;
-            this.jumpEndBtn.Size = new System.Drawing.Size(59, 27);
+            this.jumpEndBtn.Size = new System.Drawing.Size(32, 27);
             this.jumpEndBtn.TabIndex = 12;
-            this.jumpEndBtn.Text = "bottom";
             this.jumpEndBtn.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
             this.jumpEndBtn.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.jumpEndBtn.Click += new System.EventHandler(this.scrollToEndBtn_Click);
@@ -345,21 +353,23 @@ namespace Lyra2.LyraShell
             // 
             appearance15.BackColorAlpha = Infragistics.Win.Alpha.Transparent;
             appearance15.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance15.Image = global::Lyra2.LyraShell.Properties.Resources.scroll_down;
             appearance15.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_enabled;
             appearance15.ImageBackgroundStretchMargins = new Infragistics.Win.ImageBackgroundStretchMargins(5, 5, 5, 7);
+            appearance15.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance15.ImageVAlign = Infragistics.Win.VAlign.Middle;
             this.scrollDownwardsBtn.Appearance = appearance15;
             this.scrollDownwardsBtn.AutoRepeat = true;
             this.scrollDownwardsBtn.AutoRepeatInterval = 50;
             appearance16.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_rollover;
             this.scrollDownwardsBtn.HotTrackAppearance = appearance16;
-            this.scrollDownwardsBtn.Location = new System.Drawing.Point(5, 161);
+            this.scrollDownwardsBtn.Location = new System.Drawing.Point(20, 161);
             this.scrollDownwardsBtn.Name = "scrollDownwardsBtn";
             appearance17.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_pressed;
             this.scrollDownwardsBtn.PressedAppearance = appearance17;
             this.scrollDownwardsBtn.ShowFocusRect = false;
-            this.scrollDownwardsBtn.Size = new System.Drawing.Size(59, 27);
+            this.scrollDownwardsBtn.Size = new System.Drawing.Size(32, 27);
             this.scrollDownwardsBtn.TabIndex = 12;
-            this.scrollDownwardsBtn.Text = "down";
             this.scrollDownwardsBtn.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
             this.scrollDownwardsBtn.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.scrollDownwardsBtn.Click += new System.EventHandler(this.scrollDownBtn_Click);
@@ -368,21 +378,23 @@ namespace Lyra2.LyraShell
             // 
             appearance18.BackColorAlpha = Infragistics.Win.Alpha.Transparent;
             appearance18.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance18.Image = global::Lyra2.LyraShell.Properties.Resources.scroll_up;
             appearance18.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_enabled;
             appearance18.ImageBackgroundStretchMargins = new Infragistics.Win.ImageBackgroundStretchMargins(5, 5, 5, 7);
+            appearance18.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance18.ImageVAlign = Infragistics.Win.VAlign.Middle;
             this.scrollUpwardsBtn.Appearance = appearance18;
             this.scrollUpwardsBtn.AutoRepeat = true;
             this.scrollUpwardsBtn.AutoRepeatInterval = 50;
             appearance19.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_rollover;
             this.scrollUpwardsBtn.HotTrackAppearance = appearance19;
-            this.scrollUpwardsBtn.Location = new System.Drawing.Point(5, 60);
+            this.scrollUpwardsBtn.Location = new System.Drawing.Point(20, 60);
             this.scrollUpwardsBtn.Name = "scrollUpwardsBtn";
             appearance20.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_pressed;
             this.scrollUpwardsBtn.PressedAppearance = appearance20;
             this.scrollUpwardsBtn.ShowFocusRect = false;
-            this.scrollUpwardsBtn.Size = new System.Drawing.Size(59, 27);
+            this.scrollUpwardsBtn.Size = new System.Drawing.Size(32, 27);
             this.scrollUpwardsBtn.TabIndex = 12;
-            this.scrollUpwardsBtn.Text = "up";
             this.scrollUpwardsBtn.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
             this.scrollUpwardsBtn.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.scrollUpwardsBtn.Click += new System.EventHandler(this.scrollUpBtn_Click);
@@ -391,19 +403,21 @@ namespace Lyra2.LyraShell
             // 
             appearance9.BackColorAlpha = Infragistics.Win.Alpha.Transparent;
             appearance9.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance9.Image = global::Lyra2.LyraShell.Properties.Resources.scroll_top;
             appearance9.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_enabled;
             appearance9.ImageBackgroundStretchMargins = new Infragistics.Win.ImageBackgroundStretchMargins(5, 5, 5, 7);
+            appearance9.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance9.ImageVAlign = Infragistics.Win.VAlign.Middle;
             this.jumpTopBtn.Appearance = appearance9;
             appearance10.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_rollover;
             this.jumpTopBtn.HotTrackAppearance = appearance10;
-            this.jumpTopBtn.Location = new System.Drawing.Point(5, 27);
+            this.jumpTopBtn.Location = new System.Drawing.Point(20, 27);
             this.jumpTopBtn.Name = "jumpTopBtn";
             appearance11.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_pressed;
             this.jumpTopBtn.PressedAppearance = appearance11;
             this.jumpTopBtn.ShowFocusRect = false;
-            this.jumpTopBtn.Size = new System.Drawing.Size(58, 27);
+            this.jumpTopBtn.Size = new System.Drawing.Size(32, 27);
             this.jumpTopBtn.TabIndex = 12;
-            this.jumpTopBtn.Text = "top";
             this.jumpTopBtn.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
             this.jumpTopBtn.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.jumpTopBtn.Click += new System.EventHandler(this.scrollToTopBtn_Click);
@@ -515,8 +529,11 @@ namespace Lyra2.LyraShell
             this.nextBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             appearance4.BackColorAlpha = Infragistics.Win.Alpha.Transparent;
             appearance4.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance4.Image = global::Lyra2.LyraShell.Properties.Resources.next;
             appearance4.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_enabled;
             appearance4.ImageBackgroundStretchMargins = new Infragistics.Win.ImageBackgroundStretchMargins(5, 5, 5, 7);
+            appearance4.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance4.ImageVAlign = Infragistics.Win.VAlign.Middle;
             this.nextBtn.Appearance = appearance4;
             appearance5.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_rollover;
             this.nextBtn.HotTrackAppearance = appearance5;
@@ -527,7 +544,6 @@ namespace Lyra2.LyraShell
             this.nextBtn.ShowFocusRect = false;
             this.nextBtn.Size = new System.Drawing.Size(47, 27);
             this.nextBtn.TabIndex = 12;
-            this.nextBtn.Text = ">>";
             this.nextBtn.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
             this.nextBtn.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.nextBtn.Click += new System.EventHandler(this.nextSongBtn_Click);
@@ -537,8 +553,11 @@ namespace Lyra2.LyraShell
             this.lastBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             appearance12.BackColorAlpha = Infragistics.Win.Alpha.Transparent;
             appearance12.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance12.Image = global::Lyra2.LyraShell.Properties.Resources.prev;
             appearance12.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_enabled;
             appearance12.ImageBackgroundStretchMargins = new Infragistics.Win.ImageBackgroundStretchMargins(5, 5, 5, 7);
+            appearance12.ImageHAlign = Infragistics.Win.HAlign.Center;
+            appearance12.ImageVAlign = Infragistics.Win.VAlign.Middle;
             this.lastBtn.Appearance = appearance12;
             appearance13.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.button_rollover;
             this.lastBtn.HotTrackAppearance = appearance13;
@@ -549,18 +568,9 @@ namespace Lyra2.LyraShell
             this.lastBtn.ShowFocusRect = false;
             this.lastBtn.Size = new System.Drawing.Size(47, 27);
             this.lastBtn.TabIndex = 12;
-            this.lastBtn.Text = "<<";
             this.lastBtn.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
             this.lastBtn.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
             this.lastBtn.Click += new System.EventHandler(this.previousSongBtn_Click);
-            // 
-            // scrollImage
-            // 
-            this.scrollImage.Location = new System.Drawing.Point(6, 5);
-            this.scrollImage.Name = "scrollImage";
-            this.scrollImage.Size = new System.Drawing.Size(48, 48);
-            this.scrollImage.TabIndex = 12;
-            this.scrollImage.TabStop = false;
             // 
             // RemoteControl
             // 
@@ -581,91 +591,91 @@ namespace Lyra2.LyraShell
             this.scrollPane.ResumeLayout(false);
             this.scrollBox.ClientArea.ResumeLayout(false);
             this.scrollBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scrollImage)).EndInit();
             this.bottomPanel.ClientArea.ResumeLayout(false);
             this.bottomPanel.ClientArea.PerformLayout();
             this.bottomPanel.ResumeLayout(false);
             this.line.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scrollImage)).EndInit();
             this.ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private void RemoteControl_Closing(object sender, CancelEventArgs e)
-		{
+        private void RemoteControl_Closing(object sender, CancelEventArgs e)
+        {
             StorePersonalizationSettings(owner.Personalizer, false);
-			_this = null;
-		}
+            _this = null;
+        }
 
-		private void scrollUpBtn_Click(object sender, EventArgs e)
-		{
-			View.ExecuteActionOnView(View.ViewActions.ScrollUp);
-		}
+        private void scrollUpBtn_Click(object sender, EventArgs e)
+        {
+            View.ExecuteActionOnView(View.ViewActions.ScrollUp);
+        }
 
-		private void nextSongBtn_Click(object sender, EventArgs e)
-		{
-			View.ExecuteActionOnView(View.ViewActions.NextSong);
-		}
+        private void nextSongBtn_Click(object sender, EventArgs e)
+        {
+            View.ExecuteActionOnView(View.ViewActions.NextSong);
+        }
 
-		private void previousSongBtn_Click(object sender, EventArgs e)
-		{
-			View.ExecuteActionOnView(View.ViewActions.PreviewsSong);
-		}
+        private void previousSongBtn_Click(object sender, EventArgs e)
+        {
+            View.ExecuteActionOnView(View.ViewActions.PreviewsSong);
+        }
 
-		private void scrollDownBtn_Click(object sender, EventArgs e)
-		{
-			View.ExecuteActionOnView(View.ViewActions.ScrollDown);	
-		}
+        private void scrollDownBtn_Click(object sender, EventArgs e)
+        {
+            View.ExecuteActionOnView(View.ViewActions.ScrollDown);
+        }
 
-		private void scrollToTopBtn_Click(object sender, EventArgs e)
-		{
-			View.ExecuteActionOnView(View.ViewActions.ScrollToTop);
-		}
+        private void scrollToTopBtn_Click(object sender, EventArgs e)
+        {
+            View.ExecuteActionOnView(View.ViewActions.ScrollToTop);
+        }
 
-		private void scrollToEndBtn_Click(object sender, EventArgs e)
-		{
-			View.ExecuteActionOnView(View.ViewActions.ScrollToEnd);
-		}
+        private void scrollToEndBtn_Click(object sender, EventArgs e)
+        {
+            View.ExecuteActionOnView(View.ViewActions.ScrollToEnd);
+        }
 
-//		private void scrollPageUpBtn_Click(object sender, System.EventArgs e)
-//		{
-//			View.ExecuteActionOnView(View.ViewActions.ScrollPageUp);
-//		}
-//
-//		private void scrollPageDownBtn_Click(object sender, System.EventArgs e)
-//		{
-//			View.ExecuteActionOnView(View.ViewActions.ScrollPageDown);
-//		}
-		
-		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-		{
-			if (keyData == Keys.F3)
-			{
-				Util.OpenFile(0);
-			}
-			else if (keyData == Keys.F4)
-			{
-				Util.OpenFile(1);
-			}
-			else if (keyData == Keys.F5)
-			{
-				Util.OpenFile(2);
-			}
-			else if (keyData == Keys.F6)
-			{
-				Util.OpenFile(3);
-			}
-			else if (keyData == Keys.F7)
-			{
-				Util.OpenFile(4);
-			}
-			else if (keyData == Keys.F8)
-			{
-				Util.OpenFile(5);
-			}
-			return base.ProcessCmdKey (ref msg, keyData);
-		}
+        //		private void scrollPageUpBtn_Click(object sender, System.EventArgs e)
+        //		{
+        //			View.ExecuteActionOnView(View.ViewActions.ScrollPageUp);
+        //		}
+        //
+        //		private void scrollPageDownBtn_Click(object sender, System.EventArgs e)
+        //		{
+        //			View.ExecuteActionOnView(View.ViewActions.ScrollPageDown);
+        //		}
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.F3)
+            {
+                Util.OpenFile(0);
+            }
+            else if (keyData == Keys.F4)
+            {
+                Util.OpenFile(1);
+            }
+            else if (keyData == Keys.F5)
+            {
+                Util.OpenFile(2);
+            }
+            else if (keyData == Keys.F6)
+            {
+                Util.OpenFile(3);
+            }
+            else if (keyData == Keys.F7)
+            {
+                Util.OpenFile(4);
+            }
+            else if (keyData == Keys.F8)
+            {
+                Util.OpenFile(5);
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
 
         public static void StorePersonalizationSettings(Personalizer personalizer, bool shown)
@@ -699,5 +709,17 @@ namespace Lyra2.LyraShell
                 personalizer.Write();
             }
         }
-	}
+
+        private void JumpMarksDoubleClickHandler(object sender, EventArgs e)
+        {
+            #region    Precondition
+
+            if(this.jumpMarksListBox.SelectedItem == null) return;
+
+            #endregion Precondition
+
+            JumpMark jumpMark = (JumpMark) this.jumpMarksListBox.SelectedItem;
+            View.ScrollToPosition(jumpMark.Position);
+        }
+    }
 }

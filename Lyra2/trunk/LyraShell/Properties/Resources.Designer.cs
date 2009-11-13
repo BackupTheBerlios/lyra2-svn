@@ -137,6 +137,13 @@ namespace Lyra2.LyraShell.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap next {
+            get {
+                object obj = ResourceManager.GetObject("next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap pfeilDown {
             get {
                 object obj = ResourceManager.GetObject("pfeilDown", resourceCulture);
@@ -151,9 +158,30 @@ namespace Lyra2.LyraShell.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap prev {
+            get {
+                object obj = ResourceManager.GetObject("prev", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap right_pane_bg {
             get {
                 object obj = ResourceManager.GetObject("right_pane_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap scroll_bottom {
+            get {
+                object obj = ResourceManager.GetObject("scroll_bottom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap scroll_down {
+            get {
+                object obj = ResourceManager.GetObject("scroll_down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,9 +193,30 @@ namespace Lyra2.LyraShell.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap scroll_top {
+            get {
+                object obj = ResourceManager.GetObject("scroll_top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap scroll_up {
+            get {
+                object obj = ResourceManager.GetObject("scroll_up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap scroll_up_bg {
             get {
                 object obj = ResourceManager.GetObject("scroll_up_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap undo_icon {
+            get {
+                object obj = ResourceManager.GetObject("undo_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

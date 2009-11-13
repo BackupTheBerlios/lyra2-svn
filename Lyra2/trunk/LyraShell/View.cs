@@ -147,6 +147,17 @@ namespace Lyra2.LyraShell
             return false;
         }
 
+        public static void ScrollToPosition(int charPos)
+        {
+            #region    Precondition
+
+            if(_this == null) return;
+
+            #endregion Precondition
+
+            _this.richTextBox1.Select(charPos, 0);
+            _this.richTextBox1.ScrollToCaret();
+        }
 
         public static void ShowSong(ISong song, ITranslation trans, GUI owner, ListBox navigate)
         {
@@ -418,7 +429,7 @@ namespace Lyra2.LyraShell
                     startText = rtb.Text.IndexOf("<" + Util.JMP, startText);
                     endText = rtb.Text.IndexOf("/>", startText) + 2;
                     string jumpmark = rtb.Text.Substring(startText, endText - startText);
-                    currentSongInfo.Jumpmarks.Add(new JumpMark("bla", start));
+                    currentSongInfo.Jumpmarks.Add(new JumpMark(jumpmark, start));
                     rtb.Rtf = rtb.Rtf.Replace(jumpmark, "");
                     start = 0;
                 }
@@ -871,7 +882,7 @@ namespace Lyra2.LyraShell
         private void View_Load(object sender, EventArgs e)
         {
             // init Screen
-            this.Width = display.Bounds.Width / 2;
+            this.Width = display.Bounds.Width;
             this.Height = display.Bounds.Height;
             this.Top = display.Bounds.Top;
             this.Left = display.Bounds.Left;
@@ -1165,12 +1176,28 @@ namespace Lyra2.LyraShell
 
     public class JumpMark
     {
-        private string name;
-        private long position;
+        private readonly string name;
+        private readonly int position;
 
-        public JumpMark(string name, long position)
+        public JumpMark(string xml, int position)
         {
-            this.name = name;
+            try
+            {
+                int pos = xml.IndexOf("name");
+                if (pos >= 0)
+                {
+                    int left = xml.IndexOf("\"", pos) + 1;
+                    int right = 0;
+                    if (left >= 0) right = xml.IndexOf("\"", left);
+                    this.name = xml.Substring(left, right - left);
+                }
+            }
+            catch (Exception)
+            {
+
+                this.name = "n/a";
+            }
+
             this.position = position;
         }
 
@@ -1179,14 +1206,14 @@ namespace Lyra2.LyraShell
             get { return name; }
         }
 
-        public long Position
+        public int Position
         {
             get { return position; }
         }
 
         public override string ToString()
         {
-            return this.name + "  [Pos " + this.position + "]";
+            return this.name;
         }
     }
 }
