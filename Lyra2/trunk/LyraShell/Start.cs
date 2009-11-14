@@ -42,7 +42,6 @@ namespace Lyra2.LyraShell
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Start));
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
@@ -57,22 +56,22 @@ namespace Lyra2.LyraShell
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "2.1.0";
+            this.label2.Text = "2.2.1";
             // 
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 318);
+            this.progressBar1.Location = new System.Drawing.Point(0, 316);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(477, 11);
+            this.progressBar1.Size = new System.Drawing.Size(475, 11);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 2;
             // 
             // Start
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(477, 329);
+            this.BackgroundImage = global::Lyra2.LyraShell.Properties.Resources.splash2009;
+            this.ClientSize = new System.Drawing.Size(475, 327);
             this.ControlBox = false;
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);

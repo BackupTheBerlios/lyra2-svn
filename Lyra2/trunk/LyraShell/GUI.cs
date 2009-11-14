@@ -49,8 +49,8 @@ namespace Lyra2.LyraShell
         private CheckBox checkBox1;
         private LyraButtonControl button9;
         private SearchTextBox textBox3;
-        private UltraButton button12;
-        private UltraButton button13;
+        private UltraButton moveListItemDownBtn;
+        private UltraButton moveListItemUpBtn;
         private MainMenu mainMenu1;
         private MenuItem menuItem1;
         private MenuItem menuItem2;
@@ -133,7 +133,7 @@ namespace Lyra2.LyraShell
         private MenuItem menuItem67;
         private UltraPanel panel7;
         private Panel panel8;
-        private Panel panel9;
+        private Panel moveUpDownPanel;
         private SongPreview songPreview2;
         private PictureBox pictureBox1;
         private Label label2;
@@ -148,6 +148,10 @@ namespace Lyra2.LyraShell
         private readonly Personalizer personalizeStore;
         private ComboBox sortCombo;
         private Label sortLabel;
+        private LyraButtonControl showSongBtn;
+        private UltraLabel songManagmentLabel;
+        private UltraLabel ultraLabel1;
+        private UltraLabel listManagementLabel;
 
         public Personalizer Personalizer
         {
@@ -276,7 +280,7 @@ namespace Lyra2.LyraShell
         private void SortMethodChanged(object sender, EventArgs e)
         {
             SortMethod newSortMethod = (SortMethod)this.sortCombo.SelectedIndex;
-            if(this.sortMethod != newSortMethod)
+            if (this.sortMethod != newSortMethod)
             {
                 this.sortMethod = newSortMethod;
                 this.searchListBox.BeginUpdate();
@@ -293,7 +297,7 @@ namespace Lyra2.LyraShell
 
         private void InitializeLyraData()
         {
-            this.storage = new Storage(Util.URL, this);  
+            this.storage = new Storage(Util.URL, this);
             Thread.Sleep(1000);
         }
 
@@ -353,7 +357,11 @@ namespace Lyra2.LyraShell
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
@@ -361,6 +369,8 @@ namespace Lyra2.LyraShell
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.searchSplitter = new System.Windows.Forms.SplitContainer();
@@ -378,13 +388,16 @@ namespace Lyra2.LyraShell
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.resultsLabel = new System.Windows.Forms.Label();
             this.panel1 = new Infragistics.Win.Misc.UltraPanel();
+            this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
             this.textBox1 = new Lyra2.LyraShell.SearchTextBox();
             this.button7 = new Lyra2.LyraShell.LyraButtonControl();
+            this.showSongBtn = new Lyra2.LyraShell.LyraButtonControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.allSongsSplitter = new System.Windows.Forms.SplitContainer();
             this.allSongsListBox = new Lyra2.LyraShell.SongListBox();
             this.songPreview1 = new Lyra2.LyraShell.SongPreview();
             this.controlPaneRight = new Infragistics.Win.Misc.UltraPanel();
+            this.songManagmentLabel = new Infragistics.Win.Misc.UltraLabel();
             this.button3 = new Lyra2.LyraShell.LyraButtonControl();
             this.button1 = new Lyra2.LyraShell.LyraButtonControl();
             this.button2 = new Lyra2.LyraShell.LyraButtonControl();
@@ -395,11 +408,12 @@ namespace Lyra2.LyraShell
             this.panel8 = new System.Windows.Forms.Panel();
             this.persListCombo = new System.Windows.Forms.ComboBox();
             this.button5 = new Lyra2.LyraShell.LyraButtonControl();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button12 = new Infragistics.Win.Misc.UltraButton();
-            this.button13 = new Infragistics.Win.Misc.UltraButton();
+            this.moveUpDownPanel = new System.Windows.Forms.Panel();
+            this.moveListItemDownBtn = new Infragistics.Win.Misc.UltraButton();
+            this.moveListItemUpBtn = new Infragistics.Win.Misc.UltraButton();
             this.songPreview2 = new Lyra2.LyraShell.SongPreview();
             this.panel7 = new Infragistics.Win.Misc.UltraPanel();
+            this.listManagementLabel = new Infragistics.Win.Misc.UltraLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button6 = new Lyra2.LyraShell.LyraButtonControl();
             this.button4 = new Lyra2.LyraShell.LyraButtonControl();
@@ -502,7 +516,7 @@ namespace Lyra2.LyraShell
             this.persListSplitter.Panel2.SuspendLayout();
             this.persListSplitter.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.moveUpDownPanel.SuspendLayout();
             this.panel7.ClientArea.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusBarPanel1)).BeginInit();
@@ -723,21 +737,40 @@ namespace Lyra2.LyraShell
             // 
             // panel1.ClientArea
             // 
+            this.panel1.ClientArea.Controls.Add(this.ultraLabel1);
             this.panel1.ClientArea.Controls.Add(this.textBox1);
             this.panel1.ClientArea.Controls.Add(this.button7);
+            this.panel1.ClientArea.Controls.Add(this.showSongBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(830, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(112, 423);
             this.panel1.TabIndex = 15;
             // 
+            // ultraLabel1
+            // 
+            appearance15.BackColor = System.Drawing.Color.Transparent;
+            appearance15.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            appearance15.BackColorAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance15.BackGradientStyle = Infragistics.Win.GradientStyle.ForwardDiagonal;
+            appearance15.FontData.ItalicAsString = "True";
+            appearance15.ForeColor = System.Drawing.Color.DimGray;
+            appearance15.TextHAlignAsString = "Left";
+            this.ultraLabel1.Appearance = appearance15;
+            this.ultraLabel1.Location = new System.Drawing.Point(12, 87);
+            this.ultraLabel1.Name = "ultraLabel1";
+            this.ultraLabel1.Padding = new System.Drawing.Size(10, 0);
+            this.ultraLabel1.Size = new System.Drawing.Size(96, 26);
+            this.ultraLabel1.TabIndex = 7;
+            this.ultraLabel1.Text = "Quick\r\n   View";
+            // 
             // textBox1
             // 
             this.textBox1.DefaultText = "Nummer";
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(16, 4);
+            this.textBox1.Location = new System.Drawing.Point(12, 119);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(88, 21);
+            this.textBox1.Size = new System.Drawing.Size(96, 21);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Nummer";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
@@ -745,12 +778,26 @@ namespace Lyra2.LyraShell
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(16, 29);
+            this.button7.Location = new System.Drawing.Point(28, 144);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(88, 28);
+            this.button7.Size = new System.Drawing.Size(80, 22);
             this.button7.TabIndex = 1;
             this.button7.Text = "Anzeigen";
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // showSongBtn
+            // 
+            appearance10.FontData.BoldAsString = "False";
+            appearance10.FontData.SizeInPoints = 11F;
+            appearance10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
+            this.showSongBtn.Appearance = appearance10;
+            this.showSongBtn.ForeColor = System.Drawing.Color.Brown;
+            this.showSongBtn.Location = new System.Drawing.Point(12, 8);
+            this.showSongBtn.Name = "showSongBtn";
+            this.showSongBtn.Size = new System.Drawing.Size(96, 46);
+            this.showSongBtn.TabIndex = 4;
+            this.showSongBtn.Text = "Anzeigen!";
+            this.showSongBtn.Click += new System.EventHandler(this.listBox3_dblClick);
             // 
             // tabPage1
             // 
@@ -818,6 +865,7 @@ namespace Lyra2.LyraShell
             // 
             // controlPaneRight.ClientArea
             // 
+            this.controlPaneRight.ClientArea.Controls.Add(this.songManagmentLabel);
             this.controlPaneRight.ClientArea.Controls.Add(this.button3);
             this.controlPaneRight.ClientArea.Controls.Add(this.button1);
             this.controlPaneRight.ClientArea.Controls.Add(this.button2);
@@ -828,11 +876,31 @@ namespace Lyra2.LyraShell
             this.controlPaneRight.Size = new System.Drawing.Size(112, 423);
             this.controlPaneRight.TabIndex = 7;
             // 
+            // songManagmentLabel
+            // 
+            appearance13.BackColor = System.Drawing.Color.Transparent;
+            appearance13.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            appearance13.BackColorAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance13.BackGradientStyle = Infragistics.Win.GradientStyle.ForwardDiagonal;
+            appearance13.FontData.ItalicAsString = "True";
+            appearance13.ForeColor = System.Drawing.Color.DimGray;
+            appearance13.TextHAlignAsString = "Left";
+            this.songManagmentLabel.Appearance = appearance13;
+            this.songManagmentLabel.Location = new System.Drawing.Point(12, 87);
+            this.songManagmentLabel.Name = "songManagmentLabel";
+            this.songManagmentLabel.Padding = new System.Drawing.Size(10, 0);
+            this.songManagmentLabel.Size = new System.Drawing.Size(96, 26);
+            this.songManagmentLabel.TabIndex = 6;
+            this.songManagmentLabel.Text = "Lieder\r\n   verwalten";
+            // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            appearance12.FontData.BoldAsString = "False";
+            appearance12.FontData.SizeInPoints = 11F;
+            appearance12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
+            this.button3.Appearance = appearance12;
             this.button3.ForeColor = System.Drawing.Color.Brown;
-            this.button3.Location = new System.Drawing.Point(10, 8);
+            this.button3.Location = new System.Drawing.Point(12, 8);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(96, 46);
             this.button3.TabIndex = 3;
@@ -841,7 +909,7 @@ namespace Lyra2.LyraShell
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(10, 72);
+            this.button1.Location = new System.Drawing.Point(12, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 28);
             this.button1.TabIndex = 1;
@@ -850,7 +918,7 @@ namespace Lyra2.LyraShell
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(10, 106);
+            this.button2.Location = new System.Drawing.Point(12, 153);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 28);
             this.button2.TabIndex = 2;
@@ -859,7 +927,7 @@ namespace Lyra2.LyraShell
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(10, 140);
+            this.button9.Location = new System.Drawing.Point(12, 187);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(96, 28);
             this.button9.TabIndex = 5;
@@ -889,7 +957,7 @@ namespace Lyra2.LyraShell
             // 
             this.persListSplitter.Panel1.Controls.Add(this.personalListsListBox);
             this.persListSplitter.Panel1.Controls.Add(this.panel8);
-            this.persListSplitter.Panel1.Controls.Add(this.panel9);
+            this.persListSplitter.Panel1.Controls.Add(this.moveUpDownPanel);
             this.persListSplitter.Panel1MinSize = 150;
             // 
             // persListSplitter.Panel2
@@ -942,66 +1010,67 @@ namespace Lyra2.LyraShell
             this.button5.Text = "Neue Liste…";
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // panel9
+            // moveUpDownPanel
             // 
-            this.panel9.Controls.Add(this.button12);
-            this.panel9.Controls.Add(this.button13);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(24, 292);
-            this.panel9.TabIndex = 16;
+            this.moveUpDownPanel.Controls.Add(this.moveListItemDownBtn);
+            this.moveUpDownPanel.Controls.Add(this.moveListItemUpBtn);
+            this.moveUpDownPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.moveUpDownPanel.Location = new System.Drawing.Point(0, 0);
+            this.moveUpDownPanel.Name = "moveUpDownPanel";
+            this.moveUpDownPanel.Size = new System.Drawing.Size(24, 292);
+            this.moveUpDownPanel.TabIndex = 16;
+            this.moveUpDownPanel.Resize += new System.EventHandler(this.MoveUpDownPanelResizeHandler);
             // 
-            // button12
+            // moveListItemDownBtn
             // 
             appearance7.BorderAlpha = Infragistics.Win.Alpha.Transparent;
             appearance7.ForegroundAlpha = Infragistics.Win.Alpha.Transparent;
             appearance7.ImageAlpha = Infragistics.Win.Alpha.Transparent;
             appearance7.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.arrow_down;
-            this.button12.Appearance = appearance7;
-            this.button12.BackgroundImage = global::Lyra2.LyraShell.Properties.Resources.pfeilDown;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button12.ButtonStyle = Infragistics.Win.UIElementButtonStyle.FlatBorderless;
+            this.moveListItemDownBtn.Appearance = appearance7;
+            this.moveListItemDownBtn.BackgroundImage = global::Lyra2.LyraShell.Properties.Resources.pfeilDown;
+            this.moveListItemDownBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.moveListItemDownBtn.ButtonStyle = Infragistics.Win.UIElementButtonStyle.FlatBorderless;
             appearance6.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.arrow_down_over;
-            this.button12.HotTrackAppearance = appearance6;
-            this.button12.Location = new System.Drawing.Point(5, 136);
-            this.button12.Name = "button12";
+            this.moveListItemDownBtn.HotTrackAppearance = appearance6;
+            this.moveListItemDownBtn.Location = new System.Drawing.Point(5, 136);
+            this.moveListItemDownBtn.Name = "moveListItemDownBtn";
             appearance9.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.arrow_down_down;
-            this.button12.PressedAppearance = appearance9;
-            this.button12.ShowFocusRect = false;
-            this.button12.ShowOutline = false;
-            this.button12.Size = new System.Drawing.Size(13, 37);
-            this.button12.TabIndex = 7;
-            this.button12.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
-            this.button12.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
-            this.button12.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.moveListItemDownBtn.PressedAppearance = appearance9;
+            this.moveListItemDownBtn.ShowFocusRect = false;
+            this.moveListItemDownBtn.ShowOutline = false;
+            this.moveListItemDownBtn.Size = new System.Drawing.Size(13, 37);
+            this.moveListItemDownBtn.TabIndex = 7;
+            this.moveListItemDownBtn.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
+            this.moveListItemDownBtn.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
+            this.moveListItemDownBtn.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
+            this.moveListItemDownBtn.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button13
+            // moveListItemUpBtn
             // 
             appearance4.BorderAlpha = Infragistics.Win.Alpha.Transparent;
             appearance4.ForegroundAlpha = Infragistics.Win.Alpha.Transparent;
             appearance4.ImageAlpha = Infragistics.Win.Alpha.Transparent;
             appearance4.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.arrow_up;
             appearance4.ImageBackgroundStyle = Infragistics.Win.ImageBackgroundStyle.Stretched;
-            this.button13.Appearance = appearance4;
-            this.button13.BackgroundImage = global::Lyra2.LyraShell.Properties.Resources.pfeilUp;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button13.ButtonStyle = Infragistics.Win.UIElementButtonStyle.FlatBorderless;
+            this.moveListItemUpBtn.Appearance = appearance4;
+            this.moveListItemUpBtn.BackgroundImage = global::Lyra2.LyraShell.Properties.Resources.pfeilUp;
+            this.moveListItemUpBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.moveListItemUpBtn.ButtonStyle = Infragistics.Win.UIElementButtonStyle.FlatBorderless;
             appearance5.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.arrow_up_over;
-            this.button13.HotTrackAppearance = appearance5;
-            this.button13.Location = new System.Drawing.Point(5, 88);
-            this.button13.Name = "button13";
+            this.moveListItemUpBtn.HotTrackAppearance = appearance5;
+            this.moveListItemUpBtn.Location = new System.Drawing.Point(5, 88);
+            this.moveListItemUpBtn.Name = "moveListItemUpBtn";
             appearance8.ImageBackground = global::Lyra2.LyraShell.Properties.Resources.arrow_up_down;
-            this.button13.PressedAppearance = appearance8;
-            this.button13.ShowFocusRect = false;
-            this.button13.ShowOutline = false;
-            this.button13.Size = new System.Drawing.Size(13, 37);
-            this.button13.TabIndex = 8;
-            this.button13.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
-            this.button13.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
-            this.button13.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.moveListItemUpBtn.PressedAppearance = appearance8;
+            this.moveListItemUpBtn.ShowFocusRect = false;
+            this.moveListItemUpBtn.ShowOutline = false;
+            this.moveListItemUpBtn.Size = new System.Drawing.Size(13, 37);
+            this.moveListItemUpBtn.TabIndex = 8;
+            this.moveListItemUpBtn.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
+            this.moveListItemUpBtn.UseHotTracking = Infragistics.Win.DefaultableBoolean.True;
+            this.moveListItemUpBtn.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
+            this.moveListItemUpBtn.Click += new System.EventHandler(this.button13_Click);
             // 
             // songPreview2
             // 
@@ -1021,6 +1090,7 @@ namespace Lyra2.LyraShell
             // 
             // panel7.ClientArea
             // 
+            this.panel7.ClientArea.Controls.Add(this.listManagementLabel);
             this.panel7.ClientArea.Controls.Add(this.linkLabel1);
             this.panel7.ClientArea.Controls.Add(this.button6);
             this.panel7.ClientArea.Controls.Add(this.button4);
@@ -1032,6 +1102,23 @@ namespace Lyra2.LyraShell
             this.panel7.Size = new System.Drawing.Size(112, 423);
             this.panel7.TabIndex = 14;
             // 
+            // listManagementLabel
+            // 
+            appearance14.BackColor = System.Drawing.Color.Transparent;
+            appearance14.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            appearance14.BackColorAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.ForwardDiagonal;
+            appearance14.FontData.ItalicAsString = "True";
+            appearance14.ForeColor = System.Drawing.Color.DimGray;
+            appearance14.TextHAlignAsString = "Left";
+            this.listManagementLabel.Appearance = appearance14;
+            this.listManagementLabel.Location = new System.Drawing.Point(12, 87);
+            this.listManagementLabel.Name = "listManagementLabel";
+            this.listManagementLabel.Padding = new System.Drawing.Size(10, 0);
+            this.listManagementLabel.Size = new System.Drawing.Size(96, 26);
+            this.listManagementLabel.TabIndex = 15;
+            this.listManagementLabel.Text = "Listen\r\n   verwalten";
+            // 
             // linkLabel1
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Orange;
@@ -1039,7 +1126,7 @@ namespace Lyra2.LyraShell
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabel1.Location = new System.Drawing.Point(10, 144);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 169);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(24, 18);
             this.linkLabel1.TabIndex = 13;
@@ -1050,7 +1137,7 @@ namespace Lyra2.LyraShell
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(10, 72);
+            this.button6.Location = new System.Drawing.Point(12, 119);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(96, 27);
             this.button6.TabIndex = 3;
@@ -1059,7 +1146,10 @@ namespace Lyra2.LyraShell
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(10, 8);
+            appearance11.FontData.SizeInPoints = 11F;
+            appearance11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(170)))));
+            this.button4.Appearance = appearance11;
+            this.button4.Location = new System.Drawing.Point(12, 8);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(96, 46);
             this.button4.TabIndex = 1;
@@ -1070,9 +1160,9 @@ namespace Lyra2.LyraShell
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(10, 120);
+            this.label3.Location = new System.Drawing.Point(12, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 19);
+            this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Lied hinzufügen";
             // 
@@ -1080,7 +1170,7 @@ namespace Lyra2.LyraShell
             // 
             this.textBox3.DefaultText = "Nummer";
             this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(34, 144);
+            this.textBox3.Location = new System.Drawing.Point(36, 169);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(72, 21);
             this.textBox3.TabIndex = 9;
@@ -1656,7 +1746,7 @@ namespace Lyra2.LyraShell
             this.persListSplitter.Panel2.ResumeLayout(false);
             this.persListSplitter.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
+            this.moveUpDownPanel.ResumeLayout(false);
             this.panel7.ClientArea.ResumeLayout(false);
             this.panel7.ClientArea.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -2724,6 +2814,8 @@ namespace Lyra2.LyraShell
             this.menuItem19.Visible = visible;
             this.menuItem4.Visible = visible;
             this.menuItem10.Visible = visible & (this.tabControl1.SelectedIndex == 2);
+            this.listManagementLabel.Visible = visible;
+            this.songManagmentLabel.Visible = visible;
             this.button1.Visible = visible;
             this.button2.Visible = visible;
             this.button9.Visible = visible;
@@ -3167,6 +3259,14 @@ namespace Lyra2.LyraShell
 
                 Process.Start("file://" + sfd.FileName);
             }
+        }
+
+        private void MoveUpDownPanelResizeHandler(object sender, EventArgs e)
+        {
+            int middle = (this.moveUpDownPanel.Height - 30) / 2 + 30;
+
+            this.moveListItemUpBtn.Top = middle - 5 - this.moveListItemUpBtn.Height;
+            this.moveListItemDownBtn.Top = middle + 5;
         }
     }
 }

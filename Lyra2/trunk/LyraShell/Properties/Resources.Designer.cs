@@ -214,6 +214,13 @@ namespace Lyra2.LyraShell.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap splash2009 {
+            get {
+                object obj = ResourceManager.GetObject("splash2009", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap undo_icon {
             get {
                 object obj = ResourceManager.GetObject("undo_icon", resourceCulture);

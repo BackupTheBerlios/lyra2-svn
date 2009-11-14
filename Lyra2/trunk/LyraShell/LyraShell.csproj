@@ -457,6 +457,7 @@
     <Content Include="data\stopwords.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\splash2009.png" />
     <None Include="Resources\undo_icon.png" />
     <None Include="Resources\scroll_up.png" />
     <None Include="Resources\scroll_top.png" />

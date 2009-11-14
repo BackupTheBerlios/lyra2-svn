@@ -26,7 +26,9 @@ namespace Lyra2.LyraShell
         {
             this.SetSongList(songList);
             DirectoryInfo indexDirInfo = new DirectoryInfo(this.indexDir);
-            this.indexAnalyzer = new StandardAnalyzer(new FileInfo(Application.StartupPath + "\\data\\stopwords.txt"), false);
+            // this.indexAnalyzer = new StandardAnalyzer(new FileInfo(Application.StartupPath + "\\data\\stopwords.txt"), false);
+            this.indexAnalyzer = new StandardAnalyzer();
+
 
             try
             {
